@@ -8,22 +8,83 @@
     <link rel="stylesheet" href="CSS/Dasar HTML.css">
     <link rel="stylesheet" href="CSS/Media queries.css">
     <link rel="stylesheet" href="CSS/Navigasi.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">Jogja<span>Culture</span></div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="sejarah.html">Sejarah</a></li>
-                <li><a href="kuliner.html">Kuliner</a></li>
-                <li><a href="seni.html">Seni</a></li>
-                <li><a href="destinasi.html">Destinasi</a></li>
-            </ul>
-            <button class="menu-toggle" id="menuToggle">☰</button>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar w-full top-0">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="logo flex items-center font-bold text-xl">Jogja<span>Culture</span></div>
+
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link">Beranda</a>
+                <a href="#" class="nav-link">Kuliner</a>
+                <a href="#" class="nav-link">Destinasi</a>
+                <a href="#" class="nav-link">Sejarah</a>
+                <a href="#" class="nav-link">Seni</a>
+                
+                <div class="relative dropdown-parent">
+                    <button onclick="toggleDropdown(event, 'desk-hotel', 'icon-hotel')" class="flex items-center space-x-1">
+                        <span>Hotel</span>
+                        <i data-lucide="chevron-down" id="icon-hotel" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div id="desk-hotel" class="hidden dropdown-content absolute top-full left-0 mt-2 w-40 bg-zinc-900 border border-gray-800 rounded-md py-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Bintang 5</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Bintang 4</a>
+                    </div>
+                </div>
+
+                <div class="relative dropdown-parent">
+                    <button onclick="toggleDropdown(event, 'desk-des', 'icon-des')" class="flex items-center space-x-1">
+                        <span>Destinasi</span>
+                        <i data-lucide="chevron-down" id="icon-des" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div id="desk-des" class="hidden dropdown-content absolute top-full left-0 mt-2 w-40 bg-zinc-900 border border-gray-800 rounded-md py-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Libur</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Roland</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 w-screen h-screen bg-zinc-950 z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden"> 
+            <div class="flex items-center justify-between mb-12">
+                <div class="logo flex items-center font-bold text-xl text-white">
+                    Jogja<span class="text-green-500">Culture</span>
+                </div>
+                
+                <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button> 
+            </div>
+
+            <div class="flex flex-col space-y-6 overflow-y-auto">
+                <a href="index.html" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Beranda</a>
+                <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Kuliner</a>
+                <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Destinasi</a>
+                <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Sejarah</a>
+                <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Seni</a>
+                
+                <div class="border-b border-white/5 pb-2 text-white">
+                    <button onclick="toggleDropdown(event, 'mob-hotel', 'mob-icon-hotel')" class="flex justify-between w-full text-2xl">
+                        <span>Hotel</span>
+                        <i data-lucide="chevron-down" id="mob-icon-hotel" class="transition-transform"></i>
+                    </button>
+                    <div id="mob-hotel" class="hidden dropdown-content mt-4 pl-4 flex flex-col space-y-4 text-gray-400">
+                        <a href="#">Bintang 5</a>
+                        <a href="#">Bintang 4</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 
     <main>
         <section class="hero">
@@ -52,7 +113,7 @@
         <p>&copy; 2024 Tugas Besar Pemrograman Web - Budaya Jogja</p>
     </footer>
 
-    <script src="JS/"></script><!--kita belum punya siap2 saja-->
+    <script src="JS/Navigasi.js"></script><!--kita belum punya siap2 saja-->
 </body>
 </html>
 <!--ROLAND GAY-->

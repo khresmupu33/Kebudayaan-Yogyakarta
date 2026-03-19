@@ -2,21 +2,22 @@
 /* --- NAVBAR (Mobile First) --- */
 .navbar {
     display: flex;
+    position: fixed;
     justify-content: space-between;
-    align-items: center;
+    align-items: s;
     padding: 15px 5%;
     background-color: #2c3e50;
     color: white;
 }
 
 .logo span {
-    color: #e67e22;
+    color: var(--warnautama);
     font-weight: bold;
+    padding-right: 20px;
 }
 
-.nav-links {
-    display: none; /* Sembunyikan menu di mobile secara default */
-    list-style: none;
+.nav-link:hover{
+    color: var(--warnautama);
 }
 
 .menu-toggle {
@@ -25,4 +26,9 @@
     color: white;
     padding: 5px 10px;
     cursor: pointer;
+}
+
+.dropdown{
+    background-color: #2c3e50;
+    width: 100px;
 }

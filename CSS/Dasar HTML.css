@@ -1,3 +1,8 @@
+:root{
+    --warnautama:#fd7600;
+    --warnakedua:#76706b;
+}
+
 /* --- RESET & BASIC --- */
 * {
     margin: 0;
