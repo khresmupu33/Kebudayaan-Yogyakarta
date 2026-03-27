@@ -1,15 +1,590 @@
-
-
-/* --- HERO SECTION --- */
-.hero {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://via.placeholder.com/1200x800'); /* Ganti dengan foto Jogja nanti */
-    background-size: cover;
-    background-position: center;
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    background: var(--brown-dark);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .batik-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.07;
+    background-image:
+      repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
+      repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+    background-size: 30px 30px;
+  }
+
+  .batik-border {
+    position: absolute;
+    inset: 24px;
+    border: 1px solid rgba(212,162,80,0.2);
+    pointer-events: none;
+  }
+
+  .batik-corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+  }
+  .batik-corner svg { width: 60px; height: 60px; }
+  .corner-tl { top: 24px; left: 24px; }
+  .corner-tr { top: 24px; right: 24px; transform: scaleX(-1); }
+  .corner-bl { bottom: 24px; left: 24px; transform: scaleY(-1); }
+  .corner-br { bottom: 24px; right: 24px; transform: scale(-1, -1); }
+
+  .hero-content {
     text-align: center;
-    color: white;
-}
+    z-index: 2;
+    padding: 2rem;
+    animation: fadeUp 1.2s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    color: var(--cream);
+    line-height: 1.05;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: rgba(240,224,204,0.7);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  .hero-desc {
+    max-width: 540px;
+    margin: 0 auto 3rem;
+    color: rgba(240,224,204,0.6);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--brown-dark);
+    background: var(--gold);
+    padding: 14px 40px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+  }
+
+  .btn-primary:hover {
+    background: var(--cream);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 14px 40px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline:hover {
+    background: rgba(212,162,80,0.1);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  .scroll-indicator span {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: rgba(212,162,80,0.5);
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    opacity: 0.5;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 7rem 4rem;
+  }
+
+  .section-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--brown-warm);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    color: var(--brown-dark);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em {
+    color: var(--brown-warm);
+    font-style: italic;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── SEJARAH ── */
+  #sejarah {
+    background: var(--brown-dark);
+    color: var(--cream);
+  }
+
+  #sejarah .section-label {
+    color: var(--gold);
+  }
+
+  #sejarah .section-title {
+    color: var(--cream);
+  }
+
+  #sejarah .divider {
+    background: var(--gold);
+  }
+
+  .sejarah-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .sejarah-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: rgba(240,224,204,0.75);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  .timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 44px;
+    bottom: -1px;
+    width: 1px;
+    background: rgba(212,162,80,0.25);
+  }
+
+  .timeline-year {
+    flex-shrink: 0;
+    width: 64px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: var(--gold);
+    border: 1px solid rgba(212,162,80,0.3);
+    margin-bottom: 2rem;
+  }
+
+  .timeline-content {
+    padding-bottom: 2rem;
+  }
+
+  .timeline-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--cream);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+
+  .timeline-content p {
+    font-size: 0.92rem;
+    color: rgba(240,224,204,0.55);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── MAKANAN ── */
+  #makanan {
+    background: var(--cream);
+  }
+
+  .makanan-intro {
+    max-width: 540px;
+    margin-bottom: 4rem;
+  }
+
+  .makanan-intro p {
+    font-size: 1.1rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .food-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .food-card {
+    border: 1px solid var(--cream-border);
+    background: #fff;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .food-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .food-card-visual {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .food-card-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(160,82,45,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(212,162,80,0.1) 0%, transparent 50%);
+  }
+
+  .food-card-body {
+    padding: 1.5rem;
+  }
+
+  .food-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--brown-dark);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+
+  .food-card-origin {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--brown-warm);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .food-card-desc {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── BUDAYA ── */
+  #budaya {
+    background: var(--cream-dark);
+  }
+
+  .budaya-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+
+  .budaya-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+  }
+
+  .art-card {
+    background: var(--brown-dark);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: all 0.3s ease;
+  }
+
+  .art-card:hover {
+    background: var(--brown-mid);
+  }
+
+  .art-card.featured {
+    grid-row: 1 / 3;
+    padding: 3.5rem;
+  }
+
+  .art-card-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+  }
+
+  .art-card.featured .art-card-icon {
+    font-size: 4rem;
+  }
+
+  .art-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  .art-card.featured .art-card-title {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .art-card-desc {
+    font-size: 0.95rem;
+    color: rgba(240,224,204,0.6);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .art-card.featured .art-card-desc {
+    font-size: 1.05rem;
+  }
+
+  .art-card-tag {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+  }
+
+  .art-card-pattern {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    opacity: 0.08;
+    border: 2px solid var(--gold);
+    transform: rotate(45deg);
+  }
+
+  /* ── TEMPAT ── */
+  #tempat {
+    background: var(--cream);
+    padding-bottom: 8rem;
+  }
+
+  .places-header {
+    margin-bottom: 4rem;
+  }
+
+  .places-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .place-item {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    border: 1px solid var(--cream-border);
+    background: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .place-item:hover {
+    border-color: var(--brown-light);
+    background: rgba(255,248,240,0.5);
+  }
+
+  .place-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: rgba(160,82,45,0.15);
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .place-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: var(--brown-dark);
+    margin-bottom: 0.4rem;
+  }
+
+  .place-info .place-type {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.63rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brown-warm);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .place-info p {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brown-dark);
+    padding: 4rem;
+    text-align: center;
+    border-top: 1px solid rgba(212,162,80,0.2);
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    font-size: 1rem;
+    color: rgba(240,224,204,0.45);
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-links a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(240,224,204,0.4);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: rgba(240,224,204,0.2);
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .food-card-visual.gudeg { background: #3D1C02; }
+  .food-card-visual.bakpia { background: #5C3317; }
+  .food-card-visual.sate { background: #2C1108; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    section { padding: 5rem 1.5rem; }
+    .sejarah-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .food-cards { grid-template-columns: 1fr; }
+    .budaya-grid { grid-template-columns: 1fr; }
+    .art-card.featured { grid-row: auto; }
+    .places-grid { grid-template-columns: 1fr; }
+    footer { padding: 3rem 1.5rem; }
+  }

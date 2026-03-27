@@ -1,6 +1,15 @@
-:root{
-    --warnautama:#fd7600;
-    --warnakedua:#76706b;
+:root {
+    --brown-dark: #2C1A0E;
+    --brown-mid: #6B3A1F;
+    --brown-warm: #A0522D;
+    --brown-light: #C8885A;
+    --gold: #D4A250;
+    --cream: #FFF8F0;
+    --cream-dark: #F0E0CC;
+    --cream-border: #E8C9A8;
+    --text-dark: #1C0F06;
+    --text-mid: #5A3020;
+    --zinc:#18181b
 }
 
 /* --- RESET & BASIC --- */
@@ -11,17 +20,20 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    line-height: 1.6;
-    color: #333;
-}
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
 
 
 /* Fitur: Text Effect */
 .text-effect {
     font-size: 2.5rem;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-    animation: fadeIn 2s ease-in; /* Fitur: Animations */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in;
+    /* Fitur: Animations */
 }
 
 /* Fitur: Button */
@@ -32,7 +44,8 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: 0.3s; /* Fitur: Transitions */
+    transition: 0.3s;
+    /* Fitur: Transitions */
 }
 
 .btn-primary:hover {
@@ -53,6 +66,13 @@ body {
 
 /* Animasi Sederhana */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

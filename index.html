@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,112 +9,415 @@
     <link rel="stylesheet" href="CSS/Dasar HTML.css">
     <link rel="stylesheet" href="CSS/Media queries.css">
     <link rel="stylesheet" href="CSS/Navigasi.css">
-        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
 
-<header>
-    <nav class="navbar w-full top-0">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="logo flex items-center font-bold text-xl">Jogja<span>Culture</span></div>
+    <header>
+        <nav class="navbar w-full top-0">
+            <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+                <div class="logo flex items-center font-bold text-xl">Jogja<span>Culture</span></div>
 
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="index.html" class="nav-link">Beranda</a>
-                <a href="#" class="nav-link">Kuliner</a>
-                <a href="#" class="nav-link">Destinasi</a>
-                <a href="#" class="nav-link">Sejarah</a>
-                <a href="#" class="nav-link">Seni</a>
-                
-                <div class="relative dropdown-parent">
-                    <button onclick="toggleDropdown(event, 'desk-hotel', 'icon-hotel')" class="flex items-center space-x-1">
-                        <span>Hotel</span>
-                        <i data-lucide="chevron-down" id="icon-hotel" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div id="desk-hotel" class="hidden dropdown-content absolute top-full left-0 mt-2 w-40 bg-zinc-900 border border-gray-800 rounded-md py-2">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Bintang 5</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Bintang 4</a>
+                <div class="nav-links hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="#" class="nav-link">Kuliner</a>
+                    <a href="#" class="nav-link">Destinasi</a>
+                    <a href="#" class="nav-link">Sejarah</a>
+                    <a href="#" class="nav-link">Seni</a>
+
+                    <div class="relative dropdown-parent">
+                        <button onclick="toggleDropdown(event, 'desk-hotel', 'icon-hotel')"
+                            class="flex items-center space-x-1">
+                            <span>Hotel</span>
+                            <i data-lucide="chevron-down" id="icon-hotel" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="desk-hotel"
+                            class="hidden dropdown-content absolute top-full left-0 mt-2 w-40 border border-gray-800 rounded-md py-2">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Bintang 5</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Bintang 4</a>
+                        </div>
+                    </div>
+
+                    <div class="relative dropdown-parent">
+                        <button onclick="toggleDropdown(event, 'desk-des', 'icon-des')"
+                            class="flex items-center space-x-1">
+                            <span>Destinasi</span>
+                            <i data-lucide="chevron-down" id="icon-des" class="w-4 h-4 transition-transform"></i>
+                        </button>
+                        <div id="desk-des"
+                            class="hidden dropdown-content absolute top-full left-0 mt-2 w-40 bg-zinc-900 border border-gray-800 rounded-md py-2">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Libur</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Roland</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="relative dropdown-parent">
-                    <button onclick="toggleDropdown(event, 'desk-des', 'icon-des')" class="flex items-center space-x-1">
-                        <span>Destinasi</span>
-                        <i data-lucide="chevron-down" id="icon-des" class="w-4 h-4 transition-transform"></i>
+                <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="fixed inset-0 w-screen h-screen bg-zinc-950 z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden">
+                <div class="flex items-center justify-between mb-12">
+                    <div class="logo flex items-center font-bold text-xl text-white">
+                        Jogja<span class="text-green-500">Culture</span>
+                    </div>
+
+                    <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                        <i data-lucide="x" class="w-8 h-8"></i>
                     </button>
-                    <div id="desk-des" class="hidden dropdown-content absolute top-full left-0 mt-2 w-40 bg-zinc-900 border border-gray-800 rounded-md py-2">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Libur</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-800 text-white">Roland</a>
+                </div>
+
+                <div class="flex flex-col space-y-6 overflow-y-auto">
+                    <a href="index.html"
+                        class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Beranda</a>
+                    <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Kuliner</a>
+                    <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Destinasi</a>
+                    <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Sejarah</a>
+                    <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Seni</a>
+
+                    <div class="border-b border-white/5 pb-2 text-white">
+                        <button onclick="toggleDropdown(event, 'mob-hotel', 'mob-icon-hotel')"
+                            class="flex justify-between w-full text-2xl">
+                            <span>Hotel</span>
+                            <i data-lucide="chevron-down" id="mob-icon-hotel" class="transition-transform"></i>
+                        </button>
+                        <div id="mob-hotel"
+                            class="hidden dropdown-content mt-4 pl-4 flex flex-col space-y-4 text-gray-400">
+                            <a href="#">Bintang 5</a>
+                            <a href="#">Bintang 4</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </nav>
+    </header>
 
-            <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
-                <i data-lucide="menu"></i>
-            </button>
+
+    <!-- HOME -->
+    <section id="home">
+        <div class="batik-bg"></div>
+        <div class="batik-border"></div>
+
+        <!-- corner ornaments -->
+        <div class="batik-corner corner-tl">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
+                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
+                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
+                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
+            </svg>
+        </div>
+        <div class="batik-corner corner-tr">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
+                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
+                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
+                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
+            </svg>
+        </div>
+        <div class="batik-corner corner-bl">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
+                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
+                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
+                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
+            </svg>
+        </div>
+        <div class="batik-corner corner-br">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
+                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
+                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
+                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
+            </svg>
         </div>
 
-        <div id="mobile-menu" class="fixed inset-0 w-screen h-screen bg-zinc-950 z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden"> 
-            <div class="flex items-center justify-between mb-12">
-                <div class="logo flex items-center font-bold text-xl text-white">
-                    Jogja<span class="text-green-500">Culture</span>
-                </div>
-                
-                <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
-                    <i data-lucide="x" class="w-8 h-8"></i>
-                </button> 
-            </div>
+        <div class="hero-content">
+            <span class="hero-label">Daerah Istimewa · Kota Budaya · Sejak 1755</span>
+            <h1 class="hero-title">Yogya<em>karta</em></h1>
+            <p class="hero-subtitle">Kota yang Tak Pernah Tidur dari Budaya</p>
+            <p class="hero-desc">
+                Di antara lereng Merapi dan gemericik Progo, Yogyakarta berdiri sebagai
+                penjaga peradaban Jawa yang agung — tempat di mana tradisi hidup berdampingan
+                harmonis dengan semangat zaman.
+            </p>
+            <a href="#sejarah" class="btn-primary">Jelajahi</a>
+            <a href="#tempat" class="btn-outline">Lihat Tempat</a>
+        </div>
 
-            <div class="flex flex-col space-y-6 overflow-y-auto">
-                <a href="index.html" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Beranda</a>
-                <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Kuliner</a>
-                <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Destinasi</a>
-                <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Sejarah</a>
-                <a href="#" class="text-2xl font-semibold text-white border-b border-white/5 pb-2">Seni</a>
-                
-                <div class="border-b border-white/5 pb-2 text-white">
-                    <button onclick="toggleDropdown(event, 'mob-hotel', 'mob-icon-hotel')" class="flex justify-between w-full text-2xl">
-                        <span>Hotel</span>
-                        <i data-lucide="chevron-down" id="mob-icon-hotel" class="transition-transform"></i>
-                    </button>
-                    <div id="mob-hotel" class="hidden dropdown-content mt-4 pl-4 flex flex-col space-y-4 text-gray-400">
-                        <a href="#">Bintang 5</a>
-                        <a href="#">Bintang 4</a>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- SEJARAH -->
+    <section id="sejarah">
+        <div class="sejarah-grid">
+            <div class="sejarah-text">
+                <span class="section-label">§ 02 — Sejarah</span>
+                <h2 class="section-title">Keraton &amp;<br><em>Sejarah Kota</em></h2>
+                <div class="divider"></div>
+                <p>
+                    Yogyakarta berdiri dari Perjanjian Giyanti tahun 1755, ketika Kerajaan Mataram
+                    Islam dibagi dua menjadi Kasunanan Surakarta dan Kesultanan Yogyakarta. Sultan
+                    Hamengkubuwono I mendirikan Keraton sebagai pusat kosmologi dan pemerintahan.
+                </p>
+                <p>
+                    Keraton Yogyakarta bukan sekadar istana — ia adalah poros sumbu imajiner yang
+                    menghubungkan Gunung Merapi di utara, Keraton di tengah, dan Pantai Parangtritis
+                    di selatan. Sebuah konsep filosofi Jawa tentang keseimbangan alam semesta.
+                </p>
+                <p>
+                    Dalam perjuangan kemerdekaan Indonesia, Yogyakarta tampil sebagai Ibu Kota
+                    Republik pada 1946–1950, menjadi benteng terakhir melawan agresi militer Belanda
+                    dan simbol ketahanan bangsa.
+                </p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1755</div>
+                    <div class="timeline-content">
+                        <h4>Perjanjian Giyanti</h4>
+                        <p>Pembagian Mataram Islam; berdirinya Kesultanan Yogyakarta di bawah Sri Sultan Hamengkubuwono
+                            I.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1756</div>
+                    <div class="timeline-content">
+                        <h4>Pembangunan Keraton</h4>
+                        <p>Keraton Yogyakarta dibangun di atas tanah yang dipilih dengan ritual kejawen dan perhitungan
+                            kosmis.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1812</div>
+                    <div class="timeline-content">
+                        <h4>Serangan Inggris</h4>
+                        <p>Pasukan Inggris menyerbu Keraton di bawah Raffles; sebagian besar harta benda dirampas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1946</div>
+                    <div class="timeline-content">
+                        <h4>Ibu Kota Republik</h4>
+                        <p>Yogyakarta menjadi Ibu Kota RI, pusat perlawanan revolusi kemerdekaan Indonesia.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Kini</div>
+                    <div class="timeline-content">
+                        <h4>Daerah Istimewa</h4>
+                        <p>Satu-satunya daerah istimewa yang dipimpin langsung oleh Sri Sultan sebagai Gubernur.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </nav>
-</header>
+    </section>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="text-effect">Selamat Datang di Yogyakarta</h1>
-                <p>Menelusuri jejak sejarah dan kehangatan budaya di Kota Pelajar.</p>
-                <a href="#about" class="btn-primary">Jelajahi Sekarang</a>
-            </div>
-        </section>
+    <!-- MAKANAN KHAS -->
+    <section id="makanan">
+        <div class="makanan-intro">
+            <span class="section-label">§ 03 — Kuliner</span>
+            <h2 class="section-title">Makanan<br><em>Khas Jogja</em></h2>
+            <div class="divider"></div>
+            <p>
+                Dari dapur keraton hingga pedagang kaki lima malam hari, kuliner Yogyakarta
+                merawat cita rasa Jawa yang kaya rempah, penuh filosofi, dan diwariskan lintas generasi.
+            </p>
+        </div>
 
-        <section id="about" class="container">
-            <h2>Tentang Jogja</h2>
-            <div class="grid-flex">
-                <div class="card">
-                    <h3>Filosofi</h3>
-                    <p>Yogyakarta dikenal dengan filosofi *Hamemayu Hayuning Bawana*.</p>
+        <div class="food-cards">
+            <div class="food-card">
+                <div class="food-card-visual gudeg">🍲</div>
+                <div class="food-card-body">
+                    <div class="food-card-origin">Masakan Keraton · Sejak abad ke-19</div>
+                    <h3 class="food-card-name">Gudeg</h3>
+                    <p class="food-card-desc">
+                        Nangka muda yang dimasak berjam-jam bersama santan, gula jawa, dan rempah pilihan
+                        hingga berwarna coklat keemasan. Disajikan bersama krecek, opor ayam, dan nasi putih panas.
+                        Simbol kuliner Jogja yang tak tergantikan.
+                    </p>
                 </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200" alt="Budaya Jogja" class="responsive-img">
+            </div>
+            <div class="food-card">
+                <div class="food-card-visual bakpia">🥮</div>
+                <div class="food-card-body">
+                    <div class="food-card-origin">Kue Legendaris · Kampung Pathuk</div>
+                    <h3 class="food-card-name">Bakpia</h3>
+                    <p class="food-card-desc">
+                        Kue bulat berkulit tipis dengan isi kacang hijau manis yang lembut. Lahir dari pengaruh
+                        budaya Tionghoa yang melebur harmonis dengan kearifan lokal Jogja. Oleh-oleh wajib
+                        yang selalu dibawa pulang setiap wisatawan.
+                    </p>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="food-card">
+                <div class="food-card-visual sate">🥩</div>
+                <div class="food-card-body">
+                    <div class="food-card-origin">Sate Tradisional · Imogiri</div>
+                    <h3 class="food-card-name">Sate Klathak</h3>
+                    <p class="food-card-desc">
+                        Sate kambing muda yang ditusuk dengan jeruji besi bukan bambu, dibakar di atas bara
+                        arang panas tanpa bumbu kecap — hanya garam dan merica. Disajikan bersama kuah tongseng
+                        bening yang gurih dan nasi hangat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- BUDAYA & SENI -->
+    <section id="budaya">
+        <div class="budaya-header">
+            <div>
+                <span class="section-label">§ 04 — Seni &amp; Budaya</span>
+                <h2 class="section-title">Warisan<br><em>Seni Agung</em></h2>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="budaya-grid">
+            <div class="art-card featured">
+                <span class="art-card-icon">🎨</span>
+                <h3 class="art-card-title">Batik Jogja</h3>
+                <p class="art-card-desc">
+                    Batik Yogyakarta diakui UNESCO sebagai Warisan Budaya Tak Benda pada 2009.
+                    Motif-motifnya — parang, kawung, sido mukti — bukan sekadar ornamen;
+                    setiap pola menyimpan makna filosofis tentang kehidupan, kekuasaan, dan hubungan
+                    manusia dengan semesta. Proses pembuatannya menggunakan canting dan malam yang
+                    diaplikasikan dengan sabar oleh tangan-tangan terlatih selama berhari-hari.
+                </p>
+                <span class="art-card-tag">Warisan UNESCO 2009</span>
+                <div class="art-card-pattern"></div>
+            </div>
+            <div class="art-card">
+                <span class="art-card-icon">🎭</span>
+                <h3 class="art-card-title">Wayang Kulit</h3>
+                <p class="art-card-desc">
+                    Pertunjukan semalam suntuk yang menceritakan kisah Ramayana dan Mahabharata
+                    melalui bayangan kulit yang dikendalikan dalang.
+                </p>
+                <span class="art-card-tag">Warisan Dunia</span>
+                <div class="art-card-pattern"></div>
+            </div>
+            <div class="art-card">
+                <span class="art-card-icon">🎼</span>
+                <h3 class="art-card-title">Gamelan</h3>
+                <p class="art-card-desc">
+                    Orkestra perkusi Jawa — perpaduan gong, kenong, saron, dan rebab yang menciptakan
+                    lanskap suara yang meditatif dan agung.
+                </p>
+                <span class="art-card-tag">Musik Keraton</span>
+                <div class="art-card-pattern"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEMPAT BUDAYA -->
+    <section id="tempat">
+        <div class="places-header">
+            <span class="section-label">§ 05 — Destinasi</span>
+            <h2 class="section-title">Tempat<br><em>Bersejarah</em></h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="places-grid">
+            <div class="place-item">
+                <div class="place-num">01</div>
+                <div class="place-info">
+                    <h3>Keraton Yogyakarta</h3>
+                    <span class="place-type">Istana Kerajaan · Aktif sejak 1755</span>
+                    <p>
+                        Pusat pemerintahan dan budaya Kesultanan Yogyakarta yang masih aktif dihuni.
+                        Kompleks yang mencerminkan kosmologi Jawa dengan pavilion-pavilion megah,
+                        gamelan pusaka, dan koleksi artefak kerajaan yang tak ternilai.
+                    </p>
+                </div>
+            </div>
+            <div class="place-item">
+                <div class="place-num">02</div>
+                <div class="place-info">
+                    <h3>Taman Sari</h3>
+                    <span class="place-type">Taman Kerajaan · Dibangun 1758</span>
+                    <p>
+                        "Kebun Bunga" para sultan — kompleks pemandian kerajaan dengan kolam-kolam
+                        elegan, lorong bawah tanah misterius, dan masjid bawah tanah yang dikenal
+                        sebagai Sumur Gumuling.
+                    </p>
+                </div>
+            </div>
+            <div class="place-item">
+                <div class="place-num">03</div>
+                <div class="place-info">
+                    <h3>Candi Prambanan</h3>
+                    <span class="place-type">Candi Hindu · Abad ke-9</span>
+                    <p>
+                        Kompleks candi Hindu terbesar di Indonesia, dipersembahkan kepada Trimurti —
+                        Brahma, Wisnu, dan Siwa. Keindahan arsitektur yang mengucap kisah Ramayana
+                        pada setiap pahatan reliefnya.
+                    </p>
+                </div>
+            </div>
+            <div class="place-item">
+                <div class="place-num">04</div>
+                <div class="place-info">
+                    <h3>Museum Sonobudoyo</h3>
+                    <span class="place-type">Museum Budaya · Alun-alun Utara</span>
+                    <p>
+                        Penyimpan ribuan koleksi benda budaya Jawa — dari wayang kulit, keris pusaka,
+                        batik kuno, hingga naskah-naskah Jawa kuno yang ditulis di atas daun lontar.
+                    </p>
+                </div>
+            </div>
+            <div class="place-item">
+                <div class="place-num">05</div>
+                <div class="place-info">
+                    <h3>Malioboro</h3>
+                    <span class="place-type">Jantung Kota · Koridor Budaya</span>
+                    <p>
+                        Jalan legendaris yang membelah kota dari utara ke selatan — dipenuhi pedagang
+                        batik, pengrajin perak, seniman jalanan, dan aroma angkringan yang menguar
+                        di bawah langit malam Jogja.
+                    </p>
+                </div>
+            </div>
+            <div class="place-item">
+                <div class="place-num">06</div>
+                <div class="place-info">
+                    <h3>Kotagede</h3>
+                    <span class="place-type">Kota Lama · Kerajinan Perak</span>
+                    <p>
+                        Bekas ibu kota Mataram Islam pertama, kini menjadi sentra kerajinan perak
+                        Yogyakarta. Lorong-lorong kota tua menyimpan rumah joglo berusia ratusan tahun
+                        dan makam raja-raja Mataram.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 Tugas Besar Pemrograman Web - Budaya Jogja</p>
+        <div class="footer-logo">Jogja</div>
+        <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sejarah">Sejarah</a></li>
+            <li><a href="#makanan">Makanan</a></li>
+            <li><a href="#budaya">Budaya</a></li>
+            <li><a href="#tempat">Tempat</a></li>
+        </ul>
+        <p class="footer-copy">© 2025 Jogja Cultural Web · Didesain dengan rasa hormat kepada tanah Mataram</p>
     </footer>
 
     <script src="JS/Navigasi.js"></script><!--kita belum punya siap2 saja-->
 </body>
+
 </html>
 <!--ROLAND GAY-->
