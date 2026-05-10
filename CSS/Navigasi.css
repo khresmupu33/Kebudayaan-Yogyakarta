@@ -1,71 +1,160 @@
-/* --- NAVBAR (Mobile First) --- */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
-    background: var(--brown-dark);
-    backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    z-index: 50;
+    background: rgba(44, 26, 14, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 162, 80, 0.2);
+    height: 70px;
     padding: 0 4rem;
-    height: 64px;
-    border-bottom: 1px solid var(--brown-dark);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.navbar.scrolled {
+    height: 60px; /* Navbar sedikit mengecil */
+    background: rgba(28, 15, 6, 0.95); /* Cokelat lebih gelap & solid */
+    border-bottom: 1px solid rgba(212, 162, 80, 0.4); /* Garis emas lebih tegas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Garis bawah animasi untuk menu saat di-hover agar lebih keren */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: var(--gold);
-    letter-spacing: 2px;
-    font-style: italic;
-    padding: 20px;
+    font-size: 1.6rem;
+    color: var(--cream);
+    letter-spacing: 1px;
 }
 
+.logo span {
+    color: var(--gold);
+    font-style: italic;
+}
 
-.nav-links a {
+.nav-links a,
+.dropdown-parent button {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 2.5px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--cream-dark);
     text-decoration: none;
     opacity: 0.85;
     transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-    opacity: 1;
-}
-
-.menu-toggle {
-    background: none;
-    border: 1px solid white;
-    color: white;
-    padding: 5px 10px;
     cursor: pointer;
 }
-.dropdown-parent button{
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--cream-dark);
-    text-decoration: none;
-    opacity: 0.85;
-    transition: all 0.3s ease;
-}
-.dropdown-parent button:hover{
+
+.nav-links a:hover,
+.dropdown-parent button:hover {
     color: var(--gold);
     opacity: 1;
 }
-.dropdown-content{
-    background-color: var( --zinc);
-}
-.dropdown-content a:hover{
-    background-color: var( --brown-dark);
+
+.dropdown-content {
+    background-color: rgba(24, 24, 27, 0.95);
+    backdrop-filter: blur(8px);
 }
 
+.dropdown-content a {
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--brown-dark);
+    color: var(--gold);
+}
+
+#mobile-menu {
+    background-color: rgba(24, 24, 27, 0.98);
+}
+
+/* Pastikan jarak antar baris seragam */
+.mobile-link {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    /* Gunakan padding yang konsisten untuk atas dan bawah */
+    padding-bottom: 0.8rem; 
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    display: block; /* Agar link memenuhi lebar kontainer */
+}
+
+/* Hilangkan border-bottom khusus di dalam dropdown agar tidak berdempetan saat menu terbuka */
+.mobile-dropdown.active .mobile-link {
+    border-bottom-color: rgba(212, 162, 80, 0.3);
+    color: var(--gold);
+}
+
+/* Jarak untuk sub-menu (anak dropdown) */
+.mobile-sublink {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.4rem 0; /* Jarak baris sub-menu sedikit lebih rapat */
+    transition: color 0.3s;
+    border-left: 1px solid var(--gold);
+    padding-left: 1.5rem;
+}
+
+/* Supaya saat dropdown terbuka, jarak ke elemen di bawahnya tetap konsisten */
+.mobile-dropdown-content {
+    margin-bottom: 0.5rem;
+}
+
+.mobile-link:hover {
+    color: var(--gold);
+}
+
+/* Style Tambahan untuk Mobile Dropdown */
+.mobile-sublink {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+    border-left: 1px solid var(--gold);
+    padding-left: 1.5rem;
+}
+
+.mobile-sublink:hover {
+    color: var(--gold);
+}
+
+/* Animasi Rotasi Icon */
+.mobile-dropdown.active i[data-lucide="chevron-down"] {
+    transform: rotate(180deg);
+    color: var(--gold);
+}
+
+.mobile-dropdown.active .mobile-dropdown-content {
+    display: flex;
+}

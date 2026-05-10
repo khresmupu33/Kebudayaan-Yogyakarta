@@ -9,70 +9,52 @@
     --cream-border: #E8C9A8;
     --text-dark: #1C0F06;
     --text-mid: #5A3020;
-    --zinc:#18181b
+    --zinc: #18181b;
 }
 
-/* --- RESET & BASIC --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-  body {
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--brown-dark);
+}
+
+body {
     font-family: 'Cormorant Garamond', serif;
     background: var(--cream);
     color: var(--text-dark);
     overflow-x: hidden;
-  }
-
-
-/* Fitur: Text Effect */
-.text-effect {
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 2s ease-in;
-    /* Fitur: Animations */
 }
 
-/* Fitur: Button */
-.btn-primary {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e67e22;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
-    /* Fitur: Transitions */
+/* Custom Scrollbar untuk Chrome, Safari, dan Edge */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.btn-primary:hover {
-    background-color: #d35400;
+::-webkit-scrollbar-track {
+    background: rgba(28, 15, 6, 0.95);; /* Latar belakang scrollbar */
 }
 
-/* --- LAYOUT UTAMA --- */
-.container {
-    padding: 40px 5%;
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--brown-mid), var(--gold)); /* Gradasi cokelat ke emas */
+    border-radius: 20px;
+    border: 2px solid var(--brown-dark); /* Memberi ruang napas */
 }
 
-.responsive-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold); /* Emas menyala saat disentuh */
 }
 
-
-/* Animasi Sederhana */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Untuk Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) var(--brown-dark);
 }

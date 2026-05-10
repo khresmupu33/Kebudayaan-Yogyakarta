@@ -1,0 +1,268 @@
+#sejarah {
+    background: var(--brown-dark);
+    color: var(--cream);
+    font-family: 'Cormorant+Garamond', serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+
+/* Container Utama */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 2rem 80px;
+}
+
+/* Header Halaman */
+.page-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.sejarah-label {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 0.75rem;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.sejarah-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.divider-custom {
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto;
+}
+
+/* Timeline Style (Lebih Panjang) */
+.timeline-detailed {
+    margin: 4rem 0;
+    position: relative;
+}
+
+.timeline-detailed::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: rgba(212, 162, 80, 0.2);
+}
+
+.timeline-node {
+    margin-bottom: 5rem;
+    position: relative;
+    width: 50%;
+    padding: 0 4rem;
+}
+
+.timeline-node:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-node:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.node-year {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.node-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--cream-dark);
+}
+
+.node-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* Dekorasi Titik Tengah */
+.timeline-node::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: 10px;
+    z-index: 2;
+}
+
+.timeline-node:nth-child(odd)::after {
+    right: -6px;
+}
+
+.timeline-node:nth-child(even)::after {
+    left: -6px;
+}
+
+/* Story Blocks */
+.story-container {
+    margin-top: 8rem;
+}
+
+.story-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 162, 80, 0.1);
+    padding: 4rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.story-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.story-card p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    text-align: justify;
+    color: rgba(240, 224, 204, 0.8);
+}
+
+/* Quote Box */
+.highlight-box {
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    padding: 3rem;
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.highlight-box blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--cream);
+}
+/* --- Tambahan Efek Hover --- */
+
+/* Hover pada Timeline Item */
+.timeline-node {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-node:hover {
+    transform: translateY(-5px);
+}
+
+/* Efek pada Titik Tengah Timeline saat Hover */
+.timeline-node::after {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 0 rgba(212, 162, 80, 0);
+}
+
+.timeline-node:hover::after {
+    background: var(--cream);
+    box-shadow: 0 0 0 6px rgba(212, 162, 80, 0.3);
+    transform: scale(1.2);
+}
+
+/* Efek pada teks judul timeline saat hover */
+.timeline-node:hover .node-content h3 {
+    color: var(--gold);
+    transition: color 0.3s ease;
+}
+
+/* Hover pada Story Card (Kartu Cerita) */
+.story-card {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+}
+
+.story-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(212, 162, 80, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Animasi garis bawah pada judul kartu saat hover */
+.story-card h2::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.5s ease;
+    margin-top: 5px;
+}
+
+.story-card:hover h2::after {
+    width: 100px;
+}
+
+/* Hover pada Highlight Box */
+.highlight-box {
+    transition: all 0.6s ease;
+}
+
+.highlight-box:hover {
+    background: rgba(212, 162, 80, 0.03);
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+/* Efek pada Header */
+.sejarah-label {
+    animation: fadeInUp-sejarah 0.8s ease backwards;
+}
+
+.sejarah-title {
+    animation: fadeInUp-sejarah 0.8s ease backwards 0.2s; /* Jeda 0.2 detik */
+}
+
+.divider-custom {
+    animation: fadeIn-sejarah 1s ease backwards 0.4s;
+}
+
+/* Efek pada Garis Tengah Timeline */
+.timeline-detailed::before {
+    animation: lineGrow-sejarah 2s cubic-bezier(0.4, 0, 0.2, 1) backwards 0.6s;
+    transform-origin: top;
+}
+
+/* Efek pada Node Timeline (Muncul satu per satu) */
+.timeline-node {
+    animation: fadeInUp-sejarah 0.8s ease backwards;
+}
+
+/* Mengatur urutan muncul node timeline (Stagger) */
+.timeline-node:nth-child(1) { animation-delay: 0.8s; }
+.timeline-node:nth-child(2) { animation-delay: 1.0s; }
+.timeline-node:nth-child(3) { animation-delay: 1.2s; }
+.timeline-node:nth-child(4) { animation-delay: 1.4s; }
+.timeline-node:nth-child(5) { animation-delay: 1.6s; }
+
+/* Efek pada Kartu Cerita & Quote */
+.highlight-box {
+    animation: fadeIn-sejarah 1.5s ease backwards 1.8s;
+}
+
+.story-card {
+    animation: fadeInUp-sejarah 1s ease backwards;
+}

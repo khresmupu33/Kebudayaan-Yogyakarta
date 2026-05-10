@@ -1,50 +1,33 @@
-// 1. Fungsi Buka/Tutup Menu Mobile
+lucide.createIcons();
+
 function handleMobileNav() {
     const menu = document.getElementById('mobile-menu');
-    if (!menu) return;
-
-    const isHidden = menu.classList.contains('translate-x-full');
-
-    if (isHidden) {
-        menu.classList.remove('translate-x-full');
-        menu.classList.add('translate-x-0');
-        document.body.style.overflow = 'hidden'; 
+    menu.classList.toggle('translate-x-full');
+}
+function toggleMobileDropdown(button) {
+    const parent = button.parentElement;
+    const content = parent.querySelector('.mobile-dropdown-content');
+    
+    // Toggle class active untuk animasi icon
+    parent.classList.toggle('active');
+    
+    // Toggle hidden class
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
     } else {
-        menu.classList.remove('translate-x-0');
-        menu.classList.add('translate-x-full');
-        document.body.style.overflow = 'auto';
-        
-        // Reset dropdown di dalam menu mobile saat ditutup
-        document.querySelectorAll('#mobile-menu .dropdown-content').forEach(d => d.classList.add('hidden'));
-        document.querySelectorAll('#mobile-menu .transition-transform').forEach(i => i.style.transform = 'rotate(0deg)');
+        content.classList.add('hidden');
     }
 }
 
-// 2. Fungsi Dropdown (Desktop & Mobile)
-function toggleDropdown(event, targetId, iconId) {
-    event.stopPropagation();
-    const target = document.getElementById(targetId);
-    const icon = document.getElementById(iconId);
-
-    // Tutup dropdown lain yang setingkat (Accordion)
-    const container = event.target.closest('.flex-col') || event.target.closest('.md\\:flex');
-    container.querySelectorAll('.dropdown-content').forEach(d => {
-        if (d.id !== targetId) d.classList.add('hidden');
-    });
-
-    const isHidden = target.classList.toggle('hidden');
-    if (icon) {
-        icon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(180deg)';
-    }
+// Pastikan Lucide Icon dirender ulang jika diperlukan
+if (window.lucide) {
+    lucide.createIcons();
 }
-
-// 3. Klik di luar untuk menutup dropdown desktop
-window.addEventListener('click', function(e) {
-    if (!e.target.closest('.dropdown-parent')) {
-        document.querySelectorAll('.md\\:flex .dropdown-content').forEach(d => d.classList.add('hidden'));
-        document.querySelectorAll('.md\\:flex .transition-transform').forEach(i => i.style.transform = 'rotate(0deg)');
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
     }
 });
-
-// Inisialisasi Lucide
-lucide.createIcons();

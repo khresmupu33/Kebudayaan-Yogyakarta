@@ -1,0 +1,25 @@
+/* Animasi Utama */
+@keyframes fadeInUp-sejarah {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineGrow-sejarah {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+@keyframes fadeIn-sejarah {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeUp-beranda {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}

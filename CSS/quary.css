@@ -1,0 +1,75 @@
+@media (max-width: 1024px) {
+    .budaya-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .art-card.featured {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 0 2rem;
+    }
+
+    section {
+        padding: 6rem 2rem;
+    }
+
+    .sejarah-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .food-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .budaya-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .container {
+        padding-top: 100px;
+    }
+
+    .timeline-detailed::before {
+        left: 20px;
+    }
+
+    .timeline-node {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 3.5rem;
+        padding-right: 1rem;
+        text-align: left !important;
+        margin-bottom: 3rem;
+    }
+
+    .timeline-node::after {
+        left: 14px !important;
+    }
+
+    .story-card {
+        padding: 2rem;
+    }
+
+    .story-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .highlight-box blockquote {
+        font-size: 1.5rem;
+    }
+}

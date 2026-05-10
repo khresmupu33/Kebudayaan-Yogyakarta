@@ -1,0 +1,39 @@
+footer {
+    background: var(--brown-dark);
+    padding: 5rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(212,162,80,0.2);
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--cream);
+}
+
+.footer-logo span {
+    color: var(--gold);
+}
+
+.footer-tagline {
+    color: rgba(240,224,204,0.6);
+    margin-bottom: 3rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgba(240,224,204,0.5);
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: rgba(240,224,204,0.3);
+}

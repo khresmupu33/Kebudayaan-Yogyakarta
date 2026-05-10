@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogja Culture | Sejarah</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Sejarah.css">
+    <link rel="stylesheet" href="CSS/Dasar HTML.css">
+    <link rel="stylesheet" href="CSS/Navigasi.css">
+    <link rel="stylesheet" href="CSS/components.css">
+    <link rel="stylesheet" href="CSS/content-sections.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/quary.css">
+    <link rel="stylesheet" href="CSS/keyframes.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body id="sejarah">
+
+    <nav class="navbar transition-all duration-300">
+        <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
+            <div class="logo"><a href="index.html">Jogja<span>Culture</span></a></div>
+
+            <div class="nav-links hidden md:flex space-x-8 items-center font-medium">
+                <a href="index.html">Beranda</a>
+                <a href="halaman-makanan.html">Kuliner</a>
+                <a href="halaman-destinasi">Destinasi</a>
+                <a href="halaman-sejarah.html">Sejarah</a>
+                <a href="halaman-budaya.html">Seni</a>
+
+                <div class="dropdown-parent relative group">
+                    <button class="flex items-center space-x-1 outline-none">
+                        <span>Hotel</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="dropdown-content absolute top-full left-0 mt-4 w-40 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                        <a href="#" class="block px-4 py-2 text-white">Bintang 5</a>
+                        <a href="#" class="block px-4 py-2 text-white">Bintang 4</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-parent relative group">
+                    <button class="flex items-center space-x-1 outline-none">
+                        <span>Info</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="dropdown-content absolute top-full left-0 mt-4 w-40 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                        <a href="#" class="block px-4 py-2 text-white">Panduan Liburan</a>
+                        <a href="#" class="block px-4 py-2 text-white">Tentang Kreator</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
+            <div class="flex items-center justify-between mb-12">
+                <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
+                <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                    <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col space-y-6 overflow-y-auto">
+                <a href="index.html" class="mobile-link">Beranda</a>
+                <a href="halaman-makan.html" class="mobile-link">Kuliner</a>
+                <a href="#tempat" class="mobile-link">Destinasi</a>
+                <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
+                <a href="#budaya" class="mobile-link">Seni</a>
+
+                <div class="mobile-dropdown">
+                    <button class="mobile-link w-full flex justify-between items-center"
+                        onclick="toggleMobileDropdown(this)">
+                        Hotel
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                        <a href="#" class="mobile-sublink">Bintang 5</a>
+                        <a href="#" class="mobile-sublink">Bintang 4</a>
+                    </div>
+                </div>
+
+                <div class="mobile-dropdown">
+                    <button class="mobile-link w-full flex justify-between items-center"
+                        onclick="toggleMobileDropdown(this)">
+                        Info
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                        <a href="#" class="mobile-sublink">Panduan Liburan</a>
+                        <a href="#" class="mobile-sublink">Tentang Kreator</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <span class="sejarah-label">Dokumentasi Sejarah</span>
+            <h1 class="sejarah-title">Jejak Langkah Kasultanan<br>Ngayogyakarta Hadiningrat</h1>
+            <div class="divider-custom"></div>
+        </header>
+
+        <section class="timeline-detailed">
+            <!-- Item 1 -->
+            <div class="timeline-node">
+                <span class="node-year">1749 - 1752</span>
+                <div class="node-content">
+                    <h3>Perang Takhta Jawa III</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae accumsan metus.
+                        Suspendisse potenti. Nam at rhoncus erat. Curabitur sed nisl a neque finibus pretium.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-node">
+                <span class="node-year">13 Februari 1755</span>
+                <div class="node-content">
+                    <h3>Palihan Nagari (Perjanjian Giyanti)</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum
+                        vestibulum. Cras venenatis euismod malesuada. Pellentesque habitant morbi tristique.</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="timeline-node">
+                <span class="node-year">1756</span>
+                <div class="node-content">
+                    <h3>Peresmian Keraton Yogyakarta</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="timeline-node">
+                <span class="node-year">1825 - 1830</span>
+                <div class="node-content">
+                    <h3>Perang Jawa (Diponegoro)</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="timeline-node">
+                <span class="node-year">1945</span>
+                <div class="node-content">
+                    <h3>Amanat 5 September</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
+                        blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="highlight-box">
+            <blockquote>"Hamemayu Hayuning Bawana: Memperindah keindahan dunia."</blockquote>
+        </div>
+
+        <section class="story-container">
+            <div class="story-card">
+                <h2>Kisah Sang Pendiri</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus.
+                    Curabitur aliquet quam id dui posuere blandit. Proin eget tortor risus. Curabitur arcu erat,
+                    accumsan id imperdiet et, porttitor at sem.</p>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
+                    neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Nulla quis lorem ut libero
+                    malesuada feugiat.</p>
+            </div>
+
+            <div class="story-card">
+                <h2>Perpindahan Ibu Kota RI</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in,
+                    elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna
+                    justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta
+                    dapibus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+            </div>
+        </section>
+    </main>
+    <script src="JS/Navigasi.js"></script>
+</body>
+
+</html>
