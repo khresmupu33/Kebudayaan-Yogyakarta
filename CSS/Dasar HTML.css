@@ -32,6 +32,10 @@ body {
     background: var(--cream);
     color: var(--text-dark);
     overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* Custom Scrollbar untuk Chrome, Safari, dan Edge */
@@ -40,21 +44,29 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(28, 15, 6, 0.95);; /* Latar belakang scrollbar */
+    background: rgba(28, 15, 6, 0.95);
+    ;
+    /* Latar belakang scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, var(--brown-mid), var(--gold)); /* Gradasi cokelat ke emas */
+    background: linear-gradient(to bottom, var(--brown-mid), var(--gold));
+    /* Gradasi cokelat ke emas */
     border-radius: 20px;
-    border: 2px solid var(--brown-dark); /* Memberi ruang napas */
+    border: 2px solid var(--brown-dark);
+    /* Memberi ruang napas */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--gold); /* Emas menyala saat disentuh */
+    background: var(--gold);
+    /* Emas menyala saat disentuh */
 }
 
 /* Untuk Firefox */
 * {
     scrollbar-width: thin;
     scrollbar-color: var(--gold) var(--brown-dark);
+}
+img {
+  pointer-events: none;       /* Mencegah gambar diklik/diseret */
 }
