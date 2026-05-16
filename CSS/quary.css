@@ -20,6 +20,36 @@
 
 }
 
+
+@media (max-width: 768px) {
+    .sejarah-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .timeline-footer {
+        justify-content: center;
+    }
+
+    .menu-item-card {
+        width: 290px;
+    }
+
+    .menu-item-card.kuliner-status-prev {
+        transform: translate(-102%, -50%) scale(0.8);
+        opacity: 0.2;
+    }
+
+    .menu-item-card.kuliner-status-next {
+        transform: translate(2%, -50%) scale(0.8);
+        opacity: 0.2;
+    }
+
+    .kuliner-slider-view {
+        height: 490px;
+    }
+}
+
 @media (max-width: 900px) {
     .navbar {
         padding: 0 2rem;

@@ -169,9 +169,9 @@
     <div class="main-layout-container">
         <aside class="events-sidebar">
 
-                <button class="btn-toggle-events" onclick="toggleEventsSidebar()" aria-label="Toggle Sidebar">
-                    <i data-lucide="chevron-left" id="toggleIcon"></i>
-                </button>
+            <button class="btn-toggle-events" onclick="toggleEventsSidebar()" aria-label="Toggle Sidebar">
+                <i data-lucide="chevron-left" id="toggleIcon"></i>
+            </button>
             <div class="events-sticky-box">
                 <h3 class="events-title">📅 Event Terbaru</h3>
 
@@ -259,44 +259,70 @@
                 </div>
             </section>
 
-            <section id="makanan">
-                <div class="makanan-intro">
-                    <h2 class="section-title">Makanan<br><em>Khas Jogja</em></h2>
-                    <div class="divider"></div>
+            <!-- ================= SECTION KULINER (SLIDER) ================= -->
+            <section id="kuliner-jogja-section">
+                <div class="kuliner-intro-box">
+                    <h2 class="kuliner-main-title">Makanan<br><em>Khas Jogja</em></h2>
+                    <div class="kuliner-title-line"></div>
                     <p>Dari dapur keraton hingga pedagang kaki lima malam hari, kuliner Yogyakarta merawat cita rasa
-                        Jawa yang
-                        kaya rempah, penuh filosofi, dan diwariskan lintas generasi.</p>
+                        Jawa yang kaya rempah, penuh filosofi, dan diwariskan lintas generasi.</p>
                 </div>
 
-                <div class="food-cards">
-                    <div class="food-card">
-                        <div class="food-card-visual gudeg">🍲</div>
-                        <div class="food-card-body">
-                            <div class="food-card-origin">Masakan Keraton · Sejak abad ke-19</div>
-                            <h3 class="food-card-name">Gudeg</h3>
-                            <p class="food-card-desc">Nangka muda yang dimasak berjam-jam bersama santan, gula jawa, dan
-                                rempah
-                                pilihan hingga berwarna coklat keemasan. Simbol kuliner Jogja yang tak tergantikan.</p>
+                <div class="kuliner-carousel-wrapper">
+                    <div class="kuliner-slider-view">
+                        <div class="kuliner-cards-holder" id="kulinerTrack">
+                            <div class="menu-item-card">
+                                <div class="menu-item-visual kuliner-bg-gudeg">
+                                   <img src="IMG/Gudeg.jpg" alt="Gudeg Jogja"> 
+                                    🍲
+                                </div>
+                                <div class="menu-item-body">
+                                    <div class="menu-item-origin">Masakan Keraton · Sejak abad ke-19</div>
+                                    <h3 class="menu-item-name">Gudeg</h3>
+                                    <p class="menu-item-desc">Nangka muda yang dimasak berjam-jam bersama santan, gula
+                                        jawa, dan
+                                        rempah pilihan hingga berwarna coklat keemasan. Simbol kuliner Jogja yang tak
+                                        tergantikan.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item-card">
+                                <div class="menu-item-visual kuliner-bg-bakpia">
+                                    <img src="IMG/bakpiak.jpg" alt="Bakpia Pathuk">
+                                    🥮
+                                </div>
+                                <div class="menu-item-body">
+                                    <div class="menu-item-origin">Kue Legendaris · Kampung Pathuk</div>
+                                    <h3 class="menu-item-name">Bakpia</h3>
+                                    <p class="menu-item-desc">Kue bulat berkulit tipis dengan isi kacang hijau manis
+                                        yang
+                                        lembut. Lahir dari pengaruh budaya Tionghoa yang melebur harmonis dengan
+                                        kearifan lokal Jogja.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item-card">
+                                <div class="menu-item-visual kuliner-bg-sate">
+                                    <img src="IMG/sate-khlatak.jpg" alt="Sate Klathak"> 
+                                    🥩
+                                </div>
+                                <div class="menu-item-body">
+                                    <div class="menu-item-origin">Sate Tradisional · Imogiri</div>
+                                    <h3 class="menu-item-name">Sate Klathak</h3>
+                                    <p class="menu-item-desc">Sate kambing muda yang ditusuk dengan jeruji besi, dibakar
+                                        di atas
+                                        bara arang panas tanpa bumbu kecap — hanya garam dan merica.</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="food-card">
-                        <div class="food-card-visual bakpia">🥮</div>
-                        <div class="food-card-body">
-                            <div class="food-card-origin">Kue Legendaris · Kampung Pathuk</div>
-                            <h3 class="food-card-name">Bakpia</h3>
-                            <p class="food-card-desc">Kue bulat berkulit tipis dengan isi kacang hijau manis yang
-                                lembut. Lahir
-                                dari pengaruh budaya Tionghoa yang melebur harmonis dengan kearifan lokal Jogja.</p>
-                        </div>
-                    </div>
-                    <div class="food-card">
-                        <div class="food-card-visual sate">🥩</div>
-                        <div class="food-card-body">
-                            <div class="food-card-origin">Sate Tradisional · Imogiri</div>
-                            <h3 class="food-card-name">Sate Klathak</h3>
-                            <p class="food-card-desc">Sate kambing muda yang ditusuk dengan jeruji besi, dibakar di atas
-                                bara
-                                arang panas tanpa bumbu kecap — hanya garam dan merica.</p>
+                    <div class="kuliner-carousel-controls">
+                        <div class="kuliner-action-buttons">
+                            <button class="kuliner-ctrl-btn" id="kulinerPrevBtn"
+                                aria-label="Sebelumnya">&#10094;</button>
+                            <div class="kuliner-dots-indicator" id="kulinerDotsContainer"></div>
+                            <button class="kuliner-ctrl-btn" id="kulinerNextBtn"
+                                aria-label="Selanjutnya">&#10095;</button>
                         </div>
                     </div>
                 </div>
@@ -406,6 +432,7 @@
     <script src="JS/Navigasi.js"></script>
     <script src="JS/Dasar html.js"></script>
     <script src="JS/Event.js"></script>
+    <script src="JS/Slide loop.js"></script>
 </body>
 
 </html>
