@@ -1,4 +1,5 @@
 
+
 #home {
     min-height: 100vh;
     background: var(--brown-dark);
@@ -8,21 +9,190 @@
     position: relative;
     overflow: hidden;
 }
+.main-layout-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    /* Kolom event 300px, sisanya untuk konten */
+    background: var(--brown-dark);
+    /* Mengikuti base warna gelap sejarah */
+    position: relative;
+    transition: grid-template-columns 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.main-layout-container.sidebar-closed {
+    grid-template-columns: 0px 1fr;
+}
+
+.events-sidebar {
+    background: var(--brown-dark);
+    border-right: 1px solid rgba(212, 162, 80, 0.2);
+    padding: 6rem 2rem 2rem 2rem;
+    
+    /* MODIFIKASI UTAMA: Seluruh sidebar dikunci sticky di posisinya */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    /* overflow wajib visible agar tombol yang menonjol keluar terlihat jelas */
+    overflow: visible; 
+    transition: padding 0.4s ease, opacity 0.3s ease;
+}
+
+/* Saat ditutup baru kita sembunyikan overflow sisa text-nya */
+.main-layout-container.sidebar-closed .events-sidebar {
+    padding: 6rem 0 2rem 0;
+
+}
+
+/* Judul H3 - Stay di tempat paling atas */
+.events-sidebar h3 {
+    background: var(--brown-dark); 
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem; 
+    flex-shrink: 0; /* Mengunci agar judul tidak ikut mengecil */
+}
+
+/* 2. KONTAINER LIST EVENT - Stay di bawah H3 dan scrollable ke bawah */
+.events-sticky-box {
+    overflow-y: auto;
+    overflow-x: hidden; /* Mematikan scroll horizontal */
+    flex-grow: 1; /* Mengambil sisa ruang tinggi kontainer */
+    margin-bottom: 2rem;
+}
+
+/* Sembunyikan isi box bagian dalam saat ditutup */
+.main-layout-container.sidebar-closed .events-sticky-box,
+.main-layout-container.sidebar-closed h3 {
+    display: none;
+}
+
+/* PERBAIKAN TOMBOL: Diberi warna emas kontras & posisi absolut presisi di garis tengah kanan */
+.btn-toggle-events {
+    position: absolute;
+    top: 50%;
+    right: -15px; /* Pas setengah lingkaran menonjol keluar melewati garis batas kanan sidebar */
+    
+    z-index: 999; /* Z-index dinaikkan maksimal agar berada di atas lapisan konten kanan */
+    
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--brown-dark);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    
+    /* Transisi untuk efek smooth saat diklik */
+    transition: background 0.3s, color 0.3s, right 0.4s, left 0.4s, border-radius 0.4s;
+}
+
+.btn-toggle-events:hover {
+    background: var(--cream);
+    color: var(--brown-dark);
+    border-color: var(--cream);
+}
+
+.main-layout-container.sidebar-closed .btn-toggle-events {
+    position: absolute;  /* Tetap menggunakan absolute sesuai keinginanmu */
+    left: 0;
+    right: auto;
+    top: 50vh;
+    transform: translateY(-50%); /* Menghilangkan '15px' agar benar-benar rapat menempel di ujung kiri halaman */
+    border-left: none;
+    border-radius: 0 50% 50% 0; /* Menjadi bentuk tab kecil di paling pojok kiri layar browser */
+    background: var(--gold);
+    color: var(--brown-dark);
+}
+
+
+.main-layout-container.sidebar-closed .btn-toggle-events svg,
+.main-layout-container.sidebar-closed .btn-toggle-events i {
+    display: block !important; /* Memaksa SVG agar mau menerima properti transform */
+    transform: rotate(180deg) !important; /* Membalik arah panah menjadi (>) saat ditutup */
+    transition: transform 0.3s ease; /* Efek putaran halus saat diklik */
+}
+
+/* Styling Komponen Event */
+.events-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.5rem;
+}
+
+.event-item {
+    background: rgba(255, 248, 240, 0.03);
+    border: 1px solid rgba(212, 162, 80, 0.1);
+    padding: 1.2rem;
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.event-item:hover {
+    border-color: var(--gold);
+    background: rgba(212, 162, 80, 0.05);
+    transform: translatey(5px);
+}
+
+.event-date {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.event-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+}
+
+.event-item p {
+    font-size: 0.9rem;
+    color: rgba(240, 224, 204, 0.6);
+    line-height: 1.5;
+}
+
+/* Custom scrollbar untuk box event jika overload */
+.events-sticky-box::-webkit-scrollbar {
+    width: 4px;
+}
+
+.events-sticky-box::-webkit-scrollbar-thumb {
+    background: var(--gold);
+}
+
 
 .batik-bg {
     position: absolute;
     inset: 0;
     opacity: 0.05;
     background-image:
-      repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
-      repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+        repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
+        repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
     background-size: 30px 30px;
 }
 
 .batik-border {
     position: absolute;
     inset: 24px;
-    border: 1px solid rgba(212,162,80,0.2);
+    border: 1px solid rgba(212, 162, 80, 0.2);
     pointer-events: none;
 }
 
@@ -31,10 +201,29 @@
     width: 60px;
     height: 60px;
 }
-.corner-tl { top: 24px; left: 24px; }
-.corner-tr { top: 24px; right: 24px; transform: scaleX(-1); }
-.corner-bl { bottom: 24px; left: 24px; transform: scaleY(-1); }
-.corner-br { bottom: 24px; right: 24px; transform: scale(-1, -1); }
+
+.corner-tl {
+    top: 24px;
+    left: 24px;
+}
+
+.corner-tr {
+    top: 24px;
+    right: 24px;
+    transform: scaleX(-1);
+}
+
+.corner-bl {
+    bottom: 24px;
+    left: 24px;
+    transform: scaleY(-1);
+}
+
+.corner-br {
+    bottom: 24px;
+    right: 24px;
+    transform: scale(-1, -1);
+}
 
 .hero-content {
     text-align: center;
@@ -60,7 +249,7 @@
     line-height: 1.05;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title em {
@@ -70,7 +259,7 @@
 
 .hero-subtitle {
     font-size: 1.4rem;
-    color: rgba(240,224,204,0.8);
+    color: rgba(240, 224, 204, 0.8);
     font-weight: 300;
     letter-spacing: 1px;
     margin-bottom: 2rem;
@@ -80,7 +269,7 @@
 .hero-desc {
     max-width: 600px;
     margin: 0 auto 3rem;
-    color: rgba(240,224,204,0.65);
+    color: rgba(240, 224, 204, 0.65);
     font-size: 1.1rem;
     line-height: 1.8;
     font-weight: 300;
@@ -92,7 +281,8 @@
     color: var(--cream);
 }
 
-#sejarah .section-label, #sejarah .divider {
+#sejarah .section-label,
+#sejarah .divider {
     color: var(--gold);
     background: var(--gold);
 }
@@ -111,7 +301,7 @@
 .sejarah-text p {
     font-size: 1.15rem;
     line-height: 1.9;
-    color: rgba(240,224,204,0.8);
+    color: rgba(240, 224, 204, 0.8);
     margin-bottom: 1.5rem;
     font-weight: 300;
 }
@@ -139,7 +329,7 @@
     top: 44px;
     bottom: -1px;
     width: 1px;
-    background: rgba(212,162,80,0.3);
+    background: rgba(212, 162, 80, 0.3);
 }
 
 .timeline-year {
@@ -153,7 +343,7 @@
     font-size: 0.75rem;
     letter-spacing: 1px;
     color: var(--gold);
-    border: 1px solid rgba(212,162,80,0.4);
+    border: 1px solid rgba(212, 162, 80, 0.4);
     background: var(--brown-dark);
     z-index: 2;
 }
@@ -172,10 +362,11 @@
 
 .timeline-content p {
     font-size: 1rem;
-    color: rgba(240,224,204,0.6);
+    color: rgba(240, 224, 204, 0.6);
     line-height: 1.7;
     font-weight: 300;
 }
+
 .timeline-footer {
     margin-top: 2rem;
     display: flex;
@@ -190,11 +381,12 @@
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .timeline-footer {
         justify-content: center;
     }
 }
+
 /* --- KULINER --- */
 #makanan {
     background: var(--cream);
@@ -221,7 +413,7 @@
     overflow: hidden;
     border-radius: 4px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 .food-card:hover {
@@ -244,9 +436,17 @@
     transform: scale(1.05);
 }
 
-.food-card-visual.gudeg { background: #3D1C02; }
-.food-card-visual.bakpia { background: #5C3317; }
-.food-card-visual.sate { background: #2C1108; }
+.food-card-visual.gudeg {
+    background: #3D1C02;
+}
+
+.food-card-visual.bakpia {
+    background: #5C3317;
+}
+
+.food-card-visual.sate {
+    background: #2C1108;
+}
 
 .food-card-body {
     padding: 2rem;

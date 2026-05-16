@@ -111,7 +111,6 @@
 
         </nav>
     </header>
-
     <section id="home">
         <div class="batik-bg"></div>
         <div class="batik-border"></div>
@@ -154,7 +153,8 @@
             <h1 class="hero-title">Yogya<em>karta</em></h1>
             <p class="hero-subtitle">Kota yang Tak Pernah Tidur dari Budaya</p>
             <p class="hero-desc">
-                Di antara lereng Merapi dan gemericik Progo, Yogyakarta berdiri sebagai penjaga peradaban Jawa yang
+                Di antara lereng Merapi dan gemericik Progo, Yogyakarta berdiri sebagai penjaga peradaban Jawa
+                yang
                 agung — tempat di mana tradisi hidup berdampingan harmonis dengan semangat zaman.
             </p>
             <a href="#sejarah" class="btn-primary">Jelajahi</a>
@@ -166,179 +166,235 @@
             <div class="scroll-line"></div>
         </div>
     </section>
+    <div class="main-layout-container">
+        <aside class="events-sidebar">
 
-    <section id="sejarah">
-        <div class="sejarah-grid">
-            <div class="sejarah-text">
-                <h2 class="section-title">Keraton &amp;<br><em>Sejarah Kota</em></h2>
-                <div class="divider"></div>
-                <p>Yogyakarta berdiri dari Perjanjian Giyanti tahun 1755, ketika Kerajaan Mataram Islam dibagi dua
-                    menjadi Kasunanan Surakarta dan Kesultanan Yogyakarta. Sultan Hamengkubuwono I mendirikan Keraton
-                    sebagai pusat kosmologi dan pemerintahan.</p>
-                <p>Keraton Yogyakarta bukan sekadar istana — ia adalah poros sumbu imajiner yang menghubungkan Gunung
-                    Merapi di utara, Keraton di tengah, dan Pantai Parangtritis di selatan. Sebuah konsep filosofi Jawa
-                    tentang keseimbangan alam semesta.</p>
-                <p>Dalam perjuangan kemerdekaan Indonesia, Yogyakarta tampil sebagai Ibu Kota Republik pada 1946–1950,
-                    menjadi benteng terakhir melawan agresi militer Belanda dan simbol ketahanan bangsa.</p>
+                <button class="btn-toggle-events" onclick="toggleEventsSidebar()" aria-label="Toggle Sidebar">
+                    <i data-lucide="chevron-left" id="toggleIcon"></i>
+                </button>
+            <div class="events-sticky-box">
+                <h3 class="events-title">📅 Event Terbaru</h3>
+
+
+                <div class="event-item">
+                    <span class="event-date">tanggal bulan tahun</span>
+                    <h4>steven ivan winardi gay</h4>
+                    <p>apapun pernyataan pasti</p>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">tanggal bulan tahun</span>
+                    <h4>roland gay</h4>
+                    <p>apapun pernyataan pasti</p>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">tanggal bulan tahun</span>
+                    <h4>adrian gay</h4>
+                    <p>apapun pernyataan pasti</p>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">tanggal bulan tahun</span>
+                    <h4>belanda gay</h4>
+                    <p>apapun pernyataan pasti</p>
+                </div>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">1755</div>
-                    <div class="timeline-content">
-                        <h4>Perjanjian Giyanti</h4>
-                        <p>Pembagian Mataram Islam; berdirinya Kesultanan Yogyakarta di bawah Sri Sultan Hamengkubuwono
-                            I.</p>
+        </aside>
+
+        <main class="main-content-flow">
+
+            <section id="sejarah">
+                <div class="sejarah-grid">
+                    <div class="sejarah-text">
+                        <h2 class="section-title">Keraton &amp;<br><em>Sejarah Kota</em></h2>
+                        <div class="divider"></div>
+                        <p>Yogyakarta berdiri dari Perjanjian Giyanti tahun 1755, ketika Kerajaan Mataram Islam dibagi
+                            dua
+                            menjadi Kasunanan Surakarta dan Kesultanan Yogyakarta. Sultan Hamengkubuwono I mendirikan
+                            Keraton
+                            sebagai pusat kosmologi dan pemerintahan.</p>
+                        <p>Keraton Yogyakarta bukan sekadar istana — ia adalah poros sumbu imajiner yang menghubungkan
+                            Gunung
+                            Merapi di utara, Keraton di tengah, dan Pantai Parangtritis di selatan. Sebuah konsep
+                            filosofi Jawa
+                            tentang keseimbangan alam semesta.</p>
+                        <p>Dalam perjuangan kemerdekaan Indonesia, Yogyakarta tampil sebagai Ibu Kota Republik pada
+                            1946–1950,
+                            menjadi benteng terakhir melawan agresi militer Belanda dan simbol ketahanan bangsa.</p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1755</div>
+                            <div class="timeline-content">
+                                <h4>Perjanjian Giyanti</h4>
+                                <p>Pembagian Mataram Islam; berdirinya Kesultanan Yogyakarta di bawah Sri Sultan
+                                    Hamengkubuwono
+                                    I.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1756</div>
+                            <div class="timeline-content">
+                                <h4>Pembangunan Keraton</h4>
+                                <p>Keraton Yogyakarta dibangun di atas tanah yang dipilih dengan ritual kejawen dan
+                                    perhitungan
+                                    kosmis.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1946</div>
+                            <div class="timeline-content">
+                                <h4>Ibu Kota Republik</h4>
+                                <p>Yogyakarta menjadi Ibu Kota RI, pusat perlawanan revolusi kemerdekaan Indonesia.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-footer">
+                            <a href="halaman-sejarah.html" class="btn-show-more">
+                                <span>Selusuri Lebih Dalam</span>
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">1756</div>
-                    <div class="timeline-content">
-                        <h4>Pembangunan Keraton</h4>
-                        <p>Keraton Yogyakarta dibangun di atas tanah yang dipilih dengan ritual kejawen dan perhitungan
-                            kosmis.</p>
+            </section>
+
+            <section id="makanan">
+                <div class="makanan-intro">
+                    <h2 class="section-title">Makanan<br><em>Khas Jogja</em></h2>
+                    <div class="divider"></div>
+                    <p>Dari dapur keraton hingga pedagang kaki lima malam hari, kuliner Yogyakarta merawat cita rasa
+                        Jawa yang
+                        kaya rempah, penuh filosofi, dan diwariskan lintas generasi.</p>
+                </div>
+
+                <div class="food-cards">
+                    <div class="food-card">
+                        <div class="food-card-visual gudeg">🍲</div>
+                        <div class="food-card-body">
+                            <div class="food-card-origin">Masakan Keraton · Sejak abad ke-19</div>
+                            <h3 class="food-card-name">Gudeg</h3>
+                            <p class="food-card-desc">Nangka muda yang dimasak berjam-jam bersama santan, gula jawa, dan
+                                rempah
+                                pilihan hingga berwarna coklat keemasan. Simbol kuliner Jogja yang tak tergantikan.</p>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-card-visual bakpia">🥮</div>
+                        <div class="food-card-body">
+                            <div class="food-card-origin">Kue Legendaris · Kampung Pathuk</div>
+                            <h3 class="food-card-name">Bakpia</h3>
+                            <p class="food-card-desc">Kue bulat berkulit tipis dengan isi kacang hijau manis yang
+                                lembut. Lahir
+                                dari pengaruh budaya Tionghoa yang melebur harmonis dengan kearifan lokal Jogja.</p>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-card-visual sate">🥩</div>
+                        <div class="food-card-body">
+                            <div class="food-card-origin">Sate Tradisional · Imogiri</div>
+                            <h3 class="food-card-name">Sate Klathak</h3>
+                            <p class="food-card-desc">Sate kambing muda yang ditusuk dengan jeruji besi, dibakar di atas
+                                bara
+                                arang panas tanpa bumbu kecap — hanya garam dan merica.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">1946</div>
-                    <div class="timeline-content">
-                        <h4>Ibu Kota Republik</h4>
-                        <p>Yogyakarta menjadi Ibu Kota RI, pusat perlawanan revolusi kemerdekaan Indonesia.</p>
+            </section>
+
+            <section id="budaya">
+                <div class="budaya-header">
+                    <div>
+                        <h2 class="section-title">Warisan<br><em>Seni Agung</em></h2>
+                        <div class="divider"></div>
                     </div>
                 </div>
-                <div class="timeline-footer">
-                    <a href="halaman-sejarah.html" class="btn-show-more">
-                        <span>Selusuri Lebih Dalam</span>
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="makanan">
-        <div class="makanan-intro">
-            <h2 class="section-title">Makanan<br><em>Khas Jogja</em></h2>
-            <div class="divider"></div>
-            <p>Dari dapur keraton hingga pedagang kaki lima malam hari, kuliner Yogyakarta merawat cita rasa Jawa yang
-                kaya rempah, penuh filosofi, dan diwariskan lintas generasi.</p>
-        </div>
+                <div class="budaya-grid">
+                    <div class="art-card featured">
+                        <span class="art-card-icon">🎨</span>
+                        <h3 class="art-card-title">Batik Jogja</h3>
+                        <p class="art-card-desc">Batik Yogyakarta diakui UNESCO sebagai Warisan Budaya Tak Benda pada
+                            2009.
+                            Motif-motifnya — parang, kawung, sido mukti — bukan sekadar ornamen; setiap pola menyimpan
+                            makna
+                            filosofis tentang kehidupan, kekuasaan, dan hubungan manusia dengan semesta.</p>
+                        <span class="art-card-tag">Warisan UNESCO 2009</span>
+                        <div class="art-card-pattern"></div>
+                    </div>
+                    <div class="art-card">
+                        <span class="art-card-icon">🎭</span>
+                        <h3 class="art-card-title">Wayang Kulit</h3>
+                        <p class="art-card-desc">Pertunjukan semalam suntuk yang menceritakan kisah epik melalui
+                            bayangan kulit
+                            yang dikendalikan dalang.</p>
+                        <span class="art-card-tag">Warisan Dunia</span>
+                        <div class="art-card-pattern"></div>
+                    </div>
+                    <div class="art-card">
+                        <span class="art-card-icon">🎼</span>
+                        <h3 class="art-card-title">Gamelan</h3>
+                        <p class="art-card-desc">Orkestra perkusi Jawa yang menciptakan lanskap suara yang meditatif dan
+                            agung.
+                        </p>
+                        <span class="art-card-tag">Musik Keraton</span>
+                        <div class="art-card-pattern"></div>
+                    </div>
+                </div>
+            </section>
 
-        <div class="food-cards">
-            <div class="food-card">
-                <div class="food-card-visual gudeg">🍲</div>
-                <div class="food-card-body">
-                    <div class="food-card-origin">Masakan Keraton · Sejak abad ke-19</div>
-                    <h3 class="food-card-name">Gudeg</h3>
-                    <p class="food-card-desc">Nangka muda yang dimasak berjam-jam bersama santan, gula jawa, dan rempah
-                        pilihan hingga berwarna coklat keemasan. Simbol kuliner Jogja yang tak tergantikan.</p>
+            <section id="tempat">
+                <div class="places-header">
+                    <h2 class="section-title">Tempat<br><em>Bersejarah</em></h2>
+                    <div class="divider"></div>
                 </div>
-            </div>
-            <div class="food-card">
-                <div class="food-card-visual bakpia">🥮</div>
-                <div class="food-card-body">
-                    <div class="food-card-origin">Kue Legendaris · Kampung Pathuk</div>
-                    <h3 class="food-card-name">Bakpia</h3>
-                    <p class="food-card-desc">Kue bulat berkulit tipis dengan isi kacang hijau manis yang lembut. Lahir
-                        dari pengaruh budaya Tionghoa yang melebur harmonis dengan kearifan lokal Jogja.</p>
-                </div>
-            </div>
-            <div class="food-card">
-                <div class="food-card-visual sate">🥩</div>
-                <div class="food-card-body">
-                    <div class="food-card-origin">Sate Tradisional · Imogiri</div>
-                    <h3 class="food-card-name">Sate Klathak</h3>
-                    <p class="food-card-desc">Sate kambing muda yang ditusuk dengan jeruji besi, dibakar di atas bara
-                        arang panas tanpa bumbu kecap — hanya garam dan merica.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="budaya">
-        <div class="budaya-header">
-            <div>
-                <h2 class="section-title">Warisan<br><em>Seni Agung</em></h2>
-                <div class="divider"></div>
-            </div>
-        </div>
+                <div class="places-grid">
+                    <div class="place-item">
+                        <div class="place-num">01</div>
+                        <div class="place-info">
+                            <h3>Keraton Yogyakarta</h3>
+                            <span class="place-type">Istana Kerajaan · Aktif sejak 1755</span>
+                            <p>Pusat pemerintahan dan budaya Kesultanan Yogyakarta yang masih aktif dihuni. Kompleks
+                                yang
+                                mencerminkan kosmologi Jawa yang tak ternilai.</p>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <div class="place-num">02</div>
+                        <div class="place-info">
+                            <h3>Taman Sari</h3>
+                            <span class="place-type">Taman Kerajaan · Dibangun 1758</span>
+                            <p>"Kebun Bunga" para sultan — kompleks pemandian kerajaan dengan kolam-kolam elegan, lorong
+                                bawah
+                                tanah misterius, dan masjid bawah tanah Sumur Gumuling.</p>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <div class="place-num">03</div>
+                        <div class="place-info">
+                            <h3>Candi Prambanan</h3>
+                            <span class="place-type">Candi Hindu · Abad ke-9</span>
+                            <p>Kompleks candi Hindu terbesar di Indonesia. Keindahan arsitektur yang mengucap kisah
+                                Ramayana
+                                pada setiap pahatan reliefnya.</p>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <div class="place-num">04</div>
+                        <div class="place-info">
+                            <h3>Malioboro</h3>
+                            <span class="place-type">Jantung Kota · Koridor Budaya</span>
+                            <p>Jalan legendaris yang membelah kota — dipenuhi pedagang batik, pengrajin, seniman
+                                jalanan, dan
+                                aroma angkringan yang menguar di malam hari.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
-        <div class="budaya-grid">
-            <div class="art-card featured">
-                <span class="art-card-icon">🎨</span>
-                <h3 class="art-card-title">Batik Jogja</h3>
-                <p class="art-card-desc">Batik Yogyakarta diakui UNESCO sebagai Warisan Budaya Tak Benda pada 2009.
-                    Motif-motifnya — parang, kawung, sido mukti — bukan sekadar ornamen; setiap pola menyimpan makna
-                    filosofis tentang kehidupan, kekuasaan, dan hubungan manusia dengan semesta.</p>
-                <span class="art-card-tag">Warisan UNESCO 2009</span>
-                <div class="art-card-pattern"></div>
-            </div>
-            <div class="art-card">
-                <span class="art-card-icon">🎭</span>
-                <h3 class="art-card-title">Wayang Kulit</h3>
-                <p class="art-card-desc">Pertunjukan semalam suntuk yang menceritakan kisah epik melalui bayangan kulit
-                    yang dikendalikan dalang.</p>
-                <span class="art-card-tag">Warisan Dunia</span>
-                <div class="art-card-pattern"></div>
-            </div>
-            <div class="art-card">
-                <span class="art-card-icon">🎼</span>
-                <h3 class="art-card-title">Gamelan</h3>
-                <p class="art-card-desc">Orkestra perkusi Jawa yang menciptakan lanskap suara yang meditatif dan agung.
-                </p>
-                <span class="art-card-tag">Musik Keraton</span>
-                <div class="art-card-pattern"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tempat">
-        <div class="places-header">
-            <h2 class="section-title">Tempat<br><em>Bersejarah</em></h2>
-            <div class="divider"></div>
-        </div>
-
-        <div class="places-grid">
-            <div class="place-item">
-                <div class="place-num">01</div>
-                <div class="place-info">
-                    <h3>Keraton Yogyakarta</h3>
-                    <span class="place-type">Istana Kerajaan · Aktif sejak 1755</span>
-                    <p>Pusat pemerintahan dan budaya Kesultanan Yogyakarta yang masih aktif dihuni. Kompleks yang
-                        mencerminkan kosmologi Jawa yang tak ternilai.</p>
-                </div>
-            </div>
-            <div class="place-item">
-                <div class="place-num">02</div>
-                <div class="place-info">
-                    <h3>Taman Sari</h3>
-                    <span class="place-type">Taman Kerajaan · Dibangun 1758</span>
-                    <p>"Kebun Bunga" para sultan — kompleks pemandian kerajaan dengan kolam-kolam elegan, lorong bawah
-                        tanah misterius, dan masjid bawah tanah Sumur Gumuling.</p>
-                </div>
-            </div>
-            <div class="place-item">
-                <div class="place-num">03</div>
-                <div class="place-info">
-                    <h3>Candi Prambanan</h3>
-                    <span class="place-type">Candi Hindu · Abad ke-9</span>
-                    <p>Kompleks candi Hindu terbesar di Indonesia. Keindahan arsitektur yang mengucap kisah Ramayana
-                        pada setiap pahatan reliefnya.</p>
-                </div>
-            </div>
-            <div class="place-item">
-                <div class="place-num">04</div>
-                <div class="place-info">
-                    <h3>Malioboro</h3>
-                    <span class="place-type">Jantung Kota · Koridor Budaya</span>
-                    <p>Jalan legendaris yang membelah kota — dipenuhi pedagang batik, pengrajin, seniman jalanan, dan
-                        aroma angkringan yang menguar di malam hari.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="footer-logo">Jogja<span>Culture</span></div>
@@ -349,6 +405,7 @@
 
     <script src="JS/Navigasi.js"></script>
     <script src="JS/Dasar html.js"></script>
+    <script src="JS/Event.js"></script>
 </body>
 
 </html>

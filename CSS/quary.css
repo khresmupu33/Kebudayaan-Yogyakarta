@@ -7,6 +7,17 @@
         grid-column: 1 / -1;
         grid-row: auto;
     }
+
+    .budaya-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .art-card.featured {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+
 }
 
 @media (max-width: 900px) {
@@ -71,5 +82,120 @@
 
     .highlight-box blockquote {
         font-size: 1.5rem;
+    }
+
+    /* 1. Reset Grid Kontainer Utama di HP */
+    .main-layout-container {
+        display: block !important;
+        position: relative;
+    }
+
+    /* 2. STATUS DEFAULT AWAL (PASTI SEMBUNYI):
+   Paksa Sidebar Event langsung tersingkir sejak pertama kali halaman dimuat di HP */
+    .events-sidebar {
+        position: fixed !important;
+        top: 0;
+
+        /* DIKUNCI DI SINI: Awal masuk di HP langsung disembunyikan total ke kiri luar */
+        left: -100vw !important;
+
+        width: 100vw !important;
+        /* Lebar penuh satu halaman fokus */
+        height: 100vh !important;
+        background: var(--brown-dark);
+        border-right: none;
+        padding: 6rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        z-index: 9999 !important;
+        /* Di atas seluruh konten halaman */
+        overflow: visible;
+
+        /* Efek transisi pergeseran saat tombol ditekan */
+        transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1), padding 0.4s ease;
+    }
+
+    /* 3. KETIKA TOMBOL DIPENCET (MEMBUKA):
+   Sidebar baru akan muncul jika container memiliki class aktif .sidebar-open */
+    .main-layout-container.sidebar-open .events-sidebar {
+        left: 0 !important;
+        /* Maju memenuhi layar normal HP secara fokus */
+    }
+
+    /* 4. PERBAIKAN UTAMA: Jangan gunakan display:none agar isinya TIDAK HILANG saat dibuka.
+   Biarkan overflow tersembunyi secara alami di luar layar (-100vw) */
+    .main-layout-container:not(.sidebar-open) .events-sidebar {
+        overflow: visible;
+        /* Memastikan tombol di luar tetap bisa nongol */
+    }
+
+    /* Judul H3 mengunci di atas */
+    .events-sidebar h3 {
+        background: var(--brown-dark);
+        font-family: 'Playfair Display', serif;
+        font-size: 1.6rem;
+        color: var(--gold);
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        flex-shrink: 0;
+        display: block !important;
+        /* Memastikan judul selalu tampil saat sidebar masuk */
+    }
+
+    /* Box list event scrollable */
+    .events-sticky-box {
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex-grow: 1;
+        margin-bottom: 2rem;
+        max-height: calc(100vh - 180px);
+        display: block !important;
+        /* Memastikan list event selalu tampil saat sidebar masuk */
+    }
+
+    /* 5. Tombol Pemicu Saat Sidebar Terbuka Penuh (Fokus Halaman) */
+    .main-layout-container.sidebar-open .btn-toggle-events {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        left: auto !important;
+        transform: none !important;
+        background: var(--gold) !important;
+        color: var(--brown-dark) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        border-radius: 50% !important;
+    }
+
+    /* 6. Tombol Pemicu Saat Sidebar Tertutup / STATUS DEFAULT AWAL 
+   (Stand-by Nempel Kiri Layar HP memancing user untuk klik) */
+    .main-layout-container:not(.sidebar-open) .btn-toggle-events {
+        position: fixed !important;
+        left: 0 !important;
+        right: auto !important;
+        top: 50vh !important;
+        transform: translateY(-50%) !important;
+        border-left: none !important;
+        border-radius: 0 50% 50% 0 !important;
+        /* Berbentuk tab melayang setengah lingkaran */
+        background: var(--gold) !important;
+        color: var(--brown-dark) !important;
+    }
+
+    /* 7. Sinkronisasi Putaran Ikon Panah Lucide di HP */
+    /* Saat Tertutup / Default Awal: Panah menghadap kanan (>) tanda menyuruh membuka */
+    .main-layout-container:not(.sidebar-open) .btn-toggle-events svg,
+    .main-layout-container:not(.sidebar-open) .btn-toggle-events i {
+        display: block !important;
+        transform: rotate(180deg) !important;
+        transition: transform 0.3s ease;
+    }
+
+    /* Saat Terbuka: Panah menghadap kiri (<) tanda menutup kembali */
+    .main-layout-container.sidebar-open .btn-toggle-events svg,
+    .main-layout-container.sidebar-open .btn-toggle-events i {
+        display: block !important;
+        transform: rotate(0deg) !important;
+        transition: transform 0.3s ease;
     }
 }
