@@ -1,0 +1,49 @@
+.btn-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: var(--gold);
+    color: var(--brown-dark);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    
+    /* Efek Sembunyi di Awal */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s, color 0.3s;
+}
+
+/* Muncul saat scroll berjalan ke bawah */
+.btn-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Ketika menempel di atas footer (Berubah jadi posisi absolut terhadap dokumen) */
+.btn-to-top.sticky-footer {
+    position: absolute;
+    bottom: calc(100% + 30px); /* Berhenti tepat 30px di atas elemen footer */
+}
+
+.btn-to-top:hover {
+    background: var(--cream);
+    color: var(--brown-dark);
+    border-color: var(--cream);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(212, 162, 80, 0.4);
+}
+
+.btn-to-top i {
+    font-size: 1.2rem;
+}
