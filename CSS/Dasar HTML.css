@@ -16,6 +16,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) var(--brown-dark);
 }
 
 html {
@@ -37,36 +39,58 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
-
-/* Custom Scrollbar untuk Chrome, Safari, dan Edge */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-track {
     background: rgba(28, 15, 6, 0.95);
-    ;
-    /* Latar belakang scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, var(--brown-mid), var(--gold));
-    /* Gradasi cokelat ke emas */
     border-radius: 20px;
     border: 2px solid var(--brown-dark);
-    /* Memberi ruang napas */
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--gold);
-    /* Emas menyala saat disentuh */
 }
 
-/* Untuk Firefox */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--gold) var(--brown-dark);
-}
 img {
-  pointer-events: none;       /* Mencegah gambar diklik/diseret */
+    pointer-events: none;
 }
+
+section {
+    padding: 8rem 10%;
+}
+.divider {
+    width: 70px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 2.5rem;
+}
+
+.section-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--brown-warm);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    color: var(--brown-dark);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.section-title em {
+    color: var(--brown-warm);
+    font-style: italic;
+}
+
