@@ -11,9 +11,7 @@
 .main-layout-container {
     display: grid;
     grid-template-columns: 300px 1fr;
-    /* Kolom event 300px, sisanya untuk konten */
     background: var(--brown-dark);
-    /* Mengikuti base warna gelap sejarah */
     position: relative;
     transition: grid-template-columns 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -26,65 +24,48 @@
     background: var(--brown-dark);
     border-right: 1px solid rgba(212, 162, 80, 0.2);
     padding: 6rem 2rem 2rem 2rem;
-
-    /* MODIFIKASI UTAMA: Seluruh sidebar dikunci sticky di posisinya */
     position: sticky;
     top: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
-
-    /* overflow wajib visible agar tombol yang menonjol keluar terlihat jelas */
     overflow: visible;
     transition: padding 0.4s ease, opacity 0.3s ease;
 }
 
-/* Saat ditutup baru kita sembunyikan overflow sisa text-nya */
 .main-layout-container.sidebar-closed .events-sidebar {
     padding: 6rem 0 2rem 0;
-
 }
 
-/* Judul H3 - Stay di tempat paling atas */
 .events-sidebar h3 {
     background: var(--brown-dark);
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--gold);
     border-bottom: 2px solid var(--gold);
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
     flex-shrink: 0;
-    /* Mengunci agar judul tidak ikut mengecil */
 }
 
-/* 2. KONTAINER LIST EVENT - Stay di bawah H3 dan scrollable ke bawah */
 .events-sticky-box {
     overflow-y: auto;
     overflow-x: hidden;
-    /* Mematikan scroll horizontal */
     flex-grow: 1;
-    /* Mengambil sisa ruang tinggi kontainer */
     margin-bottom: 2rem;
 }
 
-/* Sembunyikan isi box bagian dalam saat ditutup */
 .main-layout-container.sidebar-closed .events-sticky-box,
 .main-layout-container.sidebar-closed h3 {
     display: none;
 }
 
-/* PERBAIKAN TOMBOL: Diberi warna emas kontras & posisi absolut presisi di garis tengah kanan */
 .btn-toggle-events {
     position: absolute;
     top: 50%;
     right: 0px;
-    /* Pas setengah lingkaran menonjol keluar melewati garis batas kanan sidebar */
-
-    /* FIX UTAMA: Diubah ke auto agar tombol AKTIF dan bisa MENERIMA KLIK kembali */
     z-index: 9999999 !important;
     pointer-events: auto !important;
-
     background: var(--gold);
     border: 1px solid var(--gold);
     color: var(--brown-dark);
@@ -106,40 +87,23 @@
 
 .main-layout-container.sidebar-closed .btn-toggle-events {
     position: absolute;
-    /* Tetap menggunakan absolute sesuai keinginanmu */
     left: 0;
     right: auto;
     top: 50vh;
     transform: translateY(-50%);
-    /* Menghilangkan '15px' agar benar-benar rapat menempel di ujung kiri halaman */
     border-left: none;
     border-radius: 0 50% 50% 0;
-    /* Menjadi bentuk tab kecil di paling pojok kiri layar browser */
     background: var(--gold);
     color: var(--brown-dark);
     z-index: 9999999 !important;
     pointer-events: auto !important;
 }
 
-
 .main-layout-container.sidebar-closed .btn-toggle-events svg,
 .main-layout-container.sidebar-closed .btn-toggle-events i {
     display: block !important;
-    /* Memaksa SVG agar mau menerima properti transform */
     transform: rotate(180deg) !important;
-    /* Membalik arah panah menjadi (>) saat ditutup */
     transition: transform 0.3s ease;
-    /* Efek putaran halus saat diklik */
-}
-
-/* Styling Komponen Event */
-.events-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: var(--gold);
-    margin-bottom: 2rem;
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 0.5rem;
 }
 
 .event-item {
@@ -179,7 +143,6 @@
     line-height: 1.5;
 }
 
-/* Custom scrollbar untuk box event jika overload */
 .events-sticky-box::-webkit-scrollbar {
     width: 4px;
 }
@@ -187,7 +150,6 @@
 .events-sticky-box::-webkit-scrollbar-thumb {
     background: var(--gold);
 }
-
 
 .batik-bg {
     position: absolute;
@@ -212,28 +174,10 @@
     height: 60px;
 }
 
-.corner-tl {
-    top: 24px;
-    left: 24px;
-}
-
-.corner-tr {
-    top: 24px;
-    right: 24px;
-    transform: scaleX(-1);
-}
-
-.corner-bl {
-    bottom: 24px;
-    left: 24px;
-    transform: scaleY(-1);
-}
-
-.corner-br {
-    bottom: 24px;
-    right: 24px;
-    transform: scale(-1, -1);
-}
+.corner-tl { top: 24px; left: 24px; }
+.corner-tr { top: 24px; right: 24px; transform: scaleX(-1); }
+.corner-bl { bottom: 24px; left: 24px; transform: scaleY(-1); }
+.corner-br { bottom: 24px; right: 24px; transform: scale(-1, -1); }
 
 .hero-content {
     text-align: center;
@@ -285,6 +229,14 @@
     font-weight: 300;
 }
 
+/* --- Standardisasi Global Ukuran H2 --- */
+.section-title, 
+.kuliner-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3rem) !important; /* Dikecilkan & disamakan di semua section */
+    line-height: 1.2;
+    font-weight: 700;
+}
 
 #sejarah {
     background: var(--brown-dark);
@@ -377,17 +329,9 @@
     font-weight: 300;
 }
 
-.timeline-footer {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: flex-start;
-}
-
-
 #kuliner-jogja-section {
     background: var(--cream);
     overflow: hidden;
-    /* Mencegah luapan horizontal */
     width: 100%;
 }
 
@@ -398,10 +342,7 @@
 }
 
 .kuliner-main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
     color: var(--brown-dark);
-    line-height: 1.2;
     margin: 0 0 1rem 0;
 }
 
@@ -427,8 +368,6 @@
     margin-bottom: 2rem;
 }
 
-
-
 .kuliner-carousel-wrapper {
     position: relative;
     width: 100%;
@@ -445,8 +384,6 @@
     height: 530px;
 }
 
-
-/* --- STYLING KARTU KULINER --- */
 .menu-item-card {
     position: absolute;
     width: 480px;
@@ -456,25 +393,19 @@
     overflow: hidden;
     border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-
-    /* Posisi Tengah */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.8);
-
-    /* Transisi Gerakan Slider */
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
         opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
         z-index 0.6s step-end,
         box-shadow 0.4s ease,
         border-color 0.4s ease;
-
     opacity: 0;
     z-index: 1;
     pointer-events: none;
 }
 
-/* POSISI 1: Kartu Utama/Tengah Aktif */
 .menu-item-card.kuliner-status-active {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
@@ -488,7 +419,6 @@
     border-color: var(--gold);
 }
 
-/* POSISI 2: Kartu Sebelah Kiri (Mengintip) */
 .menu-item-card.kuliner-status-prev {
     transform: translate(-125%, -50%) scale(0.85);
     opacity: 0.4;
@@ -497,7 +427,6 @@
     cursor: pointer;
 }
 
-/* POSISI 3: Kartu Sebelah Kanan (Mengintip) */
 .menu-item-card.kuliner-status-next {
     transform: translate(25%, -50%) scale(0.85);
     opacity: 0.4;
@@ -506,7 +435,6 @@
     cursor: pointer;
 }
 
-/* Area Gambar Kartu */
 .menu-item-visual {
     height: 240px;
     display: flex;
@@ -529,18 +457,6 @@
 
 .menu-item-card:hover .menu-item-visual img {
     transform: scale(1.05);
-}
-
-.menu-item-visual.kuliner-bg-gudeg {
-    background: #3D1C02;
-}
-
-.menu-item-visual.kuliner-bg-bakpia {
-    background: #5C3317;
-}
-
-.menu-item-visual.kuliner-bg-sate {
-    background: #2C1108;
 }
 
 .menu-item-body {
@@ -574,7 +490,6 @@
     font-weight: 300;
 }
 
-/* --- TOMBOL KONTROL DI BAWAH --- */
 .kuliner-carousel-controls {
     display: flex;
     justify-content: center;
@@ -601,7 +516,6 @@
     cursor: pointer;
     font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .kuliner-ctrl-btn:hover {
@@ -631,12 +545,135 @@
     border-radius: 4px;
 }
 
-#budaya {
-    background: var(--cream-dark);
+/* --- Section Destinasi --- */
+.destinasi-section {
+    background: var(--brown-dark);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    padding-top: 6rem;
 }
 
-.budaya-header {
-    margin-bottom: 4rem;
+.destinasi-header-grid {
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.destinasi-header-grid .section-title {
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+}
+
+.destinasi-header-grid .section-title em {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.destinasi-header-grid .divider {
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+}
+
+/* Styling Peta SVG */
+.map-region {
+    fill: rgba(255, 255, 255, 0.03);
+    stroke: var(--gold);
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-region:hover,
+.map-region.active {
+    fill: var(--gold) !important;
+    stroke: var(--cream);
+    stroke-width: 2.5;
+}
+
+/* Kartu Info */
+.destination-card {
+    background: rgba(255, 255, 255, 0.07); 
+    border: 1px solid rgba(212, 162, 80, 0.2);
+    border-radius: 12px;
+    box-shadow: none !important; 
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.destination-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(212, 162, 80, 0.5);
+    transform: translateY(-8px);
+    box-shadow: none !important; 
+}
+
+.card-image-overlay {
+    position: relative;
+}
+
+.card-image-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(35, 30, 25, 0.5));
+    pointer-events: none;
+}
+
+.dest-card-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.destination-card:hover .dest-card-title {
+    color: var(--cream);
+}
+
+.dest-card-desc {
+    font-family: 'Cormorant Garamond', serif;
+    color: rgba(240, 224, 204, 0.9);
+}
+
+.dest-nav-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    box-shadow: none !important; 
+}
+
+.dest-nav-btn:hover {
+    background: var(--gold);
+    color: var(--brown-dark);
+    box-shadow: none !important; 
+}
+
+.dest-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(212, 162, 80, 0.3);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid transparent;
+    box-shadow: none !important;
+}
+
+.dest-dot.active {
+    background-color: var(--gold) !important;
+    transform: scale(1.25);
+    border-color: var(--cream);
+    box-shadow: none !important;
+}
+
+#budaya {
+    background: var(--cream-dark);
 }
 
 .budaya-grid {
