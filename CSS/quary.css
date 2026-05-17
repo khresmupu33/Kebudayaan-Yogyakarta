@@ -48,6 +48,19 @@
     .kuliner-slider-view {
         height: 490px;
     }
+    .kuliner-ctrl-btn{
+        z-index: 100;
+        margin-top: 30px;
+    }
+    .kuliner-dots-indicator{
+        z-index: 100;
+        margin-top: 30px;
+    }
+    .btn-primary, .btn-outline {
+        padding: 15px;
+        margin: 10px;
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 900px) {
