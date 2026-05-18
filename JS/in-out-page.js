@@ -1,47 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll("a");
+    const inPageLayer = document.querySelector(".in-page");
+    const navigationType = performance.getEntriesByType("navigation")[0]?.type;
+    const isReload = navigationType === "reload";
+    const isTransitioning = localStorage.getItem("pageTransitionActive") === "true";
 
+    // Hapus token secepatnya
+    localStorage.removeItem("pageTransitionActive");
+
+    if (isTransitioning && !isReload) {
+        // JIKA MASUK DARI PROSES TRANSISI:
+        // Langsung tampilkan body tanpa delay karena layar sudah ditutup tirai cokelat (.in-page)
+        document.body.classList.add("visible");
+        if (inPageLayer) {
+            inPageLayer.classList.add("jalan"); 
+        }
+    } else {
+        // JIKA REFRESH / KETIK URL MANUAL:
+        // Hancurkan tirai, langsung munculkan halaman dengan fade-in halus
+        if (inPageLayer) {
+            inPageLayer.style.display = "none";
+        }
+        document.body.classList.add("visible");
+    }
+
+    // INTERAKSI TOMBOL / LINK
+    const links = document.querySelectorAll("a");
     links.forEach(link => {
         link.addEventListener("click", function(e) {
-            // Abaikan link anchor kosong atau link dropdown biasa yang cuma tanda '#'
             const hrefAttr = this.getAttribute('href');
-            if (!hrefAttr || hrefAttr === '#' || hrefAttr.startsWith('javascript:')) {
-                return; 
-            }
+            if (!hrefAttr || hrefAttr === '#' || hrefAttr.startsWith('javascript:')) return; 
 
-            // ATURAN VALIDASI:
-            // 1. Link desktop (tidak punya class sama sekali: link.className === "")
-            // 2. ATAU Link mobile (punya class 'mobile-link' atau 'mobile-sublink')
             const isLinkValid = this.className === "" || 
                                this.classList.contains("mobile-link") || 
                                this.classList.contains("mobile-sublink");
 
             if (isLinkValid) {
-                e.preventDefault(); // Kunci halaman! Tahan browser agar tidak pindah instan
-                e.stopPropagation(); // Amankan dari benturan event ganda
+                e.preventDefault(); 
+                e.stopPropagation(); 
                 
                 const targetUrl = this.href;
                 const menu = document.getElementById('mobile-menu');
                 const outPageLayer = document.querySelector(".out-page");
-
-                // Logika Deteksi: Apakah menu mobile saat ini sedang aktif/terbuka?
                 const isMenuOpen = menu && !menu.classList.contains('translate-x-full');
 
+                // Set penanda transisi untuk halaman tujuan
+                localStorage.setItem("pageTransitionActive", "true");
+
                 if (isMenuOpen) {
-                    
-                    // TAHAP 1: Tutup menu navigasi dulu memanfaatkan fungsi asli milikmu
                     handleMobileNav(); 
-
-                    // TAHAP 2: Beri jeda diam 5 detik penuh (5000ms) setelah menu mulai menutup
-                    setTimeout(() => {
-                        
-                        // TAHAP 3: Jalankan tirai animasi cokelat (durasi 1 detik)
-                        mulaiAnimasiKeluar(outPageLayer, targetUrl);
-
-                    }, 1); // <-- Lock Angka Jeda 5 Detik
-
+                    setTimeout(() => { 
+                        mulaiAnimasiKeluar(outPageLayer, targetUrl); 
+                    }, 1); 
                 } else {
-                    // LOGIKA DESKTOP: Jika menu sedang tutup, langsung sikat animasi cokelat
                     mulaiAnimasiKeluar(outPageLayer, targetUrl);
                 }
             }
@@ -49,14 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Fungsi pengeksekusi lapisan animasi keluar
 function mulaiAnimasiKeluar(layer, url) {
     if (layer) {
-        layer.style.display = "block";
-        layer.classList.add("aktif"); // Memulai animasi CSS .out-page meluncur horizontal
+        layer.classList.add("aktif"); 
     }
-    
-    // TAHAP 4: Tunggu 1 detik sampai tirai cokelat menutup layar penuh, baru pindah halaman
+    // Tunggu 1 detik sampai layar tertutup penuh oleh cokelat, baru pindah total
     setTimeout(() => {
         window.location.href = url;
     }, 1000);

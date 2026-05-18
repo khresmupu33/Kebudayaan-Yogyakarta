@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogja Culture</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Beranda.css">
+    <link rel="stylesheet" href="CSS/Dasar HTML.css">
+    <link rel="stylesheet" href="CSS/Navigasi.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/quary.css">
+    <link rel="stylesheet" href="CSS/btn-top.css">
+    <link rel="stylesheet" href="CSS/keyframes.css">
+    <link rel="stylesheet" href="CSS/in-out-page.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="in-page"></div>
+    <div class="out-page"></div>
+    <header>
+        <nav class="navbar transition-all duration-300">
+            <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
+                <div class="logo"><a href="index.html">Jogja<span>Culture</span></a></div>
+
+                <div class="nav-links hidden md:flex space-x-8 items-center font-medium">
+                    <a href="index.html">Beranda</a>
+                    <a href="halaman-makanan.html">Kuliner</a>
+                    <a href="halaman-destinasi">Destinasi</a>
+                    <a href="halaman-sejarah.html">Sejarah</a>
+                    <a href="halaman-budaya.html">Seni</a>
+
+                    <div class="dropdown-parent relative group">
+                        <button class="flex items-center space-x-1 outline-none">
+                            <span>Hotel</span>
+                            <i data-lucide="chevron-down"
+                                class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-40 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="#" class="block px-4 py-2 text-white">Bintang 5</a>
+                            <a href="#" class="block px-4 py-2 text-white">Bintang 4</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <button class="flex items-center space-x-1 outline-none">
+                            <span>Info</span>
+                            <i data-lucide="chevron-down"
+                                class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-40 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="#" class="block px-4 py-2 text-white">Panduan Liburan</a>
+                            <a href="#" class="block px-4 py-2 text-white">Tentang Kreator</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-12">
+                    <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
+                    <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                        <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col space-y-6 overflow-y-auto">
+                    <a href="index.html" class="mobile-link">Beranda</a>
+                    <a href="halaman-makan.html" class="mobile-link">Kuliner</a>
+                    <a href="#tempat" class="mobile-link">Destinasi</a>
+                    <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
+                    <a href="#budaya" class="mobile-link">Seni</a>
+
+                    <div class="mobile-dropdown">
+                        <button class="mobile-link w-full flex justify-between items-center"
+                            onclick="toggleMobileDropdown(this)">
+                            Hotel
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="#" class="mobile-sublink">Bintang 5</a>
+                            <a href="#" class="mobile-sublink">Bintang 4</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <button class="mobile-link w-full flex justify-between items-center"
+                            onclick="toggleMobileDropdown(this)">
+                            Info
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="#" class="mobile-sublink">Panduan Liburan</a>
+                            <a href="#" class="mobile-sublink">Tentang Kreator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <section id="home">
+        <div class="batik-bg"></div>
+        <div class="batik-border"></div>
+
+        <div class="batik-corner corner-tl">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
+                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
+                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
+                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
+            </svg>
+        </div>
+        <div class="batik-corner corner-tr">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
+                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
+                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
+                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
+            </svg>
+        </div>
+        <div class="batik-corner corner-bl">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
+                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
+                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
+                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
+            </svg>
+        </div>
+        <div class="batik-corner corner-br">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
+                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
+                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
+                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
+            </svg>
+        </div>
+
+        <div class="hero-content">
+            <span class="hero-label">Daerah Istimewa · Kota Budaya · Sejak 1755</span>
+            <h1 class="hero-title">Yogya<em>karta</em></h1>
+            <p class="hero-subtitle">Kota yang Tak Pernah Tidur dari Budaya</p>
+            <p class="hero-desc">
+                Di antara lereng Merapi dan gemericik Progo, Yogyakarta berdiri sebagai penjaga peradaban Jawa
+                yang
+                agung — tempat di mana tradisi hidup berdampingan harmonis dengan semangat zaman.
+            </p>
+            <a href="#sejarah" class="btn-primary">Jelajahi</a>
+            <a href="#tempat" class="btn-outline">Lihat Tempat</a>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+    <div class="main-layout-container">
+        <aside class="events-sidebar">
+
+            <button class="btn-toggle-events" onclick="toggleEventsSidebar()" aria-label="Toggle Sidebar">
+                <i data-lucide="chevron-left" id="toggleIcon"></i>
+            </button>
+            <div class="events-sticky-box">
+                <h3 class="events-title">📅 Event Terbaru</h3>
+
+
+                <div class="event-item">
+                    <span class="event-date">tanggal bulan tahun</span>
+                    <h4>steven ivan winardi gay</h4>
+                    <p>apapun pernyataan pasti</p>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">tanggal bulan tahun</span>
+                    <h4>roland gay</h4>
+                    <p>apapun pernyataan pasti</p>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">tanggal bulan tahun</span>
+                    <h4>adrian gay</h4>
+                    <p>apapun pernyataan pasti</p>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">tanggal bulan tahun</span>
+                    <h4>belanda gay</h4>
+                    <p>apapun pernyataan pasti</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content-flow">
+
+            <section id="sejarah">
+                <div class="sejarah-grid">
+                    <div class="sejarah-text">
+                        <h2 class="section-title">Keraton &amp;<br><em>Sejarah Kota</em></h2>
+                        <div class="divider"></div>
+                        <p>Yogyakarta berdiri dari Perjanjian Giyanti tahun 1755, ketika Kerajaan Mataram Islam dibagi
+                            dua
+                            menjadi Kasunanan Surakarta dan Kesultanan Yogyakarta. Sultan Hamengkubuwono I mendirikan
+                            Keraton
+                            sebagai pusat kosmologi dan pemerintahan.</p>
+                        <p>Keraton Yogyakarta bukan sekadar istana — ia adalah poros sumbu imajiner yang menghubungkan
+                            Gunung
+                            Merapi di utara, Keraton di tengah, dan Pantai Parangtritis di selatan. Sebuah konsep
+                            filosofi Jawa
+                            tentang keseimbangan alam semesta.</p>
+                        <p>Dalam perjuangan kemerdekaan Indonesia, Yogyakarta tampil sebagai Ibu Kota Republik pada
+                            1946–1950,
+                            menjadi benteng terakhir melawan agresi militer Belanda dan simbol ketahanan bangsa.</p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1755</div>
+                            <div class="timeline-content">
+                                <h4>Perjanjian Giyanti</h4>
+                                <p>Pembagian Mataram Islam; berdirinya Kesultanan Yogyakarta di bawah Sri Sultan
+                                    Hamengkubuwono
+                                    I.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1756</div>
+                            <div class="timeline-content">
+                                <h4>Pembangunan Keraton</h4>
+                                <p>Keraton Yogyakarta dibangun di atas tanah yang dipilih dengan ritual kejawen dan
+                                    perhitungan
+                                    kosmis.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1946</div>
+                            <div class="timeline-content">
+                                <h4>Ibu Kota Republik</h4>
+                                <p>Yogyakarta menjadi Ibu Kota RI, pusat perlawanan revolusi kemerdekaan Indonesia.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-footer">
+                            <a href="halaman-sejarah.html" class="btn-show-more">
+                                <span>Selusuri Lebih Dalam</span>
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= SECTION KULINER (SLIDER) ================= -->
+            <section id="kuliner-jogja-section">
+                <div class="kuliner-intro-box">
+                    <h2 class="kuliner-main-title">Makanan<br><em>Khas Jogja</em></h2>
+                    <div class="kuliner-title-line"></div>
+                    <p>Dari dapur keraton hingga pedagang kaki lima malam hari, kuliner Yogyakarta merawat cita rasa
+                        Jawa yang kaya rempah, penuh filosofi, dan diwariskan lintas generasi.</p>
+                </div>
+
+                <div class="kuliner-carousel-wrapper">
+                    <div class="kuliner-slider-view">
+                        <div class="kuliner-cards-holder" id="kulinerTrack">
+                            <div class="menu-item-card">
+                                <div class="menu-item-visual kuliner-bg-gudeg">
+                                    <img src="IMG/Gudeg.jpg" alt="Gudeg Jogja">
+                                    🍲
+                                </div>
+                                <div class="menu-item-body">
+                                    <div class="menu-item-origin">Masakan Keraton · Sejak abad ke-19</div>
+                                    <h3 class="menu-item-name">Gudeg</h3>
+                                    <p class="menu-item-desc">Nangka muda yang dimasak berjam-jam bersama santan, gula
+                                        jawa, dan
+                                        rempah pilihan hingga berwarna coklat keemasan. Simbol kuliner Jogja yang tak
+                                        tergantikan.</p>
+                                </div>
+                            </div>
+                            <div class="menu-item-card">
+                                <div class="menu-item-visual kuliner-bg-bakpia">
+                                    <img src="IMG/bakpiak.jpg" alt="Bakpia Pathuk">
+                                    🥮
+                                </div>
+                                <div class="menu-item-body">
+                                    <div class="menu-item-origin">Kue Legendaris · Kampung Pathuk</div>
+                                    <h3 class="menu-item-name">Bakpia</h3>
+                                    <p class="menu-item-desc">Kue bulat berkulit tipis dengan isi kacang hijau manis
+                                        yang
+                                        lembut. Lahir dari pengaruh budaya Tionghoa yang melebur harmonis dengan
+                                        kearifan lokal Jogja.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item-card">
+                                <div class="menu-item-visual kuliner-bg-sate">
+                                    <img src="IMG/sate-khlatak.jpg" alt="Sate Klathak">
+                                    🥩
+                                </div>
+                                <div class="menu-item-body">
+                                    <div class="menu-item-origin">Sate Tradisional · Imogiri</div>
+                                    <h3 class="menu-item-name">Sate Klathak</h3>
+                                    <p class="menu-item-desc">Sate kambing muda yang ditusuk dengan jeruji besi, dibakar
+                                        di atas
+                                        bara arang panas tanpa bumbu kecap — hanya garam dan merica.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="kuliner-carousel-controls">
+                        <div class="kuliner-action-buttons">
+                            <button class="kuliner-ctrl-btn" id="kulinerPrevBtn"
+                                aria-label="Sebelumnya">&#10094;</button>
+                            <div class="kuliner-dots-indicator" id="kulinerDotsContainer"></div>
+                            <button class="kuliner-ctrl-btn" id="kulinerNextBtn"
+                                aria-label="Selanjutnya">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="destinasi" class="destinasi-section">
+                <div class="destinasi-header-grid">
+                    <div class="sejarah-text">
+                        <div>
+                            <h2 class="section-title">Pesona &amp;<br><em>Destinasi Wilayah</em></h2>
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col lg:flex-row justify-center items-center w-full gap-8 max-w-[1200px] mx-auto px-4 py-16">
+
+                    <!-- Container Peta SVG -->
+                    <div class="map-container w-full max-w-[600px]">
+                        <svg viewBox="0 0 620 480" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <!-- Shadow disesuaikan agar lebih halus di latar belakang gelap -->
+                                <filter id="drop-shadow-map" x="-10%" y="-10%" width="130%" height="130%">
+                                    <feDropShadow dx="-5" dy="8" stdDeviation="10" flood-color="#000000"
+                                        flood-opacity="0.8" />
+                                </filter>
+                            </defs>
+
+                            <g id="yogyakarta-map" filter="url(#drop-shadow-map)" stroke-linejoin="round"
+                                stroke-linecap="round">
+                                <!-- Class diubah menjadi 'map-region' saja, pewarnaan dipindah ke CSS -->
+                                <path id="region-kulonprogo" class="map-region"
+                                    d="M251,102 L244,115 L252,143 L233,149 L217,144 L204,151 L200,166 L211,179 L200,201 L204,217 L192,230 L188,247 L171,260 L174,279 L162,298 L169,311 L151,326 L163,337 L248,397 L249,385 L259,372 L260,356 L267,343 L264,331 L275,317 L275,296 L283,281 L278,272 L269,268 L269,252 L260,243 L255,229 L262,223 L260,207 L251,192 L254,178 L250,152 L254,136 Z"
+                                    onclick="changeDestination(0)" />
+
+                                <path id="region-sleman" class="map-region"
+                                    d="M251,102 L254,136 L250,152 L254,178 L251,192 L260,207 L262,223 L255,229 L260,243 L269,252 L269,268 L278,272 L283,281 L294,277 L293,259 L287,243 L297,222 L301,231 L314,228 L313,235 L320,240 L314,248 L315,264 L332,231 L347,227 L351,215 L360,211 L365,223 L376,219 L389,228 L399,223 L381,202 L378,187 L367,175 L362,152 L353,138 L348,118 L339,94 L323,43 L317,54 L294,97 L272,111 Z"
+                                    onclick="changeDestination(1)" />
+
+                                <path id="region-kota" class="map-region"
+                                    d="M293,243 L293,259 L287,270 L294,277 L304,264 L315,264 L314,248 L314,228 L301,231 L297,222 L287,227 Z"
+                                    onclick="changeDestination(2)" />
+
+                                <path id="region-bantul" class="map-region"
+                                    d="M283,281 L275,296 L275,317 L264,331 L267,343 L260,356 L259,372 L249,385 L248,397 L302,434 L340,432 L347,406 L361,385 L357,370 L351,357 L359,343 L345,335 L346,316 L355,310 L356,298 L360,286 L364,269 L360,256 L355,244 L360,233 L347,227 L332,231 L315,264 L304,264 L294,277 L283,281 Z"
+                                    onclick="changeDestination(3)" />
+
+                                <path id="region-gunungkidul" class="map-region"
+                                    d="M399,223 L390,228 L376,219 L365,223 L360,211 L351,215 L347,227 L360,233 L355,244 L360,256 L364,269 L360,286 L356,298 L355,310 L346,316 L345,335 L359,343 L351,357 L357,370 L361,385 L347,406 L340,432 L351,438 L366,423 L377,411 L396,399 L412,410 L435,426 L454,440 L478,458 L503,468 L508,454 L502,442 L508,429 L489,417 L491,399 L480,387 L482,374 L489,353 L479,342 L483,322 L478,296 L488,284 L482,267 L483,248 L489,233 L473,221 L479,207 L467,203 L450,217 L436,215 L420,217 L409,208 Z"
+                                    onclick="changeDestination(4)" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Container Info Card -->
+                    <div class="flex flex-col items-center lg:items-start w-full max-w-[450px] relative px-10">
+
+                        <!-- Tombol Navigasi Kiri -->
+                        <button onclick="prevSlide()"
+                            class="dest-nav-btn absolute left-0 top-[40%] -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center font-bold z-10 text-sm">
+                            &#10216;
+                        </button>
+
+                        <!-- Kartu Destinasi (Gaya diubah menyerupai story-card) -->
+                        <div class="destination-card overflow-hidden w-full transition-all duration-500 transform"
+                            id="destination-card">
+                            <div class="h-60 w-full bg-cover bg-center transition-all duration-500 card-image-overlay"
+                                id="dest-image"></div>
+
+                            <div class="p-6 min-h-[170px] flex flex-col justify-between">
+                                <div>
+                                    <h2 class="dest-card-title text-xl font-bold mb-2" id="dest-title">Gunungkidul</h2>
+                                    <p class="dest-card-desc text-xs sm:text-sm leading-relaxed" id="dest-desc"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tombol Navigasi Kanan -->
+                        <button onclick="nextSlide()"
+                            class="dest-nav-btn absolute right-0 top-[40%] -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center font-bold z-10 text-sm">
+                            &#10217;
+                        </button>
+
+                        <div class="w-full flex flex-col items-center mt-6 gap-4">
+                            <div class="flex gap-2 " id="dots-container"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="budaya">
+                <div class="budaya-header">
+                    <div>
+                        <h2 class="section-title">Warisan<br><em>Seni Agung</em></h2>
+                        <div class="divider"></div>
+                    </div>
+                </div>
+
+                <div class="budaya-grid">
+                    <div class="art-card featured">
+                        <span class="art-card-icon">🎨</span>
+                        <h3 class="art-card-title">Batik Jogja</h3>
+                        <p class="art-card-desc">Batik Yogyakarta diakui UNESCO sebagai Warisan Budaya Tak Benda pada
+                            2009.
+                            Motif-motifnya — parang, kawung, sido mukti — bukan sekadar ornamen; setiap pola menyimpan
+                            makna
+                            filosofis tentang kehidupan, kekuasaan, dan hubungan manusia dengan semesta.</p>
+                        <span class="art-card-tag">Warisan UNESCO 2009</span>
+                        <div class="art-card-pattern"></div>
+                    </div>
+                    <div class="art-card">
+                        <span class="art-card-icon">🎭</span>
+                        <h3 class="art-card-title">Wayang Kulit</h3>
+                        <p class="art-card-desc">Pertunjukan semalam suntuk yang menceritakan kisah epik melalui
+                            bayangan kulit
+                            yang dikendalikan dalang.</p>
+                        <span class="art-card-tag">Warisan Dunia</span>
+                        <div class="art-card-pattern"></div>
+                    </div>
+                    <div class="art-card">
+                        <span class="art-card-icon">🎼</span>
+                        <h3 class="art-card-title">Gamelan</h3>
+                        <p class="art-card-desc">Orkestra perkusi Jawa yang menciptakan lanskap suara yang meditatif dan
+                            agung.
+                        </p>
+                        <span class="art-card-tag">Musik Keraton</span>
+                        <div class="art-card-pattern"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tempat">
+                <div class="places-header">
+                    <h2 class="section-title">Tempat<br><em>Bersejarah</em></h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="places-grid">
+                    <div class="place-item">
+                        <div class="place-num">01</div>
+                        <div class="place-info">
+                            <h3>Keraton Yogyakarta</h3>
+                            <span class="place-type">Istana Kerajaan · Aktif sejak 1755</span>
+                            <p>Pusat pemerintahan dan budaya Kesultanan Yogyakarta yang masih aktif dihuni. Kompleks
+                                yang
+                                mencerminkan kosmologi Jawa yang tak ternilai.</p>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <div class="place-num">02</div>
+                        <div class="place-info">
+                            <h3>Taman Sari</h3>
+                            <span class="place-type">Taman Kerajaan · Dibangun 1758</span>
+                            <p>"Kebun Bunga" para sultan — kompleks pemandian kerajaan dengan kolam-kolam elegan, lorong
+                                bawah
+                                tanah misterius, dan masjid bawah tanah Sumur Gumuling.</p>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <div class="place-num">03</div>
+                        <div class="place-info">
+                            <h3>Candi Prambanan</h3>
+                            <span class="place-type">Candi Hindu · Abad ke-9</span>
+                            <p>Kompleks candi Hindu terbesar di Indonesia. Keindahan arsitektur yang mengucap kisah
+                                Ramayana
+                                pada setiap pahatan reliefnya.</p>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <div class="place-num">04</div>
+                        <div class="place-info">
+                            <h3>Malioboro</h3>
+                            <span class="place-type">Jantung Kota · Koridor Budaya</span>
+                            <p>Jalan legendaris yang membelah kota — dipenuhi pedagang batik, pengrajin, seniman
+                                jalanan, dan
+                                aroma angkringan yang menguar di malam hari.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <footer>
+        <div class="footer-logo">Jogja<span>Culture</span></div>
+        <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+
+        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain dengan rasa hormat kepada tanah Mataram</p>
+    </footer>
+    <a href="#home" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
+        &#8593; 
+    </a>
+
+    <script src="JS/Navigasi.js"></script>
+    <script src="JS/Dasar html.js"></script>
+    <script src="JS/Event.js"></script>
+    <script src="JS/Slide loop.js"></script>
+    <script src="JS/Map Destinasi.js"></script>
+    <script src="JS/btn-top.js"></script>
+    <script src="JS/in-out-page.js"></script>
+</body>
+
+</html>

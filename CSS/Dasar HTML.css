@@ -31,13 +31,20 @@ html {
 
 body {
     font-family: 'Cormorant Garamond', serif;
-    background: var(--cream);
+    background: var(--brown-mid);
     color: var(--text-dark);
     overflow-x: hidden;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Class pembantu untuk menampilkan body lewat JavaScript */
+body.visible {
+    opacity: 1;
 }
 ::-webkit-scrollbar {
     width: 10px;

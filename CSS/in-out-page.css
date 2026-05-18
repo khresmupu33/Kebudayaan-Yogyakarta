@@ -1,35 +1,31 @@
-
 .page {
     padding: 40px;
-    opacity: 0;
-    animation: fadeInContent 0.6s ease forwards 0.4s;
-}
-.in-page, .out-page {
-    position: fixed;
-    top: -50vh;   /* Dilebihkan ke atas */
-    left: -50vw;  /* Dilebihkan ke kiri */
-    width: 200vw; /* Ukuran 2x lipat lebar layar */
-    height: 200vh;/* Ukuran 2x lipat tinggi layar */
-    background-color: var(--brown-mid);
-    z-index: 999999999999999999999999999999999999999999999999999999999; /* Dipastikan berada di paling atas objek apapun */
-    transform: rotate(-25deg);
-    pointer-events: none; 
+    /* JANGAN taruh animasi fade-out di sini agar tidak kelip saat link diklik */
 }
 
-/* ANIMASI MASUK (In-Page) */
-.in-page {
+/* Base Lapisan Tirai (In & Out) */
+.in-page, .out-page {
+    position: fixed;
+    top: -50vh;   
+    left: -50vw;  
+    width: 200vw; 
+    height: 200vh;
+    background-color: var(--brown-mid);
+    z-index: 999999; 
+    transform: rotate(-25deg);
+    pointer-events: none; 
+    display: none; /* Sembunyikan default */
+}
+
+/* Jalankan Animasi Masuk */
+.in-page.jalan {
+    display: block;
     animation: slideOutRightUp 1.2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
 
-
-/* ANIMASI KELUAR (Out-Page) */
-.out-page {
-    transform: rotate(-25deg) translate(0, 100%); /* Sembunyi di serong kiri bawah */
-    display: none; 
-}
-
+/* Jalankan Animasi Keluar */
 .out-page.aktif {
     display: block;
+    transform: rotate(-25deg) translate(0, 100%); /* Start posisi luar layar */
     animation: slideInRightUp 1.2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
-
