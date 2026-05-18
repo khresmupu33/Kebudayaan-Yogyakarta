@@ -1,3 +1,7 @@
+/* ==========================================
+   PERBAIKAN NAVBAR & MENU MOBILE (SINKRONISASI)
+   ========================================== */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -9,17 +13,21 @@
     border-bottom: 1px solid rgba(212, 162, 80, 0.2);
     height: 70px;
     padding: 0 4rem;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* PERBAIKAN: Ganti 'all' menjadi properti spesifik agar tidak merusak animasi menu mobile */
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                background 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar.scrolled {
-    height: 60px; /* Navbar sedikit mengecil */
-    background: rgba(28, 15, 6, 0.95); /* Cokelat lebih gelap & solid */
-    border-bottom: 1px solid rgba(212, 162, 80, 0.4); /* Garis emas lebih tegas */
+    height: 60px;
+    background: rgba(28, 15, 6, 0.95);
+    border-bottom: 1px solid rgba(212, 162, 80, 0.4);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Garis bawah animasi untuk menu saat di-hover agar lebih keren */
+/* Garis bawah animasi untuk menu saat di-hover */
 .nav-links a {
     position: relative;
 }
@@ -38,6 +46,7 @@
 .nav-links a:hover::after {
     width: 100%;
 }
+
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
@@ -83,8 +92,23 @@
     color: var(--gold);
 }
 
+/* PERBAIKAN TOTAL PADA MENU MOBILE */
 #mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(24, 24, 27, 0.98);
+    z-index: 99999999999999999999999999999999999999 !important; /* Pastikan di atas navbar biasa */
+    
+    /* PENTING: Paksa durasi transisi geser 0.4 detik agar dibaca sempurna oleh JS event listener */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Memastikan efek geser sembunyi ke kanan luar layar berjalan mulus */
+#mobile-menu.translate-x-full {
+    transform: translateX(100%) !important;
 }
 
 /* Pastikan jarak antar baris seragam */
@@ -93,13 +117,12 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: white;
-    /* Gunakan padding yang konsisten untuk atas dan bawah */
     padding-bottom: 0.8rem; 
     border-bottom: 1px solid rgba(255,255,255,0.1);
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: all 0.3s ease;
-    display: block; /* Agar link memenuhi lebar kontainer */
+    display: block;
 }
 
 /* Hilangkan border-bottom khusus di dalam dropdown agar tidak berdempetan saat menu terbuka */
@@ -116,7 +139,7 @@
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 0.4rem 0; /* Jarak baris sub-menu sedikit lebih rapat */
+    padding: 0.4rem 0;
     transition: color 0.3s;
     border-left: 1px solid var(--gold);
     padding-left: 1.5rem;

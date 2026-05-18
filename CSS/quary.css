@@ -61,6 +61,73 @@
         margin: 10px;
         justify-content: space-between;
     }
+    .in-page, .out-page {
+        /* Reset posisi & rotasi untuk mode HP */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transform: translateX(0); /* Tidak perlu dirotasi miring */
+    }
+.in-page, .out-page {
+        top: 0;
+        left: 0;
+        width: 100vw;  /* Pas seukuran layar HP */
+        height: 100vh; /* Pas seukuran layar HP */
+        transform: rotate(0deg); /* Menghilangkan efek serong agar murni horizontal */
+    }
+
+    /* ANIMASI MASUK: Dari tengah (penuh) -> keluar ke kiri luar layar */
+    .in-page {
+        transform: translateX(0);
+        animation: slideOutLeftMobile 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    @keyframes slideOutLeftMobile {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* ANIMASI KELUAR: Dari kanan luar layar -> masuk memenuhi layar */
+    .out-page {
+        transform: translateX(100%); 
+        display: none;
+    }
+
+    .out-page.aktif {
+        display: block;
+        animation: slideInLeftMobile 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    @keyframes slideInLeftMobile {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    #mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(24, 24, 27, 0.98);
+        z-index: 99999999999999999999999999999999!important; /* Di bawah out-page, tapi di atas konten biasa */
+        
+        /* Paksa transisi penutupan berjalan selama 0.5 detik secara halus */
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    /* Class penutup (Jika class ini ada, menu sembunyi ke kanan luar layar) */
+    #mobile-menu.translate-x-full {
+        transform: translateX(100%) !important;
+    }
 }
 
 @media (max-width: 900px) {
@@ -136,23 +203,21 @@
     /* 2. STATUS DEFAULT AWAL (PASTI SEMBUNYI):
    Paksa Sidebar Event langsung tersingkir sejak pertama kali halaman dimuat di HP */
     .events-sidebar {
-        position: fixed !important;
+        position: fixed ;
         top: 0;
 
         /* DIKUNCI DI SINI: Awal masuk di HP langsung disembunyikan total ke kiri luar */
-        left: -100vw !important;
+        left: -100vw ;
 
-        width: 100vw !important;
+        width: 100vw ;
         /* Lebar penuh satu halaman fokus */
-        height: 100vh !important;
+        height: 100vh ;
         background: var(--brown-dark);
         border-right: none;
         padding: 6rem 2rem 2rem 2rem;
         display: flex;
         flex-direction: column;
-        z-index: 9999 !important;
-        /* Di atas seluruh konten halaman */
-        overflow: visible;
+        z-index: 91 ;
 
         /* Efek transisi pergeseran saat tombol ditekan */
         transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1), padding 0.4s ease;
@@ -161,16 +226,11 @@
     /* 3. KETIKA TOMBOL DIPENCET (MEMBUKA):
    Sidebar baru akan muncul jika container memiliki class aktif .sidebar-open */
     .main-layout-container.sidebar-open .events-sidebar {
-        left: 0 !important;
+        left: 0 ;
         /* Maju memenuhi layar normal HP secara fokus */
     }
 
-    /* 4. PERBAIKAN UTAMA: Jangan gunakan display:none agar isinya TIDAK HILANG saat dibuka.
-   Biarkan overflow tersembunyi secara alami di luar layar (-100vw) */
-    .main-layout-container:not(.sidebar-open) .events-sidebar {
-        overflow: visible;
-        /* Memastikan tombol di luar tetap bisa nongol */
-    }
+ 
 
     /* Judul H3 mengunci di atas */
     .events-sidebar h3 {
