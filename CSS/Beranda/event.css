@@ -1,0 +1,154 @@
+.main-layout-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    background: var(--brown-dark);
+    position: relative;
+    transition: grid-template-columns 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    
+    /* TAMBAHKAN DUA BARIS INI */
+    isolation: isolate;
+    z-index: 10; 
+}
+
+.main-layout-container.sidebar-closed {
+    grid-template-columns: 0px 1fr;
+}
+
+.events-sidebar {
+    background: var(--brown-dark);
+    border-right: 1px solid rgba(212, 162, 80, 0.2);
+    padding: 2rem; /* Diubah: tidak perlu padding atas yang terlalu besar jika 'top' sudah diatur */
+    
+    position: sticky;
+    top: 70px; /* PERBAIKAN: Diubah dari 0 menjadi 70px (sesuai tinggi navbar) */
+    
+    height: calc(100vh - 70px); /* PERBAIKAN: Tinggi sidebar dikurangi tinggi navbar */
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    transition: padding 0.4s ease, opacity 0.3s ease;
+}
+
+.main-layout-container.sidebar-closed .events-sidebar {
+    padding: 6rem 0 2rem 0;
+}
+
+.events-sidebar h3 {
+    background: var(--brown-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+
+.main-layout-container.sidebar-closed .events-sticky-box,
+.main-layout-container.sidebar-closed h3 {
+    display: none;
+}
+
+.btn-toggle-events {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    /* UBAH DI SINI: Diturunkan agar di bawah navbar (z-index: 50) */
+    z-index: 50 !important; 
+    pointer-events: auto !important;
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--brown-dark);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.btn-toggle-events:hover {
+    background: var(--cream);
+    color: var(--brown-dark);
+    border-color: var(--cream);
+}
+.events-sticky-box {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-grow: 1;
+    margin-bottom: 2rem;
+    
+    /* TAMBAHKAN INI: Memberi jarak aman di dalam kotak scroll */
+    padding-top: 1rem; 
+}
+
+
+.main-layout-container.sidebar-closed .btn-toggle-events {
+    position: absolute;
+    left: 0;
+    right: auto;
+    top: 50vh;
+    transform: translateY(-50%);
+    border-left: none;
+    border-radius: 0 50% 50% 0;
+    background: var(--gold);
+    color: var(--brown-dark);
+   z-index: 50 !important; 
+    pointer-events: auto !important;
+}
+.main-layout-container.sidebar-closed .btn-toggle-events svg,
+.main-layout-container.sidebar-closed .btn-toggle-events i {
+    display: block !important;
+    transform: rotate(180deg) !important;
+    transition: transform 0.3s ease;
+}
+
+.event-item {
+    background: rgba(255, 248, 240, 0.05); /* Sedikit lebih tebal warnanya */
+    border: 1px solid rgba(212, 162, 80, 0.2);
+    padding: 1.5rem; /* Lebih luas sedikit dari 1.2rem */
+    border-radius: 6px; /* Sudut lebih halus */
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.event-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; /* Sedikit lebih besar */
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+}
+
+.event-item p {
+    font-size: 0.95rem;
+    color: rgba(240, 224, 204, 0.8); /* Teks deskripsi lebih jelas (opacity dinaikkan) */
+    line-height: 1.6;
+}
+
+.event-item:hover {
+    border-color: var(--gold);
+    background: rgba(212, 162, 80, 0.05);
+    transform: translatey(5px);
+}
+
+.event-date {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.events-sticky-box::-webkit-scrollbar {
+    width: 4px;
+}
+
+.events-sticky-box::-webkit-scrollbar-thumb {
+    background: var(--gold);
+}

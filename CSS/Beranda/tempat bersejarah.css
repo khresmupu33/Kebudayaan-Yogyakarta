@@ -1,0 +1,68 @@
+#tempat {
+    background: var(--cream);
+}
+
+.places-header {
+    margin-bottom: 4rem;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.place-item {
+    display: flex;
+    gap: 2rem;
+    padding: 2.5rem;
+    border: 1px solid var(--cream-border);
+    background: #fff;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+.place-item:hover {
+    border-color: var(--gold);
+    background: rgba(255,248,240,0.8);
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(44, 26, 14, 0.05);
+}
+
+.place-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: rgba(212,162,80,0.25); 
+    font-weight: 700;
+    line-height: 0.8;
+    flex-shrink: 0;
+    transition: color 0.4s ease;
+}
+
+.place-item:hover .place-num {
+    color: var(--gold);
+}
+
+.place-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--brown-dark);
+    margin-bottom: 0.5rem;
+}
+
+.place-info .place-type {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brown-warm);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.place-info p {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 300;
+}

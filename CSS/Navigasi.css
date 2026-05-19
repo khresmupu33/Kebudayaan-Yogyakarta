@@ -92,7 +92,6 @@
     color: var(--gold);
 }
 
-/* PERBAIKAN TOTAL PADA MENU MOBILE */
 #mobile-menu {
     position: fixed;
     top: 0;
@@ -100,10 +99,14 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(24, 24, 27, 0.98);
-    z-index: 99999999999999999999999999999999999999 !important; /* Pastikan di atas navbar biasa */
     
-    /* PENTING: Paksa durasi transisi geser 0.4 detik agar dibaca sempurna oleh JS event listener */
+    /* UBAH ATAU PASTIKAN Z-INDEX INI LEBIH BESAR DARI NYA 10001 */
+    z-index: 1; 
+    
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.nav-mobile-p{
+    z-index: 0.1 !important;
 }
 
 /* Memastikan efek geser sembunyi ke kanan luar layar berjalan mulus */
@@ -122,6 +125,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: all 0.3s ease;
+    z-index: 1;
     display: block;
 }
 

@@ -20,8 +20,103 @@
 
 }
 
-
 @media (max-width: 768px) {
+        /* Container Utama */
+    .container {
+        padding: 60px 1.2rem 40px; /* Padding dikurangi agar hemat ruang */
+    }
+
+    /* Header Halaman */
+    .page-header {
+        margin-bottom: 3.5rem;
+    }
+
+    .sejarah-label {
+        letter-spacing: 4px; /* Sedikit dirapatkan di layar kecil */
+        font-size: 0.65rem;  /* Tulisan lebih kecil */
+        margin-bottom: 1rem;
+    }
+
+    .sejarah-title {
+        /* Menggunakan clamp bawaanmu, otomatis mengecil ke 2.5rem di HP */
+        margin-bottom: 1.5rem;
+    }
+
+    /* === TIMELINE RESET (Diubah jadi 1 kolom ke bawah) === */
+    .timeline-detailed::before {
+        left: 15px; /* Garis timeline digeser ke kiri */
+        transform: none;
+    }
+
+    .timeline-node {
+        width: 100%;       /* Lebar penuh */
+        left: 0 !important; /* Reset posisi kiri */
+        padding: 0 0 0 2.5rem; /* Teks digeser ke kanan garis */
+        text-align: left !important; /* Semua teks rata kiri */
+        margin-bottom: 3rem; /* Jarak antar node lebih rapat */
+    }
+
+    .node-year {
+        font-size: 1rem; /* Tulisan tahun lebih kecil */
+    }
+
+    .node-content h3 {
+        font-size: 1.4rem; /* Tulisan judul timeline lebih kecil */
+    }
+
+    .node-content p {
+        font-size: 0.95rem; /* Tulisan deskripsi lebih kecil */
+    }
+
+    /* Posisi Titik Tengah Timeline di HP */
+    .timeline-node::after {
+        left: 10px !important; /* Titik pas di atas garis kiri */
+        right: auto !important;
+        top: 6px;
+    }
+    
+    .timeline-node:hover {
+        transform: translateX(5px); /* Hover berubah ke kanan, bukan ke atas */
+    }
+
+    /* === STORY BLOCKS (Container Agak Lebih Besar & Lega) === */
+    .story-container {
+        margin-top: 5rem;
+    }
+
+    .story-card {
+        padding: 2rem 1.5rem; /* Padding atas/bawah dikurangi, tapi kiri/kanan dibuat pas agar card terlihat lebih besar dan lebar */
+        margin-bottom: 2.5rem;
+        width: 100%;
+    }
+
+    .story-card h2 {
+        font-size: 1.8rem; /* Tulisan judul card lebih kecil */
+        margin-bottom: 1.2rem;
+    }
+
+    .story-card p {
+        font-size: 1rem; /* Tulisan isi card lebih kecil */
+        line-height: 1.6;
+        text-align: left; /* Rata kiri lebih rapi untuk HP dibanding justify */
+        margin-bottom: 1rem;
+    }
+
+    /* === QUOTE BOX (HIGHLIGHT BOX) === */
+    .highlight-box {
+        padding: 2rem 1rem;
+        margin: 3.5rem 0;
+    }
+
+    .highlight-box blockquote {
+        font-size: 1.35rem; /* Tulisan quote lebih kecil dan proporsional */
+    }
+    
+    .highlight-box:hover {
+        padding-left: 1rem;  /* Matikan efek padding melebar di HP agar tidak patah */
+        padding-right: 1rem;
+    }
+    
     .sejarah-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -260,7 +355,7 @@
     /* 5. Tombol Pemicu Saat Sidebar Terbuka Penuh (Fokus Halaman) */
     .main-layout-container.sidebar-open .btn-toggle-events {
         position: absolute !important;
-        top: 20px !important;
+        top: 80px !important;
         right: 20px !important;
         left: auto !important;
         transform: none !important;

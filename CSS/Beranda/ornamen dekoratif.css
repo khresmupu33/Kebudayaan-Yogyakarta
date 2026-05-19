@@ -1,0 +1,45 @@
+.batik-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image:
+        repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
+        repeating-linear-gradient(-45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+    background-size: 30px 30px;
+}
+
+.batik-border {
+    position: absolute;
+    inset: 24px;
+    border: 1px solid rgba(212, 162, 80, 0.2);
+    pointer-events: none;
+}
+
+.batik-corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+}
+
+.corner-tl {
+    top: 24px;
+    left: 24px;
+}
+
+.corner-tr {
+    top: 24px;
+    right: 24px;
+    transform: scaleX(-1);
+}
+
+.corner-bl {
+    bottom: 24px;
+    left: 24px;
+    transform: scaleY(-1);
+}
+
+.corner-br {
+    bottom: 24px;
+    right: 24px;
+    transform: scale(-1, -1);
+}
