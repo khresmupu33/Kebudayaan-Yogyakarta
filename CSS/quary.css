@@ -17,66 +17,91 @@
         grid-row: auto;
     }
 
+    html {
+        font-size: 17px;
+    }
+
 
 }
 
 @media (max-width: 768px) {
-        /* Container Utama */
-    .container {
-        padding: 60px 1.2rem 40px; /* Padding dikurangi agar hemat ruang */
+    html {
+        font-size: 16px;
     }
 
-    /* Header Halaman */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.85rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 60px 1.2rem 40px;
+    }
+
     .page-header {
         margin-bottom: 3.5rem;
     }
 
     .sejarah-label {
-        letter-spacing: 4px; /* Sedikit dirapatkan di layar kecil */
-        font-size: 0.65rem;  /* Tulisan lebih kecil */
+        letter-spacing: 4px;
+        font-size: 0.65rem;
         margin-bottom: 1rem;
     }
 
     .sejarah-title {
-        /* Menggunakan clamp bawaanmu, otomatis mengecil ke 2.5rem di HP */
         margin-bottom: 1.5rem;
     }
 
-    /* === TIMELINE RESET (Diubah jadi 1 kolom ke bawah) === */
     .timeline-detailed::before {
-        left: 15px; /* Garis timeline digeser ke kiri */
+        left: 15px;
         transform: none;
     }
 
     .timeline-node {
-        width: 100%;       /* Lebar penuh */
-        left: 0 !important; /* Reset posisi kiri */
-        padding: 0 0 0 2.5rem; /* Teks digeser ke kanan garis */
-        text-align: left !important; /* Semua teks rata kiri */
-        margin-bottom: 3rem; /* Jarak antar node lebih rapat */
+        width: 100%;
+        left: 0 !important;
+        /* Reset posisi kiri */
+        padding: 0 0 0 2.5rem;
+        /* Teks digeser ke kanan garis */
+        text-align: left !important;
+        /* Semua teks rata kiri */
+        margin-bottom: 3rem;
+        /* Jarak antar node lebih rapat */
     }
 
     .node-year {
-        font-size: 1rem; /* Tulisan tahun lebih kecil */
+        font-size: 1rem;
+        /* Tulisan tahun lebih kecil */
     }
 
     .node-content h3 {
-        font-size: 1.4rem; /* Tulisan judul timeline lebih kecil */
+        font-size: 1.4rem;
+        /* Tulisan judul timeline lebih kecil */
     }
 
     .node-content p {
-        font-size: 0.95rem; /* Tulisan deskripsi lebih kecil */
+        font-size: 0.95rem;
+        /* Tulisan deskripsi lebih kecil */
     }
 
     /* Posisi Titik Tengah Timeline di HP */
     .timeline-node::after {
-        left: 10px !important; /* Titik pas di atas garis kiri */
+        left: 10px !important;
+        /* Titik pas di atas garis kiri */
         right: auto !important;
         top: 6px;
     }
-    
+
     .timeline-node:hover {
-        transform: translateX(5px); /* Hover berubah ke kanan, bukan ke atas */
+        transform: translateX(5px);
+        /* Hover berubah ke kanan, bukan ke atas */
     }
 
     /* === STORY BLOCKS (Container Agak Lebih Besar & Lega) === */
@@ -85,20 +110,24 @@
     }
 
     .story-card {
-        padding: 2rem 1.5rem; /* Padding atas/bawah dikurangi, tapi kiri/kanan dibuat pas agar card terlihat lebih besar dan lebar */
+        padding: 2rem 1.5rem;
+        /* Padding atas/bawah dikurangi, tapi kiri/kanan dibuat pas agar card terlihat lebih besar dan lebar */
         margin-bottom: 2.5rem;
         width: 100%;
     }
 
     .story-card h2 {
-        font-size: 1.8rem; /* Tulisan judul card lebih kecil */
+        font-size: 1.8rem;
+        /* Tulisan judul card lebih kecil */
         margin-bottom: 1.2rem;
     }
 
     .story-card p {
-        font-size: 1rem; /* Tulisan isi card lebih kecil */
+        font-size: 1rem;
+        /* Tulisan isi card lebih kecil */
         line-height: 1.6;
-        text-align: left; /* Rata kiri lebih rapi untuk HP dibanding justify */
+        text-align: left;
+        /* Rata kiri lebih rapi untuk HP dibanding justify */
         margin-bottom: 1rem;
     }
 
@@ -109,14 +138,16 @@
     }
 
     .highlight-box blockquote {
-        font-size: 1.35rem; /* Tulisan quote lebih kecil dan proporsional */
+        font-size: 1.35rem;
+        /* Tulisan quote lebih kecil dan proporsional */
     }
-    
+
     .highlight-box:hover {
-        padding-left: 1rem;  /* Matikan efek padding melebar di HP agar tidak patah */
+        padding-left: 1rem;
+        /* Matikan efek padding melebar di HP agar tidak patah */
         padding-right: 1rem;
     }
-    
+
     .sejarah-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -143,33 +174,45 @@
     .kuliner-slider-view {
         height: 490px;
     }
-    .kuliner-ctrl-btn{
+
+    .kuliner-ctrl-btn {
         z-index: 100;
         margin-top: 30px;
     }
-    .kuliner-dots-indicator{
+
+    .kuliner-dots-indicator {
         z-index: 100;
         margin-top: 30px;
     }
-    .btn-primary, .btn-outline {
+
+    .btn-primary,
+    .btn-outline {
         padding: 15px;
         margin: 10px;
         justify-content: space-between;
     }
-    .in-page, .out-page {
+
+    .in-page,
+    .out-page {
         /* Reset posisi & rotasi untuk mode HP */
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        transform: translateX(0); /* Tidak perlu dirotasi miring */
+        transform: translateX(0);
+        /* Tidak perlu dirotasi miring */
     }
-.in-page, .out-page {
+
+    .in-page,
+    .out-page {
         top: 0;
         left: 0;
-        width: 100vw;  /* Pas seukuran layar HP */
-        height: 100vh; /* Pas seukuran layar HP */
-        transform: rotate(0deg); /* Menghilangkan efek serong agar murni horizontal */
+        width: 100vw;
+        /* Pas seukuran layar HP */
+        height: 100vh;
+        /* Pas seukuran layar HP */
+        transform: rotate(0deg);
+        /* Menghilangkan efek serong agar murni horizontal */
     }
 
     /* ANIMASI MASUK: Dari tengah (penuh) -> keluar ke kiri luar layar */
@@ -182,6 +225,7 @@
         0% {
             transform: translateX(0);
         }
+
         100% {
             transform: translateX(-100%);
         }
@@ -189,7 +233,7 @@
 
     /* ANIMASI KELUAR: Dari kanan luar layar -> masuk memenuhi layar */
     .out-page {
-        transform: translateX(100%); 
+        transform: translateX(100%);
         display: none;
     }
 
@@ -202,10 +246,12 @@
         0% {
             transform: translateX(100%);
         }
+
         100% {
             transform: translateX(0);
         }
     }
+
     #mobile-menu {
         position: fixed;
         top: 0;
@@ -213,19 +259,36 @@
         width: 100vw;
         height: 100vh;
         background-color: rgba(24, 24, 27, 0.98);
-        z-index: 99999999999999999999999999999999!important; /* Di bawah out-page, tapi di atas konten biasa */
-        
-        /* Paksa transisi penutupan berjalan selama 0.5 detik secara halus */
+        z-index: 99999999999999999999999999999999 !important;
         transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
-    
-    /* Class penutup (Jika class ini ada, menu sembunyi ke kanan luar layar) */
+
     #mobile-menu.translate-x-full {
         transform: translateX(100%) !important;
     }
 }
 
 @media (max-width: 900px) {
+    html {
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
     .navbar {
         padding: 0 2rem;
     }
@@ -289,45 +352,31 @@
         font-size: 1.5rem;
     }
 
-    /* 1. Reset Grid Kontainer Utama di HP */
     .main-layout-container {
         display: block !important;
         position: relative;
     }
 
-    /* 2. STATUS DEFAULT AWAL (PASTI SEMBUNYI):
-   Paksa Sidebar Event langsung tersingkir sejak pertama kali halaman dimuat di HP */
     .events-sidebar {
-        position: fixed ;
+        position: fixed;
         top: 0;
+        left: -100vw;
 
-        /* DIKUNCI DI SINI: Awal masuk di HP langsung disembunyikan total ke kiri luar */
-        left: -100vw ;
-
-        width: 100vw ;
-        /* Lebar penuh satu halaman fokus */
-        height: 100vh ;
+        width: 100vw;
+        height: 100vh;
         background: var(--brown-dark);
         border-right: none;
         padding: 6rem 2rem 2rem 2rem;
         display: flex;
         flex-direction: column;
-        z-index: 91 ;
-
-        /* Efek transisi pergeseran saat tombol ditekan */
+        z-index: 91;
         transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1), padding 0.4s ease;
     }
 
-    /* 3. KETIKA TOMBOL DIPENCET (MEMBUKA):
-   Sidebar baru akan muncul jika container memiliki class aktif .sidebar-open */
     .main-layout-container.sidebar-open .events-sidebar {
-        left: 0 ;
-        /* Maju memenuhi layar normal HP secara fokus */
+        left: 0;
     }
 
- 
-
-    /* Judul H3 mengunci di atas */
     .events-sidebar h3 {
         background: var(--brown-dark);
         font-family: 'Playfair Display', serif;
@@ -338,7 +387,6 @@
         margin-bottom: 1.5rem;
         flex-shrink: 0;
         display: block !important;
-        /* Memastikan judul selalu tampil saat sidebar masuk */
     }
 
     /* Box list event scrollable */

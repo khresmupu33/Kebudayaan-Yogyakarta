@@ -29,7 +29,6 @@
 }
 
 .kuliner-intro-box p {
-    font-size: 1.15rem;
     color: var(--text-mid);
     line-height: 1.8;
     font-weight: 300;
@@ -109,7 +108,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 5rem;
     position: relative;
     overflow: hidden;
 }
@@ -137,7 +135,6 @@
 
 .menu-item-origin {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.65rem;
     letter-spacing: 2px;
     color: var(--brown-warm);
     text-transform: uppercase;
@@ -146,14 +143,13 @@
 
 .menu-item-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+
     color: var(--brown-dark);
     margin-bottom: 0.8rem;
     font-weight: 600;
 }
 
 .menu-item-desc {
-    font-size: 1rem;
     color: var(--text-mid);
     line-height: 1.7;
     font-weight: 300;
@@ -183,7 +179,6 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
@@ -217,7 +212,6 @@
 .section-title, 
 .kuliner-main-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 5vw, 3rem) !important;
     line-height: 1.2;
     font-weight: 700;
 }

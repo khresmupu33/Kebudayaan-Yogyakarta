@@ -11,7 +11,6 @@
 .btn-primary, .btn-outline {
     display: inline-block;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.75rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     padding: 16px 42px;
@@ -56,7 +55,6 @@
 
 .scroll-indicator span {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.6rem;
     letter-spacing: 3px;
     color: rgba(212,162,80,0.6);
     text-transform: uppercase;
@@ -78,7 +76,7 @@
 
 .hero-label {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.7rem;
+    
     letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--gold);
@@ -88,7 +86,7 @@
 
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(3.5rem, 8vw, 7rem);
+    
     color: var(--cream);
     line-height: 1.05;
     font-weight: 700;
@@ -102,7 +100,7 @@
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
+    
     color: rgba(240, 224, 204, 0.8);
     font-weight: 300;
     letter-spacing: 1px;
@@ -114,7 +112,7 @@
     max-width: 600px;
     margin: 0 auto 3rem;
     color: rgba(240, 224, 204, 0.65);
-    font-size: 1.1rem;
+    
     line-height: 1.8;
     font-weight: 300;
 }

@@ -44,9 +44,6 @@
     box-shadow: 0 8px 25px rgba(212, 162, 80, 0.4);
 }
 
-.btn-to-top i {
-    font-size: 1.2rem;
-}
 
 /* Muncul saat scroll berjalan ke bawah */
 .btn-to-top.show {
@@ -69,6 +66,3 @@
     box-shadow: 0 8px 25px rgba(212, 162, 80, 0.4);
 }
 
-.btn-to-top i {
-    font-size: 1.2rem;
-}

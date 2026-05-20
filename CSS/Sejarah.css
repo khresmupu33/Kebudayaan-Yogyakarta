@@ -25,14 +25,12 @@
     color: var(--gold);
     text-transform: uppercase;
     letter-spacing: 6px;
-    font-size: 0.75rem;
     display: block;
     margin-bottom: 1.5rem;
 }
 
 .sejarah-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 6vw, 4rem);
     line-height: 1.2;
     margin-bottom: 2rem;
 }
@@ -81,20 +79,17 @@
     font-family: 'Josefin Sans', sans-serif;
     color: var(--gold);
     font-weight: 600;
-    font-size: 1.2rem;
     margin-bottom: 0.5rem;
     display: block;
 }
 
 .node-content h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
     margin-bottom: 1rem;
     color: var(--cream-dark);
 }
 
 .node-content p {
-    font-size: 1.1rem;
     color: var(--text-muted);
 }
 
@@ -133,14 +128,12 @@
 
 .story-card h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
     color: var(--gold);
     margin-bottom: 2rem;
 }
 
 .story-card p {
     margin-bottom: 1.5rem;
-    font-size: 1.2rem;
     text-align: justify;
     color: rgba(240, 224, 204, 0.8);
 }
@@ -156,7 +149,6 @@
 
 .highlight-box blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
     font-style: italic;
     color: var(--cream);
 }

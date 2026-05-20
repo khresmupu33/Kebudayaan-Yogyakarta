@@ -31,7 +31,6 @@
 
 .place-num {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
     color: rgba(212,162,80,0.25); 
     font-weight: 700;
     line-height: 0.8;
@@ -45,14 +44,12 @@
 
 .place-info h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
     color: var(--brown-dark);
     margin-bottom: 0.5rem;
 }
 
 .place-info .place-type {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.65rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--brown-warm);
@@ -61,7 +58,6 @@
 }
 
 .place-info p {
-    font-size: 1.05rem;
     color: var(--text-mid);
     line-height: 1.75;
     font-weight: 300;
