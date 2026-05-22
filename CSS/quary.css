@@ -25,6 +25,11 @@
 }
 
 @media (max-width: 768px) {
+    #home {
+        height: 50px;
+        padding: 1px;
+    }
+
     html {
         font-size: 16px;
     }
@@ -60,7 +65,8 @@
     /* 2. Ubah grid desktop menjadi satu kolom penuh */
     .sejarah-grid {
         grid-template-columns: 1fr !important;
-        gap: 2rem !important; /* Perkecil jarak gap antar elemen */
+        gap: 2rem !important;
+        /* Perkecil jarak gap antar elemen */
     }
 
     /* 3. Sembunyikan semua item timeline beserta garis penghubungnya */
@@ -75,16 +81,23 @@
 
     .timeline-footer {
         display: flex;
-        justify-content: flex-start; /* Membuat tombol rata kiri di HP */
+        justify-content: flex-start;
+        /* Membuat tombol rata kiri di HP */
         margin-top: 0.5rem;
     }
 
     /* 5. Sesuaikan ukuran tombol agar nyaman ditekan jari di HP */
     .btn-show-more {
-        width: 100%;               /* Membuat tombol melebar penuh di HP (opsional) */
-        justify-content: center;   /* Teks tombol berada di tengah */
+        width: 100%;
+        /* Membuat tombol melebar penuh di HP (opsional) */
+        justify-content: center;
+        /* Teks tombol berada di tengah */
         padding: 0.85rem 1.5rem;
         font-size: 13px;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 
     .timeline-footer {
@@ -182,10 +195,14 @@
         height: 40px;
     }
 
+    .hero-label {
+        padding-top: 80px;
+    }
+
     .btn-primary,
     .btn-outline {
-        padding: 15px;
-        margin: 10px;
+        padding: 6px;
+        margin: 4px;
         justify-content: space-between;
     }
 
@@ -321,6 +338,7 @@
 
     .mobile-floating-zoom {
         display: block;
+        bottom: 70px;
     }
 
     .main-layout-container {
@@ -432,6 +450,28 @@
     .mobile-dropdown>.mobile-link {
         pointer-events: none;
         cursor: default;
+    }
+
+    #jogja-philosophy-section {
+        padding: 4rem 1.25rem;
+    }
+
+    .section-main-title {
+        font-size: 2.1rem;
+    }
+
+    .philosophy-node-card {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .philosophy-node-card:hover,
+    .philosophy-node-card.active {
+        transform: translateY(-5px);
+    }
+
+    .philosophy-img-frame {
+        height: 200px;
     }
 }
 
@@ -612,61 +652,68 @@
         transform: rotate(0deg) !important;
         transition: transform 0.3s ease;
     }
-     #wisata-mosaik-section { 
-        padding: 4rem 1rem; 
+
+    #wisata {
+        padding: 4rem 1rem;
     }
 
     /* Membuat wadah filter bisa di-scroll horizontal */
     .wisata-filter-container {
         display: flex;
-        flex-direction: row !important;   
-        flex-wrap: nowrap !important;     
-        justify-content: flex-start;      
-        gap: 0.6rem;                      
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+        gap: 0.6rem;
         margin-bottom: 2.5rem;
         width: 100%;
-        
+
         /* AKTIFKAN SCROLL HORIZONTAL */
-        overflow-x: auto;                 
-        padding: 0.5rem 0.2rem 1.25rem 0.2rem; /* Ditambah sedikit ruang bawah agar scrollbar tidak menempel ke tombol */
-        
+        overflow-x: auto;
+        padding: 0.5rem 0.2rem 1.25rem 0.2rem;
+        /* Ditambah sedikit ruang bawah agar scrollbar tidak menempel ke tombol */
+
         /* Memastikan scroll bar terlihat di Firefox */
-        scrollbar-width: thin;          
-        scrollbar-color: rgba(44, 26, 14, 0.3) transparent; 
-        
-        -webkit-overflow-scrolling: touch; 
+        scrollbar-width: thin;
+        scrollbar-color: rgba(44, 26, 14, 0.3) transparent;
+
+        -webkit-overflow-scrolling: touch;
     }
 
     /* KUSTOMISASI MODIFIKASI SCROLLBAR (TAMPIL MINIMALIS) */
     /* 1. Mengatur tinggi/lebar track scrollbar */
     .wisata-filter-container::-webkit-scrollbar {
-        height: 4px; /* Membuat garis scrollbar tipis dan elegan */
-        display: block; /* Memaksa scrollbar tetap muncul */
+        height: 4px;
+        /* Membuat garis scrollbar tipis dan elegan */
+        display: block;
+        /* Memaksa scrollbar tetap muncul */
     }
 
     /* 2. Mengatur latar belakang lintasan scrollbar (Track) */
     .wisata-filter-container::-webkit-scrollbar-track {
-        background: rgba(44, 26, 14, 0.05); /* Warna dasar lintasan sangat transparan */
+        background: rgba(44, 26, 14, 0.05);
+        /* Warna dasar lintasan sangat transparan */
         border-radius: 10px;
     }
 
     /* 3. Mengatur warna batang penggeser (Thumb) */
     .wisata-filter-container::-webkit-scrollbar-thumb {
-        background: rgba(44, 26, 14, 0.3); /* Warna cokelat transparan tipis */
+        background: rgba(44, 26, 14, 0.3);
+        /* Warna cokelat transparan tipis */
         border-radius: 10px;
     }
 
     /* Warna batang penggeser saat disentuh/di-scroll */
     .wisata-filter-container::-webkit-scrollbar-thumb:hover {
-        background: var(--gold); /* Menjadi cokelat gelap pekat saat aktif digeser */
+        background: var(--gold);
+        /* Menjadi cokelat gelap pekat saat aktif digeser */
     }
 
     /* Penyesuaian tombol kapsul agar tidak gepeng */
     .filter-btn {
         padding: 0.55rem 1.25rem;
         font-size: 13px;
-        white-space: nowrap;            
-        flex-shrink: 0;                 
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     /* Grid Mosaik otomatis rata 1 kolom vertikal di HP */
@@ -677,7 +724,7 @@
     }
 
     /* Menetralkan ukuran acak khusus di HP agar gambar proporsional */
-    .wisata-card.size-tall, 
+    .wisata-card.size-tall,
     .wisata-card.size-wide,
     .wisata-card.size-standard {
         grid-row: auto !important;
@@ -691,5 +738,14 @@
 
     .wisata-title {
         font-size: 1.25rem;
+    }
+
+    .philosophy-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .axis-line-decorator {
+        left: 30px;
     }
 }

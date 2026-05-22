@@ -1,0 +1,268 @@
+/* =========================================================================
+   STYLE SEKSI FILOSOFI DENGAN ANIMASI HOVER SANGKAN PARANING
+========================================================================= */
+
+#jogja-philosophy-section {
+    background-color: var(--cream);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section-intro-box {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 3;
+}
+
+.section-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--brown-dark);
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.section-main-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--brown-mid);
+}
+
+.section-title-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--gold);
+    margin: 1rem auto 0 auto;
+}
+
+.axis-line-decorator {
+    position: absolute;
+    top: 0;
+    left: 65%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.philosophy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.philosophy-text-block {
+    padding-right: 1rem;
+}
+
+/* FRAME GAMBAR DENGAN STRUKTUR ANIMASI GERAK KE ATAS */
+.philosophy-img-frame {
+    width: 100%;
+    height: 240px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.75rem;
+    box-shadow: 0 10px 30px rgba(22, 13, 7, 0.1);
+    border: 1px solid var(--cream-border);
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.philosophy-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+/* LAPISAN OVERLAY TEKS SANGKAN PARANING DUMADI (MUNCUL SAAT HOVER CARD) */
+.sangkan-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(22, 13, 7, 0.95) 30%, rgba(22, 13, 7, 0.4) 100%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    /* Supaya tidak mengganggu kursor */
+}
+
+.sangkan-overlay span {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.3rem;
+}
+
+.sangkan-overlay h4 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 500;
+}
+
+.sangkan-overlay p {
+    color: rgba(255, 248, 240, 0.8);
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* EFEK TRIGER ANIMASI KETIKA KARTU PILAR DI-HOVER (DIATUR KELASNYA OLEH JS) */
+.philosophy-img-frame.lift-up {
+    transform: translateY(-12px);
+    /* Gambar bergeser mengangkat ke atas */
+    box-shadow: 0 20px 40px rgba(22, 13, 7, 0.25);
+}
+
+.philosophy-img-frame.lift-up img {
+    transform: scale(1.05);
+}
+
+.philosophy-img-frame.lift-up .sangkan-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Deskripsi & Badge */
+.philosophy-paragraph {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--text-mid);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.philosophy-paragraph strong {
+    color: var(--brown-dark);
+}
+
+.philosophy-badge {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background-color: var(--cream-dark);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--gold);
+}
+
+.badge-icon {
+    font-size: 1.8rem;
+    color: var(--brown-mid);
+}
+
+.badge-info h4 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 0.2rem 0;
+    color: var(--brown-dark);
+    font-size: 15px;
+}
+
+.badge-info p {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-mid);
+}
+
+/* --- GRID INTERAKTIF KANAN --- */
+.philosophy-interactive-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.philosophy-node-card {
+    background-color: #ffffff;
+    border: 1px solid var(--cream-border);
+    padding: 1.75rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.node-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--cream-border);
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.node-content h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 0.3rem 0;
+    font-size: 1.3rem;
+    color: var(--brown-dark);
+}
+
+.node-tag {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--brown-light);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.node-content p {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--text-mid);
+    line-height: 1.5;
+}
+
+/* EFEK HOVER NYALA KARTU PILAR */
+.philosophy-node-card:hover,
+.philosophy-node-card.active {
+    background-color: var(--brown-dark);
+    border-color: var(--brown-dark);
+    transform: translateX(10px);
+    box-shadow: 0 15px 35px rgba(22, 13, 7, 0.22);
+}
+
+.philosophy-node-card:hover .node-number,
+.philosophy-node-card.active .node-number {
+    color: var(--gold);
+}
+
+.philosophy-node-card:hover h3,
+.philosophy-node-card.active h3 {
+    color: #ffffff;
+}
+
+.philosophy-node-card:hover .node-tag,
+.philosophy-node-card.active .node-tag {
+    color: var(--gold);
+}
+
+.philosophy-node-card:hover p,
+.philosophy-node-card.active p {
+    color: var(--cream-dark);
+}
