@@ -1,3 +1,6 @@
+/* =========================================================================
+   1. PENGATURAN DASAR & STRUKTUR UTAMA KANVAS GRID (DESKTOP)
+========================================================================= */
 html,
 body {
     margin: 0;
@@ -6,18 +9,12 @@ body {
     height: 100%;
 }
 
-/* =========================================
-   STRUKTUR UTAMA KANVAS GRID (DESKTOP)
-========================================= */
 .main-layout-container {
     width: 100%;
-    height: calc(100vh - 70px);
-    /* Memotong tinggi navbar agar tidak ke bawah scroll */
-    margin-top: 70px;
-    /* Memberi ruang pas bagi navbar agar peta kelihatan penuh */
+    height: calc(100vh - 70px); /* Memotong tinggi navbar agar tidak ke bawah scroll */
+    margin-top: 70px;           /* Memberi ruang pas bagi navbar agar peta kelihatan penuh */
     display: grid;
-    grid-template-columns: 320px 1fr;
-    /* Kolom Kiri: 320px (Legenda), Kolom Kanan: Sisa Ruang (Peta) */
+    grid-template-columns: 320px 1fr; /* Kolom Kiri: 320px (Legenda), Kolom Kanan: Sisa Ruang (Peta) */
     padding: 0 !important;
     max-width: none !important;
     overflow: hidden;
@@ -25,81 +22,17 @@ body {
     background-color: #121212;
 }
 
-/* Gaya Tombol Navigasi Kustom di Desktop (Legenda Kiri) */
-.btn-custom-zoom {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    color: #f5f0e6;
-    /* var(--cream) */
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 13px;
-    transition: all 0.2s ease-in-out;
-}
-
-.btn-custom-zoom:hover {
-    background: #d4af37;
-    /* var(--gold) */
-    color: #1a0f05;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-    transform: translateY(-2px);
-}
-
-/* -------------------------------------------------------------
-           KUNCI UTAMA: Kontrol Zoom Melayang Khusus Mobile (Kanan Bawah)
-        ------------------------------------------------------------- */
-.mobile-floating-zoom {
-    position: absolute;
-    bottom: 24px;
-    right: 20px;
-    z-index: 7;
-    /* Di atas tile-map Leaflet */
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.btn-mobile-zoom {
-    width: 46px;
-    height: 46px;
-    background-color: #2b1808;
-    /* Cokelat Gelap khas Mataram */
-    border: 2px solid rgba(212, 175, 55, 0.8);
-    /* Border Emas */
-    color: #d4af37;
-    border-radius: 50%;
-    /* Bulat melayang */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.btn-mobile-zoom:active {
-    transform: scale(0.9);
-    background-color: #d4af37;
-    color: #2b1808;
-}
-
-/* =========================================
-   LEGENDA DESKTOP UTAMA (Kunci Kolom 1 Kiri)
-========================================= */
+/* =========================================================================
+   2. PANEL LEGENDA & FILTER (DESKTOP KIRI)
+========================================================================= */
 .map-legend-control {
     grid-column: 1;
     height: 100%;
     width: 100%;
-    background: rgba(30, 20, 12, 0.98);
-    border-right: 2px solid var(--gold);
+    background: rgba(30, 20, 12, 0.98); /* Cokelat Gelap khas Mataram */
+    border-right: 2px solid #d4af37;     /* Border Emas asli/var(--gold) */
     padding: 30px 24px;
-    color: var(--cream);
+    color: #f5f0e6;                     /* Warna Cream asli/var(--cream) */
     box-shadow: 6px 0 25px rgba(0, 0, 0, 0.5);
     z-index: 2;
     overflow-y: auto;
@@ -110,7 +43,7 @@ body {
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 24px;
-    color: var(--gold);
+    color: #d4af37;
     border-bottom: 2px solid rgba(212, 175, 55, 0.25);
     padding-bottom: 12px;
     text-transform: uppercase;
@@ -129,13 +62,13 @@ body {
 
 .legend-item:hover {
     transform: translateX(6px);
-    color: var(--gold);
+    color: #d4af37;
 }
 
 .legend-item input[type="checkbox"] {
     width: 17px;
     height: 17px;
-    accent-color: var(--gold);
+    accent-color: #d4af37;
     cursor: pointer;
 }
 
@@ -151,16 +84,16 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* =========================================
-   TOMBOL KONTROL NAVIGASI CUSTOM
-========================================= */
+/* =========================================================================
+   3. TOMBOL NAVIGASI & KONTROL ZOOM CUSTOM DESKTOP
+========================================================================= */
 .btn-custom-zoom {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(212, 175, 55, 0.4);
-    color: var(--cream);
+    color: #f5f0e6;
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
@@ -170,28 +103,28 @@ body {
 }
 
 .btn-custom-zoom:hover {
-    background: var(--gold);
+    background: #d4af37;
     color: #1a0f05;
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
     transform: translateY(-2px);
 }
 
-/* Modifikasi kotak tombol bawaan Leaflet di kanan bawah agar tidak kontras cerah */
+/* Modifikasi elemen bawaan Leaflet di kanan bawah agar senada */
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
     background-color: #2b1808 !important;
-    color: var(--gold) !important;
+    color: #d4af37 !important;
     border-color: rgba(212, 175, 55, 0.3) !important;
 }
 
 .leaflet-control-zoom a:hover {
-    background-color: var(--gold) !important;
+    background-color: #d4af37 !important;
     color: #000 !important;
 }
 
-/* =========================================
-   WRAPPER MAP LEAFLET (Kunci Kolom 2 Kanan)
-========================================= */
+/* =========================================================================
+   4. WRAPPER MAP LEAFLET (DESKTOP KANAN)
+========================================================================= */
 .map-content-wrapper {
     grid-column: 2;
     width: 100%;
@@ -207,9 +140,9 @@ body {
     z-index: 1;
 }
 
-/* =========================================
-   DESAIN BOX INFOWINDOW POPUP LEAFLET
-========================================= */
+/* =========================================================================
+   5. POPUP BALON INFORMASI (INFOWINDOW) LEAFLET
+========================================================================= */
 .popup-box {
     min-width: 220px;
     padding: 4px;
@@ -219,7 +152,7 @@ body {
 .popup-category {
     display: inline-block;
     background: #2b1808;
-    color: var(--gold);
+    color: #d4af37;
     font-size: 10px;
     padding: 2px 8px;
     border-radius: 4px;
@@ -241,9 +174,125 @@ body {
     color: #555;
 }
 
-/* Sembunyikan elemen laci mobile saat ukuran komputer layar lebar */
+/* Sembunyikan laci sidebar mobile bawaan saat tampilan layar lebar */
 .peta-sidebar,
 .btn-toggle-peta {
     display: none;
 }
 
+/* Kunci Kontrol Zoom Melayang Khusus Mobile (Disembunyikan di Desktop) */
+.mobile-floating-zoom {
+    position: absolute;
+    bottom: 24px;
+    right: 20px;
+    z-index: 7;
+    display: none; /* Diaktifkan lewat media query mobile */
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-mobile-zoom {
+    width: 46px;
+    height: 46px;
+    background-color: #2b1808;
+    border: 2px solid rgba(212, 175, 55, 0.8);
+    color: #d4af37;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-mobile-zoom:active {
+    transform: scale(0.9);
+    background-color: #d4af37;
+    color: #2b1808;
+}
+
+
+/* =========================================================================
+   6. PEMBARUAN: INTERFACES RESPONSIF & GRID KHUSUS MOBILE (Layar <= 768px)
+========================================================================= */
+@media (max-width: 768px) {
+    /* Memaksa body tidak bisa di-scroll secara global agar layout mengunci */
+    body {
+        overflow: hidden !important;
+    }
+
+    /* Mengubah susunan grid desktop menjadi tumpuk & pas dengan tinggi sisa layar */
+    .main-layout-container {
+        grid-template-columns: 1fr;       /* Menjadi satu kolom penuh */
+        grid-template-rows: auto 1fr;     /* Baris atas untuk filter, sisanya kebawah full untuk peta */
+        height: calc(100vh - 70px);       /* Tinggi pas dari batas bawah navbar sampai ujung layar HP */
+        margin-top: 70px;
+        overflow: hidden;                 /* Mencegah main-layout tembus kebawah */
+    }
+
+    /* Modifikasi panel filter di mobile (Menempati Baris Pertama) */
+    .map-legend-control {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        max-height: 180px;                /* Membatasi tinggi filter agar area peta tetap dominan */
+        border-right: none;
+        border-bottom: 2px solid #d4af37; /* Mengalihkan garis pembatas ke area bawah */
+        padding: 14px 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .legend-title {
+        margin-bottom: 10px;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    /* Menyusun item-item filter secara horizontal agar hemat ruang vertikal HP */
+    .map-legend-control > div:first-child {
+        display: flex;
+        flex-wrap: wrap;                 /* Membuat filter otomatis turun ke baris baru jika penuh */
+        gap: 6px 14px;
+    }
+
+    .legend-item {
+        margin-bottom: 0;                /* Menghapus margin bawah bawaan desktop */
+        padding: 2px 0;
+    }
+    
+    .legend-label {
+        font-size: 12px;                 /* Sedikit mengecilkan teks agar muat di layar HP kecil */
+    }
+
+    /* Menyembunyikan panel kontrol tombol zoom teks desktop di layar mobile */
+    .map-legend-control > div:last-child {
+        display: none !important;
+    }
+
+    /* Modifikasi wrapper peta di mobile (Menempati Baris Kedua - Menghabiskan Sisa Layar) */
+    .map-content-wrapper {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: 100%;                     /* Otomatis mengisi 1fr dari sisa row grid */
+    }
+
+    /* Menampilkan tombol navigasi zoom bulat melayang di atas peta */
+    .mobile-floating-zoom {
+        display: flex;
+        bottom: 16px;                     /* Disesuaikan posisinya agar pas di ujung layar HP */
+        right: 16px;
+    }
+
+    /* HILANGKAN FOOTER TOTAL DAN BEBASKAN MATRIKS RUANGNYA */
+    footer {
+        display: none !important;
+        position: absolute !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}

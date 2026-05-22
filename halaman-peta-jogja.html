@@ -190,6 +190,7 @@
     <main class="main-layout-container" id="kontainer_peta_layout">
 
         <div class="map-legend-control flex flex-col justify-between">
+            <!-- Berikan ID atau biarkan selector CSS bekerja untuk membungkus label filter -->
             <div>
                 <div class="legend-title">Filter Destinasi</div>
 
@@ -224,6 +225,7 @@
                 </label>
             </div>
 
+            <!-- Bagian ini otomatis disembunyikan di mobile melalui CSS (.map-legend-control > div:last-child) -->
             <div class="mt-6 pt-6 border-t border-[rgba(212,175,55,0.25)]">
                 <div class="legend-title">Navigasi Peta</div>
                 <div class="grid grid-cols-2 gap-2 mb-2">
@@ -243,6 +245,7 @@
         <div class="map-content-wrapper relative">
             <div id="map"></div>
 
+            <!-- Tombol melayang ini otomatis muncul di mobile berkat CSS media query -->
             <div class="mobile-floating-zoom">
                 <button id="mobileZoomIn" class="btn-mobile-zoom" aria-label="Zoom In">
                     <i data-lucide="plus" class="w-6 h-6"></i>
@@ -256,18 +259,17 @@
             </div>
         </div>
 
+        <!-- Elemen sidebar laci bawaan Anda yang disembunyikan -->
         <button class="btn-toggle-peta" id="togglePetaSidebar">
             <i data-lucide="chevron-left"></i>
         </button>
 
         <aside class="peta-sidebar">
             <h3>Filter Destinasi</h3>
-            <div class="peta-sticky-box" id="mobileLegendContainer">
-            </div>
+            <div class="peta-sticky-box" id="mobileLegendContainer"></div>
         </aside>
 
     </main>
-
     <footer>
         <div class="footer-logo">Jogja<span>Culture</span></div>
         <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>

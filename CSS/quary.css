@@ -49,108 +49,42 @@
         margin-bottom: 3.5rem;
     }
 
-    .sejarah-label {
-        letter-spacing: 4px;
-        font-size: 0.65rem;
-        margin-bottom: 1rem;
+    /* 1. Atur padding seksi utama agar pas di layar HP */
+    #sejarah {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 
-    .sejarah-title {
-        margin-bottom: 1.5rem;
-    }
-
-    .timeline-detailed::before {
-        left: 15px;
-        transform: none;
-    }
-
-    .timeline-node {
-        width: 100%;
-        left: 0 !important;
-        /* Reset posisi kiri */
-        padding: 0 0 0 2.5rem;
-        /* Teks digeser ke kanan garis */
-        text-align: left !important;
-        /* Semua teks rata kiri */
-        margin-bottom: 3rem;
-        /* Jarak antar node lebih rapat */
-    }
-
-    .node-year {
-        font-size: 1rem;
-        /* Tulisan tahun lebih kecil */
-    }
-
-    .node-content h3 {
-        font-size: 1.4rem;
-        /* Tulisan judul timeline lebih kecil */
-    }
-
-    .node-content p {
-        font-size: 0.95rem;
-        /* Tulisan deskripsi lebih kecil */
-    }
-
-    /* Posisi Titik Tengah Timeline di HP */
-    .timeline-node::after {
-        left: 10px !important;
-        /* Titik pas di atas garis kiri */
-        right: auto !important;
-        top: 6px;
-    }
-
-    .timeline-node:hover {
-        transform: translateX(5px);
-        /* Hover berubah ke kanan, bukan ke atas */
-    }
-
-    /* === STORY BLOCKS (Container Agak Lebih Besar & Lega) === */
-    .story-container {
-        margin-top: 5rem;
-    }
-
-    .story-card {
-        padding: 2rem 1.5rem;
-        /* Padding atas/bawah dikurangi, tapi kiri/kanan dibuat pas agar card terlihat lebih besar dan lebar */
-        margin-bottom: 2.5rem;
-        width: 100%;
-    }
-
-    .story-card h2 {
-        font-size: 1.8rem;
-        /* Tulisan judul card lebih kecil */
-        margin-bottom: 1.2rem;
-    }
-
-    .story-card p {
-        font-size: 1rem;
-        /* Tulisan isi card lebih kecil */
-        line-height: 1.6;
-        text-align: left;
-        /* Rata kiri lebih rapi untuk HP dibanding justify */
-        margin-bottom: 1rem;
-    }
-
-    /* === QUOTE BOX (HIGHLIGHT BOX) === */
-    .highlight-box {
-        padding: 2rem 1rem;
-        margin: 3.5rem 0;
-    }
-
-    .highlight-box blockquote {
-        font-size: 1.35rem;
-        /* Tulisan quote lebih kecil dan proporsional */
-    }
-
-    .highlight-box:hover {
-        padding-left: 1rem;
-        /* Matikan efek padding melebar di HP agar tidak patah */
-        padding-right: 1rem;
-    }
-
+    /* 2. Ubah grid desktop menjadi satu kolom penuh */
     .sejarah-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important; /* Perkecil jarak gap antar elemen */
+    }
+
+    /* 3. Sembunyikan semua item timeline beserta garis penghubungnya */
+    .timeline .timeline-item {
+        display: none !important;
+    }
+
+    /* 4. Atur ulang pembungkus tombol agar pas di bawah teks */
+    .timeline {
+        display: block !important;
+    }
+
+    .timeline-footer {
+        display: flex;
+        justify-content: flex-start; /* Membuat tombol rata kiri di HP */
+        margin-top: 0.5rem;
+    }
+
+    /* 5. Sesuaikan ukuran tombol agar nyaman ditekan jari di HP */
+    .btn-show-more {
+        width: 100%;               /* Membuat tombol melebar penuh di HP (opsional) */
+        justify-content: center;   /* Teks tombol berada di tengah */
+        padding: 0.85rem 1.5rem;
+        font-size: 13px;
     }
 
     .timeline-footer {
@@ -161,28 +95,91 @@
         width: 290px;
     }
 
-    .menu-item-card.kuliner-status-prev {
-        transform: translate(-102%, -50%) scale(0.8);
-        opacity: 0.2;
+    /* 1. Mengurangi ruang kosong berlebih di bagian intro judul */
+    .section-intro-box br {
+        display: none;
+        /* Menghilangkan tag <br><br><br> bawaan HTML di mobile */
     }
 
-    .menu-item-card.kuliner-status-next {
-        transform: translate(2%, -50%) scale(0.8);
-        opacity: 0.2;
+    #kuliner-jogja-section {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
     }
 
+    /* 2. Menyesuaikan tinggi panggung slider agar pas dengan kartu mobile */
     .kuliner-slider-view {
-        height: 490px;
+        height: 420px;
+        /* Diturunkan dari 530px agar hemat ruang vertikal HP */
+    }
+
+    /* 3. Membuat kartu melebar penuh dan mengatur ulang posisi tumpukan */
+    .menu-item-card {
+        width: 90% !important;
+        /* Kartu melebar hampir penuh menyisakan sedikit celah kiri-kanan */
+        max-width: 100%;
+        box-shadow: 0 8px 24px rgba(44, 26, 14, 0.06);
+    }
+
+    /* Kartu Active: Berada tepat di tengah layar HP */
+    .menu-item-card.kuliner-status-active {
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
+
+    /* Kartu Previous: Digeser tipis ke kiri luar layar agar tidak menabrak kartu utama */
+    .menu-item-card.kuliner-status-prev {
+        transform: translate(-145%, -50%) scale(0.85) !important;
+        opacity: 0;
+        /* Menyembunyikan kartu prev di HP sangat kecil untuk menghindari distorsi */
+    }
+
+    /* Kartu Next: Digeser tipis ke kanan luar layar */
+    .menu-item-card.kuliner-status-next {
+        transform: translate(45%, -50%) scale(0.85) !important;
+        opacity: 0.15;
+        /* Sisakan sedikit bayangan kartu berikutnya di tepi kanan browser HP */
+    }
+
+    /* 4. MEMPERKECIL AREA GAMBAR (VISUAL) */
+    .menu-item-visual {
+        height: 150px !important;
+        /* Diperkecil dari 240px agar porsi teks teks lebih lega */
+    }
+
+    /* Mengecilkan ukuran dekorasi emoji di dalam gambar */
+    .menu-item-visual::after,
+    .menu-item-visual {
+        font-size: 1.5rem;
+    }
+
+    /* 5. Menyesuaikan padding boks teks teks agar tidak terlalu memakan ruang */
+    .menu-item-body {
+        padding: 1.25rem 1.5rem !important;
+    }
+
+    .menu-item-origin {
+        font-size: 10px;
+        margin-bottom: 0.4rem;
+        letter-spacing: 1px;
+    }
+
+    .menu-item-name {
+        font-size: 1.25rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .menu-item-desc {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* 6. Mengatur tombol kontrol navigasi agar posisinya pas di bawah kartu lebar */
+    .kuliner-carousel-controls {
+        margin-top: 0rem;
     }
 
     .kuliner-ctrl-btn {
-        z-index: 100;
-        margin-top: 30px;
-    }
-
-    .kuliner-dots-indicator {
-        z-index: 100;
-        margin-top: 30px;
+        width: 40px;
+        height: 40px;
     }
 
     .btn-primary,
@@ -190,6 +187,61 @@
         padding: 15px;
         margin: 10px;
         justify-content: space-between;
+    }
+
+    .destinasi-section {
+        padding-top: 2rem !important;
+    }
+
+    /* 2. Sesuaikan flex-container dan pangkas padding boks pembungkus */
+    .destinasi-section .flex-col {
+        padding-top: 1rem !important;
+        padding-bottom: 2rem !important;
+        gap: 0 !important;
+        /* Menghilangkan gap akibat peta yang disembunyikan */
+    }
+
+
+    .destinasi-section .max-w-\[450px\] {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        /* Reset padding bawaan agar kartu bisa mentok kiri-kanan jika mau */
+        padding-right: 0 !important;
+        position: relative !important;
+    }
+
+    /* 2. Pastikan kartu mengambil lebar penuh container */
+    #destination-card {
+        width: 100% !important;
+    }
+
+    /* 3. Atur ulang posisi tombol panah agar mengikuti pelebaran kartu */
+    .dest-nav-btn {
+        top: 40% !important;
+        /* Menjaga tombol tetap di tengah vertikal kartu */
+        transform: translateY(-50%) !important;
+        background: rgba(35, 30, 25, 0.7) !important;
+        /* Beri background sedikit gelap agar teks di belakangnya tetap terbaca */
+        border-color: var(--gold) !important;
+    }
+
+    /* Tombol Kiri nempel di sisi dalam kiri kartu */
+    .dest-nav-btn[onclick="prevSlide()"] {
+        left: 12px !important;
+    }
+
+    /* Tombol Kanan nempel di sisi dalam kanan kartu */
+    .dest-nav-btn[onclick="nextSlide()"] {
+        right: 12px !important;
+    }
+
+    /* 4. Memastikan SVG peta benar-benar terpotong strukturnya di browser HP */
+    .map-container {
+        display: none !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .in-page,
@@ -559,5 +611,85 @@
         display: block !important;
         transform: rotate(0deg) !important;
         transition: transform 0.3s ease;
+    }
+     #wisata-mosaik-section { 
+        padding: 4rem 1rem; 
+    }
+
+    /* Membuat wadah filter bisa di-scroll horizontal */
+    .wisata-filter-container {
+        display: flex;
+        flex-direction: row !important;   
+        flex-wrap: nowrap !important;     
+        justify-content: flex-start;      
+        gap: 0.6rem;                      
+        margin-bottom: 2.5rem;
+        width: 100%;
+        
+        /* AKTIFKAN SCROLL HORIZONTAL */
+        overflow-x: auto;                 
+        padding: 0.5rem 0.2rem 1.25rem 0.2rem; /* Ditambah sedikit ruang bawah agar scrollbar tidak menempel ke tombol */
+        
+        /* Memastikan scroll bar terlihat di Firefox */
+        scrollbar-width: thin;          
+        scrollbar-color: rgba(44, 26, 14, 0.3) transparent; 
+        
+        -webkit-overflow-scrolling: touch; 
+    }
+
+    /* KUSTOMISASI MODIFIKASI SCROLLBAR (TAMPIL MINIMALIS) */
+    /* 1. Mengatur tinggi/lebar track scrollbar */
+    .wisata-filter-container::-webkit-scrollbar {
+        height: 4px; /* Membuat garis scrollbar tipis dan elegan */
+        display: block; /* Memaksa scrollbar tetap muncul */
+    }
+
+    /* 2. Mengatur latar belakang lintasan scrollbar (Track) */
+    .wisata-filter-container::-webkit-scrollbar-track {
+        background: rgba(44, 26, 14, 0.05); /* Warna dasar lintasan sangat transparan */
+        border-radius: 10px;
+    }
+
+    /* 3. Mengatur warna batang penggeser (Thumb) */
+    .wisata-filter-container::-webkit-scrollbar-thumb {
+        background: rgba(44, 26, 14, 0.3); /* Warna cokelat transparan tipis */
+        border-radius: 10px;
+    }
+
+    /* Warna batang penggeser saat disentuh/di-scroll */
+    .wisata-filter-container::-webkit-scrollbar-thumb:hover {
+        background: var(--gold); /* Menjadi cokelat gelap pekat saat aktif digeser */
+    }
+
+    /* Penyesuaian tombol kapsul agar tidak gepeng */
+    .filter-btn {
+        padding: 0.55rem 1.25rem;
+        font-size: 13px;
+        white-space: nowrap;            
+        flex-shrink: 0;                 
+    }
+
+    /* Grid Mosaik otomatis rata 1 kolom vertikal di HP */
+    .wisata-mosaik-grid {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: 270px !important;
+        gap: 1.25rem;
+    }
+
+    /* Menetralkan ukuran acak khusus di HP agar gambar proporsional */
+    .wisata-card.size-tall, 
+    .wisata-card.size-wide,
+    .wisata-card.size-standard {
+        grid-row: auto !important;
+        grid-column: auto !important;
+        width: 100% !important;
+    }
+
+    .wisata-card-overlay {
+        padding: 1.5rem;
+    }
+
+    .wisata-title {
+        font-size: 1.25rem;
     }
 }

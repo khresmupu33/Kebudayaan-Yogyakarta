@@ -8,14 +8,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="CSS/Beranda/budaya.css">
     <link rel="stylesheet" href="CSS/Beranda/detinasi.css">
     <link rel="stylesheet" href="CSS/Beranda/event.css">
     <link rel="stylesheet" href="CSS/Beranda/hero.css">
     <link rel="stylesheet" href="CSS/Beranda/kuliner.css">
     <link rel="stylesheet" href="CSS/Beranda/ornamen dekoratif.css">
     <link rel="stylesheet" href="CSS/Beranda/sejarah.css">
-    <link rel="stylesheet" href="CSS/Beranda/tempat bersejarah.css">
+    <link rel="stylesheet" href="CSS/Beranda/wisata.css">
     <link rel="stylesheet" href="CSS/Dasar HTML.css">
     <link rel="stylesheet" href="CSS/Navigasi.css">
     <link rel="stylesheet" href="CSS/footer.css">
@@ -277,15 +276,16 @@
 
             <section id="sejarah">
                 <div class="section-intro-box">
-                    <h2 class="section-main-title">Keraton &<br><em>Sejarah Kota</em></h2>
+                    <h2 class="section-main-title">Keraton &<br><em> Sejarah Kota</em></h2>
                     <div class="section-title-line"></div>
-                    <p>Yogyakarta berdiri dari Perjanjian Giyanti tahun 1755, ketika Kerajaan Mataram Islam dibagi dua
-                        menjadi Kasunanan Surakarta dan Kesultanan Yogyakarta. Sultan Hamengkubuwono I mendirikan
-                        Keraton sebagai pusat kosmologi dan pemerintahan.</p>
                 </div>
 
                 <div class="sejarah-grid">
                     <div class="sejarah-text">
+                        <p>Yogyakarta berdiri dari Perjanjian Giyanti tahun 1755, ketika Kerajaan Mataram Islam dibagi
+                            dua
+                            menjadi Kasunanan Surakarta dan Kesultanan Yogyakarta. Sultan Hamengkubuwono I mendirikan
+                            Keraton sebagai pusat kosmologi dan pemerintahan.</p>
                         <p>Keraton Yogyakarta bukan sekadar istana — ia adalah poros sumbu imajiner yang menghubungkan
                             Gunung Merapi di utara, Keraton di tengah, dan Pantai Parangtritis di selatan. Sebuah konsep
                             filosofi Jawa tentang keseimbangan alam semesta.</p>
@@ -332,7 +332,7 @@
 
             <section id="kuliner-jogja-section">
                 <div class="section-intro-box">
-                    <h2 class="section-main-title">Makanan<br><em>Khas Jogja</em></h2>
+                    <h2 class="section-main-title">Makanan<br><em> Khas Jogja</em></h2>
                     <div class="section-title-line"></div>
                     <br><br><br>
                 </div>
@@ -392,13 +392,13 @@
 
             <section id="destinasi" class="destinasi-section">
                 <div class="section-intro-box">
-                    <h2 class="section-main-title">Pesona &<br><em>Destinasi Wilayah</em></h2>
+                    <h2 class="section-main-title">Pesona &<br><em> Destinasi Wilayah</em></h2>
                     <div class="section-title-line"></div>
                 </div>
 
                 <div
                     class="flex flex-col lg:flex-row justify-center items-center w-full gap-8 max-w-[1200px] mx-auto px-4 py-16">
-                    <div class="map-container w-full max-w-[600px]">
+                    <div class="map-container w-full max-w-[600px] hidden lg:block">
                         <svg viewBox="0 0 620 480" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <filter id="drop-shadow-map" x="-10%" y="-10%" width="130%" height="130%">
@@ -449,85 +449,153 @@
                 </div>
             </section>
 
-            <section id="budaya">
+            <section id="wisata-mosaik-section">
                 <div class="section-intro-box">
-                    <h2 class="section-main-title">Warisan<br><em>Seni Agung</em></h2>
+                    <h2 class="section-main-title">Eksplorasi<br><em> Ragam Destinasi</em></h2>
                     <div class="section-title-line"></div>
                 </div>
 
-                <div class="budaya-grid">
-                    <div class="art-card featured">
-                        <span class="art-card-icon">🎨</span>
-                        <h3 class="art-card-title">Batik Jogja</h3>
-                        <p class="art-card-desc">Batik Yogyakarta diakui UNESCO sebagai Warisan Budaya Tak Benda pada
-                            2009. Motif-motifnya — parang, kawung, sido mukti — bukan sekadar ornamen; setiap pola
-                            menyimpan makna filosofis tentang kehidupan, kekuasaan, dan hubungan manusia dengan semesta.
-                        </p>
-                        <span class="art-card-tag">Warisan UNESCO 2009</span>
-                        <div class="art-card-pattern"></div>
-                    </div>
-                    <div class="art-card">
-                        <span class="art-card-icon">🎭</span>
-                        <h3 class="art-card-title">Wayang Kulit</h3>
-                        <p class="art-card-desc">Pertunjukan semalam suntuk yang menceritakan kisah epik melalui
-                            bayangan kulit yang dikendalikan dalang.</p>
-                        <span class="art-card-tag">Warisan Dunia</span>
-                        <div class="art-card-pattern"></div>
-                    </div>
-                    <div class="art-card">
-                        <span class="art-card-icon">🎼</span>
-                        <h3 class="art-card-title">Gamelan</h3>
-                        <p class="art-card-desc">Orkestra perkusi Jawa yang menciptakan lanskap suara yang meditatif dan
-                            agung.</p>
-                        <span class="art-card-tag">Musik Keraton</span>
-                        <div class="art-card-pattern"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="tempat">
-                <div class="section-intro-box">
-                    <h2 class="section-main-title">Tempat<br><em>Bersejarah</em></h2>
-                    <div class="section-title-line"></div>
+                <div class="wisata-filter-container" id="wisataFilterGroup">
+                    <button class="filter-btn active" data-target="alam">Wisata Alam</button>
+                    <button class="filter-btn" data-target="sejarah">Wisata Sejarah</button>
+                    <button class="filter-btn" data-target="budaya">Wisata Budaya</button>
                 </div>
 
-                <div class="places-grid">
-                    <div class="place-item">
-                        <div class="place-num">01</div>
-                        <div class="place-info">
-                            <h3>Keraton Yogyakarta</h3>
-                            <span class="place-type">Istana Kerajaan · Aktif sejak 1755</span>
-                            <p>Pusat pemerintahan dan budaya Kesultanan Yogyakarta yang masih aktif dihuni. Kompleks
-                                yang mencerminkan kosmologi Jawa yang tak ternilai.</p>
+                <div class="wisata-mosaik-grid" id="wisataMosaikGrid">
+
+                    <div class="wisata-card" data-kategori="alam">
+                        <div class="wisata-img-wrapper"><img src="IMG/merapi-lava.jpg" alt="Lava Tour Merapi"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Alam</span>
+                            <h3 class="wisata-title">Lava Tour Merapi</h3>
+                            <p class="wisata-desc">Petualangan ekstrem menembus jalur sungai pasir sisa aliran lahar
+                                dingin Merapi menggunakan jip terbuka.</p>
+                            <a href="detail-merapi.html" class="wisata-btn-detail">Lihat Detail</a>
                         </div>
                     </div>
-                    <div class="place-item">
-                        <div class="place-num">02</div>
-                        <div class="place-info">
-                            <h3>Taman Sari</h3>
-                            <span class="place-type">Taman Kerajaan · Dibangun 1758</span>
-                            <p>"Kebun Bunga" para sultan — kompleks pemandian kerajaan dengan kolam-kolam elegan, lorong
-                                bawah tanah misterius, dan masjid bawah tanah Sumur Gumuling.</p>
+
+                    <div class="wisata-card" data-kategori="alam">
+                        <div class="wisata-img-wrapper"><img src="IMG/parangtritis.jpg" alt="Pantai Parangtritis"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Alam</span>
+                            <h3 class="wisata-title">Pantai Parangtritis</h3>
+                            <p class="wisata-desc">Pantai ikonik pesisir selatan dengan gumuk pasir langka dan
+                                pemandangan sunset yang magis.</p>
+                            <a href="detail-parangtritis.html" class="wisata-btn-detail">Lihat Detail</a>
                         </div>
                     </div>
-                    <div class="place-item">
-                        <div class="place-num">03</div>
-                        <div class="place-info">
-                            <h3>Candi Prambanan</h3>
-                            <span class="place-type">Candi Hindu · Abad ke-9</span>
-                            <p>Kompleks candi Hindu terbesar di Indonesia. Keindahan arsitektur yang mengucap kisah
-                                Ramayana pada setiap pahatan reliefnya.</p>
+
+                    <div class="wisata-card" data-kategori="alam">
+                        <div class="wisata-img-wrapper"><img src="IMG/heha-sky.jpg" alt="HeHa Sky View"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Alam</span>
+                            <h3 class="wisata-title">HeHa Sky View</h3>
+                            <p class="wisata-desc">Menikmati lanskap perbukitan kapur Gunungkidul yang berpadu dengan
+                                gemerlap lampu kota Jogja dari ketinggian.</p>
+                            <a href="detail-heha.html" class="wisata-btn-detail">Lihat Detail</a>
                         </div>
                     </div>
-                    <div class="place-item">
-                        <div class="place-num">04</div>
-                        <div class="place-info">
-                            <h3>Malioboro</h3>
-                            <span class="place-type">Jantung Kota · Koridor Budaya</span>
-                            <p>Jalan legendaris yang membelah kota — dipenuhi pedagang batik, pengrajin, seniman
-                                jalanan, dan aroma angkringan yang menguar di malam hari.</p>
+
+                    <div class="wisata-card" data-kategori="alam">
+                        <div class="wisata-img-wrapper"><img src="IMG/kalibiru.jpg" alt="Wisata Alam Kalibiru"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Alam</span>
+                            <h3 class="wisata-title">Puncak Kalibiru</h3>
+                            <p class="wisata-desc">Hijaunya hamparan hutan pegunungan Menoreh Kulon Progo berlatar waduk
+                                sermo yang tenang.</p>
+                            <a href="detail-kalibiru.html" class="wisata-btn-detail">Lihat Detail</a>
                         </div>
                     </div>
+
+                    <div class="wisata-card" data-kategori="sejarah">
+                        <div class="wisata-img-wrapper"><img src="IMG/keraton.jpg" alt="Keraton Yogyakarta"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Sejarah</span>
+                            <h3 class="wisata-title">Keraton Ngayogyakarta</h3>
+                            <p class="wisata-desc">Istana hidup pusat peradaban kesultanan Jawa yang merawat arsitektur
+                                pusaka peninggalan Mataram Islam.</p>
+                            <a href="detail-keraton.html" class="wisata-btn-detail">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="sejarah">
+                        <div class="wisata-img-wrapper"><img src="IMG/tamansari.jpg" alt="Taman Sari"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Sejarah</span>
+                            <h3 class="wisata-title">Istana Air Taman Sari</h3>
+                            <p class="wisata-desc">Situs reruntuhan pemandian pribadi sultan yang menyimpan rahasia
+                                lorong bawah air.</p>
+                            <a href="detail-tamansari.html" class="wisata-btn-detail">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="sejarah">
+                        <div class="wisata-img-wrapper"><img src="IMG/vredeburg.jpg" alt="Benteng Vredeburg"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Sejarah</span>
+                            <h3 class="wisata-title">Benteng Vredeburg</h3>
+                            <p class="wisata-desc">Situs saksi bisu kolonialisme Belanda yang kini bertransformasi
+                                menjadi museum diorama perjuangan.</p>
+                            <a href="detail-vredeburg.html" class="wisata-btn-detail">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="sejarah">
+                        <div class="wisata-img-wrapper"><img src="IMG/kotagede.jpg" alt="Situs Sejarah Kotagede"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Sejarah</span>
+                            <h3 class="wisata-title">Situs Tua Kotagede</h3>
+                            <p class="wisata-desc">Kota lama pusat kerajinan perak yang menyimpan kompleks makam
+                                raja-raja pendiri dinasti Mataram.</p>
+                            <a href="detail-kotagede.html" class="wisata-btn-detail">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="budaya">
+                        <div class="wisata-img-wrapper"><img src="IMG/malioboro.jpg" alt="Kawasan Malioboro"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Budaya</span>
+                            <h3 class="wisata-title">Nadi Budaya Malioboro</h3>
+                            <p class="wisata-desc">Poros sumbu imajiner tempat bertemunya tradisi dagang, seni
+                                angkringan, dan seniman jalanan legendaris.</p>
+                            <a href="detail-malioboro.html" class="wisata-btn-detail">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="budaya">
+                        <div class="wisata-img-wrapper"><img src="IMG/gudeg-wijilan.jpg" alt="Sentra Gudeg Wijilan">
+                        </div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Budaya</span>
+                            <h3 class="wisata-title">Sentra Gudeg Wijilan</h3>
+                            <p class="wisata-desc">Kampung kuliner tradisional penghasil gudeg kering manis resep
+                                keraton asli semenjak abad ke-19.</p>
+                            <a href="detail-wijilan.html" class="wisata-btn-detail">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="budaya">
+                        <div class="wisata-img-wrapper"><img src="IMG/beringharjo.jpg" alt="Pasar Beringharjo"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Budaya</span>
+                            <h3 class="wisata-title">Pasar Beringharjo</h3>
+                            <p class="wisata-desc">Pusat transaksi budaya dan pasar batik tertua tempat bertemunya
+                                keramahan khas masyarakat Jawa.</p>
+                            <a href="detail-beringharjo.html" class="wisata-btn-detail">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="budaya">
+                        <div class="wisata-img-wrapper"><img src="IMG/affandi.jpg" alt="Museum Affandi"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Budaya</span>
+                            <h3 class="wisata-title">Museum Affandi</h3>
+                            <p class="wisata-desc">Kompleks rumah kubah eksentrik pelestari ratusan karya seni lukis
+                                maestro ekspresionisme dunia.</p>
+                            <a href="detail-affandi.html" class="wisata-btn-detail">Lihat Detail</a>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </main>
@@ -551,6 +619,7 @@
     <script src="JS/Map Destinasi.js"></script>
     <script src="JS/btn-top.js"></script>
     <script src="JS/in-out-page.js"></script>
+    <script src="JS/Wisata Beranda.js"></script>
 </body>
 
 </html>

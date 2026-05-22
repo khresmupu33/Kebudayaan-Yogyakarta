@@ -1,0 +1,93 @@
+/* =========================================================================
+   STYLE SEKSI WISATA DENGAN UKURAN KARTU RANDOM / ACAK MASONRY
+========================================================================= */
+
+#wisata-mosaik-section {
+    background: var(--cream, #fcf8f2);
+    padding: 6rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Filter Container Horizontal style kapsul */
+.wisata-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 3.5rem;
+}
+
+.filter-btn {
+    padding: 0.6rem 1.6rem;
+    border: 1px solid rgba(44, 26, 14, 0.15);
+    background: #ffffff;
+    color: #555555;
+    border-radius: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn:hover, 
+.filter-btn.active {
+    background: #2b1808;
+    color: #d4af37;
+    border-color: #2b1808;
+    box-shadow: 0 4px 12px rgba(44, 26, 14, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Grid Layout Utama */
+.wisata-mosaik-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 240px;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* KELAS UKURAN YANG AKAN DIKOCOK ACAK OLEH JAVASCRIPT */
+.wisata-card.size-tall { grid-row: span 2; }
+.wisata-card.size-wide { grid-column: span 2; }
+.wisata-card.size-standard { grid-column: span 1; grid-row: span 1; }
+
+/* Desain Dasar Kartu */
+.wisata-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #140d07;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    display: block;
+}
+
+.wisata-card.is-hidden {
+    display: none !important; /* Menyembunyikan kartu saat disaring */
+}
+
+.wisata-img-wrapper { width: 100%; height: 100%; }
+.wisata-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+
+.wisata-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20,13,7,0.95) 0%, rgba(20,13,7,0.5) 50%, transparent 100%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.wisata-tag { color: #d4af37; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 0.4rem; letter-spacing: 1px;}
+.wisata-title { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.4rem; margin: 0 0 0.5rem 0; }
+.wisata-desc { color: rgba(255, 245, 230, 0.75); font-size: 13px; line-height: 1.5; margin: 0 0 1.25rem 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.wisata-btn-detail { align-self: flex-start; padding: 0.45rem 1.25rem; border: 1px solid #fff; color: #fff; text-decoration: none; font-size: 12px; border-radius: 4px; transition: all 0.3s ease; }
+
+.wisata-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(20,13,7,0.3); }
+.wisata-card:hover .wisata-img-wrapper img { transform: scale(1.06); }
+.wisata-card:hover .wisata-btn-detail { background: #d4af37; color: #140d07; border-color: #d4af37; font-weight: 600; }
