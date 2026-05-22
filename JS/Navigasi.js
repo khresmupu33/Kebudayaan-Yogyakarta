@@ -1,77 +1,121 @@
 function handleMobileNav() {
     const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('translate-x-full');
+    if (menu) menu.classList.toggle('translate-x-full');
 }
 
-// Fungsi toggle klik asli tetap dipertahankan agar tidak error jika dipanggil HTML
+// =================================================================
+// MEMICU DROPDOWN HANYA SAAT TOMBOL PANAH DIKLIK (MOBILE)
+// =================================================================
 function toggleMobileDropdown(button) {
+    if (window.innerWidth >= 768) return;
+
     const parent = button.closest('.mobile-dropdown');
     if (!parent) return;
-    
+
     const content = parent.querySelector('.mobile-dropdown-content');
-    const icon = parent.querySelector('button i'); // Ambil icon di dalam button parent
-    
+    const icon = parent.querySelector('.toggle-dropdown-btn svg, .toggle-dropdown-btn i');
+
     parent.classList.toggle('active');
-    
+
     if (content.classList.contains('hidden')) {
         content.classList.remove('hidden');
-        if(icon) icon.style.transform = 'rotate(180deg)';
+
+        if (icon) {
+            icon.style.transform = 'rotate(180deg)';
+            icon.style.transition = 'transform 0.3s ease';
+        }
+
     } else {
         content.classList.add('hidden');
-        if(icon) icon.style.transform = 'rotate(0deg)';
+
+        if (icon) {
+            icon.style.transform = 'rotate(0deg)';
+        }
     }
 }
 
-// Memastikan inisialisasi icon lucide berjalan aman & MENAMBAHKAN HOVER DROPDOWN
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     if (window.lucide) {
         lucide.createIcons();
     }
 
-    // ==========================================
-    // LOGIKA HOWER DROPDOWN MOBILE (BARU)
-    // ==========================================
+    // =================================================================
+    // FIX TOTAL: BLOCK LINK UTAMA MENGGUNAKAN CAPTURING PHASE
+    // =================================================================
     const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
 
     mobileDropdowns.forEach(dropdown => {
         const content = dropdown.querySelector('.mobile-dropdown-content');
-        const icon = dropdown.querySelector('button i');
+        const mainLink = dropdown.querySelector('.mobile-link');
+ if (mainLink) {
 
-        if (!content) return;
+    mainLink.addEventListener('click', function(e) {
 
-        // Saat Jari Menyentuh / Kursor Diatas Elemen (Hover Masuk)
-        dropdown.addEventListener('mouseenter', () => {
-            dropdown.classList.add('active');
-            content.classList.remove('hidden');
-            if (icon) icon.style.transform = 'rotate(180deg)';
-        });
+        if (window.innerWidth < 768) {
 
-        // Dukungan tambahan untuk layar sentuh HP (Touch Event)
-        dropdown.addEventListener('touchstart', (e) => {
-            // Cek jika yang ditekuk adalah bagian utama, bukan link di dalam dropdown
-            if (!e.target.closest('.mobile-dropdown-content')) {
-                if (content.classList.contains('hidden')) {
-                    dropdown.classList.add('active');
-                    content.classList.remove('hidden');
-                    if (icon) icon.style.transform = 'rotate(180deg)';
-                } else {
-                    dropdown.classList.remove('active');
-                    content.classList.add('hidden');
-                    if (icon) icon.style.transform = 'rotate(0deg)';
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            // ambil ulang elemennya
+            const parent = mainLink.closest('.mobile-dropdown');
+            if (!parent) return;
+
+            const content = parent.querySelector('.mobile-dropdown-content');
+            const icon = parent.querySelector('.toggle-dropdown-btn svg, .toggle-dropdown-btn i');
+
+            // toggle active
+            parent.classList.toggle('active');
+
+            // toggle dropdown
+            if (content.classList.contains('hidden')) {
+
+                content.classList.remove('hidden');
+
+                if (icon) {
+                    icon.style.transform = 'rotate(180deg)';
+                    icon.style.transition = 'transform 0.3s ease';
+                }
+
+            } else {
+
+                content.classList.add('hidden');
+
+                if (icon) {
+                    icon.style.transform = 'rotate(0deg)';
                 }
             }
-        }, { passive: true });
 
-        // Saat Jari Menjauh / Kursor Keluar dari Elemen (Hover Keluar)
+            return false;
+        }
+
+    }, true);
+}
+
+        // =================================================================
+        // LOGIKA DESKTOP: TETAP MENGGUNAKAN HOVER AMAN (LAYAR >= 768px)
+        // =================================================================
+        dropdown.addEventListener('mouseenter', () => {
+            if (window.innerWidth >= 768) {
+                const currentIcon = dropdown.querySelector('.toggle-dropdown-btn svg, .toggle-dropdown-btn i');
+                if (content) content.classList.remove('hidden');
+                dropdown.classList.add('active');
+                if (currentIcon) currentIcon.style.transform = 'rotate(180deg)';
+            }
+        });
+
         dropdown.addEventListener('mouseleave', () => {
-            dropdown.classList.remove('active');
-            content.classList.add('hidden');
-            if (icon) icon.style.transform = 'rotate(0deg)';
+            if (window.innerWidth >= 768) {
+                const currentIcon = dropdown.querySelector('.toggle-dropdown-btn svg, .toggle-dropdown-btn i');
+                if (content) content.classList.add('hidden');
+                dropdown.classList.remove('active');
+                if (currentIcon) currentIcon.style.transform = 'rotate(0deg)';
+            }
         });
     });
 });
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const nav = document.querySelector('.navbar');
     if (nav && window.scrollY > 50) {
         nav.classList.add('scrolled');

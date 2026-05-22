@@ -266,7 +266,123 @@
     #mobile-menu.translate-x-full {
         transform: translateX(100%) !important;
     }
+
+    .mobile-floating-zoom {
+        display: block;
+    }
+
+    .main-layout-container {
+        display: block !important;
+    }
+
+    /* Hilangkan total legenda kolom kiri di HP agar tidak mempersempit layar */
+    .map-legend-control {
+        display: none !important;
+    }
+
+    /* Paksa Kontainer Peta Melebar Mutlak Seisi Layar HP */
+    .map-content-wrapper {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* --- SIDEBAR MOBILE (SLIDE-IN DRAWER) --- */
+    .peta-sidebar {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 75%;
+        max-width: 280px;
+        height: 100vh;
+        background: linear-gradient(180deg, rgba(30, 16, 7, 0.99), rgba(15, 8, 3, 0.99));
+        backdrop-filter: blur(12px);
+        z-index: 7;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        flex-direction: column;
+        padding: 6rem 1.5rem 2rem;
+        overflow-y: auto;
+        border-right: 2px solid var(--gold);
+        box-shadow: 10px 0 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .main-layout-container.sidebar-open .peta-sidebar {
+        left: 0;
+    }
+
+    .peta-sidebar h3 {
+        font-size: 1.3rem;
+        color: var(--gold);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        padding-bottom: 8px;
+    }
+
+    .peta-sticky-box {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    /* Styling ulang item filter khusus di dalam HP mobile */
+    .peta-sticky-box .legend-item {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 12px 14px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        margin-bottom: 0;
+    }
+
+    .peta-sticky-box .legend-item color {
+        color: var(--cream);
+    }
+
+    /* --- TOMBOL AKSI TOGGLE SISI DRAWER --- */
+    .btn-toggle-peta {
+        display: flex !important;
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 50px;
+        border: none;
+        background: linear-gradient(180deg, #E0B04B, #C8922D);
+        color: #1f1005;
+        border-radius: 0 12px 12px 0;
+        z-index: 6;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 3px 0 12px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+    }
+
+    .main-layout-container.sidebar-open .btn-toggle-peta {
+        left: 280px;
+        /* Menyesuaikan batas lebar maksimum drawer laci */
+        border-radius: 0 50% 50% 0;
+        width: 40px;
+        height: 44px;
+    }
+
+    .btn-toggle-peta svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .mobile-dropdown>.mobile-link {
+        pointer-events: none;
+        cursor: default;
+    }
 }
+
 
 @media (max-width: 900px) {
     html {

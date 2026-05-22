@@ -1,0 +1,249 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================================
+   STRUKTUR UTAMA KANVAS GRID (DESKTOP)
+========================================= */
+.main-layout-container {
+    width: 100%;
+    height: calc(100vh - 70px);
+    /* Memotong tinggi navbar agar tidak ke bawah scroll */
+    margin-top: 70px;
+    /* Memberi ruang pas bagi navbar agar peta kelihatan penuh */
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    /* Kolom Kiri: 320px (Legenda), Kolom Kanan: Sisa Ruang (Peta) */
+    padding: 0 !important;
+    max-width: none !important;
+    overflow: hidden;
+    position: relative;
+    background-color: #121212;
+}
+
+/* Gaya Tombol Navigasi Kustom di Desktop (Legenda Kiri) */
+.btn-custom-zoom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #f5f0e6;
+    /* var(--cream) */
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-custom-zoom:hover {
+    background: #d4af37;
+    /* var(--gold) */
+    color: #1a0f05;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------------
+           KUNCI UTAMA: Kontrol Zoom Melayang Khusus Mobile (Kanan Bawah)
+        ------------------------------------------------------------- */
+.mobile-floating-zoom {
+    position: absolute;
+    bottom: 24px;
+    right: 20px;
+    z-index: 7;
+    /* Di atas tile-map Leaflet */
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-mobile-zoom {
+    width: 46px;
+    height: 46px;
+    background-color: #2b1808;
+    /* Cokelat Gelap khas Mataram */
+    border: 2px solid rgba(212, 175, 55, 0.8);
+    /* Border Emas */
+    color: #d4af37;
+    border-radius: 50%;
+    /* Bulat melayang */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-mobile-zoom:active {
+    transform: scale(0.9);
+    background-color: #d4af37;
+    color: #2b1808;
+}
+
+/* =========================================
+   LEGENDA DESKTOP UTAMA (Kunci Kolom 1 Kiri)
+========================================= */
+.map-legend-control {
+    grid-column: 1;
+    height: 100%;
+    width: 100%;
+    background: rgba(30, 20, 12, 0.98);
+    border-right: 2px solid var(--gold);
+    padding: 30px 24px;
+    color: var(--cream);
+    box-shadow: 6px 0 25px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.legend-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--gold);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.25);
+    padding-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 4px 0;
+}
+
+.legend-item:hover {
+    transform: translateX(6px);
+    color: var(--gold);
+}
+
+.legend-item input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--gold);
+    cursor: pointer;
+}
+
+.legend-icon {
+    width: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.legend-label {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   TOMBOL KONTROL NAVIGASI CUSTOM
+========================================= */
+.btn-custom-zoom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: var(--cream);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-custom-zoom:hover {
+    background: var(--gold);
+    color: #1a0f05;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Modifikasi kotak tombol bawaan Leaflet di kanan bawah agar tidak kontras cerah */
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    background-color: #2b1808 !important;
+    color: var(--gold) !important;
+    border-color: rgba(212, 175, 55, 0.3) !important;
+}
+
+.leaflet-control-zoom a:hover {
+    background-color: var(--gold) !important;
+    color: #000 !important;
+}
+
+/* =========================================
+   WRAPPER MAP LEAFLET (Kunci Kolom 2 Kanan)
+========================================= */
+.map-content-wrapper {
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* =========================================
+   DESAIN BOX INFOWINDOW POPUP LEAFLET
+========================================= */
+.popup-box {
+    min-width: 220px;
+    padding: 4px;
+    color: #333;
+}
+
+.popup-category {
+    display: inline-block;
+    background: #2b1808;
+    color: var(--gold);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.popup-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.popup-desc {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Sembunyikan elemen laci mobile saat ukuran komputer layar lebar */
+.peta-sidebar,
+.btn-toggle-peta {
+    display: none;
+}
+
