@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogja Culture | Sejarah</title>
+    <title>Jogja Culture | halaman-sejarah</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
         rel="stylesheet">
@@ -20,194 +19,274 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body >
+<body>
     <div class="in-page"></div>
     <div class="out-page"></div>
     <section id="sejarah">
-    <nav class="navbar transition-all duration-300">
-        <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
-            <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
+        <header>
+            <nav class="navbar transition-all duration-300">
+                <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
+                    <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
 
-            <div class="nav-links hidden md:flex space-x-8 items-center font-medium">
-                <a href="halaman-beranda.html">Beranda</a>
-                <a href="halaman-makanan.html">Kuliner</a>
-                <a href="halaman-destinasi">Destinasi</a>
-                <a href="halaman-sejarah.html">Sejarah</a>
-                <a href="halaman-budaya.html">Seni</a>
+                    <div class="nav-links hidden md:flex gap-x-1 items-center font-medium">
+                        <a href="halaman-beranda.html">Beranda</a>
+                        <a href="halaman-sejarah.html">Sejarah</a>
 
-                <div class="dropdown-parent relative group">
-                    <button class="flex items-center space-x-1 outline-none">
-                        <span>Hotel</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
-                    </button>
-                    <div
-                        class="dropdown-content absolute top-full left-0 mt-4 w-40 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
-                        <a href="#" class="block px-4 py-2 text-white">Bintang 5</a>
-                        <a href="#" class="block px-4 py-2 text-white">Bintang 4</a>
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-budaya.html" class="outline-none">
+                                <span>Budaya</span>
+                                <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div class="dropdown-content absolute top-full left-0 mt-4 w-52 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-batik.html">Batik</a>
+                                <a href="halaman-tarian-adat.html">Tarian Adat</a>
+                                <a href="halaman-wayang.html">Wayang</a>
+                                <a href="halaman-upacara-adat.html">Upacara Adat</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-kuliner.html" class="outline-none">
+                                <span>Kuliner</span>
+                                <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-makanan-tradisional.html">Makanan Tradisional</a>
+                                <a href="halaman-jajanan-khas.html">Jajanan Khas</a>
+                                <a href="halaman-minuman-khas.html">Minuman Khas</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-destinasi.html" class="outline-none">
+                                <span>Destinasi</span>
+                                <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-wisata-alam.html">Wisata Alam</a>
+                                <a href="halaman-wisata-sejarah.html">Wisata Sejarah</a>
+                                <a href="halaman-wisata-budaya.html">Wisata Budaya</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-teknologi.html" class="outline-none">
+                                <span>Teknologi</span>
+                                <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-smart-city.html">Smart City</a>
+                                <a href="halaman-kota-pelajar.html">Kota Pelajar</a>
+                                <a href="halaman-industri-modern.html">Industri Modern</a>
+                            </div>
+                        </div>
+
+                        <a href="halaman-peta-jogja.html">Peta</a>
+                        <a href="halaman-info.html">Tentang Kami</a>
                     </div>
+
+                    <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                        <i data-lucide="menu"></i>
+                    </button>
                 </div>
 
-                <div class="dropdown-parent relative group">
-                    <button class="flex items-center space-x-1 outline-none">
-                        <span>Info</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
-                    </button>
-                    <div
-                        class="dropdown-content absolute top-full left-0 mt-4 w-40 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
-                        <a href="#" class="block px-4 py-2 text-white">Panduan Liburan</a>
-                        <a href="#" class="block px-4 py-2 text-white">Tentang Kreator</a>
+                <div id="mobile-menu" class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
+                    <div class="flex items-center justify-between mb-12">
+                        <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
+                        <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                            <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col space-y-6 overflow-y-auto">
+                        <a href="halaman-beranda.html" class="mobile-link">Beranda</a>
+                        <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
+
+                        <div class="mobile-dropdown">
+                            <div class="w-full flex justify-between items-center">
+                                <a href="halaman-budaya.html" class="mobile-link flex-grow">Budaya</a>
+                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                                <a href="halaman-batik.html" class="mobile-sublink">Batik</a>
+                                <a href="halaman-tarian-adat.html" class="mobile-sublink">Tarian Adat</a>
+                                <a href="halaman-wayang.html" class="mobile-sublink">Wayang</a>
+                                <a href="halaman-upacara-adat.html" class="mobile-sublink">Upacara Adat</a>
+                            </div>
+                        </div>
+
+                        <div class="mobile-dropdown">
+                            <div class="w-full flex justify-between items-center">
+                                <a href="halaman-kuliner.html" class="mobile-link flex-grow">Kuliner</a>
+                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                                <a href="halaman-makanan-tradisional.html" class="mobile-sublink">Makanan Tradisional</a>
+                                <a href="halaman-jajanan-khas.html" class="mobile-sublink">Jajanan Khas</a>
+                                <a href="halaman-minuman-khas.html" class="mobile-sublink">Minuman Khas</a>
+                            </div>
+                        </div>
+
+                        <div class="mobile-dropdown">
+                            <div class="w-full flex justify-between items-center">
+                                <a href="halaman-destinasi.html" class="mobile-link flex-grow">Destinasi</a>
+                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                                <a href="halaman-wisata-alam.html" class="mobile-sublink">Wisata Alam</a>
+                                <a href="halaman-wisata-sejarah.html" class="mobile-sublink">Wisata Sejarah</a>
+                                <a href="halaman-wisata-budaya.html" class="mobile-sublink">Wisata Budaya</a>
+                            </div>
+                        </div>
+
+                        <div class="mobile-dropdown">
+                            <div class="w-full flex justify-between items-center">
+                                <a href="halaman-teknologi.html" class="mobile-link flex-grow">Teknologi</a>
+                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                                <a href="halaman-smart-city.html" class="mobile-sublink">Smart City</a>
+                                <a href="halaman-kota-pelajar.html" class="mobile-sublink">Kota Pelajar</a>
+                                <a href="halaman-industri-modern.html" class="mobile-sublink">Industri Modern</a>
+                            </div>
+                        </div>
+
+                        <a href="halaman-peta-jogja.html" class="mobile-link">Peta</a>
+                        <a href="halaman-info.html" class="mobile-link">Tentang Kami</a>
                     </div>
                 </div>
-            </div>
-
-            <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
-                <i data-lucide="menu"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
-            <div class="flex items-center justify-between mb-12">
-                <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
-                <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
-                    <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
-                </button>
-            </div>
-
-            <div class="flex flex-col space-y-6 overflow-y-auto">
-                <a href="halaman-beranda.html" class="mobile-link">Beranda</a>
-                <a href="halaman-makan.html" class="mobile-link">Kuliner</a>
-                <a href="#tempat" class="mobile-link">Destinasi</a>
-                <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
-                <a href="#budaya" class="mobile-link">Seni</a>
-
-                <div class="mobile-dropdown">
-                    <button class="mobile-link w-full flex justify-between items-center"
-                        onclick="toggleMobileDropdown(this)">
-                        Hotel
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
-                        <a href="#" class="mobile-sublink">Bintang 5</a>
-                        <a href="#" class="mobile-sublink">Bintang 4</a>
-                    </div>
-                </div>
-
-                <div class="mobile-dropdown">
-                    <button class="mobile-link w-full flex justify-between items-center"
-                        onclick="toggleMobileDropdown(this)">
-                        Info
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
-                        <a href="#" class="mobile-sublink">Panduan Liburan</a>
-                        <a href="#" class="mobile-sublink">Tentang Kreator</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </nav>
-
-    <main class="container">
-        <header class="page-header">
-            <span class="sejarah-label">Dokumentasi Sejarah</span>
-            <h1 class="sejarah-title">Jejak Langkah Kasultanan<br>Ngayogyakarta Hadiningrat</h1>
-            <div class="divider-custom"></div>
+            </nav>
         </header>
 
-        <section class="timeline-detailed">
-            <!-- Item 1 -->
-            <div class="timeline-node">
-                <span class="node-year">1749 - 1752</span>
-                <div class="node-content">
-                    <h3>Perang Takhta Jawa III</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae accumsan metus.
-                        Suspendisse potenti. Nam at rhoncus erat. Curabitur sed nisl a neque finibus pretium.</p>
+        <main class="container">
+            <header class="page-header">
+                <span class="sejarah-label">Dokumentasi Sejarah</span>
+                <h1 class="sejarah-title">Jejak Langkah Kasultanan<br>Ngayogyakarta Hadiningrat</h1>
+                <div class="divider-custom"></div>
+            </header>
+
+            <section class="timeline-detailed">
+                
+                <div class="timeline-node node-left">
+                    <div class="node-text">
+                        <span class="node-year">1749 - 1752</span>
+                        <h3>Perang Takhta Jawa III</h3>
+                        <p>Konflik besar yang melibatkan Pangeran Mangkubumi melawan VOC dan Susuhunan Pakubuwana II. Perjuangan ini menjadi batu pijakan awal yang kuat sebelum lahirnya entitas berdaulat baru di tanah Mataram Islam.</p>
+                    </div>
+                    <div class="node-image">
+                        <div class="image-card">
+                            <img src="IMG/Perang Takhta Jawa III.jpg" alt="Perang Takhta Jawa III">
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Item 2 -->
-            <div class="timeline-node">
-                <span class="node-year">13 Februari 1755</span>
-                <div class="node-content">
-                    <h3>Palihan Nagari (Perjanjian Giyanti)</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum
-                        vestibulum. Cras venenatis euismod malesuada. Pellentesque habitant morbi tristique.</p>
+                <div class="timeline-node node-right">
+                    <div class="node-text">
+                        <span class="node-year">13 Februari 1755</span>
+                        <h3>Perjanjian Giyanti &amp; Kisah Sang Pendiri</h3>
+                        <p>Perjanjian monumental yang membagi Kerajaan Mataram Islam menjadi dua wilayah kedaulatan. Sultan Hamengkubuwana I tidak hanya dikenal sebagai ahli strategi militer yang tangguh, melainkan juga seorang arsitek ulung yang meletakkan poros imajiner filosofis tata ruang pusat pemerintahan Kasultanan Ngayogyakarta Hadiningrat.</p>
+                    </div>
+                    <div class="node-image">
+                        <div class="image-card">
+                            <img src="IMG/perjanjian-giyanti.jpg" alt="Perjanjian Giyanti dan HB I">
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Item 3 -->
-            <div class="timeline-node">
-                <span class="node-year">1756</span>
-                <div class="node-content">
-                    <h3>Peresmian Keraton Yogyakarta</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                <div class="timeline-node node-left">
+                    <div class="node-text">
+                        <span class="node-year">1756</span>
+                        <h3>Peresmian Keraton Yogyakarta</h3>
+                        <p>Sultan Hamengkubuwana I resmi membuka Hutan Pabringan untuk mendirikan kompleks istana. Tata ruang dirancang penuh simbolisme spiritual yang lurus membentang dari Gunung Merapi, Tugu, Keraton, hingga Laut Selatan.</p>
+                    </div>
+                    <div class="node-image">
+                        <div class="image-card">
+                            <img src="IMG/keraton.jpg" alt="Peresmian Keraton Yogyakarta">
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Item 4 -->
-            <div class="timeline-node">
-                <span class="node-year">1825 - 1830</span>
-                <div class="node-content">
-                    <h3>Perang Jawa (Diponegoro)</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit
-                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                <div class="timeline-node node-right">
+                    <div class="node-text">
+                        <span class="node-year">1825 - 1830</span>
+                        <h3>Perang Jawa (Pangeran Diponegoro)</h3>
+                        <p>Perlawanan terbesar masyarakat Jawa melawan kolonialisme Hindia Belanda. Dipimpin langsung oleh Pangeran Diponegoro, konflik hebat ini menguras kas pertahanan kolonial dan mengobarkan heroisme total di tanah Jawa.</p>
+                    </div>
+                    <div class="node-image">
+                        <div class="image-card">
+                            <img src="IMG/pangeran-diponegoro.jpg" alt="Perang Jawa Diponegoro">
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Item 5 -->
-            <div class="timeline-node">
-                <span class="node-year">1945</span>
-                <div class="node-content">
-                    <h3>Amanat 5 September</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
-                        blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient.</p>
+                <div class="timeline-node node-left">
+                    <div class="node-text">
+                        <span class="node-year">1945 - 1946</span>
+                        <h3>Amanat 5 September &amp; Perpindahan Ibu Kota</h3>
+                        <p>Sri Sultan HB IX dan Sri Paduka Paku Alam VIII menyatakan wilayahnya terintegrasi dengan NKRI. Saat Jakarta jatuh ke tangan sekutu, Sri Sultan dengan sukarela mengirim logistik dan menawarkan pemindahan pusat pemerintahan Republik Indonesia ke Yogyakarta sehingga keberlangsungan kedaulatan negara tetap terjaga.</p>
+                    </div>
+                    <div class="node-image">
+                        <div class="image-card">
+                            <img src="IMG/perpindahan-ibukota.jpg" alt="Amanat dan Perpindahan Ibu Kota RI">
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <div class="highlight-box">
-            <blockquote>"Hamemayu Hayuning Bawana: Memperindah keindahan dunia."</blockquote>
-        </div>
+                <div class="timeline-node node-right">
+                    <div class="node-text">
+                        <span class="node-year">1 Maret 1949</span>
+                        <h3>Serangan Umum 1 Maret</h3>
+                        <p>Aksi ofensif militer berskala besar guna merebut kembali kota Yogyakarta dari pendudukan tentara Belanda selama 6 jam. Keberhasilan ini membuktikan kepada dunia internasional bahwa eksistensi TNI dan negara RI masih tegak berdiri.</p>
+                    </div>
+                    <div class="node-image">
+                        <div class="image-card">
+                            <img src="IMG/serangan-umum.jpg" alt="Serangan Umum 1 Maret">
+                        </div>
+                    </div>
+                </div>
 
-        <section class="story-container">
-            <div class="story-card">
-                <h2>Kisah Sang Pendiri</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus.
-                    Curabitur aliquet quam id dui posuere blandit. Proin eget tortor risus. Curabitur arcu erat,
-                    accumsan id imperdiet et, porttitor at sem.</p>
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
-                    neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Nulla quis lorem ut libero
-                    malesuada feugiat.</p>
-            </div>
+                <div class="timeline-node node-left">
+                    <div class="node-text">
+                        <span class="node-year">2012 - Sekarang</span>
+                        <h3>Undang-Undang Keistimewaan</h3>
+                        <p>Disahkannya UU No. 13 Tahun 2012 mengukuhkan kembali status hukum Daerah Istimewa Yogyakarta. Kini Yogyakarta berkembang menjadi perpaduan kota kebudayaan tradisional yang luhur sekaligus ekosistem kota digital modern yang cerdas.</p>
+                    </div>
+                    <div class="node-image">
+                        <div class="image-card">
+                            <img src="IMG/Kota-Yogyakarta.jpg" alt="Yogyakarta Keistimewaan Era Modern">
+                        </div>
+                    </div>
+                </div>
 
-            <div class="story-card">
-                <h2>Perpindahan Ibu Kota RI</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in,
-                    elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna
-                    justo, lacinia eget consectetur sed, convallis at tellus.</p>
-                <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta
-                    dapibus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+            </section>
+
+            <div class="highlight-box">
+                <blockquote>"Hamemayu Hayuning Bawana: Memperindah keindahan dunia."</blockquote>
             </div>
-        </section>
-    </main>
+        </main>
     </section>
+
     <footer>
         <div class="footer-logo">Jogja<span>Culture</span></div>
         <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
-
         <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain dengan rasa hormat kepada tanah Mataram</p>
     </footer>
+
     <a href="#sejarah" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
         &#8593;
     </a>
+
     <script src="JS/Navigasi.js"></script>
     <script src="JS/Dasar html.js"></script>
     <script src="JS/btn-top.js"></script>
     <script src="JS/in-out-page.js"></script>
 </body>
-
 </html>

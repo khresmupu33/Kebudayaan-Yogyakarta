@@ -1,3 +1,17 @@
+:root {
+    --brown-dark: #2C1A0E;
+    --brown-mid: #6B3A1F;
+    --brown-warm: #A0522D;
+    --brown-light: #C8885A;
+    --gold: #D4A250;
+    --cream: #FFF8F0;
+    --cream-dark: #F0E0CC;
+    --cream-border: #E8C9A8;
+    --text-dark: #1C0F06;
+    --text-mid: #5A3020;
+    --zinc: #18181b;
+}
+
 #sejarah {
     background: var(--brown-dark);
     color: var(--cream);
@@ -6,10 +20,9 @@
     overflow-x: hidden;
 }
 
-
 /* Container Utama */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 120px 2rem 80px;
 }
@@ -42,78 +55,173 @@
     margin: 0 auto;
 }
 
-/* Timeline Style (Lebih Panjang) */
+/* ==========================================================================
+   DESKTOP TIMELINE SYSTEM (Gambar di Seberang Teks)
+   ========================================================================== */
 .timeline-detailed {
     margin: 4rem 0;
     position: relative;
+    width: 100%;
 }
 
+/* Garis Tengah Sempurna pada Desktop */
 .timeline-detailed::before {
     content: '';
     position: absolute;
     left: 50%;
+    top: 0;
+    bottom: 0;
     transform: translateX(-50%);
-    width: 1px;
-    height: 100%;
-    background: rgba(212, 162, 80, 0.2);
+    width: 2px;
+    background: rgba(212, 162, 80, 0.25);
+    z-index: 1;
 }
 
+/* Pengaturan Node Baris */
 .timeline-node {
-    margin-bottom: 5rem;
+    display: flex;
+    width: 100%;
+    margin-bottom: 8rem;
     position: relative;
-    width: 50%;
-    padding: 0 4rem;
+    align-items: center;
+    cursor: pointer;
+    /* Efek transisi halus saat seluruh baris di-hover */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.timeline-node:nth-child(odd) {
-    left: 0;
+/* Pembagian Ruang 50% Kiri & 50% Kanan */
+.node-text, .node-image {
+    width: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+/* PENATAAN BARIS KIRI (Teks Kiri, Gambar Seberang Kanan) */
+.timeline-node.node-left {
+    flex-direction: row;
+}
+
+.timeline-node.node-left .node-text {
+    padding-right: 5rem;
     text-align: right;
 }
 
-.timeline-node:nth-child(even) {
-    left: 50%;
+.timeline-node.node-left .node-image {
+    padding-left: 5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* PENATAAN BARIS KANAN (Teks Kanan, Gambar Seberang Kiri) */
+.timeline-node.node-right {
+    flex-direction: row-reverse;
+}
+
+.timeline-node.node-right .node-text {
+    padding-left: 5rem;
     text-align: left;
 }
 
+.timeline-node.node-right .node-image {
+    padding-right: 5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Komponen Elemen di dalam Node */
 .node-year {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--gold);
     font-weight: 600;
     margin-bottom: 0.5rem;
     display: block;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.node-content h3 {
+.node-text h3 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 1rem;
     color: var(--cream-dark);
+    transition: color 0.3s ease;
 }
 
-.node-content p {
-    color: var(--text-muted);
+.node-text p {
+    color: rgba(240, 224, 204, 0.65);
 }
 
-/* Dekorasi Titik Tengah */
+/* Card Gambar Arsitektur Mewah */
+.image-card {
+    width: 100%;
+    max-width: 420px;
+    height: 240px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 162, 80, 0.2);
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* ==========================================================================
+   INTERAKSI HOVER GLOBAL (Berlaku Bersamaan untuk Semua Device)
+   ========================================================================== */
+.timeline-node:hover {
+    transform: translateY(-5px);
+}
+
+/* Hover Bersamaan: Gambar membesar halus */
+.timeline-node:hover .image-card img {
+    transform: scale(1.05);
+}
+
+/* Hover Bersamaan: Border gambar menyala emas */
+.timeline-node:hover .image-card {
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(212, 162, 80, 0.15);
+}
+
+/* Hover Bersamaan: Judul teks berubah warna menjadi emas */
+.timeline-node:hover .node-text h3 {
+    color: var(--gold);
+}
+
+/* Hover Bersamaan: Teks tahun memutih terang bersinar */
+.timeline-node:hover .node-year {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Titik Penanda Lingkaran di Garis Tengah */
 .timeline-node::after {
     content: '';
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 12px;
     height: 12px;
     background: var(--gold);
     border-radius: 50%;
-    top: 10px;
-    z-index: 2;
+    z-index: 3;
+    transition: all 0.3s ease;
 }
 
-.timeline-node:nth-child(odd)::after {
-    right: -6px;
+/* Hover Bersamaan: Titik tengah membesar */
+.timeline-node:hover::after {
+    background: var(--cream);
+    box-shadow: 0 0 0 6px rgba(212, 162, 80, 0.4);
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
-.timeline-node:nth-child(even)::after {
-    left: -6px;
-}
 
-/* Story Blocks */
+/* Story Blocks & Highlights */
 .story-container {
     margin-top: 8rem;
 }
@@ -123,7 +231,7 @@
     border: 1px solid rgba(212, 162, 80, 0.1);
     padding: 4rem;
     margin-bottom: 4rem;
-    position: relative;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .story-card h2 {
@@ -138,13 +246,19 @@
     color: rgba(240, 224, 204, 0.8);
 }
 
-/* Quote Box */
+.story-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(212, 162, 80, 0.4);
+    transform: translateY(-10px);
+}
+
 .highlight-box {
     border-top: 1px solid var(--gold);
     border-bottom: 1px solid var(--gold);
     padding: 3rem;
     margin: 5rem 0;
     text-align: center;
+    transition: all 0.6s ease;
 }
 
 .highlight-box blockquote {
@@ -153,125 +267,90 @@
     color: var(--cream);
 }
 
-/* --- Tambahan Efek Hover --- */
-
-/* Hover pada Timeline Item */
-.timeline-node {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.timeline-node:hover {
-    transform: translateY(-5px);
-}
-
-/* Efek pada Titik Tengah Timeline saat Hover */
-.timeline-node::after {
-    transition: all 0.3s ease;
-    box-shadow: 0 0 0 0 rgba(212, 162, 80, 0);
-}
-
-.timeline-node:hover::after {
-    background: var(--cream);
-    box-shadow: 0 0 0 6px rgba(212, 162, 80, 0.3);
-    transform: scale(1.2);
-}
-
-/* Efek pada teks judul timeline saat hover */
-.timeline-node:hover .node-content h3 {
-    color: var(--gold);
-    transition: color 0.3s ease;
-}
-
-/* Hover pada Story Card (Kartu Cerita) */
-.story-card {
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
-}
-
-.story-card:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(212, 162, 80, 0.4);
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Animasi garis bawah pada judul kartu saat hover */
-.story-card h2::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 1px;
-    background: var(--gold);
-    transition: width 0.5s ease;
-    margin-top: 5px;
-}
-
-.story-card:hover h2::after {
-    width: 100px;
-}
-
-/* Hover pada Highlight Box */
-.highlight-box {
-    transition: all 0.6s ease;
-}
-
 .highlight-box:hover {
     background: rgba(212, 162, 80, 0.03);
-    padding-left: 4rem;
-    padding-right: 4rem;
 }
 
-/* Efek pada Header */
-.sejarah-label {
-    animation: fadeInUp-sejarah 0.8s ease backwards;
-}
+/* ==========================================================================
+   MOBILE RESPONSIVE SYSTEM (Garis Ekstrem Kiri & Gambar Melebar Penuh)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* Menghilangkan padding container agar area luar makin luas mendekati tepi layar */
+    .container {
+        padding: 100px 0.5rem 60px !important;
+    }
 
-.sejarah-title {
-    animation: fadeInUp-sejarah 0.8s ease backwards 0.2s;
-    /* Jeda 0.2 detik */
-}
+    /* 1. Garis timeline dipepetkan sangat ekstrim ke dinding layar kiri (sisa 4px) */
+    .timeline-detailed::before {
+        left: 4px !important;
+        transform: none !important;
+        height: 100% !important;
+    }
 
-.divider-custom {
-    animation: fadeIn-sejarah 1s ease backwards 0.4s;
-}
+    /* 2. Reset struktur 50% desktop agar card melebar penuh 100% tanpa terhimpit */
+    .timeline-node {
+        display: flex !important;
+        flex-direction: column !important; /* Membuat tumpukan vertikal */
+        align-items: flex-start !important;
+        width: 100% !important; /* Menggunakan lebar penuh layar */
+        left: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 4rem !important;
+    }
 
-/* Efek pada Garis Tengah Timeline */
-.timeline-detailed::before {
-    animation: lineGrow-sejarah 2s cubic-bezier(0.4, 0, 0.2, 1) backwards 0.6s;
-    transform-origin: top;
-}
+    /* Membatalkan aturan posisi kiri-kanan selang-seling bawaan desktop */
+    .timeline-node:nth-child(odd),
+    .timeline-node:nth-child(even) {
+        left: 0 !important;
+        text-align: left !important;
+    }
 
-/* Efek pada Node Timeline (Muncul satu per satu) */
-.timeline-node {
-    animation: fadeInUp-sejarah 0.8s ease backwards;
-}
+    /* 3. MENUKAR URUTAN: Memaksa Card Gambar berada di atas Teks per topik */
+    .timeline-node .node-image {
+        order: 1 !important;        /* Gambar tampil pertama (paling atas) */
+        margin-bottom: 1rem !important; /* Jarak antara card gambar dengan teks di bawahnya */
+        width: 100% !important;
+        padding-left: 10px !important; /* Jarak pengaman minimal dari garis paling kiri */
+        padding-right: 0 !important;
+    }
 
-/* Mengatur urutan muncul node timeline (Stagger) */
-.timeline-node:nth-child(1) {
-    animation-delay: 0.8s;
-}
+    .timeline-node .node-text,
+    .timeline-node .node-content {
+        order: 2 !important;        /* Teks (judul & paragraf) mengalir di bawah gambar */
+        width: 100% !important;
+        padding-left: 20px !important; /* Jarak pas agar teks tidak menabrak garis kiri */
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
 
-.timeline-node:nth-child(2) {
-    animation-delay: 1.0s;
-}
+    /* 4. Membuat card gambar melebar penuh mengikuti device HP Anda */
+    .image-card {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: 190px !important;   /* Ketinggian card gambar ideal untuk mobile */
+    }
 
-.timeline-node:nth-child(3) {
-    animation-delay: 1.2s;
-}
+    .image-card img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
 
-.timeline-node:nth-child(4) {
-    animation-delay: 1.4s;
-}
+    /* 5. Menggeser Titik Bulat (.timeline-node::after) agar menempel pas menindih garis kiri */
+    .timeline-node::after {
+        left: 4px !important;      /* Posisi horizontal sama dengan garis mepet kiri */
+        top: -20px !important;       /* Posisi titik sejajar dengan baris teks tahun */
+        right: auto !important;
+        transform: translateX(-50%) !important; /* Titik simetris membelah garis vertikal */
+    }
 
-.timeline-node:nth-child(5) {
-    animation-delay: 1.6s;
-}
+    /* Override Khusus Hover Titik Bulat di Mobile agar tidak menggunakan translate desktop */
+    .timeline-node:hover::after {
+        transform: translateX(-50%) scale(1.2) !important;
+    }
 
-/* Efek pada Kartu Cerita & Quote */
-.highlight-box {
-    animation: fadeIn-sejarah 1.5s ease backwards 1.8s;
-}
-
-.story-card {
-    animation: fadeInUp-sejarah 1s ease backwards;
+    /* Penyesuaian box quotes pelengkap */
+    .highlight-box {
+        padding: 2.5rem 1rem !important;
+    }
 }
