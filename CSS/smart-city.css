@@ -1,0 +1,134 @@
+#smart_city {
+    background: var(--zinc);
+}
+
+/* ==================== 1. ELEMEN UTAMA & GAMBAR CONTROLLER ==================== */
+
+/* Efek Bingkai Gambar Utama */
+.relative.overflow-hidden {
+    border: 1px solid var(--cream-border);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Bingkai Gambar: Mengeluarkan cahaya gold halus dan mengangkat kartu */
+.relative.overflow-hidden:hover {
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(212, 162, 80, 0.15);
+}
+
+/* Efek Zoom Gambar saat Di-hover */
+.relative.overflow-hidden img {
+    transition: transform 0.5s ease;
+}
+
+.relative.overflow-hidden:hover img {
+    transform: scale(1.05);
+}
+
+/* Efek Teks Overlay di Dalam Gambar saat Di-hover */
+.relative.overflow-hidden div {
+    transition: background-color 0.3s ease;
+}
+
+.relative.overflow-hidden:hover div {
+    background: linear-gradient(to top, rgba(28, 15, 6, 0.95), rgba(0, 0, 0, 0.2));
+}
+
+
+/* ==================== 2. TOMBOL KEMBALI KUSTOM ==================== */
+a[href="halaman-teknologi.html"] {
+    transition: all 0.3s ease;
+}
+
+/* Hover Tombol Kembali: Teks berubah cream dan sedikit bergeser ke kiri */
+a[href="halaman-teknologi.html"]:hover {
+    color: var(--cream);
+    transform: translateX(-4px);
+}
+
+
+/* ==================== 3. LAYOUT RESPONSIF KARTU DAYA TARIK ==================== */
+.custom-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.75rem 1rem;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.card-icon {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 1px solid var(--gold);
+    background: var(--brown-dark);
+    color: var(--gold);
+    border-radius: 0.375rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-title {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+}
+
+.card-desc {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--cream-dark);
+}
+
+/* Media Query untuk Desktop (min-width: 768px) */
+@media (min-width: 768px) {
+    .custom-card {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.25rem 0rem;
+    }
+    .card-icon {
+        grid-row: 1 / span 2;
+    }
+    .card-title {
+        grid-column: 2;
+        grid-row: 1;
+        align-items: flex-start;
+        margin-bottom: 0.25rem;
+    }
+    .card-desc {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+
+
+/* ==================== 4. EFEK HOVER NYALA KARTU (SMART CITY) ==================== */
+
+/* Hover keseluruhan komponen kartu list */
+.custom-card:hover {
+    background: rgba(44, 26, 14, 0.5);
+    border-color: rgba(232, 201, 168, 0.3);
+    transform: translateX(8px);
+    box-shadow: -4px 4px 0px var(--gold);
+}
+
+/* Hover mengubah warna latar ikon menjadi emas penuh & berputar sedikit */
+.custom-card:hover .card-icon {
+    background: var(--gold);
+    color: var(--brown-dark);
+    transform: scale(1.1) rotate(5deg);
+}

@@ -1,0 +1,50 @@
+/* Aturan Pewarnaan Berdasarkan Variabel Root Sistem */
+:root {
+    --brown-dark: #2C1A0E;
+    --brown-mid: #6B3A1F;
+    --brown-warm: #A0522D;
+    --brown-light: #C8885A;
+    --gold: #D4A250;
+    --cream: #FFF8F0;
+    --cream-dark: #F0E0CC;
+    --cream-border: #E8C9A8;
+    --text-dark: #1C0F06;
+    --text-mid: #5A3020;
+    --zinc: #18181b;
+}
+
+/* Kustomisasi Section Khusus Halaman Teknologi (Aturan bg selain brown-mid) */
+#teknologi {
+    background: var(--brown-dark);
+    min-height: 100vh;
+}
+
+/* Font Family Helper Tanpa Mengubah Ukuran Tag Dasar */
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-josefin {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Styling Khusus Elemen Main Konten Teknologi */
+.tech-hero {
+    position: relative;
+    z-index: 10;
+}
+
+.tech-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--cream-border);
+}
+
+.tech-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 10px 25px rgba(212, 162, 80, 0.15);
+}
+
+/* Modifikasi hal-hal kecil pendukung icon wrapper tanpa merusak element bawaan */
+.icon-wrapper i {
+    stroke-width: 1.5px;
+}
