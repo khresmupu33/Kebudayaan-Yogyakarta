@@ -166,107 +166,302 @@
             </nav>
         </header>
 
-        <main class="container">
+<main class="container">
             <header class="page-header">
                 <span class="sejarah-label">Dokumentasi Sejarah</span>
                 <h1 class="sejarah-title">Jejak Langkah Kasultanan<br>Ngayogyakarta Hadiningrat</h1>
                 <div class="divider-custom"></div>
+
+                <div class="history-tabs-container">
+                    <button class="tab-btn active" onclick="switchHistoryTab('cikabakal')">Cikal Bakal</button>
+                    <button class="tab-btn" onclick="switchHistoryTab('raja')">Raja-Raja</button>
+                </div>
             </header>
 
-            <section class="timeline-detailed">
-                
-                <div class="timeline-node node-left">
-                    <div class="node-text">
-                        <span class="node-year">1749 - 1752</span>
-                        <h3>Perang Takhta Jawa III</h3>
-                        <p>Konflik besar yang melibatkan Pangeran Mangkubumi melawan VOC dan Susuhunan Pakubuwana II. Perjuangan ini menjadi batu pijakan awal yang kuat sebelum lahirnya entitas berdaulat baru di tanah Mataram Islam.</p>
-                    </div>
-                    <div class="node-image">
-                        <div class="image-card">
-                            <img src="IMG/Perang Takhta Jawa III.jpg" alt="Perang Takhta Jawa III">
+            <div id="konten-cikabakal" class="history-tab-content active-content">
+                <section class="timeline-detailed">
+                    
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">Akhir Abad ke-16</span>
+                            <h3>Cikal Bakal Kerajaan Mataram Islam</h3>
+                            <p>Berdiri sebuah kerajaan Islam di Jawa bagian tengah-selatan bernama Mataram yang berpusat di Kota Gede (sebelah tenggara kota Yogyakarta saat ini). Seiring berjalannya waktu, pusat pemerintahan sempat berpindah-pindah ke Kerta, Plered, Kartasura, hingga Surakarta akibat intervensi Kumpeni Belanda yang kian mengganggu kedaulatan kerajaan.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/kota-gede.jpg" alt="Cikal Bakal Kota Gede Mataram">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-node node-right">
-                    <div class="node-text">
-                        <span class="node-year">13 Februari 1755</span>
-                        <h3>Perjanjian Giyanti &amp; Kisah Sang Pendiri</h3>
-                        <p>Perjanjian monumental yang membagi Kerajaan Mataram Islam menjadi dua wilayah kedaulatan. Sultan Hamengkubuwana I tidak hanya dikenal sebagai ahli strategi militer yang tangguh, melainkan juga seorang arsitek ulung yang meletakkan poros imajiner filosofis tata ruang pusat pemerintahan Kasultanan Ngayogyakarta Hadiningrat.</p>
-                    </div>
-                    <div class="node-image">
-                        <div class="image-card">
-                            <img src="IMG/perjanjian-giyanti.jpg" alt="Perjanjian Giyanti dan HB I">
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">1749 - 1752</span>
+                            <h3>Perang Takhta Jawa III</h3>
+                            <p>Konflik besar yang melibatkan Pangeran Mangkubumi melawan VOC dan Susuhunan Pakubuwana II. Perjuangan dan gerakan anti-penjajah ini menjadi batu pijakan awal yang kuat sebelum lahirnya entitas berdaulat baru di tanah Mataram Islam.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/Perang Takhta Jawa III.jpg" alt="Perang Takhta Jawa III">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-node node-left">
-                    <div class="node-text">
-                        <span class="node-year">1756</span>
-                        <h3>Peresmian Keraton Yogyakarta</h3>
-                        <p>Sultan Hamengkubuwana I resmi membuka Hutan Pabringan untuk mendirikan kompleks istana. Tata ruang dirancang penuh simbolisme spiritual yang lurus membentang dari Gunung Merapi, Tugu, Keraton, hingga Laut Selatan.</p>
-                    </div>
-                    <div class="node-image">
-                        <div class="image-card">
-                            <img src="IMG/keraton.jpg" alt="Peresmian Keraton Yogyakarta">
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">13 Februari 1755</span>
+                            <h3>Perjanjian Giyanti &amp; Kisah Sang Pendiri</h3>
+                            <p>Perjanjian monumental (Palihan Nagari) yang membagi Kerajaan Mataram menjadi dua wilayah kedaulatan: Kasunanan Surakarta Hadiningrat di bawah Paku Buwono III dan Kasultanan Ngayogyakarta Hadiningrat di bawah Pangeran Mangkubumi yang bergelar Sultan Hamengku Buwono I. Beliau merupakan arsitek ulung yang meletakkan poros imajiner filosofis tata ruang pusat pemerintahan.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/perjanjian-giyanti.jpg" alt="Perjanjian Giyanti dan HB I">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-node node-right">
-                    <div class="node-text">
-                        <span class="node-year">1825 - 1830</span>
-                        <h3>Perang Jawa (Pangeran Diponegoro)</h3>
-                        <p>Perlawanan terbesar masyarakat Jawa melawan kolonialisme Hindia Belanda. Dipimpin langsung oleh Pangeran Diponegoro, konflik hebat ini menguras kas pertahanan kolonial dan mengobarkan heroisme total di tanah Jawa.</p>
-                    </div>
-                    <div class="node-image">
-                        <div class="image-card">
-                            <img src="IMG/pangeran-diponegoro.jpg" alt="Perang Jawa Diponegoro">
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">15 Februari 1755</span>
+                            <h3>Perjanjian Jatisari &amp; Peletakan Dasar Budaya</h3>
+                            <p>Pertemuan penting antara Sultan HB I dan Sunan PB III di Lebak, Jatisari untuk membahas perbedaan identitas kedua wilayah, meliputi tata cara berpakaian, bahasa, adat, hingga seni tari. Sultan Hamengku Buwono I memilih melanjutkan tradisi asli Mataram, sedangkan Sunan Pakubuwono III sepakat memodifikasi budaya baru.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/perjanjian-jatisari.jpg" alt="Pertemuan Jatisari">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-node node-left">
-                    <div class="node-text">
-                        <span class="node-year">1945 - 1946</span>
-                        <h3>Amanat 5 September &amp; Perpindahan Ibu Kota</h3>
-                        <p>Sri Sultan HB IX dan Sri Paduka Paku Alam VIII menyatakan wilayahnya terintegrasi dengan NKRI. Saat Jakarta jatuh ke tangan sekutu, Sri Sultan dengan sukarela mengirim logistik dan menawarkan pemindahan pusat pemerintahan Republik Indonesia ke Yogyakarta sehingga keberlangsungan kedaulatan negara tetap terjaga.</p>
-                    </div>
-                    <div class="node-image">
-                        <div class="image-card">
-                            <img src="IMG/perpindahan-ibukota.jpg" alt="Amanat dan Perpindahan Ibu Kota RI">
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">13 Maret 1755</span>
+                            <h3>Hadeging Nagari Ngayogyakarta Hadiningrat</h3>
+                            <p>Tanggal bersejarah di mana proklamasi atau Hadeging Nagari Ngayogyakarta Hadiningrat resmi dikumandangkan. Peristiwa ini menandai lahir dan berdirinya secara resmi negara baru Kasultanan Yogyakarta.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hadeging-nagari.jpg" alt="Proklamasi Hadeging Nagari">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-node node-right">
-                    <div class="node-text">
-                        <span class="node-year">1 Maret 1949</span>
-                        <h3>Serangan Umum 1 Maret</h3>
-                        <p>Aksi ofensif militer berskala besar guna merebut kembali kota Yogyakarta dari pendudukan tentara Belanda selama 6 jam. Keberhasilan ini membuktikan kepada dunia internasional bahwa eksistensi TNI dan negara RI masih tegak berdiri.</p>
-                    </div>
-                    <div class="node-image">
-                        <div class="image-card">
-                            <img src="IMG/serangan-umum.jpg" alt="Serangan Umum 1 Maret">
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">9 Oktober 1755</span>
+                            <h3>Awal Pembangunan &amp; Pesanggrahan Ambar Ketawang</h3>
+                            <p>Sri Sultan Hamengku Buwono I mulai membuka Hutan Pabringan untuk mendirikan kompleks istana. Selama proses pembangunan yang memakan waktu hampir satu tahun tersebut, Sri Sultan beserta keluarga dan pengikutnya bertempat tinggal di Pesanggrahan Ambar Ketawang.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/ambar-ketawang.jpg" alt="Pesanggrahan Ambar Ketawang">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="timeline-node node-left">
-                    <div class="node-text">
-                        <span class="node-year">2012 - Sekarang</span>
-                        <h3>Undang-Undang Keistimewaan</h3>
-                        <p>Disahkannya UU No. 13 Tahun 2012 mengukuhkan kembali status hukum Daerah Istimewa Yogyakarta. Kini Yogyakarta berkembang menjadi perpaduan kota kebudayaan tradisional yang luhur sekaligus ekosistem kota digital modern yang cerdas.</p>
-                    </div>
-                    <div class="node-image">
-                        <div class="image-card">
-                            <img src="IMG/Kota-Yogyakarta.jpg" alt="Yogyakarta Keistimewaan Era Modern">
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">7 Oktober 1756</span>
+                            <h3>Peresmian &amp; Memasuki Keraton Yogyakarta</h3>
+                            <p>Sri Sultan Hamengku Buwono I beserta keluarga resmi memasuki Keraton Yogyakarta yang dirancang penuh simbolisme spiritual dari Gunung Merapi hingga Laut Selatan. Peristiwa bersejarah ini ditandai dengan sengkalan memet sakral: <em>Dwi Naga Rasa Tunggal</em> dan <em>Dwi Naga Rasa Wani</em>.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/keraton.jpg" alt="Peresmian Keraton Yogyakarta">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </section>
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">1812 - 1813</span>
+                            <h3>Serangan Inggris &amp; Berdirinya Kadipaten Pakualaman</h3>
+                            <p>Menyusul serangan Inggris ke keraton pada Juni 1812, Sultan HB II dipaksa turun takhta. Sebagian wilayah Kasultanan otonom di daerah Adikarto (Kulonprogo selatan) diserahkan kepada Pangeran Notokusumo (putera HB I) yang kemudian mendeklarasikan berdirinya Kadipaten Pakualaman sebagai Adipati Paku Alam I sejak 17 Maret 1813.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/pakualaman.jpg" alt="Kadipaten Pakualaman">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">1825 - 1830</span>
+                            <h3>Perang Jawa (Pangeran Diponegoro)</h3>
+                            <p>Perlawanan terbesar masyarakat Jawa melawan kolonialisme Hindia Belanda. Dipimpin langsung oleh Pangeran Diponegoro, konflik hebat ini menguras kas pertahanan kolonial dan mengobarkan heroisme total di tanah Jawa.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/pangeran-diponegoro.jpg" alt="Perang Jawa Diponegoro">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">Agustus - September 1945</span>
+                            <h3>Amanat 5 September &amp; Integrasi NKRI</h3>
+                            <p>Pasca Proklamasi RI, Sri Sultan HB IX dan Sri Paduka Paku Alam VIII mengeluarkan amanat monumental pada 5 September 1945 yang menyatakan wilayahnya terintegrasi dengan NKRI. Presiden Sukarno menetapkan Sultan HB dan Paku Alam sebagai dwi tunggal yang memegang kekuasaan atas Daerah Istimewa Yogyakarta.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/perpindahan-ibukota.jpg" alt="Amanat dan Integrasi RI">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">1 Maret 1949</span>
+                            <h3>Serangan Umum 1 Maret</h3>
+                            <p>Aksi ofensif militer berskala besar guna merebut kembali kota Yogyakarta dari pendudukan tentara Belanda selama 6 jam. Keberhasilan ini membuktikan kepada dunia internasional bahwa eksistensi TNI dan negara RI masih tegak berdiri.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/serangan-umum.jpg" alt="Serangan Umum 1 Maret">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">2012 - Sekarang</span>
+                            <h3>Undang-Undang Keistimewaan</h3>
+                            <p>Disahkannya UU No. 13 Tahun 2012 mengukuhkan kembali status hukum Daerah Istimewa Yogyakarta, memastikan warisan budaya Kasultanan dan Pakualaman tetap lestari. Kini Yogyakarta berkembang menjadi perpaduan kota kebudayaan tradisional yang luhur sekaligus ekosistem kota digital modern yang cerdas.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/Kota-Yogyakarta.jpg" alt="Yogyakarta Keistimewaan Era Modern">
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <div id="konten-raja" class="history-tab-content">
+                <section class="timeline-detailed">
+                    
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">1755 - 1792</span>
+                            <h3>Sri Sultan Hamengku Buwono I</h3>
+                            <p>Lahir dengan nama BRM Sujono (Pangeran Mangkubumi), beliau merupakan pendiri Kasultanan Yogyakarta sekaligus arsitek ulung Keraton. Dikenal sangat cakap dalam olah keprajuritan, mahir berkuda, serta teguh menjunjung tinggi nilai luhur budaya dan spiritual Jawa.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hb1.jpg" alt="Sri Sultan Hamengku Buwono I">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">1792 - 1828</span>
+                            <h3>Sri Sultan Hamengku Buwono II</h3>
+                            <p>Lahir dengan nama RM Sundoro, masa kecilnya dihabiskan di pengungsian akibat perang melawan VOC, membentuk karakternya menjadi sosok yang tegas dan keras terhadap penjajah. Beliau resmi diangkat menjadi putra mahkota pada tahun 1758.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hb3.jpg" alt="Sri Sultan Hamengku Buwono II">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">1810 - 1814</span>
+                            <h3>Sri Sultan Hamengku Buwono III</h3>
+                            <p>Memiliki nama kecil Raden Mas Surojo, beliau dikenal sebagai pribadi yang pendiam dan bijaksana. Memerintah di era penuh pergolakan takhta dan intervensi kolonial yang memuncak pada penyerbuan Keraton Yogyakarta oleh pasukan Daendels.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hb3.jpg" alt="Sri Sultan Hamengku Buwono III">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">1814 - 1822</span>
+                            <h3>Sri Sultan Hamengku Buwono IV</h3>
+                            <p>Naik takhta pada usia sangat belia (10 tahun) dengan nama kecil GRM Ibnu Jarot. Karena usianya yang masih anak-anak, roda pemerintahan sementara didampingi oleh wali raja, yaitu Pangeran Notokusumo (Paku Alam I).</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hb4.jpg" alt="Sri Sultan Hamengku Buwono IV">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">1823 - 1855</span>
+                            <h3>Sri Sultan Hamengku Buwono V</h3>
+                            <p>Lahir dengan nama GRM Gatot Menol, beliau dinobatkan sebagai sultan saat masih berusia 3 tahun akibat wafatnya sang ayah. Tumbuh dengan karakter lemah lembut, beliau memimpin pemerintahan didampingi dewan perwalian.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hb5.jpg" alt="Sri Sultan Hamengku Buwono V">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">1855 - 1877</span>
+                            <h3>Sri Sultan Hamengku Buwono VI</h3>
+                            <p>Lahir dengan nama Raden Mas Mustojo, beliau merupakan perwira militer berpangkat Kolonel sebelum meneruskan takhta kakandanya (HB V) yang wafat tanpa meninggalkan putra mahkota yang sudah lahir.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hb6.jpg" alt="Sri Sultan Hamengku Buwono VI">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">1877 - 1921</span>
+                            <h3>Sri Sultan Hamengku Buwono VII</h3>
+                            <p>Lahir dengan nama Raden Mas Murtejo, beliau dinobatkan pada usia 36 tahun. Di bawah kepemimpinannya, Yogyakarta mengalami kemajuan industrialisasi yang pesat, ditandai dengan berdirinya banyak pabrik gula.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hb7.jpg" alt="Sri Sultan Hamengku Buwono VII">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-right">
+                        <div class="node-text">
+                            <span class="node-year">1921 - 1939</span>
+                            <h3>Sri Sultan Hamengku Buwono VIII</h3>
+                            <p>Lahir dengan nama GRM Sujadi, beliau tengah menempuh studi di Belanda ketika proses transisi takhta dipercepat karena sang ayah menyatakan niat untuk lengser keprabon demi stabilitas pemerintahan.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hb8.jpg" alt="Sri Sultan Hamengku Buwono VIII">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node node-left">
+                        <div class="node-text">
+                            <span class="node-year">1940 - 1988</span>
+                            <h3>Sri Sultan Hamengku Buwono IX</h3>
+                            <p>Lahir dengan nama GRM Dorojatun, masa mudanya dididik mandiri layaknya rakyat biasa di luar lingkungan keraton bersama keluarga Belanda. Kelak menjadi tokoh kunci yang mengintegrasikan Yogyakarta ke dalam NKRI.</p>
+                        </div>
+                        <div class="node-image">
+                            <div class="image-card">
+                                <img src="IMG/hb9.jpg" alt="Sri Sultan Hamengku Buwono IX">
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
 
             <div class="highlight-box">
                 <blockquote>"Hamemayu Hayuning Bawana: Memperindah keindahan dunia."</blockquote>
@@ -288,5 +483,6 @@
     <script src="JS/Dasar html.js"></script>
     <script src="JS/btn-top.js"></script>
     <script src="JS/in-out-page.js"></script>
+    <script src="JS/halaman-sejaraha.js"></script>
 </body>
 </html>

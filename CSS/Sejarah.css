@@ -1,15 +1,73 @@
-:root {
-    --brown-dark: #2C1A0E;
-    --brown-mid: #6B3A1F;
-    --brown-warm: #A0522D;
-    --brown-light: #C8885A;
-    --gold: #D4A250;
-    --cream: #FFF8F0;
-    --cream-dark: #F0E0CC;
-    --cream-border: #E8C9A8;
-    --text-dark: #1C0F06;
-    --text-mid: #5A3020;
-    --zinc: #18181b;
+/* --- KONTROL VISUAL TAB KONTEN --- */
+.history-tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.history-tab-content.active-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- DESAIN TOMBOL PILIHAN YANG LEBIH RINGKAS & KECIL --- */
+.history-tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px auto 30px auto;
+}
+.tab-btn {
+    background: #1e1e1e;
+    color: #bfa15f;
+    border: 1px solid #bfa15f;
+    padding: 6px 16px;          /* Ukuran padding diperkecil */
+    font-size: 0.85rem;         /* Ukuran font diperkecil agar pas di HP */
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.tab-btn.active, .tab-btn:hover {
+    background: #bfa15f;
+    color: #121212;
+}
+
+/* --- ATURAN RESPONSIVE KHUSUS LAYAR HP (MOBILE VERSION) --- */
+@media screen and (max-width: 768px) {
+    /* Merapatkan jarak pembungkus linimasa di HP */
+    .timeline-detailed {
+        padding: 10px 0;
+    }
+    
+    /* Memaksa susunan konten menjadi satu kolom vertikal di HP */
+    .timeline-node {
+        flex-direction: column !important; 
+        gap: 15px !important;
+        margin-bottom: 35px;
+    }
+    
+    /* Mengatur area teks agar mengambil lebar penuh layar HP */
+    .node-text {
+        width: 100% !important;
+        padding: 0 10px !important;
+        text-align: left !important;
+    }
+    
+    /* Mengatur gambar agar tampil proporsional di bawah teks pada layar HP */
+    .node-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 10px !important;
+    }
+    
+    .image-card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
 }
 
 #sejarah {
