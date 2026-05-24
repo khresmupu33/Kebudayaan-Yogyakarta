@@ -1,0 +1,117 @@
+
+
+#halaman_kuliner {
+    background-color: var(--brown-dark); 
+    min-height: 100vh;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+#halaman_kuliner main {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-josefin { font-family: 'Josefin Sans', sans-serif; }
+.font-cormorant { font-family: 'Cormorant Garamond', serif; }
+
+
+.custom-kuliner-card {
+    background-color: rgba(44, 26, 14, 0.6); 
+    border: 1px solid rgba(212, 162, 80, 0.25); 
+    border-radius: 32px 4px 32px 4px; 
+    padding: 10px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+
+.custom-kuliner-card .card-inner-frame {
+    border: 1px dashed rgba(212, 162, 80, 0.4);
+    border-radius: 26px 2px 26px 2px;
+    padding: 2.5rem 1.75rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+
+.custom-kuliner-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 162, 80, 0.2);
+    background-color: rgba(107, 58, 31, 0.5); 
+}
+
+.custom-kuliner-card:hover .card-inner-frame {
+    border-style: solid;
+    border-color: rgba(212, 162, 80, 0.8);
+}
+
+
+.card-icon-header {
+    color: var(--gold);
+    background-color: rgba(20, 10, 5, 0.4);
+    padding: 1rem;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(212, 162, 80, 0.2);
+    transition: transform 0.4s ease;
+}
+
+.custom-kuliner-card:hover .card-icon-header {
+    transform: scale(1.15) rotate(8deg);
+    background-color: var(--brown-dark);
+    color: var(--cream);
+}
+
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--cream-dark);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+
+.card-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gold);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.custom-kuliner-card:hover .card-action-btn {
+    color: var(--cream);
+    border-color: var(--gold);
+}
