@@ -1,0 +1,52 @@
+
+
+#makanan_tradisional {
+    background-color: var(--brown-dark);
+    min-height: 100vh;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+#makanan_tradisional main {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.makanan-hero {
+    margin-bottom: 2rem;
+}
+
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-josefin {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.menu-card {
+ 
+    background-color: rgba(107, 58, 31, 0.4); 
+    border-color: rgba(232, 201, 168, 0.2);
+}
+
+.menu-card:hover {
+    background-color: rgba(107, 58, 31, 0.7);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.menu-card i {
+  
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
