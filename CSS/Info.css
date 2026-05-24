@@ -40,7 +40,9 @@
     margin: 26px auto;
     position: relative;
 }
-.ornament-divider::before, .ornament-divider::after {
+
+.ornament-divider::before,
+.ornament-divider::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -49,8 +51,14 @@
     top: -2px;
     transform: rotate(45deg);
 }
-.ornament-divider::before { left: -15px; }
-.ornament-divider::after { right: -15px; }
+
+.ornament-divider::before {
+    left: -15px;
+}
+
+.ornament-divider::after {
+    right: -15px;
+}
 
 .info-desc {
     color: var(--cream-dark);
@@ -89,10 +97,10 @@
     flex-direction: column;
     justify-content: space-between;
     /* Transisi agar animasi hover terasa sangat halus dan responsif */
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-color 0.35s ease, 
-                box-shadow 0.4s ease, 
-                background-color 0.35s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.35s ease,
+        box-shadow 0.4s ease,
+        background-color 0.35s ease;
 }
 
 /* EFEK HOVER BARU: Kartu naik sedikit, berpendar, dan border menyala emas */
@@ -100,8 +108,8 @@
     transform: translateY(-8px);
     border-color: var(--gold);
     background: rgba(107, 58, 31, 0.28);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5), 
-                0 0 20px rgba(212, 162, 80, 0.1);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(212, 162, 80, 0.1);
 }
 
 .card-meta {
@@ -172,7 +180,8 @@
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.35s ease;
-    margin-bottom: 55px; /* Kontrol jarak renggang antar anggota */
+    margin-bottom: 55px;
+    /* Kontrol jarak renggang antar anggota */
 }
 
 .member-row-card:last-child {
@@ -186,13 +195,19 @@
 }
 
 /* Pengaturan Arah Modul Selang-Seling */
-.member-rtl { flex-direction: row; }
-.member-ltr { flex-direction: row-reverse; }
+.member-rtl {
+    flex-direction: row;
+}
+
+.member-ltr {
+    flex-direction: row-reverse;
+}
 
 /* Area Informasi Teks Di Dalam Kartu */
 .member-info-content {
     flex: 1;
-    padding: 40px; /* Ukuran padding internal dikontrol dari sini */
+    padding: 40px;
+    /* Ukuran padding internal dikontrol dari sini */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -229,7 +244,6 @@
     color: var(--brown-dark);
     background: var(--gold);
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.72rem;
     font-weight: 600;
     padding: 2px 10px;
     border-radius: 4px;
@@ -244,10 +258,7 @@
 }
 
 .task-list {
-    display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 25px;
 }
 
 .task-list li {
@@ -257,7 +268,6 @@
     color: var(--cream-dark);
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
-    font-size: 0.9rem;
 }
 
 .task-list li i {
@@ -330,11 +340,11 @@
 }
 
 .overlay-right {
-    background: linear-gradient(to right, var(--brown-dark) 0%, transparent 15%, rgba(0,0,0,0.2) 100%);
+    background: linear-gradient(to right, var(--brown-dark) 0%, transparent 15%, rgba(0, 0, 0, 0.2) 100%);
 }
 
 .overlay-left {
-    background: linear-gradient(to left, var(--brown-dark) 0%, transparent 15%, rgba(0,0,0,0.2) 100%);
+    background: linear-gradient(to left, var(--brown-dark) 0%, transparent 15%, rgba(0, 0, 0, 0.2) 100%);
 }
 
 /* Foot Manifesto Box */
@@ -354,12 +364,14 @@
     font-size: 1.4rem;
     text-align: center;
 }
+
 /* Mengontrol ukuran wajib ikon SVG Lucide di dalam portofolio agar tidak menciut */
 .portfolio-links a svg {
     width: 20px !important;
     height: 20px !important;
     display: block;
 }
+
 /* ==========================================================================
    Responsive Adaptive Viewport (Mobile/HP)
    ========================================================================== */
@@ -369,13 +381,10 @@
    ========================================================================== */
 @media screen and (max-width: 768px) {
 
-
-
-    /* CONTAINER FULL LEBAR */
-    .about-container {
-        max-width: 100%;
+    .pcard {
+        align-items: center !important;
+        justify-content: center !important;
     }
-
 
     .info-tag {
         font-size: 0.62rem;
@@ -417,7 +426,6 @@
     .ref-detail-card {
         width: 240px;
         border-radius: 10px;
-        margin-bottom: 14px;
     }
 
     .ref-detail-card:hover {
@@ -457,20 +465,26 @@
 
     .team-cards-container {
         width: 250px;
+        margin-left: -20px;
+         align-items: center !important;
+        justify-content: center !important;
     }
 
     .member-row-card {
         width: 100%;
         flex-direction: column-reverse !important;
         border-radius: 10px;
-        justify-content: space-between;
+         align-items: center !important;
+        justify-content: center !important;
 
     }
 
     .member-info-content {
         width: 100%;
         padding: 8px;
-        justify-content: space-between;
+        
+        align-items: center !important;
+        justify-content: center !important;
 
     }
 
@@ -551,11 +565,9 @@
 
     .photo-overlay {
         background:
-            linear-gradient(
-                to top,
+            linear-gradient(to top,
                 rgba(44, 26, 14, 0.95) 0%,
-                transparent 45%
-            ) !important;
+                transparent 45%) !important;
     }
 
     /* =========================
