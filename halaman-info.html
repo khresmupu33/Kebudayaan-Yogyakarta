@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogja Culture | Info</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Info.css">
+    <link rel="stylesheet" href="CSS/Dasar HTML.css">
+    <link rel="stylesheet" href="CSS/Navigasi.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/quary.css">
+    <link rel="stylesheet" href="CSS/btn-top.css">
+    <link rel="stylesheet" href="CSS/keyframes.css">
+    <link rel="stylesheet" href="CSS/in-out-page.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="in-page"></div>
+    <div class="out-page"></div>
+    <section id="halaman-info">
+        <header>
+            <nav class="navbar transition-all duration-300">
+                <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
+                    <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
+
+                    <div class="nav-links hidden md:flex gap-x-1 items-center font-medium">
+                        <a href="halaman-beranda.html">Beranda</a>
+                        <a href="halaman-sejarah.html">Sejarah</a>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-budaya.html" class="outline-none">
+                                <span>Budaya</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="dropdown-content absolute top-full left-0 mt-4 w-52 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-batik.html">Batik</a>
+                                <a href="halaman-tarian-adat.html">Tarian Adat</a>
+                                <a href="halaman-wayang.html">Wayang</a>
+                                <a href="halaman-upacara-adat.html">Upacara Adat</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-kuliner.html" class="outline-none">
+                                <span>Kuliner</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-makanan-tradisional.html">Makanan Tradisional</a>
+                                <a href="halaman-jajanan-khas.html">Jajanan Khas</a>
+                                <a href="halaman-minuman-khas.html">Minuman Khas</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-destinasi.html" class="outline-none">
+                                <span>Destinasi</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-wisata-alam.html">Wisata Alam</a>
+                                <a href="halaman-wisata-sejarah.html">Wisata Sejarah</a>
+                                <a href="halaman-wisata-budaya.html">Wisata Budaya</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-teknologi.html" class="outline-none">
+                                <span>Teknologi</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-smart-city.html">Smart City</a>
+                                <a href="halaman-kota-pelajar.html">Kota Pelajar</a>
+                                <a href="halaman-industri-modern.html">Industri Modern</a>
+                            </div>
+                        </div>
+
+                        <a href="halaman-peta-jogja.html">Peta</a>
+                        <a href="halaman-info.html">Tentang Kami</a>
+                    </div>
+
+                    <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+
+                <div id="mobile-menu"
+                    class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
+                    <div class="flex items-center justify-between mb-12">
+                        <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
+                        <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                            <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col space-y-6 overflow-y-auto">
+                        <a href="halaman-beranda.html" class="mobile-link">Beranda</a>
+                        <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
+
+                        <div class="mobile-dropdown">
+                            <div class="w-full flex justify-between items-center">
+                                <a href="halaman-budaya.html" class="mobile-link flex-grow">Budaya</a>
+                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                                <a href="halaman-batik.html" class="mobile-sublink">Batik</a>
+                                <a href="halaman-tarian-adat.html" class="mobile-sublink">Tarian Adat</a>
+                                <a href="halaman-wayang.html" class="mobile-sublink">Wayang</a>
+                                <a href="halaman-upacara-adat.html" class="mobile-sublink">Upacara Adat</a>
+                            </div>
+                        </div>
+
+                        <div class="mobile-dropdown">
+                            <div class="w-full flex justify-between items-center">
+                                <a href="halaman-kuliner.html" class="mobile-link flex-grow">Kuliner</a>
+                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                                <a href="halaman-makanan-tradisional.html" class="mobile-sublink">Makanan
+                                    Tradisional</a>
+                                <a href="halaman-jajanan-khas.html" class="mobile-sublink">Jajanan Khas</a>
+                                <a href="halaman-minuman-khas.html" class="mobile-sublink">Minuman Khas</a>
+                            </div>
+                        </div>
+
+                        <div class="mobile-dropdown">
+                            <div class="w-full flex justify-between items-center">
+                                <a href="halaman-destinasi.html" class="mobile-link flex-grow">Destinasi</a>
+                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                                <a href="halaman-wisata-alam.html" class="mobile-sublink">Wisata Alam</a>
+                                <a href="halaman-wisata-sejarah.html" class="mobile-sublink">Wisata Sejarah</a>
+                                <a href="halaman-wisata-budaya.html" class="mobile-sublink">Wisata Budaya</a>
+                            </div>
+                        </div>
+
+                        <div class="mobile-dropdown">
+                            <div class="w-full flex justify-between items-center">
+                                <a href="halaman-teknologi.html" class="mobile-link flex-grow">Teknologi</a>
+                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                                <a href="halaman-smart-city.html" class="mobile-sublink">Smart City</a>
+                                <a href="halaman-kota-pelajar.html" class="mobile-sublink">Kota Pelajar</a>
+                                <a href="halaman-industri-modern.html" class="mobile-sublink">Industri Modern</a>
+                            </div>
+                        </div>
+
+                        <a href="halaman-peta-jogja.html" class="mobile-link">Peta</a>
+                        <a href="halaman-info.html" class="mobile-link">Tentang Kami</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="about-container">
+            <section class="about-hero">
+                <h2 class="info-tag">Tugas Besar Web Dasar</h2>
+                <h2 class="info-title">Manifesto Digital Jogja Culture</h2>
+                <div class="ornament-divider"></div>
+                <p class="info-desc">
+                    Platform repositori kebudayaan Yogyakarta yang memadukan desain responsif HTML5, utilitas Tailwind
+                    CSS, optimasi grafis, serta animasi transisi halaman yang dinamis.
+                </p>
+            </section>
+
+            <section class="about-details">
+                <h2 class="section-subtitle">Referensi Resmi</h2>
+                <div class="ornament-divider"></div>
+                <p class="info-desc-secondary">
+                    Penyajian data kebudayaan dan pariwisata valid yang merujuk langsung pada dua pilar informasi
+                    otoritatif:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                    <div class="ref-detail-card">
+                        <div class="card-meta">
+                            <i data-lucide="crown"></i>
+                            <h3>Kraton Ngayogyakarta Hadiningrat</h3>
+                        </div>
+                        <p class="card-text">
+                            Sumber validasi data sejarah, silsilah Mataram Islam, adat istiadat, pranata sosial, tata
+                            ruang sumbu imajiner, serta filosofi kebudayaan lokal Keraton Yogyakarta.
+                        </p>
+                        <a href="https://www.kratonjogja.id/" target="_blank" rel="noopener noreferrer"
+                            class="ref-link-premium">
+                            <span>Kunjungi kratonjogja.id </span>
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+
+                    <div class="ref-detail-card">
+                        <div class="card-meta">
+                            <i data-lucide="map"></i>
+                            <h3>Enjoy Jakarta Tourism Portal</h3>
+                        </div>
+                        <p class="card-text">
+                            Referensi cetak biru manajemen informasi urban, arsitektur tata letak direktori, visualisasi
+                            peta penjelajahan, serta ergonomi interface panduan wisata digital.
+                        </p>
+                        <a href="https://enjoy.jakarta.go.id/" target="_blank" rel="noopener noreferrer"
+                            class="ref-link-premium">
+                            <span>Kunjungi enjoy.jakarta.go.id </span>
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="team-section">
+                <h2 class="section-subtitle">Tim Pengembang</h2>
+                <div class="ornament-divider"></div>
+                <p class="info-desc-secondary">
+                    Pembagian matriks kerja dan portofolio profesional personel tim pengembang:
+                </p>
+
+                <div class="team-cards-container">
+                    <div class="member-row-card member-rtl">
+                        <div class="member-info-content">
+                            <div>
+                                <div class="card-header-dev">
+                                    <div class="avatar-box"><i data-lucide="terminal"></i></div>
+                                    <div>
+                                        <h3>Khresmupu</h3>
+                                        <span class="role-badge">Lead Core &amp; System Engineer</span>
+                                    </div>
+                                </div>
+                                <p class="task-intro">Rekayasa fondasi halaman, navigasi peta, dan modul kota pintar:
+                                </p>
+                                <ul class="task-list">
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-beranda.html (Landing
+                                            Page)</span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-sejarah.html (Menu Utama)</span>
+                                    </li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-peta-jogja.html (Navigasi
+                                            Peta)</span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-teknologi.html (Smart
+                                            City)</span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-info.html (Dokumentasi
+                                            Website)</span></li>
+                                </ul>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="https://github.com/khresmupu33" target="_blank" rel="noopener noreferrer"
+                                    title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="currentColor" width="20" height="20">
+                                        <path
+                                            d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.25 9.27 7.76 10.77.57.1.78-.25.78-.56
+                                                    0-.28-.01-1.02-.02-2-3.15.68-3.81-1.52-3.81-1.52-.52-1.3-1.26-1.65-1.26-1.65-1.03-.7.08-.69.08-.69
+                                                    1.13.08 1.73 1.16 1.73 1.16 1.01 1.72 2.65 1.22 3.3.93.1-.73.39-1.22.71-1.5-2.52-.29-5.17-1.26-5.17-5.6
+                                                    0-1.24.44-2.25 1.16-3.04-.12-.29-.5-1.45.11-3.02 0 0 .95-.3 3.12 1.16a10.8 10.8 0 0 1 5.68 0
+                                                    c2.17-1.46 3.12-1.16 3.12-1.16.61 1.57.23 2.73.11 3.02.72.79 1.16 1.8 1.16 3.04
+                                                    0 4.35-2.66 5.31-5.19 5.59.4.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+                                                    0 .31.2.67.79.56 4.5-1.5 7.75-5.75 7.75-10.77C23.25 5.48 18.27.5 12 .5z" />
+                                    </svg></a>
+                                <a href="https://id.linkedin.com/in/khresna-mulia-putra-339b97382" target="_blank" rel="noopener noreferrer"
+                                    title="LinkedIn"> <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1
+            4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.84v2.16h.05
+            c.53-1.01 1.84-2.16 3.79-2.16 4.05 0 4.8 2.67 4.8 6.14V24h-4v-7.1
+            c0-1.7-.03-3.88-2.36-3.88-2.36 0-2.72 1.84-2.72 3.75V24h-4V8z" />
+                                    </svg></a>
+                                <a href="https://portofolio-khresmupu.netlify.app/" target="_blank" rel="noopener noreferrer" title="Portfolio"><i
+                                        data-lucide="globe"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-photo-block photo-right">
+                            <div class="photo-wrapper">
+                                <img src="IMG/khresmupu.jpg" alt="Foto Khresmupu">
+                                <div class="photo-overlay overlay-right"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-row-card member-ltr">
+                        <div class="member-info-content">
+                            <div>
+                                <div class="card-header-dev">
+                                    <div class="avatar-box"><i data-lucide="palette"></i></div>
+                                    <div>
+                                        <h3>Steven</h3>
+                                        <span class="role-badge">Gay</span>
+                                    </div>
+                                </div>
+                                <p class="task-intro">Visualisasi ekspresi seni, tata direktori pariwisata, dan info
+                                    proyek:</p>
+                                <ul class="task-list">
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-budaya.html (Kesenian &amp;
+                                            Adat)</span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-destinasi.html (Zonasi
+                                            Wisata)</span></li>
+                                </ul>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+                                    title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="currentColor" width="20" height="20">
+                                        <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.25 9.27 7.76 10.77.57.1.78-.25.78-.56
+    0-.28-.01-1.02-.02-2-3.15.68-3.81-1.52-3.81-1.52-.52-1.3-1.26-1.65-1.26-1.65-1.03-.7.08-.69.08-.69
+    1.13.08 1.73 1.16 1.73 1.16 1.01 1.72 2.65 1.22 3.3.93.1-.73.39-1.22.71-1.5-2.52-.29-5.17-1.26-5.17-5.6
+    0-1.24.44-2.25 1.16-3.04-.12-.29-.5-1.45.11-3.02 0 0 .95-.3 3.12 1.16a10.8 10.8 0 0 1 5.68 0
+    c2.17-1.46 3.12-1.16 3.12-1.16.61 1.57.23 2.73.11 3.02.72.79 1.16 1.8 1.16 3.04
+    0 4.35-2.66 5.31-5.19 5.59.4.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+    0 .31.2.67.79.56 4.5-1.5 7.75-5.75 7.75-10.77C23.25 5.48 18.27.5 12 .5z" />
+                                    </svg></a>
+                                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"
+                                    title="LinkedIn"> <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1
+            4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.84v2.16h.05
+            c.53-1.01 1.84-2.16 3.79-2.16 4.05 0 4.8 2.67 4.8 6.14V24h-4v-7.1
+            c0-1.7-.03-3.88-2.36-3.88-2.36 0-2.72 1.84-2.72 3.75V24h-4V8z" />
+                                    </svg></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" title="Portfolio"><i
+                                        data-lucide="globe"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-photo-block photo-left">
+                            <div class="photo-wrapper">
+                                <img src="IMG/steven.jpg" alt="Foto Steven">
+                                <div class="photo-overlay overlay-left"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-row-card member-rtl">
+                        <div class="member-info-content">
+                            <div>
+                                <div class="card-header-dev">
+                                    <div class="avatar-box"><i data-lucide="chef-hat"></i></div>
+                                    <div>
+                                        <h3>Roland</h3>
+                                        <span class="role-badge">The great father of gay </span>
+                                    </div>
+                                </div>
+                                <p class="task-intro">Standarisasi aset visual serta pengelolaan taksonomi kuliner khas:
+                                </p>
+                                <ul class="task-list">
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-kuliner.html (Main
+                                            Direktori)</span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-makanan-tradisional.html (Kuliner
+                                            Berat)</span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-jajanan-khas.html (Kudapan
+                                            Tradisional)</span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-minuman-khas.html (Wedangan &amp;
+                                            Jamu)</span></li>
+                                </ul>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+                                    title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="currentColor" width="20" height="20">
+                                        <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.25 9.27 7.76 10.77.57.1.78-.25.78-.56
+    0-.28-.01-1.02-.02-2-3.15.68-3.81-1.52-3.81-1.52-.52-1.3-1.26-1.65-1.26-1.65-1.03-.7.08-.69.08-.69
+    1.13.08 1.73 1.16 1.73 1.16 1.01 1.72 2.65 1.22 3.3.93.1-.73.39-1.22.71-1.5-2.52-.29-5.17-1.26-5.17-5.6
+    0-1.24.44-2.25 1.16-3.04-.12-.29-.5-1.45.11-3.02 0 0 .95-.3 3.12 1.16a10.8 10.8 0 0 1 5.68 0
+    c2.17-1.46 3.12-1.16 3.12-1.16.61 1.57.23 2.73.11 3.02.72.79 1.16 1.8 1.16 3.04
+    0 4.35-2.66 5.31-5.19 5.59.4.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+    0 .31.2.67.79.56 4.5-1.5 7.75-5.75 7.75-10.77C23.25 5.48 18.27.5 12 .5z" />
+                                    </svg></a>
+                                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"
+                                    title="LinkedIn"> <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1
+            4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.84v2.16h.05
+            c.53-1.01 1.84-2.16 3.79-2.16 4.05 0 4.8 2.67 4.8 6.14V24h-4v-7.1
+            c0-1.7-.03-3.88-2.36-3.88-2.36 0-2.72 1.84-2.72 3.75V24h-4V8z" />
+                                    </svg></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" title="Portfolio"><i
+                                        data-lucide="globe"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-photo-block photo-right">
+                            <div class="photo-wrapper">
+                                <img src="IMG/roland.jpg" alt="Foto Roland">
+                                <div class="photo-overlay overlay-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="highlight-quote">
+                <blockquote>"Melestarikan warisan budaya luhur lewat implementasi rekayasa pemrograman web modern."
+                </blockquote>
+            </div>
+        </main>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Jogja<span>Culture</span></div>
+        <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain untuk kebudayaan Mataram</p>
+    </footer>
+
+    <a href="#halaman-info" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">&#8593;</a>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        function muatSemuaIkon() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+                console.log("Semua ikon Lucide berhasil dirender.");
+            } else {
+                console.error("Library Lucide gagal dimuat dari server CDN.");
+            }
+        }
+        document.addEventListener("DOMContentLoaded", muatSemuaIkon);
+        window.addEventListener("load", muatSemuaIkon);
+    </script>
+    <script src="JS/Navigasi.js"></script>
+    <script src="JS/Dasar html.js"></script>
+    <script src="JS/btn-top.js"></script>
+    <script src="JS/in-out-page.js"></script>
+</body>
+
+</html>

@@ -51,16 +51,20 @@ body {
 h1,
 .hero-title,
 .sejarah-title {
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     font-weight: 700;
     line-height: 1.2;
+}
+
+h1{
+    font-size: 3.5rem !important;
 }
 
 h2,
 .section-title,
 .kuliner-main-title,
 .story-card h2 {
-    font-size: 1.875rem;
+    font-size: 1.875rem !important;
     font-weight: 600;
     line-height: 1.3;
 }
@@ -69,20 +73,20 @@ h3,
 .events-title,
 .menu-item-name,
 .node-content h3 {
-    font-size: 1.375rem;
+    font-size: 1.375rem !important;
     font-weight: 600;
 }
 
 h4,
 .event-item h4,
 .timeline-content h4 {
-    font-size: 1.125rem;
+    font-size: 1.125rem !important;
     font-weight: 600;
 }
 
 h5,
 h6 {
-    font-size: 1rem;
+    font-size: 1rem !important;
     font-weight: 600;
 }
 
@@ -92,14 +96,14 @@ p,
 .art-card-desc,
 .timeline-content p,
 .node-content p {
-    font-size: 1rem;
+    font-size: 1rem !important;
 }
 
 a,
 .nav-links a,
 .mobile-link,
 .mobile-sublink {
-    font-size: 1rem;
+    font-size: 1rem !important;
     text-decoration: none;
     display: inline-block;
 }
@@ -161,7 +165,7 @@ i,
 .art-card-tag,
 .place-type,
 .sejarah-label {
-    font-size: 1rem;
+    font-size: 1rem !important;
     /* Di HP: ~12px | Di Laptop: ~13.6px | Di PC: ~14.5px */
 }
 
