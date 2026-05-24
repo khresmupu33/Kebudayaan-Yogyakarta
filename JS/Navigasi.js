@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mainLink.addEventListener('click', function(e) {
 
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 1424) {
 
             e.preventDefault();
             e.stopPropagation();
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // LOGIKA DESKTOP: TETAP MENGGUNAKAN HOVER AMAN (LAYAR >= 768px)
         // =================================================================
         dropdown.addEventListener('mouseenter', () => {
-            if (window.innerWidth >= 768) {
+            if (window.innerWidth >= 1424) {
                 const currentIcon = dropdown.querySelector('.toggle-dropdown-btn svg, .toggle-dropdown-btn i');
                 if (content) content.classList.remove('hidden');
                 dropdown.classList.add('active');

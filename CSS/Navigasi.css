@@ -209,3 +209,60 @@
   font-weight: 700;
   padding: 8px 0 !important; 
 }
+/* Custom Breakpoint: Saat menu berubah menjadi 3 Bar (di bawah 1150px) */
+@media (max-width: 1150px) {
+    /* 1. Sembunyikan Navigasi Desktop & Munculkan Tombol 3 Bar */
+    .nav-links.hidden.md\:flex {
+        display: none !important;
+    }
+    button.md\:hidden {
+        display: block !important;
+    }
+    
+    /* 2. MATIKAN TOTAL HOVER DESKTOP (Jinakkan class group-hover bawaan HTML) */
+    .dropdown-parent:hover .dropdown-content,
+    .group:hover .dropdown-content {
+        opacity: 0 !important;
+        vertical-align: dashed;
+        visibility: hidden !important;
+        transform: none !important;
+        pointer-events: none !important; /* Supaya tidak bisa diinteraksi/hover */
+    }
+    
+    .group:hover .group-hover\:rotate-180 {
+        transform: none !important; /* Matikan putar panah versi desktop */
+    }
+
+    /* 3. Atur Tampilan Menu Utama Mobile (Menu Gantung/Sidebar) */
+    #mobile-menu {
+        display: flex !important;
+        background-color: #0f172a; /* Warna gelap solid agar rapi menyeluruh */
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .mobile-link {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #ffffff !important;
+    }
+
+    /* 4. Tampilan Sub-menu Dropdown Mobile Murni Klik */
+    .mobile-dropdown-content:not(.hidden) {
+        display: flex !important;
+        flex-direction: column;
+        padding-left: 1.25rem;
+        margin-top: 0.75rem;
+        gap: 0.75rem;
+        border-left: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-sublink {
+        font-size: 1.05rem;
+        color: #94a3b8 !important; 
+    }
+}
+
+/* Class pembantu untuk animasi rotasi icon chevron mobile saat KLIK */
+.rotate-180-click {
+    transform: rotate(180deg) !important;
+}
