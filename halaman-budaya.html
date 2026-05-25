@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogja Culture | Ragam Budaya Mataram</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="CSS/Dasar HTML.css">
+    <link rel="stylesheet" href="CSS/Navigasi.css">
+    <link rel="stylesheet" href="CSS/Beranda/budaya.css"> <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/quary.css">
+    <link rel="stylesheet" href="CSS/btn-top.css">
+    <link rel="stylesheet" href="CSS/keyframes.css">
+    <link rel="stylesheet" href="CSS/in-out-page.css">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body id="budaya">
+    <div class="in-page"></div>
+    <div class="out-page"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; height: 100%; max-width: 1200px; margin: 0 auto; width: 100%;">
+                <div class="navbar-logo" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream);">
+                    <a href="halaman-beranda.html" style="color: inherit; text-decoration: none;">Jogja<span style="color: var(--gold);">Culture</span></a>
+                </div>
+                
+                <ul class="nav-links" style="display: flex; list-style: none; gap: 1.5rem; align-items: center;">
+                    <li><a href="halaman-beranda.html">Beranda</a></li>
+                    <li><a href="halaman-sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman-budaya.html" style="color: var(--gold);">Budaya</a></li>
+                    <li><a href="halaman-kuliner.html">Kuliner</a></li>
+                    <li><a href="halaman-destinasi.html">Destinasi</a></li>
+                    <li><a href="halaman-teknologi.html">Teknologi</a></li>
+                    <li><a href="halaman-peta-jogja.html">Peta</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="max-width: 1200px; margin: 70px auto 0 auto; padding: 5rem 2rem;">
+        
+        <header class="page-header" style="text-align: center; margin-bottom: 4rem;">
+            <span class="sejarah-label" style="font-family: 'Josefin Sans', sans-serif; color: var(--gold); text-transform: uppercase; letter-spacing: 6px; display: block; margin-bottom: 1rem;">Warisan Leluhur</span>
+            <h1 class="sejarah-title" style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Adat, Seni & Kebudayaan</h1>
+            <div class="divider-custom" style="width: 80px; height: 2px; background: var(--gold); margin: 0 auto;"></div>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; max-width: 700px; margin: 1.5rem auto 0 auto; color: var(--text-mid); line-height: 1.6;">
+                Penjaga api peradaban berlandaskan filosofi luhur Mataram. Temukan keindahan filosofis di balik setiap gerak tari, guratan kain batik, jalinan cerita wayang, hingga kesakralan upacara adat ritual Keraton.
+            </p>
+        </header>
+
+        <section class="budaya-grid">
+            
+            <article class="art-card featured">
+                <div class="batik-bg"></div>
+                <div class="batik-border"></div>
+                <div class="art-card-icon">
+                    <i data-lucide="palette" style="color: var(--gold); width: 2.5rem; height: 2.5rem;"></i>
+                </div>
+                <h2 class="art-card-title" style="font-size: 2.5rem;">Seni Batik Jogja</h2>
+                <span class="art-card-tag" style="color: var(--gold); font-family: 'Josefin Sans', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; display: block; margin-bottom: 1rem;">Filosofi & Identitas</span>
+                <p class="art-card-desc" style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; margin-bottom: 2rem;">
+                    Bukan sekadar kain bercorak, setiap goresan malam di atas mori mengunci doa, strata, dan harapan spiritual. Temukan rahasia motif Ceplok, Parang Rusak, hingga Sidomukti yang sakral.
+                </p>
+                <a href="halaman-batik.html" class="btn-primary" style="display: inline-block; font-family: 'Josefin Sans', sans-serif; padding: 12px 28px; background: var(--gold); color: var(--brown-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; border-radius: 4px;">Jelajahi Batik</a>
+            </article>
+
+            <article class="art-card">
+                <div class="art-card-icon">
+                    <i data-lucide="sparkles" style="color: var(--gold);"></i>
+                </div>
+                <h3 class="art-card-title">Tarian Adat</h3>
+                <p class="art-card-desc" style="font-family: 'Cormorant Garamond', serif; margin-bottom: 1.5rem;">
+                    Penyelarasan jiwa melalu gerak gemulai nan tegas tari Bedhaya Semang atau ketangkasan tari Beksan Lawung Ageng.
+                </p>
+                <a href="halaman-tarian-adat.html" style="color: var(--gold); font-family: 'Josefin Sans', sans-serif; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 5px;">
+                    Lihat Ragam Tari <i data-lucide="arrow-right" style="width: 1rem; height: 1rem;"></i>
+                </a>
+            </article>
+
+            <article class="art-card">
+                <div class="art-card-icon">
+                    <i data-lucide="theater" style="color: var(--gold);"></i>
+                </div>
+                <h3 class="art-card-title">Wayang Kulit</h3>
+                <p class="art-card-desc" style="font-family: 'Cormorant Garamond', serif; margin-bottom: 1.5rem;">
+                    Bayang-bayang kehidupan manusia yang dikisahkan melalui jemari sang Dalang di balik layar selembar kain kelir.
+                </p>
+                <a href="halaman-wayang.html" style="color: var(--gold); font-family: 'Josefin Sans', sans-serif; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 5px;">
+                    Simak Kisahnya <i data-lucide="arrow-right" style="width: 1rem; height: 1rem;"></i>
+                </a>
+            </article>
+
+            <article class="art-card" style="grid-column: 2 / -1;">
+                <div class="art-card-icon">
+                    <i data-lucide="flame" style="color: var(--gold);"></i>
+                </div>
+                <h3 class="art-card-title">Upacara Adat & Ritual Sakral</h3>
+                <p class="art-card-desc" style="font-family: 'Cormorant Garamond', serif; margin-bottom: 1.5rem;">
+                    Saksikan harmoni rasa syukur masyarakat Yogyakarta melalui iring-iringan gunungan dalam Sekaten, Grebeg Mulud, hingga labuhan ageng di pesisir Pantai Selatan yang penuh makna mistis religius.
+                </p>
+                <a href="halaman-upacara-adat.html" style="color: var(--gold); font-family: 'Josefin Sans', sans-serif; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 5px;">
+                    Pelajari Upacara Ritual <i data-lucide="arrow-right" style="width: 1rem; height: 1rem;"></i>
+                </a>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">Jogja<span>Culture</span></div>
+        <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain dengan rasa hormat kepada tanah Mataram</p>
+    </footer>
+
+    <a href="#budaya" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
+        &#8593;
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
+    <script src="JS/Navigasi.js"></script>
+    <script src="JS/Dasar html.js"></script>
+    <script src="JS/btn-top.js"></script>
+    <script src="JS/in-out-page.js"></script>
+</body>
+
+</html>
