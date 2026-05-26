@@ -2,76 +2,225 @@
     background: var(--cream-dark);
 }
 
-.budaya-grid {
+.eksplorasi-seksyen {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Mengatur Layout Grid Responsif seperti Web Gerbang Budaya */
+.grid-container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
 }
 
-.art-card {
-    background: var(--brown-dark);
-    padding: 2.5rem;
+/* Mengambil Struktur Card dari Gerbang Budaya dengan Efek Overlay */
+.budaya-card {
     position: relative;
+    height: 480px; 
+    border-radius: 12px;
     overflow: hidden;
-    transition: all 0.4s ease;
-    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Membawa susunan teks merapat ke bawah kartu */
+    padding: 30px 25px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.art-card:hover {
-    background: var(--brown-mid);
+/* Efek Zoom Halus saat Card di-hover */
+.budaya-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px rgba(10, 77, 38, 0.25);
 }
 
-.art-card.featured {
-    grid-row: 1 / 3;
-    padding: 4rem;
-}
-
-.art-card-icon {
-    display: block;
-    margin-bottom: 1.5rem;
-}
-
-
-.art-card-title {
-    font-family: 'Playfair Display', serif;
-    color: var(--cream);
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-
-.art-card-desc {
-    color: rgba(240,224,204,0.7);
-    line-height: 1.8;
-    font-weight: 300;
-}
-
-.art-card-tag {
-    display: inline-block;
-    margin-top: 2rem;
-    font-family: 'Josefin Sans', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 4px;
-}
-
-.art-card-pattern {
+/* Efek Gradasi Gelap Transparan di atas Gambar (Kunci Keterbacaan Teks Putih) */
+.budaya-card::before {
+    content: '';
     position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 100px;
-    height: 100px;
-    opacity: 0.1;
-    border: 2px solid var(--gold);
-    transform: rotate(45deg);
-    transition: transform 0.5s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 77, 38, 0.2), rgba(0, 0, 0, 0.85));
+    z-index: 1;
 }
 
-.art-card:hover .art-card-pattern {
-    transform: rotate(90deg) scale(1.1);
+/* Memastikan teks & tombol berada di atas lapisan gelap */
+.card-badge, .card-title, .card-desc, .btn-jelajahi {
+    position: relative;
+    z-index: 2;
+    text-align: left; /* Rata kiri sesuai gaya estetik modern */
+}
+
+/* Badge Kategori di bagian atas teks */
+.card-badge {
+    align-self: flex-start;
+    color: var(--emas-keraton);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+/* Judul Seni/Budaya */
+.card-title {
+    color: var(--putih);
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    font-family: 'Georgia', serif;
+}
+
+/* Deskripsi Singkat di dalam Card */
+.card-desc {
+    color: #E0E0E0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    font-style: normal; /* Mengubah italic asli Anda agar lebih rapi di dalam card */
+}
+
+/* Tombol Jelajahi Modern Berbasis Kaca (Blur Backdrop) */
+.btn-jelajahi {
+    align-self: flex-start;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--putih);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Efek Hover Tombol berganti menjadi Emas Keraton */
+.btn-jelajahi:hover {
+    background-color: var(--emas-keraton);
+    color: var(--hijau-keraton);
+    border-color: var(--emas-keraton);
+}
+
+/* 1. Kontainer Utama: Memaksa 4 kolom sejajar ke samping */
+.card-container {
+    display: grid;
+    /* Membuat tepat 4 kolom yang membagi layar sama rata */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; /* Jarak antar kartu agar tidak saling menempel */
+    width: 100%;
+    max-width: 1400px; /* Diperlebar agar muat 4 kartu sekaligus dengan lega */
+    margin: 50px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 1. KONTANER UTAMA: 4 Kolom Sejajar Samping */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Tepat 4 kolom segaris */
+    gap: 24px; /* Jarak antar kartu */
+    width: 100%;
+    max-width: 1300px; /* Lebar maksimal grid agar megah */
+    margin: 50px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+    align-items: stretch; /* Memaksa semua kartu tingginya sama sejajar */
+}
+
+/* 2. KOTAK KARTU UTAMA */
+.card {
+    position: relative;
+    height: 520px; /* Tinggi vertikal kartu yang megah */
+    border-radius: 16px;
+    overflow: hidden; /* WAJIB: Supaya gambar yang membesar tidak tumpah keluar kotak */
+    padding: 40px 24px;
+    box-sizing: border-box;
+    
+    /* Mengaktifkan susunan Flexbox Vertikal */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memaksa semua elemen teks/tombol berada di tengah (Center) */
+    justify-content: space-between;
+}
+
+/* 3. ELEMEN GAMBAR BACKGROUND & ANIMASI MENCUIT */
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    /* Transisi halus saat gambar membesar dan mengecil */
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* EFEK HOVER: Gambar otomatis mencuit (zoom-in) saat kartu disentuh kursor */
+.card:hover .card-bg {
+    transform: scale(1.08); /* Tingkat pembesaran gambar */
+}
+
+/* Memastikan semua teks & tombol berada di depan lapisan gambar */
+.card .sub-title, 
+.card .card-title, 
+.card .btn {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); /* Efek bayangan tipis agar teks mudah dibaca */
+}
+
+/* 4. TEKS KATEGORI (Posisi: Atas Tengah) */
+.card .sub-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: auto; /* Mendorong elemen judul ke tengah */
+}
+
+/* 5. JUDUL UTAMA KARTU (Posisi: Benar-benar di Tengah) */
+.card .card-title {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto; /* Trik mengunci posisi tepat di center vertical */
+}
+
+/* 6. TOMBOL JELAJAHI (Posisi: Bawah Tengah) */
+.card .btn {
+    display: inline-block;
+    min-width: 130px;
+    padding: 12px 24px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Border putih transparan khas Gerbang Budaya */
+    border-radius: 8px;
+    background: transparent;
+    margin-top: auto; /* Mengunci tombol agar selalu di dasar bawah kartu */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover pada Tombol */
+.card .btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
 }

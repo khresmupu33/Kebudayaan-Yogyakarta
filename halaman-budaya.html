@@ -25,7 +25,7 @@
     <header>
         <nav class="navbar">
             <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; height: 100%; max-width: 1200px; margin: 0 auto; width: 100%;">
-                <div class="navbar-logo" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream);">
+                <div class="logo" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream);">
                     <a href="halaman-beranda.html" style="color: inherit; text-decoration: none;">Jogja<span style="color: var(--gold);">Culture</span></a>
                 </div>
                 
@@ -53,62 +53,40 @@
             </p>
         </header>
 
-        <section class="budaya-grid">
-            
-            <article class="art-card featured">
-                <div class="batik-bg"></div>
-                <div class="batik-border"></div>
-                <div class="art-card-icon">
-                    <i data-lucide="palette" style="color: var(--gold); width: 2.5rem; height: 2.5rem;"></i>
-                </div>
-                <h2 class="art-card-title" style="font-size: 2.5rem;">Seni Batik Jogja</h2>
-                <span class="art-card-tag" style="color: var(--gold); font-family: 'Josefin Sans', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; display: block; margin-bottom: 1rem;">Filosofi & Identitas</span>
-                <p class="art-card-desc" style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; margin-bottom: 2rem;">
-                    Bukan sekadar kain bercorak, setiap goresan malam di atas mori mengunci doa, strata, dan harapan spiritual. Temukan rahasia motif Ceplok, Parang Rusak, hingga Sidomukti yang sakral.
-                </p>
-                <a href="halaman-batik.html" class="btn-primary" style="display: inline-block; font-family: 'Josefin Sans', sans-serif; padding: 12px 28px; background: var(--gold); color: var(--brown-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; border-radius: 4px;">Jelajahi Batik</a>
-            </article>
+        <section class="eksplorasi-seksyen">
+    <div class="card-container">
 
-            <article class="art-card">
-                <div class="art-card-icon">
-                    <i data-lucide="sparkles" style="color: var(--gold);"></i>
-                </div>
-                <h3 class="art-card-title">Tarian Adat</h3>
-                <p class="art-card-desc" style="font-family: 'Cormorant Garamond', serif; margin-bottom: 1.5rem;">
-                    Penyelarasan jiwa melalu gerak gemulai nan tegas tari Bedhaya Semang atau ketangkasan tari Beksan Lawung Ageng.
-                </p>
-                <a href="halaman-tarian-adat.html" style="color: var(--gold); font-family: 'Josefin Sans', sans-serif; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 5px;">
-                    Lihat Ragam Tari <i data-lucide="arrow-right" style="width: 1rem; height: 1rem;"></i>
-                </a>
-            </article>
+    <div class="card">
+        <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('IMG/gambar-batik.png');"></div>
+        
+        <span class="sub-title">FILOSOFI & IDENTITAS</span>
+        <h2 class="card-title">Seni Batik Jogja</h2>
+        <a href="#" class="btn">Jelajahi</a>
+    </div>
 
-            <article class="art-card">
-                <div class="art-card-icon">
-                    <i data-lucide="theater" style="color: var(--gold);"></i>
-                </div>
-                <h3 class="art-card-title">Wayang Kulit</h3>
-                <p class="art-card-desc" style="font-family: 'Cormorant Garamond', serif; margin-bottom: 1.5rem;">
-                    Bayang-bayang kehidupan manusia yang dikisahkan melalui jemari sang Dalang di balik layar selembar kain kelir.
-                </p>
-                <a href="halaman-wayang.html" style="color: var(--gold); font-family: 'Josefin Sans', sans-serif; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 5px;">
-                    Simak Kisahnya <i data-lucide="arrow-right" style="width: 1rem; height: 1rem;"></i>
-                </a>
-            </article>
+    <div class="card">
+        <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('IMG/gambar-tari.jpg');"></div>
+        <span class="sub-title">PENYELARASAN JIWA</span>
+        <h2 class="card-title">Tarian Adat</h2>
+        <a href="#" class="btn">Jelajahi</a>
+    </div>
 
-            <article class="art-card" style="grid-column: 2 / -1;">
-                <div class="art-card-icon">
-                    <i data-lucide="flame" style="color: var(--gold);"></i>
-                </div>
-                <h3 class="art-card-title">Upacara Adat & Ritual Sakral</h3>
-                <p class="art-card-desc" style="font-family: 'Cormorant Garamond', serif; margin-bottom: 1.5rem;">
-                    Saksikan harmoni rasa syukur masyarakat Yogyakarta melalui iring-iringan gunungan dalam Sekaten, Grebeg Mulud, hingga labuhan ageng di pesisir Pantai Selatan yang penuh makna mistis religius.
-                </p>
-                <a href="halaman-upacara-adat.html" style="color: var(--gold); font-family: 'Josefin Sans', sans-serif; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 5px;">
-                    Pelajari Upacara Ritual <i data-lucide="arrow-right" style="width: 1rem; height: 1rem;"></i>
-                </a>
-            </article>
+    <div class="card">
+        <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('IMG/gambar-wayang.jpg');"></div>
+        <span class="sub-title">TUNTUNAN HIDUP</span>
+        <h2 class="card-title">Wayang Kulit</h2>
+        <a href="#" class="btn">Jelajahi</a>
+    </div>
 
-        </section>
+    <div class="card">
+        <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('IMG/gambar-ritual.jpg');"></div>
+        <span class="sub-title">RITUAL SAKRAL</span>
+        <h2 class="card-title">Upacara Adat</h2>
+        <a href="#" class="btn">Jelajahi</a>
+    </div>
+
+</div>
+</section>
     </main>
 
     <footer>
