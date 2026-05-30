@@ -50,3 +50,43 @@
 .menu-card:hover i {
     transform: scale(1.1) rotate(5deg);
 }
+
+
+
+
+.in-makanan {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    pointer-events: none;
+    display: flex;
+}
+
+
+.in-makanan::before,
+.in-makanan::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.in-makanan::before {
+    background-color: #ffffff;
+    z-index: 2;
+    animation: geserKanan 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.in-makanan::after {
+    background-color: #D4A250; 
+    z-index: 1;
+    animation: geserKanan 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s forwards; 
+}
+
+
+@keyframes geserKanan {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
