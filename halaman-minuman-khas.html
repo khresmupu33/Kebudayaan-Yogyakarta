@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogja Culture | Kuliner | Minuman Khas</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/makanan-tradisional.css">
+    <link rel="stylesheet" href="CSS/Dasar HTML.css">
+    <link rel="stylesheet" href="CSS/Navigasi.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/quary.css">
+    <link rel="stylesheet" href="CSS/btn-top.css">
+    <link rel="stylesheet" href="CSS/keyframes.css">
+    <link rel="stylesheet" href="CSS/in-out-page.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <style>
+        #minuman_khas {
+            background-color: #2C1A0E;
+            min-height: 100vh;
+        }
+
+        .in-minuman {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+  
+        .in-minuman::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 1;
+            border-right: 1px solid rgba(212, 162, 80, 0.3);
+            animation: belahKiri 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.8s forwards;
+        }
+
+        .in-minuman::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 1;
+            border-left: 1px solid rgba(212, 162, 80, 0.3);
+            animation: belahKanan 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.8s forwards;
+        }
+
+        
+        .ikon-tetesan {
+            position: relative;
+            z-index: 2;
+            color: #D4A250;
+      
+            animation: tetesanJatuh 1.8s ease-in-out forwards;
+        }
+
+        @keyframes belahKiri {
+            100% {
+                transform: translateX(-100%);
+                visibility: hidden;
+            }
+        }
+
+        @keyframes belahKanan {
+            100% {
+                transform: translateX(100%);
+                visibility: hidden;
+            }
+        }
+
+        @keyframes tetesanJatuh {
+            0% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+
+            30% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            60% {
+                transform: scale(1.3);
+                opacity: 1;
+                filter: drop-shadow(0 0 15px rgba(212, 162, 80, 0.8));
+            }
+
+            80% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="in-minuman">
+        <div class="ikon-tetesan">
+            <i data-lucide="droplets" class="w-20 h-20"></i>
+        </div>
+    </div>
+
+    <div class="out-page"></div>
+
+    <section id="minuman_khas">
+        <header>
+            <nav class="navbar transition-all duration-300">
+                <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
+                    <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
+
+                    <div class="nav-links hidden md:flex gap-x-1 items-center font-medium">
+                        <a href="halaman-beranda.html">Beranda</a>
+                        <a href="halaman-sejarah.html">Sejarah</a>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-budaya.html" class="outline-none">
+                                <span>Budaya</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="dropdown-content absolute top-full left-0 mt-4 w-52 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-batik.html">Batik</a>
+                                <a href="halaman-tarian-adat.html">Tarian Adat</a>
+                                <a href="halaman-wayang.html">Wayang</a>
+                                <a href="halaman-upacara-adat.html">Upacara Adat</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-kuliner.html" class="outline-none">
+                                <span>Kuliner</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-makanan-tradisional.html">Makanan Tradisional</a>
+                                <a href="halaman-jajanan-khas.html">Jajanan Khas</a>
+                                <a href="halaman-minuman-khas.html">Minuman Khas</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-destinasi.html" class="outline-none">
+                                <span>Destinasi</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-wisata-alam.html">Wisata Alam</a>
+                                <a href="halaman-wisata-sejarah.html">Wisata Sejarah</a>
+                                <a href="halaman-wisata-budaya.html">Wisata Budaya</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-parent relative group">
+                            <a href="halaman-teknologi.html" class="outline-none">
+                                <span>Teknologi</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div
+                                class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                                <a href="halaman-smart-city.html">Smart City</a>
+                                <a href="halaman-kota-pelajar.html">Kota Pelajar</a>
+                                <a href="halaman-industri-modern.html">Industri Modern</a>
+                            </div>
+                        </div>
+
+                        <a href="halaman-peta-jogja.html">Peta</a>
+                        <a href="halaman-info.html">Tentang Kami</a>
+                    </div>
+
+                    <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="makanan-hero text-center py-20 px-4 max-w-5xl mx-auto">
+                <p
+                    class="subtitle text-[var(--gold)] font-josefin tracking-widest uppercase mb-4 text-sm font-semibold">
+                    Pelepas Dahaga & Penghangat Hati</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 font-playfair text-[var(--cream)]">Minuman Khas Jogja
+                </h1>
+                <p
+                    class="text-lg md:text-xl max-w-3xl mx-auto opacity-90 text-[var(--cream-dark)] font-cormorant leading-relaxed">
+                    Seni meracik rempah yang diwariskan dari keraton turun ke jalanan angkringan. Temukan kesegaran di
+                    siang yang terik atau kehangatan di tengah sejuknya malam Yogyakarta.
+                </p>
+                <div class="w-24 h-1 bg-[var(--gold)] mx-auto mt-10 rounded-full opacity-50"></div>
+            </div>
+
+          
+            <div class="max-w-7xl mx-auto px-6 pb-32">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+
+                  
+                    <div
+                        class="relative overflow-hidden rounded-[2rem] h-[450px] group border border-[var(--gold)] border-opacity-30 shadow-[0_10px_20px_rgba(0,0,0,0.5)] cursor-pointer">
+                        <img src="IMG/kopi jos.jpg" alt="Kopi Jos Jogja"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+
+               
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#1A0F08] via-[#1A0F08]/80 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95">
+                        </div>
+
+                  
+                        <div
+                            class="absolute inset-0 flex flex-col justify-end p-8 md:p-10 translate-y-24 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="p-3 bg-[var(--brown-dark)] rounded-full text-[var(--gold)] border border-[var(--gold)] border-opacity-30 shadow-lg">
+                                    <i data-lucide="coffee" class="w-6 h-6"></i>
+                                </div>
+                                <h2 class="text-4xl font-bold font-playfair text-[var(--cream)] drop-shadow-md">Kopi Jos
+                                </h2>
+                            </div>
+                
+                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <p class="text-[var(--cream)] font-josefin text-lg leading-relaxed mb-4">
+                                    Bukan sembarang kopi! Kopi hitam pekat ini disajikan dengan sensasi unik, yaitu
+                                    arang membara (jos) yang dicelupkan langsung ke dalam gelasnya untuk menetralisir
+                                    ampas.
+                                </p>
+                                <p class="text-sm text-[var(--gold)] font-josefin italic tracking-wide">Paling asik
+                                    diminum sambil nongkrong di angkringan dekat Stasiun Tugu.</p>
+                            </div>
+                        </div>
+                    </div>
+
+      
+                    <div
+                        class="relative overflow-hidden rounded-[2rem] h-[450px] group border border-[var(--gold)] border-opacity-30 shadow-[0_10px_20px_rgba(0,0,0,0.5)] cursor-pointer">
+                        <img src="IMG/wedanguwuh.avif" alt="Wedang Uwuh Jogja"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#1A0F08] via-[#1A0F08]/80 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95">
+                        </div>
+
+                        <div
+                            class="absolute inset-0 flex flex-col justify-end p-8 md:p-10 translate-y-24 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="p-3 bg-[var(--brown-dark)] rounded-full text-[var(--gold)] border border-[var(--gold)] border-opacity-30 shadow-lg">
+                                    <i data-lucide="leaf" class="w-6 h-6"></i>
+                                </div>
+                                <h2 class="text-4xl font-bold font-playfair text-[var(--cream)] drop-shadow-md">Wedang
+                                    Uwuh</h2>
+                            </div>
+                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <p class="text-[var(--cream)] font-josefin text-lg leading-relaxed mb-4">
+                                    Secara harfiah berarti "minuman sampah" karena isiannya yang tampak berantakan.
+                                    Padahal, ini adalah racikan rempah super menyehatkan dari jahe, secang, cengkeh,
+                                    kayu manis, dan pala.
+                                </p>
+                                <p class="text-sm text-[var(--gold)] font-josefin italic tracking-wide">Bikin badan
+                                    otomatis hangat, pas banget buat malam hari.</p>
+                            </div>
+                        </div>
+                    </div>
+
+         
+                    <div
+                        class="relative overflow-hidden rounded-[2rem] h-[450px] group border border-[var(--gold)] border-opacity-30 shadow-[0_10px_20px_rgba(0,0,0,0.5)] cursor-pointer">
+                        <img src="IMG/essemlo.jpg" alt="Es Semlo Khas Jogja"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#1A0F08] via-[#1A0F08]/80 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95">
+                        </div>
+
+                        <div
+                            class="absolute inset-0 flex flex-col justify-end p-8 md:p-10 translate-y-24 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="p-3 bg-[var(--brown-dark)] rounded-full text-[var(--gold)] border border-[var(--gold)] border-opacity-30 shadow-lg">
+                                    <i data-lucide="glass-water" class="w-6 h-6"></i>
+                                </div>
+                                <h2 class="text-4xl font-bold font-playfair text-[var(--cream)] drop-shadow-md">Es Semlo
+                                </h2>
+                            </div>
+                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <p class="text-[var(--cream)] font-josefin text-lg leading-relaxed mb-4">
+                                    Minuman segar favorit Sultan Hamengkubuwono IX! Perpaduan unik antara potongan
+                                    pisang kepok dengan kuah sirup rempah merah merona berkat campuran kayu secang.
+                                </p>
+                                <p class="text-sm text-[var(--gold)] font-josefin italic tracking-wide">Penyelamat
+                                    sejati di siang bolong waktu cuaca lagi terik-teriknya.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="relative overflow-hidden rounded-[2rem] h-[450px] group border border-[var(--gold)] border-opacity-30 shadow-[0_10px_20px_rgba(0,0,0,0.5)] cursor-pointer">
+                        <img src="IMG/wedangronde.avif" alt="Wedang Ronde Jogja"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#1A0F08] via-[#1A0F08]/80 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95">
+                        </div>
+
+                        <div
+                            class="absolute inset-0 flex flex-col justify-end p-8 md:p-10 translate-y-24 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="p-3 bg-[var(--brown-dark)] rounded-full text-[var(--gold)] border border-[var(--gold)] border-opacity-30 shadow-lg">
+                                    <i data-lucide="soup" class="w-6 h-6"></i>
+                                </div>
+                                <h2 class="text-4xl font-bold font-playfair text-[var(--cream)] drop-shadow-md">Wedang
+                                    Ronde</h2>
+                            </div>
+                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <p class="text-[var(--cream)] font-josefin text-lg leading-relaxed mb-4">
+                                    Bola-bola ketan kenyal berisi kacang manis yang disajikan dalam kuah jahe panas
+                                    pekat bersama taburan kacang tanah sangrai dan potongan roti tawar.
+                                </p>
+                                <p class="text-sm text-[var(--gold)] font-josefin italic tracking-wide">Selalu sukses
+                                    balikin mood sehabis keliling Alun-Alun Kidul.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Jogja<span>Culture</span></div>
+        <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain dengan rasa hormat kepada tanah Mataram</p>
+    </footer>
+
+    <a href="#minuman_khas" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
+        &#8593;
+    </a>
+
+    <script src="JS/Navigasi.js"></script>
+    <script src="JS/Dasar html.js"></script>
+    <script src="JS/btn-top.js"></script>
+    <script src="JS/in-out-page.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
