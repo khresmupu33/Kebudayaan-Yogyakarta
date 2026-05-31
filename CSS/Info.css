@@ -4,6 +4,12 @@
 #halaman-info {
     background: var(--brown-dark);
     padding: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Memastikan tinggi halaman penuh agar posisi vertikal pas di tengah */
+    width: 100%;
 }
 
 .about-container {
