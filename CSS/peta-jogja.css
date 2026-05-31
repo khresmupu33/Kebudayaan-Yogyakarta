@@ -263,7 +263,8 @@ body {
     }
     
     .legend-label {
-        font-size: 12px;                 /* Sedikit mengecilkan teks agar muat di layar HP kecil */
+        font-size: 12px;
+        color: #d4af37;                 /* Sedikit mengecilkan teks agar muat di layar HP kecil */
     }
 
     /* Menyembunyikan panel kontrol tombol zoom teks desktop di layar mobile */

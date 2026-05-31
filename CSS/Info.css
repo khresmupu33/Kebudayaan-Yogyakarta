@@ -1,13 +1,14 @@
-/* Base Configuration */
+/* ==========================================================================
+   Base Configuration
+   ========================================================================== */
 #halaman-info {
     background: var(--brown-dark);
-    min-height: 100vh;
+    padding: 1px;
 }
 
 .about-container {
-    max-w: 1200px;
+    max-width: 1200px;
     width: 100%;
-    margin: 0 auto;
 }
 
 /* Header Manifesto */
@@ -88,6 +89,18 @@
 /* ==========================================================================
    REFERENSI CARDS & EFEK INTERAKTIF HOVER LUAS
    ========================================================================== */
+.ref-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
 .ref-detail-card {
     background: rgba(107, 58, 31, 0.18);
     border: 1px solid rgba(212, 162, 80, 0.25);
@@ -96,20 +109,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Transisi agar animasi hover terasa sangat halus dan responsif */
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.35s ease,
-        box-shadow 0.4s ease,
-        background-color 0.35s ease;
+                border-color 0.35s ease,
+                box-shadow 0.4s ease,
+                background-color 0.35s ease;
 }
 
-/* EFEK HOVER BARU: Kartu naik sedikit, berpendar, dan border menyala emas */
 .ref-detail-card:hover {
     transform: translateY(-8px);
     border-color: var(--gold);
     background: rgba(107, 58, 31, 0.28);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(212, 162, 80, 0.1);
+                0 0 20px rgba(212, 162, 80, 0.1);
 }
 
 .card-meta {
@@ -159,18 +170,23 @@
    ========================================================================== */
 .team-section {
     margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-/* Wadah Utama Pembungkus Seluruh Kartu */
 .team-cards-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     max-width: 1024px;
     width: 100%;
     margin: 48px auto 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-/* Kartu Utama Individu Anggota */
 .member-row-card {
     display: flex;
     justify-content: space-between;
@@ -181,7 +197,7 @@
     overflow: hidden;
     transition: all 0.35s ease;
     margin-bottom: 55px;
-    /* Kontrol jarak renggang antar anggota */
+    width: 100%;
 }
 
 .member-row-card:last-child {
@@ -194,7 +210,6 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Pengaturan Arah Modul Selang-Seling */
 .member-rtl {
     flex-direction: row;
 }
@@ -203,11 +218,9 @@
     flex-direction: row-reverse;
 }
 
-/* Area Informasi Teks Di Dalam Kartu */
 .member-info-content {
     flex: 1;
     padding: 40px;
-    /* Ukuran padding internal dikontrol dari sini */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -258,6 +271,7 @@
 }
 
 .task-list {
+    display: flex;
     flex-direction: column;
 }
 
@@ -278,7 +292,6 @@
     flex-shrink: 0;
 }
 
-/* Portofolio Tautan */
 .portfolio-links {
     display: flex;
     gap: 12px;
@@ -306,7 +319,6 @@
     transform: translateY(-3px);
 }
 
-/* Area Blok Ukuran Foto Keren */
 .member-photo-block {
     width: 320px;
     min-width: 320px;
@@ -332,7 +344,6 @@
     transform: scale(1.06);
 }
 
-/* Overlay bayangan dinamis sesuai posisi foto */
 .photo-overlay {
     position: absolute;
     inset: 0;
@@ -347,13 +358,11 @@
     background: linear-gradient(to left, var(--brown-dark) 0%, transparent 15%, rgba(0, 0, 0, 0.2) 100%);
 }
 
-/* Foot Manifesto Box */
 .highlight-quote {
     background: linear-gradient(135deg, var(--brown-mid), var(--brown-warm));
     border-left: 4px solid var(--gold);
     padding: 35px;
     border-radius: 0 8px 8px 0;
-    max-w: 960px;
     margin: 10px auto 0 auto;
 }
 
@@ -365,222 +374,272 @@
     text-align: center;
 }
 
-/* Mengontrol ukuran wajib ikon SVG Lucide di dalam portofolio agar tidak menciut */
 .portfolio-links a svg {
     width: 20px !important;
     height: 20px !important;
     display: block;
 }
 
+.main-layout-container.sidebar-closed .events-sticky-box,
+.main-layout-container.sidebar-closed .events-sidebar h3 {
+    display: none;
+}
+
+
 /* ==========================================================================
-   Responsive Adaptive Viewport (Mobile/HP)
-   ========================================================================== */
-/* ==========================================================================
-   RESPONSIVE MOBILE OPTIMIZED
-   Semua card lebih lebar + teks lebih kecil
+   RESPONSIVE MOBILE OPTIMIZED (CARD HAMPIR MENYENTUH PINGGIR HALAMAN FULL)
    ========================================================================== */
 @media screen and (max-width: 768px) {
 
+    .about-container {
+        padding: 0 4px !important; /* MODIFIKASI: Sisa jarak ke tepi layar dibuat sangat tipis (4px) */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
     .pcard {
+        display: flex;
+        flex-direction: column;
         align-items: center !important;
         justify-content: center !important;
     }
 
     .info-tag {
-        font-size: 0.62rem;
-        letter-spacing: 1.4px;
+        font-size: 0.58rem;
+        letter-spacing: 1.2px;
+        text-align: center;
     }
 
     .info-title {
-        font-size: 1.55rem;
+        font-size: 1.4rem;
         line-height: 1.2;
-        margin-top: 10px;
+        margin-top: 8px;
+        text-align: center;
     }
 
     .ornament-divider {
-        width: 90px;
-        margin: 18px auto;
+        width: 80px;
+        margin: 15px auto;
     }
 
     .info-desc {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.88rem;
+        line-height: 1.55;
         max-width: 100%;
+        text-align: center;
+        padding: 0 12px; /* Teks deskripsi diberi padding agar tidak ikut mepet tepi */
     }
 
     .section-subtitle {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 1.3;
+        text-align: center;
     }
 
     .info-desc-secondary {
-        font-size: 0.78rem;
-        line-height: 1.5;
-        margin-bottom: 16px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+        margin-bottom: 14px;
         max-width: 100%;
+        text-align: center;
+        padding: 0 12px;
     }
 
     /* =========================
-       REFERENSI CARD
+       REFERENSI CARD (MOBILE)
        ========================= */
+    .ref-cards-container {
+        padding: 0 !important; 
+        width: 100%;
+    }
+
     .ref-detail-card {
-        width: 240px;
-        border-radius: 10px;
+        width: 100% !important;
+        max-width: 100% !important; /* Mengisi penuh sisa ruang kontainer */
+        margin: 0 auto;
+        padding: 24px 16px; 
+        border-radius: 6px; /* Lengkungan sudut sedikit dikurangi agar tampak kokoh di pinggir */
+        box-sizing: border-box;
     }
 
     .ref-detail-card:hover {
         transform: translateY(-3px);
     }
 
+    .card-meta {
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
 
     .card-meta h3 {
-        font-size: 1rem;
+        font-size: 0.95rem;
         line-height: 1.3;
+        text-align: center;
     }
 
     .card-meta i,
     .card-meta svg {
-        width: 16px !important;
-        height: 16px !important;
-    }
-
-    .card-text {
-        font-size: 0.78rem;
-        line-height: 1.55;
-        margin-bottom: 14px;
-    }
-
-    .ref-link-premium {
-        font-size: 0.72rem;
-        padding: 6px 12px;
-        gap: 6px;
-    }
-
-    /* =========================
-       TEAM SECTION
-       ========================= */
-    .team-section {
-        margin-bottom: 50px;
-    }
-
-    .team-cards-container {
-        width: 250px;
-        margin-left: -20px;
-         align-items: center !important;
-        justify-content: center !important;
-    }
-
-    .member-row-card {
-        width: 100%;
-        flex-direction: column-reverse !important;
-        border-radius: 10px;
-         align-items: center !important;
-        justify-content: center !important;
-
-    }
-
-    .member-info-content {
-        width: 100%;
-        padding: 8px;
-        
-        align-items: center !important;
-        justify-content: center !important;
-
-    }
-
-    .card-header-dev {
-        gap: 10px;
-    }
-
-    .avatar-box {
-        width: 38px;
-        height: 38px;
-        min-width: 38px;
-    }
-
-    .avatar-box i,
-    .avatar-box svg {
-        width: 16px !important;
-        height: 16px !important;
-    }
-
-    .card-header-dev h3 {
-        font-size: 1.05rem;
-        line-height: 1.3;
-    }
-
-    .role-badge {
-        font-size: 0.58rem;
-        padding: 2px 7px;
-        margin-top: 3px;
-    }
-
-    .task-intro {
-        font-size: 0.76rem;
-        line-height: 1.5;
-        margin-bottom: 8px;
-    }
-
-    .task-list {
-        gap: 6px;
-        margin-bottom: 16px;
-    }
-
-    .task-list li {
-        font-size: 0.74rem;
-        line-height: 1.45;
-        gap: 8px;
-    }
-
-    .task-list li i,
-    .task-list li svg {
-        width: 11px !important;
-        height: 11px !important;
-        margin-top: 3px;
-    }
-
-    /* PORTFOLIO */
-    .portfolio-links {
-        gap: 8px;
-        padding-top: 12px;
-    }
-
-    .portfolio-links a {
-        width: 30px;
-        height: 30px;
-    }
-
-    .portfolio-links a svg,
-    .portfolio-links a i {
         width: 14px !important;
         height: 14px !important;
     }
 
-    /* FOTO */
-    .member-photo-block {
-        width: 100%;
-        min-width: 100%;
-        height: 220px;
+    .card-text {
+        font-size: 0.74rem;
+        line-height: 1.5;
+        margin-bottom: 14px;
+        text-align: center;
     }
 
-    .photo-overlay {
-        background:
-            linear-gradient(to top,
-                rgba(44, 26, 14, 0.95) 0%,
-                transparent 45%) !important;
+    .ref-link-premium {
+        font-size: 0.68rem;
+        padding: 5px 12px;
+        gap: 5px;
+        align-self: center;
     }
 
     /* =========================
-       QUOTE
+       TEAM SECTION (MOBILE)
        ========================= */
+    .team-section {
+        margin-bottom: 45px;
+        width: 100%;
+    }
+
+    .team-cards-container {
+        width: 100% !important;
+        max-width: 100% !important; /* Memaksa container meregang penuh */
+        margin: 30px auto 0 auto;
+        padding: 0 !important; 
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+    }
+
+    .member-row-card {
+        width: 100% !important; /* Card tim dipaksa meregang penuh ke tepi halaman */
+        max-width: 100% !important;
+        flex-direction: column-reverse !important;
+        border-radius: 6px; /* Lengkungan sudut sedikit dikurangi agar rapi di pinggiran */
+        margin-bottom: 25px;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .member-info-content {
+        width: 100%;
+        padding: 24px 16px; 
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box;
+    }
+
+    .card-header-dev {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 10px;
+        justify-content: center !important;
+    }
+
+    .avatar-box {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+    }
+
+    .avatar-box i,
+    .avatar-box svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .card-header-dev h3 {
+        font-size: 0.98rem;
+        line-height: 1.3;
+        text-align: center;
+    }
+
+    .role-badge {
+        font-size: 0.52rem;
+        padding: 1px 6px;
+        margin-top: 2px;
+    }
+
+    .task-intro {
+        font-size: 0.72rem;
+        line-height: 1.45;
+        margin-bottom: 6px;
+        text-align: center;
+    }
+
+    .task-list {
+        gap: 5px;
+        margin-bottom: 14px;
+        align-items: center;
+    }
+
+    .task-list li {
+        font-size: 0.70rem;
+        line-height: 1.4;
+        gap: 6px;
+        justify-content: center;
+    }
+
+    .task-list li i,
+    .task-list li svg {
+        width: 10px !important;
+        height: 10px !important;
+        margin-top: 2px;
+    }
+
+    /* PORTFOLIO (MOBILE) */
+    .portfolio-links {
+        gap: 10px;
+        padding-top: 12px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .portfolio-links a {
+        width: 28px;
+        height: 28px;
+    }
+
+    .portfolio-links a svg,
+    .portfolio-links a i {
+        width: 13px !important;
+        height: 13px !important;
+    }
+
+    /* FOTO MEMBER (MOBILE) */
+    .member-photo-block {
+        width: 100%;
+        min-width: 100%;
+        height: 230px; 
+    }
+
+    .photo-overlay {
+        background: linear-gradient(to top, rgba(44, 26, 14, 0.85) 0%, transparent 55%) !important;
+    }
+
+    /* QUOTE (MOBILE) */
     .highlight-quote {
         width: 100%;
-        padding: 18px;
-        border-radius: 0 8px 8px 0;
+        max-width: 100% !important; /* Mengikuti kelebaran halaman penuh */
+        padding: 16px;
+        margin: 10px auto;
+        border-left: none;
+        border-top: 3px solid var(--gold);
+        border-radius: 6px;
+        box-sizing: border-box;
     }
 
     .highlight-quote blockquote {
-        font-size: 0.98rem;
-        line-height: 1.6;
+        font-size: 0.90rem;
+        line-height: 1.55;
     }
 }

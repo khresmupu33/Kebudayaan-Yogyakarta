@@ -44,8 +44,9 @@
 }
 
 
+/* PERBAIKAN: Tambahkan .events-sidebar sebelum h3 */
 .main-layout-container.sidebar-closed .events-sticky-box,
-.main-layout-container.sidebar-closed h3 {
+.main-layout-container.sidebar-closed .events-sidebar h3 {
     display: none;
 }
 
