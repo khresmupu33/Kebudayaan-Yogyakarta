@@ -8,7 +8,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Memastikan tinggi halaman penuh agar posisi vertikal pas di tengah */
+    min-height: 100vh;
+    /* Memastikan tinggi halaman penuh agar posisi vertikal pas di tengah */
     width: 100%;
 }
 
@@ -117,9 +118,9 @@
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.35s ease,
-                box-shadow 0.4s ease,
-                background-color 0.35s ease;
+        border-color 0.35s ease,
+        box-shadow 0.4s ease,
+        background-color 0.35s ease;
 }
 
 .ref-detail-card:hover {
@@ -127,7 +128,7 @@
     border-color: var(--gold);
     background: rgba(107, 58, 31, 0.28);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5),
-                0 0 20px rgba(212, 162, 80, 0.1);
+        0 0 20px rgba(212, 162, 80, 0.1);
 }
 
 .card-meta {
@@ -370,7 +371,7 @@
     border-left: 4px solid var(--gold);
     padding: 35px;
     border-radius: 0 8px 8px 0;
-    margin: 10px auto 0 auto;
+    margin: 100px 100px 100px 100px;
 }
 
 .highlight-quote blockquote {
@@ -399,7 +400,8 @@
 @media screen and (max-width: 768px) {
 
     .about-container {
-        padding: 0 4px !important; /* MODIFIKASI: Sisa jarak ke tepi layar dibuat sangat tipis (4px) */
+        padding: 0 4px !important;
+        /* MODIFIKASI: Sisa jarak ke tepi layar dibuat sangat tipis (4px) */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -438,7 +440,8 @@
         line-height: 1.55;
         max-width: 100%;
         text-align: center;
-        padding: 0 12px; /* Teks deskripsi diberi padding agar tidak ikut mepet tepi */
+        padding: 0 12px;
+        /* Teks deskripsi diberi padding agar tidak ikut mepet tepi */
     }
 
     .section-subtitle {
@@ -460,16 +463,18 @@
        REFERENSI CARD (MOBILE)
        ========================= */
     .ref-cards-container {
-        padding: 0 !important; 
+        padding: 0 !important;
         width: 100%;
     }
 
     .ref-detail-card {
         width: 100% !important;
-        max-width: 100% !important; /* Mengisi penuh sisa ruang kontainer */
+        max-width: 100% !important;
+        /* Mengisi penuh sisa ruang kontainer */
         margin: 0 auto;
-        padding: 24px 16px; 
-        border-radius: 6px; /* Lengkungan sudut sedikit dikurangi agar tampak kokoh di pinggir */
+        padding: 24px 16px;
+        border-radius: 6px;
+        /* Lengkungan sudut sedikit dikurangi agar tampak kokoh di pinggir */
         box-sizing: border-box;
     }
 
@@ -519,19 +524,22 @@
 
     .team-cards-container {
         width: 100% !important;
-        max-width: 100% !important; /* Memaksa container meregang penuh */
+        max-width: 100% !important;
+        /* Memaksa container meregang penuh */
         margin: 30px auto 0 auto;
-        padding: 0 !important; 
+        padding: 0 !important;
         display: flex;
         flex-direction: column;
         align-items: center !important;
     }
 
     .member-row-card {
-        width: 100% !important; /* Card tim dipaksa meregang penuh ke tepi halaman */
+        width: 100% !important;
+        /* Card tim dipaksa meregang penuh ke tepi halaman */
         max-width: 100% !important;
         flex-direction: column-reverse !important;
-        border-radius: 6px; /* Lengkungan sudut sedikit dikurangi agar rapi di pinggiran */
+        border-radius: 6px;
+        /* Lengkungan sudut sedikit dikurangi agar rapi di pinggiran */
         margin-bottom: 25px;
         align-items: center !important;
         justify-content: center !important;
@@ -539,7 +547,7 @@
 
     .member-info-content {
         width: 100%;
-        padding: 24px 16px; 
+        padding: 24px 16px;
         align-items: center !important;
         justify-content: center !important;
         box-sizing: border-box;
@@ -626,7 +634,7 @@
     .member-photo-block {
         width: 100%;
         min-width: 100%;
-        height: 230px; 
+        height: 230px;
     }
 
     .photo-overlay {
@@ -636,9 +644,11 @@
     /* QUOTE (MOBILE) */
     .highlight-quote {
         width: 100%;
-        max-width: 100% !important; /* Mengikuti kelebaran halaman penuh */
+        max-width: 100% !important;
+        /* Mengikuti kelebaran halaman penuh */
         padding: 16px;
-        margin: 10px auto;
+
+        margin: 100px 100px 100px 100px;
         border-left: none;
         border-top: 3px solid var(--gold);
         border-radius: 6px;
