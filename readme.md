@@ -3,7 +3,6 @@
 ![Status Proyek](https://img.shields.io/badge/Project-Tugas%20Besar%20Webdas-brown)
 ![Tahun Proyek](https://img.shields.io/badge/Year-2026-gold)
 
-**Jogja Culture** adalah platform web interaktif yang dirancang untuk memperkenalkan, melestarikan, dan mengedukasi masyarakat mengenai ragam kebudayaan, sejarah, kuliner, destinasi wisata, serta perkembangan teknologi modern di Daerah Istimewa Yogyakarta. Web ini dibangun menggunakan HTML5, CSS eksternal dengan pendekatan modular, Tailwind CSS, ikon dari Lucide, serta JavaScript kustom.
 
 ---
 
