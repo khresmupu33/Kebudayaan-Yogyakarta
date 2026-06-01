@@ -346,7 +346,9 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    object-position: top; 
 }
+
 
 .member-row-card:hover .photo-wrapper img {
     transform: scale(1.06);
