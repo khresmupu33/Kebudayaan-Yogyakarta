@@ -63,7 +63,7 @@ footer {
     left: 0;
     width: 35px;
     height: 2px;
-    background: #e62a4a; /* Warna merah aksen, bisa diganti var(--gold) */
+    background: #C8885A; /* Warna merah aksen, bisa diganti var(--gold) */
 }
 
 .footer-links-vertical {

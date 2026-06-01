@@ -1,0 +1,205 @@
+
+
+/* Pengaturan latar belakang halaman sesuai ketentuan poin g */
+#privacy_policy_page {
+    background: var(--brown-dark);
+    min-height: 100vh;
+    padding-top: 80px; /* Jarak aman agar konten tidak tertutup navbar fixed */
+}
+
+/* Pembungkus Konten Utama */
+.privacy-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+/* Desain Header Dokumen */
+.privacy-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.privacy-header h1 {
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+}
+
+.privacy-header p {
+    color: var(--cream-dark);
+}
+
+.title-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 1.5rem auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Grid Layout untuk Kartu Informasi Kebijakan */
+.privacy-content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Pengaturan Kartu Privacy */
+.privacy-card {
+    background: rgba(107, 58, 31, 0.25); /* Paduan transparan berbasis --brown-mid */
+    border: 1px solid rgba(212, 162, 80, 0.2); /* Sempadan transparan berbasis --gold */
+    padding: 2.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.privacy-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+/* Wadah Ikon Lucide di dalam kartu */
+.card-icon-wrapper {
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: inline-block;
+}
+
+.card-icon-wrapper i {
+    width: 32px;
+    height: 32px;
+}
+
+.privacy-card h3 {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.privacy-card p {
+    color: var(--cream-dark);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.6;
+}
+
+/* List Khusus Referensi Website */
+.reference-list {
+    margin-top: 1rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+.reference-list li {
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
+}
+
+
+
+.reference-list a {
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+    border-bottom: 1px dashed rgba(255, 248, 240, 0.3);
+}
+
+.reference-list a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+/* --- OPTIMASI KHUSUS MOBILE / HP (SANGAT RAPI) --- */
+/* --- OPTIMASI KHUSUS MOBILE / HP (SANGAT RAPI) --- */
+@media (max-width: 768px) {
+    #privacy_policy_page {
+        padding-top: 70px;
+    }
+
+    .privacy-container {
+        padding: 2.5rem 1rem;
+    }
+
+    .privacy-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .privacy-header h1 {
+        font-size: 1.8rem; /* Mengecilkan judul utama agar muat di HP */
+    }
+
+    .privacy-header p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        padding: 0 0.5rem;
+    }
+
+    /* Stack satu kolom ke bawah dengan jarak yang pas */
+    .privacy-content-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    /* Rekonstruksi struktur Card khusus HP */
+    .privacy-card {
+        padding: 1.5rem;
+        border-radius: 10px;
+        background: rgba(107, 58, 31, 0.35); /* Lebih solid sedikit agar kontras di HP */
+        
+        /* Mengubah layout card agar judul & ikon bersandingan menyamping (menghemat ruang vertikal) */
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1rem;
+        row-gap: 0.8rem;
+        align-items: center;
+    }
+
+    /* Memposisikan Ikon di sebelah kiri atas judul */
+    .card-icon-wrapper {
+        margin-bottom: 0;
+        padding: 0.5rem;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .card-icon-wrapper i {
+        width: 22px;
+        height: 22px; /* Ukuran ikon mengecil proporsional */
+    }
+
+    /* Memposisikan Judul di sebelah kanan ikon */
+    .privacy-card h3 {
+        font-size: 1.15rem; /* Mengecilkan teks judul card */
+        margin-bottom: 0;
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    /* Memposisikan Deskripsi teks penuh di bawahnya */
+    .privacy-card p {
+        font-size: 0.95rem; /* Ukuran font p tetap seimbang sesuai instruksi */
+        line-height: 1.5;
+        grid-column: 1 / span 2; /* Memenuhi grid bawah dari ujung kiri ke kanan */
+        margin: 0;
+    }
+/* --- PERBAIKAN TOTAL SPASE LIST PADA MOBILE --- */
+    .reference-list {
+        grid-column: 1 / span 2;
+        display: flex;
+        flex-direction: row; /* Berjejer ke samping sesuai gambar */
+        gap: 1.5rem;         /* Jarak horizontal antar link */
+        margin-top: -100px;           /* Menghilangkan margin luar atas/bawah bawaan ul */
+        padding-top: -100px;          /* MENENTUKAN UTAMA: Menghilangkan padding-left 40px bawaan ul */
+        list-style: none;    /* Memastikan tidak ada bullet point bawaan */
+        width: 100%;
+        justify-content: flex-start; /* Merapatkan konten ke kiri sejajar teks */
+    }
+    
+    .reference-list li {
+        font-size: 0.9rem;
+        margin: 0;          /* Menghilangkan sisa margin pada item list */
+        padding: 0;         /* Menghilangkan sisa padding pada item list */
+        line-height: 1;     /* Memaksa tinggi baris seminimal mungkin agar spasi bawah hilang */
+    }
+}
