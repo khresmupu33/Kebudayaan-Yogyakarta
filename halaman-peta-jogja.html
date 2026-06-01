@@ -225,6 +225,7 @@
                 </label>
             </div>
 
+
             <!-- Bagian ini otomatis disembunyikan di mobile melalui CSS (.map-legend-control > div:last-child) -->
             <div class="mt-6 pt-6 border-t border-[rgba(212,175,55,0.25)]">
                 <div class="legend-title">Navigasi Peta</div>
@@ -236,9 +237,34 @@
                         <i data-lucide="minus" class="w-4 h-4 mr-2"></i> Perkecil
                     </button>
                 </div>
-                <button id="customZoomReset" class="btn-custom-zoom w-full" title="Kembali ke Default">
+                <button id="customZoomReset" class="btn-custom-zoom w-full mb-4" title="Kembali ke Default">
                     <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i> Reset Tampilan DIY
                 </button>
+
+                <!-- BARU: Blok Tombol Pengarah / Fokus Wilayah -->
+                <div class="legend-title">Navigasi Peta</div>
+                <div class="flex flex-col gap-1.5">
+                    <button onclick="arahkannyaKeWilayah('yogyakarta')"
+                        class="btn-custom-zoom !justify-start w-full !py-1.5 text-xs">
+                        📍 Kota Yogyakarta
+                    </button>
+                    <button onclick="arahkannyaKeWilayah('sleman')"
+                        class="btn-custom-zoom !justify-start w-full !py-1.5 text-xs">
+                        📍 Kab. Sleman
+                    </button>
+                    <button onclick="arahkannyaKeWilayah('bantul')"
+                        class="btn-custom-zoom !justify-start w-full !py-1.5 text-xs">
+                        📍 Kab. Bantul
+                    </button>
+                    <button onclick="arahkannyaKeWilayah('kulonprogo')"
+                        class="btn-custom-zoom !justify-start w-full !py-1.5 text-xs">
+                        📍 Kab. Kulon Progo
+                    </button>
+                    <button onclick="arahkannyaKeWilayah('gunungkidul')"
+                        class="btn-custom-zoom !justify-start w-full !py-1.5 text-xs">
+                        📍 Kab. Gunungkidul
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -273,10 +299,10 @@
     <footer>
         <div class="footer-top-section">
             <div class="footer-column">
-            <div class="footer-logo-box">
-                <div class="footer-logo">Jogja<span>Culture</span></div>
-                <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
-            </div>
+                <div class="footer-logo-box">
+                    <div class="footer-logo">Jogja<span>Culture</span></div>
+                    <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+                </div>
             </div>
 
             <!-- Kolom Navigasi (Sesuai gambar image_5e60a0.png) -->

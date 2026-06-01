@@ -297,3 +297,34 @@ body {
         margin: 0 !important;
     }
 }
+/* =========================================================================
+   TOMBOL PENGARAH / DIREKSI RUTE DI DALAM POPUP PETA
+========================================================================= */
+.btn-peta-direksi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #2b1808; /* Cokelat gelap Mataram */
+    border: 1px solid #d4af37;  /* Emas */
+    color: #d4af37;
+    border-radius: 6px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-peta-direksi:hover {
+    background-color: #d4af37;
+    color: #2b1808;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Modifikasi popup bawaan Leaflet agar tombol terlihat rapi */
+.leaflet-popup-content {
+    margin: 13px 19px 13px 14px !important;
+}
