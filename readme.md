@@ -22,7 +22,7 @@ Bertanggung jawab atas arsitektur halaman utama, pemetaan, sejarah dasar, dan in
   * `halaman-industri-modern.html`
 * `halaman-info.html` (Menu Tentang Kami / Profil Anggota Kelompok)
 
-### 2. Steven (Content & Culture Specialist)
+### 2. stseven77 (Content & Culture Specialist)
 Bertanggung jawab atas visualisasi kebudayaan, agenda kota, destinasi, dan profil informasi kelompok:
 * `halaman-budaya.html` (Menu Utama & Sub-Halaman Kebudayaan):
   * `halaman-batik.html` 
@@ -35,7 +35,7 @@ Bertanggung jawab atas visualisasi kebudayaan, agenda kota, destinasi, dan profi
   * `halaman-wisata-budaya.html`
 * `halaman-event.html` (Agenda & Pagelaran Seni)
 
-### 3. Roland (Culinary Curator)
+### 3. RolandMF (Culinary Curator)
 Bertanggung jawab atas kurasi kuliner legendaris dan jajanan autentik Yogyakarta:
 * `halaman-kuliner.html` (Menu Utama & Sub-Halaman Kuliner):
   * `halaman-makanan-tradisional.html` 
