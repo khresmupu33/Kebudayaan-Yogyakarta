@@ -1,0 +1,58 @@
+#jajanan_khas {
+    background-color: #2C1A0E;
+    min-height: 100vh;
+}
+
+.in-jajanan {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.in-jajanan::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    z-index: 2;
+    animation: tiraiPudar 1s ease-in-out 0.6s forwards;
+}
+
+.in-jajanan::before {
+    content: "★";
+    font-size: 20vw;
+    color: #D4A250; 
+    z-index: 3;
+    animation: bintangPuter 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    text-shadow: 0 0 30px rgba(212, 162, 80, 0.5);
+}
+
+@keyframes bintangPuter {
+    0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+    40% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+    60% { transform: scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: scale(5) rotate(90deg); opacity: 0; visibility: hidden; }
+}
+
+@keyframes tiraiPudar {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+.image-glow {
+    position: relative;
+}
+
+.image-glow::before {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    background: radial-gradient(circle, rgba(212,162,80,0.15) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(10px);
+}
