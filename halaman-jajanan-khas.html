@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogja Culture | Kuliner | Jajanan Khas</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="CSS/makanan-tradisional.css">
     <link rel="stylesheet" href="CSS/Dasar HTML.css">
@@ -17,69 +15,11 @@
     <link rel="stylesheet" href="CSS/btn-top.css">
     <link rel="stylesheet" href="CSS/keyframes.css">
     <link rel="stylesheet" href="CSS/in-out-page.css">
+    
+    <link rel="stylesheet" href="CSS/jajanan-khas.css">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-
-
-    <style>
-         #jajanan_khas {
-            background-color: #2C1A0E;
-            min-height: 100vh;
-        }
-        .in-jajanan {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            pointer-events: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .in-jajanan::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-color: #ffffff;
-            z-index: 2;
-            animation: tiraiPudar 1s ease-in-out 0.6s forwards;
-        }
-
-        .in-jajanan::before {
-            content: "★";
-            font-size: 20vw;
-            color: #D4A250; 
-            z-index: 3;
-            animation: bintangPuter 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-            text-shadow: 0 0 30px rgba(212, 162, 80, 0.5);
-        }
-
-        @keyframes bintangPuter {
-            0% { transform: scale(0) rotate(-180deg); opacity: 0; }
-            40% { transform: scale(1.2) rotate(15deg); opacity: 1; }
-            60% { transform: scale(1) rotate(0deg); opacity: 1; }
-            100% { transform: scale(5) rotate(90deg); opacity: 0; visibility: hidden; }
-        }
-
-        @keyframes tiraiPudar {
-            0% { opacity: 1; }
-            100% { opacity: 0; visibility: hidden; }
-        }
-
-     
-        .image-glow {
-            position: relative;
-        }
-        .image-glow::before {
-            content: '';
-            position: absolute;
-            inset: -15px;
-            background: radial-gradient(circle, rgba(212,162,80,0.15) 0%, rgba(0,0,0,0) 70%);
-            z-index: -1;
-            border-radius: 50%;
-            filter: blur(10px);
-        }
-    </style>
 </head>
 
 <body>
@@ -162,14 +102,11 @@
                 <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90 text-[var(--cream-dark)] font-cormorant leading-relaxed">
                     Dari gigitan pertama Bakpia yang lumer sampai kenyalnya Yangko, jajanan Jogja selalu punya cara buat bikin kamu kangen balik lagi. Teman pas buat ngopi atau jadi buah tangan tersayang.
                 </p>
-        
                 <div class="w-24 h-1 bg-[var(--gold)] mx-auto mt-10 rounded-full opacity-50"></div>
             </div>
 
-    
             <div class="max-w-6xl mx-auto px-6 pb-32">
                 
-     
                 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16 mb-24 group">
                     <div class="w-full md:w-1/2 image-glow">
                         <img src="IMG/bakpiak.jpg" alt="Kue Bakpia Jogja" class="w-full h-[350px] md:h-[450px] object-cover rounded-[2rem] shadow-2xl border border-[var(--gold)] border-opacity-30 transition-all duration-700 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(212,162,80,0.15)]">
@@ -190,7 +127,6 @@
                     </div>
                 </div>
 
-          
                 <div class="flex flex-col md:flex-row-reverse items-center gap-10 md:gap-16 mb-24 group">
                     <div class="w-full md:w-1/2 image-glow">
                         <img src="IMG/yangko.jpeg" alt="Yangko Khas Jogja" class="w-full h-[350px] md:h-[450px] object-cover rounded-[2rem] shadow-2xl border border-[var(--gold)] border-opacity-30 transition-all duration-700 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(212,162,80,0.15)]">
@@ -211,7 +147,6 @@
                     </div>
                 </div>
 
-               
                 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16 mb-24 group">
                     <div class="w-full md:w-1/2 image-glow">
                         <img src="IMG/geplak.jpg" alt="Camilan Geplak Bantul" class="w-full h-[350px] md:h-[450px] object-cover rounded-[2rem] shadow-2xl border border-[var(--gold)] border-opacity-30 transition-all duration-700 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(212,162,80,0.15)]">
@@ -232,7 +167,6 @@
                     </div>
                 </div>
 
-           
                 <div class="flex flex-col md:flex-row-reverse items-center gap-10 md:gap-16 group">
                     <div class="w-full md:w-1/2 image-glow">
                         <img src="IMG/cenil.jpg" alt="Sajian Lupis dan Cenil Jogja" class="w-full h-[350px] md:h-[450px] object-cover rounded-[2rem] shadow-2xl border border-[var(--gold)] border-opacity-30 transition-all duration-700 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(212,162,80,0.15)]">
@@ -258,26 +192,9 @@
     </section>
 
     <footer>
-        <div class="footer-top-section">
-            <div class="footer-column">
-            <div class="footer-logo-box">
-                <div class="footer-logo">Jogja<span>Culture</span></div>
-                <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
-            </div>
-            </div>
-
-            <!-- Kolom Navigasi (Sesuai gambar image_5e60a0.png) -->
-            <div class="footer-column">
-                <h4 class="column-title">Company</h4>
-                <div class="footer-links-vertical">
-                    <a href="halaman-info.html">About Us</a>
-                    <a href="halaman-privacy-policy.html">Privacy Policy</a>
-                </div>
-            </div>
-
-        </div>
-
-        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain untuk kebudayaan Mataram</p>
+        <div class="footer-logo">Jogja<span>Culture</span></div>
+        <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain dengan rasa hormat kepada tanah Mataram</p>
     </footer>
 
     <a href="#jajanan_khas" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
@@ -288,9 +205,8 @@
     <script src="JS/Dasar html.js"></script>
     <script src="JS/btn-top.js"></script>
     <script src="JS/in-out-page.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    
+    <script src="JS/jajanan-khas.js"></script>
 </body>
 
 </html>
