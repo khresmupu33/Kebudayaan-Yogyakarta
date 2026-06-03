@@ -5,6 +5,7 @@
     transform: translateY(10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
 .history-tab-content.active-content {
     display: block;
     opacity: 1;
@@ -18,51 +19,57 @@
     gap: 8px;
     margin: 15px auto 30px auto;
 }
+
 .tab-btn {
     background: #1e1e1e;
     color: #bfa15f;
     border: 1px solid #bfa15f;
-    padding: 6px 16px;          /* Ukuran padding diperkecil */
-    font-size: 0.85rem;         /* Ukuran font diperkecil agar pas di HP */
+    padding: 6px 16px;
+    /* Ukuran padding diperkecil */
+    font-size: 0.85rem;
+    /* Ukuran font diperkecil agar pas di HP */
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.25s ease;
 }
-.tab-btn.active, .tab-btn:hover {
+
+.tab-btn.active,
+.tab-btn:hover {
     background: #bfa15f;
     color: #121212;
 }
 
 /* --- ATURAN RESPONSIVE KHUSUS LAYAR HP (MOBILE VERSION) --- */
 @media screen and (max-width: 768px) {
+
     /* Merapatkan jarak pembungkus linimasa di HP */
     .timeline-detailed {
         padding: 10px 0;
     }
-    
+
     /* Memaksa susunan konten menjadi satu kolom vertikal di HP */
     .timeline-node {
-        flex-direction: column !important; 
+        flex-direction: column !important;
         gap: 15px !important;
         margin-bottom: 35px;
     }
-    
+
     /* Mengatur area teks agar mengambil lebar penuh layar HP */
     .node-text {
         width: 100% !important;
         padding: 0 10px !important;
         text-align: left !important;
     }
-    
+
     /* Mengatur gambar agar tampil proporsional di bawah teks pada layar HP */
     .node-image {
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 10px !important;
     }
-    
+
     .image-card img {
         width: 100%;
         height: auto;
@@ -73,16 +80,36 @@
 #sejarah {
     background: var(--brown-dark);
     color: var(--cream);
-    font-family: 'Cormorant+Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
     line-height: 1.8;
     overflow-x: hidden;
+    z-index: 1;
+}
+
+#sejarah::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Menggunakan pola Batik Kawung & Gurda dengan kontras yang sedikit dinaikkan (0.07) agar lebih terlihat */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23b38e46' fill-opacity='0.07'%3E%3Cpath d='M50 0 C62 20, 78 20, 90 0 C95 10, 95 25, 100 30 C80 35, 80 51, 100 60 C80 65, 80 81, 100 90 C95 95, 85 95, 80 100 C68 80, 52 80, 40 100 C32 80, 16 80, 0 100 C0 95 0 85 0 80 C20 75 20 59 0 50 C20 45 20 29 0 20 C0 15 0 5 0 0 C12 20, 28 20, 40 0 Z M50 50 C58 32, 72 32, 80 50 C72 68, 58 68, 50 50 Z M50 50 C42 32, 28 32, 20 50 C28 68, 42 68, 50 50 Z'/%3E%3Ccircle cx='50' cy='50' r='3'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='100' cy='0' r='2'/%3E%3Ccircle cx='0' cy='100' r='2'/%3E%3Ccircle cx='100' cy='100' r='2'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+    /* Agar tidak mengganggu klik atau hover pada teks/tombol */
+    z-index: -1;
+    /* Berada di bawah semua konten teks/gambar */
 }
 
 /* Container Utama */
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 2rem 80px;
+    padding: 140px 2rem 100px;
+    position: relative;
+    z-index: 2;
+    /* Memastikan konten berada di atas pola ornamen */
 }
 
 /* Header Halaman */
@@ -148,7 +175,8 @@
 }
 
 /* Pembagian Ruang 50% Kiri & 50% Kanan */
-.node-text, .node-image {
+.node-text,
+.node-image {
     width: 50%;
     position: relative;
     z-index: 2;
@@ -225,7 +253,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
-    object-position: top; 
+    object-position: top;
 }
 
 /* ==========================================================================
@@ -334,6 +362,7 @@
    MOBILE RESPONSIVE SYSTEM (Garis Ekstrem Kiri & Gambar Melebar Penuh)
    ========================================================================== */
 @media screen and (max-width: 768px) {
+
     /* Menghilangkan padding container agar area luar makin luas mendekati tepi layar */
     .container {
         padding: 100px 0.5rem 60px !important;
@@ -349,9 +378,11 @@
     /* 2. Reset struktur 50% desktop agar card melebar penuh 100% tanpa terhimpit */
     .timeline-node {
         display: flex !important;
-        flex-direction: column !important; /* Membuat tumpukan vertikal */
+        flex-direction: column !important;
+        /* Membuat tumpukan vertikal */
         align-items: flex-start !important;
-        width: 100% !important; /* Menggunakan lebar penuh layar */
+        width: 100% !important;
+        /* Menggunakan lebar penuh layar */
         left: 0 !important;
         padding: 0 !important;
         margin-bottom: 4rem !important;
@@ -366,18 +397,23 @@
 
     /* 3. MENUKAR URUTAN: Memaksa Card Gambar berada di atas Teks per topik */
     .timeline-node .node-image {
-        order: 1 !important;        /* Gambar tampil pertama (paling atas) */
-        margin-bottom: 1rem !important; /* Jarak antara card gambar dengan teks di bawahnya */
+        order: 1 !important;
+        /* Gambar tampil pertama (paling atas) */
+        margin-bottom: 1rem !important;
+        /* Jarak antara card gambar dengan teks di bawahnya */
         width: 100% !important;
-        padding-left: 10px !important; /* Jarak pengaman minimal dari garis paling kiri */
+        padding-left: 10px !important;
+        /* Jarak pengaman minimal dari garis paling kiri */
         padding-right: 0 !important;
     }
 
     .timeline-node .node-text,
     .timeline-node .node-content {
-        order: 2 !important;        /* Teks (judul & paragraf) mengalir di bawah gambar */
+        order: 2 !important;
+        /* Teks (judul & paragraf) mengalir di bawah gambar */
         width: 100% !important;
-        padding-left: 20px !important; /* Jarak pas agar teks tidak menabrak garis kiri */
+        padding-left: 20px !important;
+        /* Jarak pas agar teks tidak menabrak garis kiri */
         padding-right: 0 !important;
         text-align: left !important;
     }
@@ -386,7 +422,8 @@
     .image-card {
         max-width: 100% !important;
         width: 100% !important;
-        height: 190px !important;   /* Ketinggian card gambar ideal untuk mobile */
+        height: 190px !important;
+        /* Ketinggian card gambar ideal untuk mobile */
     }
 
     .image-card img {
@@ -397,10 +434,13 @@
 
     /* 5. Menggeser Titik Bulat (.timeline-node::after) agar menempel pas menindih garis kiri */
     .timeline-node::after {
-        left: 4px !important;      /* Posisi horizontal sama dengan garis mepet kiri */
-        top: -20px !important;       /* Posisi titik sejajar dengan baris teks tahun */
+        left: 4px !important;
+        /* Posisi horizontal sama dengan garis mepet kiri */
+        top: -20px !important;
+        /* Posisi titik sejajar dengan baris teks tahun */
         right: auto !important;
-        transform: translateX(-50%) !important; /* Titik simetris membelah garis vertikal */
+        transform: translateX(-50%) !important;
+        /* Titik simetris membelah garis vertikal */
     }
 
     /* Override Khusus Hover Titik Bulat di Mobile agar tidak menggunakan translate desktop */

@@ -1,4 +1,6 @@
-/* Aturan Pewarnaan Berdasarkan Variabel Root Sistem */
+/* ==========================================================================
+   1. ATURAN WARNA & VARIABEL ROOT SISTEM (Sesuai Struktur Dasar Anda)
+   ========================================================================== */
 :root {
     --brown-dark: #2C1A0E;
     --brown-mid: #6B3A1F;
@@ -13,13 +15,16 @@
     --zinc: #18181b;
 }
 
-/* Kustomisasi Section Khusus Halaman Teknologi (Aturan bg selain brown-mid) */
+/* ==========================================================================
+   2. ATURAN DASAR & HELPER FONT
+   ========================================================================== */
 #teknologi {
-    background: var(--cream);
+    background: var(--zinc);
     min-height: 100vh;
+    padding: 1px;
+    overflow-x: hidden;
 }
 
-/* Font Family Helper Tanpa Mengubah Ukuran Tag Dasar */
 .font-playfair {
     font-family: 'Playfair Display', serif;
 }
@@ -28,23 +33,254 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-/* Styling Khusus Elemen Main Konten Teknologi */
+.icon-wrapper i {
+    stroke-width: 1.5px;
+}
+
+/* Kotak Pembungkus Konten Utama */
+.tech-main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (Tampilan Atas)
+   ========================================================================== */
 .tech-hero {
+    text-align: center;
+    padding-top: 270px;
+    padding-bottom: 300px;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    /* Motif dikunci penuh mengikuti seluruh area padding hero */
+    background-image: 
+        radial-gradient(circle at center, transparent 30%, var(--zinc) 95%), /* Masking halus di ujung terluar */
+        radial-gradient(rgba(212, 162, 80, 0.15) 1.5px, transparent 1.5px); /* Pola titik emas samar */
+    background-size: 100% 100%, 24px 24px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.tech-subtitle {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.tech-hero h1 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.tech-hero p {
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.tech-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 40px auto 0;
+    opacity: 0.4;
+}
+
+/* ==========================================================================
+   4. SECTION MENARIK (The Hook Box - Kombinasi Narasi & Statistik)
+   ========================================================================== */
+.tech-hook-section {
+    padding-bottom: 200px;
+}
+
+.tech-hook-box {
+    background: var(--brown-dark);
+    border: 1px solid rgba(232, 201, 168, 0.25);
+    border-radius: 12px;
+    padding: 45px;
     position: relative;
-    z-index: 10;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Ornamen Ikon CPU Samar di Latar Belakang */
+.bg-ornament {
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    color: var(--gold);
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.bg-ornament i {
+    width: 260px;
+    height: 260px;
+}
+
+/* Pengaturan Layout Menggunakan CSS Grid */
+.tech-hook-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Membagi teks (60%) dan info statistik (40%) */
+    gap: 50px;
+    align-items: center;
+}
+
+.hook-tag {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.tech-hook-text h2 {
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 1.3;
+}
+.tech-hook-box:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 30px rgba(212, 162, 80, 0.15);
+}
+.tech-hook-text p {
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.hook-highlight {
+    color: var(--gold);
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Kolom Kisi Statistik */
+.tech-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    border-left: 1px solid rgba(232, 201, 168, 0.2);
+    padding-left: 50px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    color: var(--cream-dark);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ==========================================================================
+   5. THREE PILAR CARD SECTION (Tiga Tombol Eksplorasi)
+   ========================================================================== */
+.tech-pilar-section {
+    padding-bottom: 120px;
+}
+
+.tech-pilar-header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.tech-pilar-header h3 {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.tech-pilar-header p {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+/* Responsif Grid untuk 3 Pilar Utama */
+.tech-grid-pilar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .tech-card {
+    background: var(--brown-dark);
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    border-color: var(--cream-border);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
 }
 
 .tech-card:hover {
+    transform: translateY(-8px);
     border-color: var(--gold);
-    box-shadow: 0 10px 25px rgba(212, 162, 80, 0.15);
+    box-shadow: 0 15px 30px rgba(212, 162, 80, 0.15);
 }
 
-/* Modifikasi hal-hal kecil pendukung icon wrapper tanpa merusak element bawaan */
-.icon-wrapper i {
-    stroke-width: 1.5px;
+.tech-card-content {
+    margin-bottom: 35px;
+}
+
+.tech-card-content .icon-wrapper {
+    margin-bottom: 25px;
+}
+
+.tech-card-content h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.tech-card-content p {
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+/* Tombol Tautan Internal */
+.tech-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: gap 0.2s ease;
+    width: fit-content;
+}
+
+.tech-action-btn:hover {
+    gap: 14px;
+    text-decoration: underline;
+}
+
+.tech-action-btn i {
+    width: 16px;
+    height: 16px;
 }
