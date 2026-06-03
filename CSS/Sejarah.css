@@ -314,7 +314,10 @@
     border-color: rgba(212, 162, 80, 0.4);
     transform: translateY(-10px);
 }
-
+.end{
+    background: radial-gradient(ellipse at center,  #3d1a03 15%, var(--brown-dark) 65%, var(--brown-dark) 100%);
+    padding: 40px;
+}
 .highlight-box {
     border-top: 1px solid var(--gold);
     border-bottom: 1px solid var(--gold);
