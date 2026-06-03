@@ -9,51 +9,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function aktifkanPilar(cardElement) {
         if (!cardElement) return;
+        
+        // Hapus class active dari semua, tambahkan ke yang di-hover
         nodeCards.forEach(c => c.classList.remove("active"));
         cardElement.classList.add("active");
 
+        // Update gambar
         const newImgSrc = cardElement.getAttribute("data-img");
         if (targetImg && newImgSrc) {
             targetImg.setAttribute("src", newImgSrc);
         }
 
-        // Memasukkan teks data-title dan data-desc ke overlay gambar
+        // Update teks overlay
         if (overlayTitle && overlayDesc) {
             overlayTitle.textContent = cardElement.getAttribute("data-title");
             overlayDesc.textContent = cardElement.getAttribute("data-desc");
         }
 
+        // Trigger animasi frame
         if (dynamicFrame) {
             dynamicFrame.classList.add("lift-up");
+            // Hapus class lift-up setelah animasi selesai agar bisa terpicu lagi
+            setTimeout(() => dynamicFrame.classList.remove("lift-up"), 500);
         }
     }
 
-    function resetKeDefault() {
-        nodeCards.forEach(c => c.classList.remove("active"));
-        
-        // Kembali ke default pilar pertama (budaya)
-        const defaultCard = document.querySelector('[data-node="budaya"]');
-        if (defaultCard) {
-            defaultCard.classList.add("active");
-            if (targetImg) targetImg.setAttribute("src", defaultCard.getAttribute("data-img"));
-            if (overlayTitle && overlayDesc) {
-                overlayTitle.textContent = defaultCard.getAttribute("data-title");
-                overlayDesc.textContent = defaultCard.getAttribute("data-desc");
-            }
-        }
-        
-        if (dynamicFrame) {
-            dynamicFrame.classList.remove("lift-up");
-        }
-    }
-
+    // Menghapus fungsi resetKeDefault dan event mouseleave
     nodeCards.forEach(card => {
         card.addEventListener("mouseenter", function () {
             aktifkanPilar(this);
         });
-
-        card.addEventListener("mouseleave", function () {
-            resetKeDefault();
-        });
+        
+        // Event mouseleave dihapus agar kondisi terakhir tetap bertahan
     });
 });
