@@ -15,7 +15,7 @@
 
 /* Kustomisasi Section Khusus Halaman Teknologi (Aturan bg selain brown-mid) */
 #teknologi {
-    background: var(--brown-dark);
+    background: var(--cream);
     min-height: 100vh;
 }
 
