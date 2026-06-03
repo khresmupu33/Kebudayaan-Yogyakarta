@@ -492,12 +492,15 @@
     h3 {
         font-size: 1.75rem;
     }
-    span{
+
+    span {
         font-size: .6rem !important;
     }
-    li{
+
+    li {
         font-size: 10.9rem !important;
     }
+
     p {
         line-height: 1.6;
     }
@@ -656,6 +659,36 @@
         display: block !important;
         transform: rotate(0deg) !important;
         transition: transform 0.3s ease;
+    }
+
+    /* ==========================================================================
+   TAMBAHAN UNTUK UTILITY MEDIA QUERY @media (max-width: 768px)
+   ========================================================================== */
+
+    /* 1. Pengaturan Tombol "Show More" Saat Terbuka di HP */
+    .main-layout-container.sidebar-open .btn-more-events {
+        display: flex !important;
+        /* Paksa tampil ketika sidebar dibuka */
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        margin-top: auto;
+        /* Mendorong ke bagian paling bawah screen HP */
+        margin-bottom: 1rem;
+        /* Memberikan sedikit jarak aman dari screen bawah */
+        box-sizing: border-box;
+    }
+
+    /* 2. Sembunyikan Tombol Ketika Sidebar dalam Kondisi Tertutup di HP */
+    .main-layout-container:not(.sidebar-open) .btn-more-events {
+        display: none !important;
+    }
+
+    /* 3. Penyesuaian Tinggi Box Scroll Agar Tombol Tidak Terpotong di Layar HP */
+    .events-sticky-box {
+        /* Dikurangi sedikit lagi (dari 180px menjadi 240px) 
+       agar memberikan ruang yang pas untuk tombol detail di bawahnya */
+        max-height: calc(100vh - 240px) !important;
     }
 
     #wisata {

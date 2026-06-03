@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <div id="top-anchor" style="position: absolute; top: 0; pointer-events: none;"></div>
     <div class="in-page"></div>
     <div class="out-page"></div>
     <header>
@@ -185,187 +186,240 @@
             </div>
         </nav>
     </header>
-    <section id="home">
-        <div class="batik-bg"></div>
-        <div class="batik-border"></div>
+    <div class="home-wrapper">
+        <section id="home">
+            <div class="batik-bg"></div>
 
-        <div class="batik-corner corner-tl">
-            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
-                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
-                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
-                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
-            </svg>
-        </div>
-        <div class="batik-corner corner-tr">
-            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
-                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
-                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
-                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
-            </svg>
-        </div>
-        <div class="batik-corner corner-bl">
-            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
-                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
-                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
-                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
-            </svg>
-        </div>
-        <div class="batik-corner corner-br">
-            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0 L60 0 L0 60 Z" fill="none" stroke="rgba(212,162,80,0.4)" stroke-width="1" />
-                <path d="M0 20 L20 0" stroke="rgba(212,162,80,0.25)" stroke-width="1" />
-                <path d="M0 40 L40 0" stroke="rgba(212,162,80,0.15)" stroke-width="1" />
-                <circle cx="4" cy="4" r="2" fill="rgba(212,162,80,0.5)" />
-            </svg>
-        </div>
+            <div class="hero-content">
+                <span class="hero-label">Warisan Agung Yogyakarta</span>
+                <h1 class="hero-title">Yogya<em>karta</em></h1>
+                <p class="hero-subtitle">Di mana tradisi merangkul zaman</p>
+                <div class="hero-divider"></div>
+            </div>
 
-        <div class="hero-content">
-            <span class="hero-label">Daerah Istimewa · Kota Budaya · Sejak 1755</span>
-            <h1 class="hero-title">Yogya<em>karta</em></h1>
-            <p class="hero-subtitle">Kota yang Tak Pernah Tidur dari Budaya</p>
-            <p class="hero-desc">
-                Di antara lereng Merapi dan gemericik Progo, Yogyakarta berdiri sebagai penjaga peradaban Jawa
-                yang
-                agung — tempat di mana tradisi hidup berdampingan harmonis dengan semangat zaman.
-            </p>
-            <a href="#sejarah" class="btn-primary">Jelajahi</a>
-            <a href="#tempat" class="btn-outline">Lihat Tempat</a>
-        </div>
+            <div class="scroll-indicator">
+                <span>Scroll to Discover</span>
+                <div class="scroll-line"></div>
+            </div>
+            <script>
+                const homeSection = document.getElementById('home');
 
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
+                window.addEventListener('scroll', () => {
+                    // Mendapatkan seberapa jauh user telah scroll
+                    const scrollY = window.scrollY;
+                    const vh = window.innerHeight;
+
+                    // Menghitung persentase scroll (0 sampai 1)
+                    // Efek dimulai dari 0 sampai 100% viewport tinggi
+                    let progress = Math.min(scrollY / vh, 1);
+
+                    // Semakin scroll, semakin kecil (dari 1 ke 0.8)
+                    const scale = 1 - (progress * 0.2);
+
+                    // Semakin scroll, semakin gelap (brightness dari 100% ke 30%)
+                    const brightness = 1 - (progress * 0.7);
+
+                    // Semakin scroll, semakin blur (dari 0px ke 10px)
+                    const blur = progress * 10;
+
+                    // Terapkan ke CSS
+                    homeSection.style.transform = `scale(${scale})`;
+                    homeSection.style.filter = `blur(${blur}px) brightness(${brightness})`;
+
+                    // Menambahkan class saat sudah scroll jauh untuk performa
+                    if (progress > 0.1) {
+                        homeSection.classList.add('is-active');
+                    } else {
+                        homeSection.classList.remove('is-active');
+                    }
+                });
+            </script>
+        </section>
+    </div>
     <div class="main-layout-container">
         <aside class="events-sidebar">
-
             <button class="btn-toggle-events" onclick="toggleEventsSidebar()" aria-label="Toggle Sidebar">
                 <i data-lucide="chevron-left" id="toggleIcon"></i>
             </button>
+
+            <h3 class="events-title">📅 Event Terbaru</h3>
+
+            <!-- Container Scroll Event -->
             <div class="events-sticky-box">
-                <h3 class="events-title">📅 Event Terbaru</h3>
 
+                <!-- Event 1 -->
+                <div class="event-item">
+                    <span class="event-date">13–14 Juni 2026</span>
+                    <h4>Keroncong Plesiran 1 Dekade</h4>
+                    <div class="event-location">
+                        <span class="location-pin">📍</span>
+                        <div class="location-text">
+                            <strong>Candi Prambanan, Sleman</strong>
+                        </div>
+                    </div>
+                    <p class="event-description">
+                        Festival musik keroncong modern dengan konsep outdoor/piknik budaya berkolaborasi dengan genre
+                        modern.
+                    </p>
+                    <a href="https://www.google.com/maps/place/Candi+Prambanan/..." target="_blank"
+                        class="btn-maps">Lihat Rute Map</a>
+                </div>
 
+                <!-- Event 2 -->
                 <div class="event-item">
-                    <span class="event-date">tanggal bulan tahun</span>
-                    <h4>steven ivan winardi gay</h4>
-                    <p>apapun pernyataan pasti</p>
+                    <span class="event-date">19 Juni–30 Agustus 2026</span>
+                    <h4>ARTJOG 2026</h4>
+                    <div class="event-location">
+                        <span class="location-pin">📍</span>
+                        <div class="location-text">
+                            <strong>Jogja National Museum</strong>
+                        </div>
+                    </div>
+                    <p class="event-description">
+                        Festival seni kontemporer terbesar di Indonesia dengan tema baru trilogi kuratorial “Ars Longa”.
+                    </p>
+                    <a href="https://maps.app.goo.gl/q7Eeyv6NSjSkHks48" target="_blank" class="btn-maps">Lihat Rute
+                        Map</a>
                 </div>
+
+                <!-- Event 3 -->
                 <div class="event-item">
-                    <span class="event-date">tanggal bulan tahun</span>
-                    <h4>roland gay</h4>
-                    <p>apapun pernyataan pasti</p>
+                    <span class="event-date">13 Juni 2026</span>
+                    <h4>Jogja Rockphonic</h4>
+                    <div class="event-location">
+                        <span class="location-pin">📍</span>
+                        <div class="location-text">
+                            <strong>Stadion Kridosono</strong>
+                        </div>
+                    </div>
+                    <p class="event-description">
+                        Konser rock-orchestra megah dengan aransemen orkestra penuh yang sinematik.
+                    </p>
+                    <a href="https://maps.app.goo.gl/QXwwkkYDbssieBMH9" target="_blank" class="btn-maps">Lihat Rute
+                        Map</a>
                 </div>
+
+                <!-- Event 4 -->
                 <div class="event-item">
-                    <span class="event-date">tanggal bulan tahun</span>
-                    <h4>adrian gay</h4>
-                    <p>apapun pernyataan pasti</p>
+                    <span class="event-date">20 Juni 2026</span>
+                    <h4>Sarga Festival 2026</h4>
+                    <div class="event-location">
+                        <span class="location-pin">📍</span>
+                        <div class="location-text">
+                            <strong>Stadion Kridosono</strong>
+                        </div>
+                    </div>
+                    <p class="event-description">
+                        Festival musik bernuansa “Desa Cowboy” sebagai bagian dari promosi sport tourism pacuan kuda.
+                    </p>
+                    <a href="https://maps.app.goo.gl/QXwwkkYDbssieBMH9" target="_blank" class="btn-maps">Lihat Rute
+                        Map</a>
                 </div>
-                <div class="event-item">
-                    <span class="event-date">tanggal bulan tahun</span>
-                    <h4>belanda gay</h4>
-                    <p>apapun pernyataan pasti</p>
-                </div>
+
             </div>
+
+            <!-- TOMBOL DETAIL DI AKHIR ASIDE -->
+            <a href="halaman-event.html" class="btn-more-events">
+                Lihat Detail Semua Event <span>➔</span>
+            </a>
         </aside>
 
         <main class="main-content-flow">
-           <section id="jogja-philosophy-section">
-    <div class="about-pattern-decorator"></div>
+            <section id="jogja-philosophy-section">
+                <div class="about-pattern-decorator"></div>
 
-    <div class="section-intro-box">
-        <span class="section-sub-title">Sugeng Rawuh Wonten Ngayogyakarta</span>
-        <h2 class="section-main-title">Mengenal Lebih Dekat <br><em>Seribu Wajah Jogja</em></h2>
-        <div class="section-title-line"></div>
-    </div>
+                <div class="section-intro-box">
+                    <span class="section-sub-title">Sugeng Rawuh Wonten Ngayogyakarta</span>
+                    <h2 class="section-main-title">Mengenal Lebih Dekat <br><em>Seribu Wajah Jogja</em></h2>
+                    <div class="section-title-line"></div>
+                </div>
 
-    <div class="philosophy-container">
+                <div class="philosophy-container">
 
-        <div class="philosophy-left-side">
-            <div class="philosophy-img-frame" id="philosophyDynamicFrame">
-                <img src="IMG/keraton.jpg" alt="Pesona Jogja" id="philosophyTargetImg">
-                
-                <div class="sangkan-overlay" id="sangkanOverlayText">
-                    <div class="sangkan-overlay-content">
-                        <span>Eksplorasi Daerah Istimewa</span>
-                        <h4 id="overlayTitle">Istana Budaya & Tradisi</h4>
-                        <p id="overlayDesc">Sebuah harmoni abadi di mana setiap sudut jalan menyimpan kisah sejarah, keramahan lokal, dan warisan leluhur yang tetap hidup melintasi zaman.</p>
+                    <div class="philosophy-left-side">
+                        <div class="philosophy-img-frame" id="philosophyDynamicFrame">
+                            <img src="IMG/keraton.jpg" alt="Pesona Jogja" id="philosophyTargetImg">
+
+                            <div class="sangkan-overlay" id="sangkanOverlayText">
+                                <div class="sangkan-overlay-content">
+                                    <span>Eksplorasi Daerah Istimewa</span>
+                                    <h4 id="overlayTitle">Istana Budaya & Tradisi</h4>
+                                    <p id="overlayDesc">Sebuah harmoni abadi di mana setiap sudut jalan menyimpan kisah
+                                        sejarah, keramahan lokal, dan warisan leluhur yang tetap hidup melintasi zaman.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="philosophy-paragraph">
+                            Yogyakarta bukan sekadar titik koordinat di peta. Ia adalah ruang rasa di mana **tradisi
+                            keraton**, **kehangatan masyarakat**, dan **bentang alam yang magis** melebur menjadi satu.
+                            Lebih dari sekadar destinasi liburan, Jogja adalah tempat pulang bagi siapapun yang
+                            merindukan kedamaian batin.
+                        </p>
+                    </div>
+
+                    <div class="philosophy-interactive-grid">
+
+                        <div class="philosophy-node-card active" data-node="budaya" data-img="IMG/keraton.jpg"
+                            data-title="Istana Budaya & Tradisi"
+                            data-desc="Sebuah harmoni abadi di mana setiap sudut jalan menyimpan kisah sejarah, keramahan lokal, dan warisan leluhur yang tetap hidup melintasi zaman.">
+                            <div class="node-number-wrapper">
+                                <h2 class="node-number">01</h2>
+                                <div class="node-line-indicator"></div>
+                            </div>
+                            <div class="node-content">
+                                <h3>Culture & Heritage</h3>
+                                <span class="node-tag">Keraton • Batik • Malioboro</span>
+                                <p>Selami denyut nadi kebudayaan Jawa lewat keagungan arsitektur istana, kelembutan
+                                    gerak tari klasik, hingga magisnya alunan gamelan di malam hari.</p>
+                            </div>
+                        </div>
+
+                        <div class="philosophy-node-card" data-node="kuliner" data-img="IMG/Gudeg.jpg"
+                            data-title="Romansa Rasa Warisan Leluhur"
+                            data-desc="Menikmati racikan rasa otentik yang dimasak perlahan di atas tungku tanah liat, menghadirkan cita rasa manis-gurih legendaris yang selalu dirindukan.">
+                            <div class="node-number-wrapper">
+                                <h2 class="node-number">02</h2>
+                                <div class="node-line-indicator"></div>
+                            </div>
+                            <div class="node-content">
+                                <h3>Culinary & Hospitality</h3>
+                                <span class="node-tag">Gudeg • Kopi Joss • Angkringan</span>
+                                <p>Manjakan lidah dengan kelezatan Gudeg legendaris, kehangatan wedang ronde, hingga
+                                    obrolan hangat penuh kekeluargaan di angkringan pinggir jalan.</p>
+                            </div>
+                        </div>
+
+                        <div class="philosophy-node-card" data-node="alam" data-img="IMG/merapi-lava.jpg"
+                            data-title="Simfoni Alam dari Gunung ke Laut"
+                            data-desc="Dari keangkuhan puncak Merapi hingga gulungan ombak mistis Pantai Selatan, alam Jogja adalah lanskap petualangan yang tidak ada habisnya.">
+                            <div class="node-number-wrapper">
+                                <h2 class="node-number">03</h2>
+                                <div class="node-line-indicator"></div>
+                            </div>
+                            <div class="node-content">
+                                <h3>Nature & Landscape</h3>
+                                <span class="node-tag">Merapi • Pantai Selatan • Gumuk Pasir</span>
+                                <p>Jelajahi lanskap alam yang dramatis, mulai dari sejuknya lereng Merapi, pesona tebing
+                                    karst Gunungkidul, hingga matahari terbenam yang syahdu di Parangtritis.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div>
 
-            <p class="philosophy-paragraph">
-                Yogyakarta bukan sekadar titik koordinat di peta. Ia adalah ruang rasa di mana **tradisi
-                keraton**, **kehangatan masyarakat**, dan **bentang alam yang magis** melebur menjadi satu.
-                Lebih dari sekadar destinasi liburan, Jogja adalah tempat pulang bagi siapapun yang
-                merindukan kedamaian batin.
-            </p>
-        </div>
-
-        <div class="philosophy-interactive-grid">
-
-            <div class="philosophy-node-card active" data-node="budaya" data-img="IMG/keraton.jpg"
-                data-title="Istana Budaya & Tradisi"
-                data-desc="Sebuah harmoni abadi di mana setiap sudut jalan menyimpan kisah sejarah, keramahan lokal, dan warisan leluhur yang tetap hidup melintasi zaman.">
-                <div class="node-number-wrapper">
-                    <h2 class="node-number">01</h2>
-                    <div class="node-line-indicator"></div>
+                <div class="philosophy-node-detail-display">
+                    <div class="philosophy-badge">
+                        <div class="badge-icon">✨</div>
+                        <div class="badge-info">
+                            <h4>Istimewa Pemimpinnya, Istimewa Rakyatnya</h4>
+                            <p>Filosofi hidup bergotong-royong dan kebersamaan yang ramah menyambut setiap pelancong.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="node-content">
-                    <h3>Culture & Heritage</h3>
-                    <span class="node-tag">Keraton • Batik • Malioboro</span>
-                    <p>Selami denyut nadi kebudayaan Jawa lewat keagungan arsitektur istana, kelembutan
-                        gerak tari klasik, hingga magisnya alunan gamelan di malam hari.</p>
-                </div>
-            </div>
-
-            <div class="philosophy-node-card" data-node="kuliner" data-img="IMG/Gudeg.jpg"
-                data-title="Romansa Rasa Warisan Leluhur"
-                data-desc="Menikmati racikan rasa otentik yang dimasak perlahan di atas tungku tanah liat, menghadirkan cita rasa manis-gurih legendaris yang selalu dirindukan.">
-                <div class="node-number-wrapper">
-                    <h2 class="node-number">02</h2>
-                    <div class="node-line-indicator"></div>
-                </div>
-                <div class="node-content">
-                    <h3>Culinary & Hospitality</h3>
-                    <span class="node-tag">Gudeg • Kopi Joss • Angkringan</span>
-                    <p>Manjakan lidah dengan kelezatan Gudeg legendaris, kehangatan wedang ronde, hingga
-                        obrolan hangat penuh kekeluargaan di angkringan pinggir jalan.</p>
-                </div>
-            </div>
-
-            <div class="philosophy-node-card" data-node="alam" data-img="IMG/merapi-lava.jpg"
-                data-title="Simfoni Alam dari Gunung ke Laut"
-                data-desc="Dari keangkuhan puncak Merapi hingga gulungan ombak mistis Pantai Selatan, alam Jogja adalah lanskap petualangan yang tidak ada habisnya.">
-                <div class="node-number-wrapper">
-                    <h2 class="node-number">03</h2>
-                    <div class="node-line-indicator"></div>
-                </div>
-                <div class="node-content">
-                    <h3>Nature & Landscape</h3>
-                    <span class="node-tag">Merapi • Pantai Selatan • Gumuk Pasir</span>
-                    <p>Jelajahi lanskap alam yang dramatis, mulai dari sejuknya lereng Merapi, pesona tebing
-                        karst Gunungkidul, hingga matahari terbenam yang syahdu di Parangtritis.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="philosophy-node-detail-display">
-        <div class="philosophy-badge">
-            <div class="badge-icon">✨</div>
-            <div class="badge-info">
-                <h4>Istimewa Pemimpinnya, Istimewa Rakyatnya</h4>
-                <p>Filosofi hidup bergotong-royong dan kebersamaan yang ramah menyambut setiap pelancong.</p>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
             <section id="sejarah">
                 <div class="section-intro-box">
                     <h2 class="section-main-title">Keraton &<br><em> Sejarah Kota</em></h2>
@@ -696,10 +750,10 @@
     <footer>
         <div class="footer-top-section">
             <div class="footer-column">
-            <div class="footer-logo-box">
-                <div class="footer-logo">Jogja<span>Culture</span></div>
-                <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
-            </div>
+                <div class="footer-logo-box">
+                    <div class="footer-logo">Jogja<span>Culture</span></div>
+                    <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+                </div>
             </div>
 
             <!-- Kolom Navigasi (Sesuai gambar image_5e60a0.png) -->
@@ -715,7 +769,7 @@
 
         <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain untuk kebudayaan Mataram</p>
     </footer>
-    <a href="#home" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
+    <a href="#top-anchor" class="btn-to-top" id="backToTop">
         &#8593;
     </a>
 
