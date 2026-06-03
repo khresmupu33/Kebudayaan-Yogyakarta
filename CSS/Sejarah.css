@@ -1,9 +1,90 @@
-/* --- KONTROL VISUAL TAB KONTEN --- */
+/* ==========================================================================
+   VARIABLE & SETUP GLOBAL
+   ========================================================================== */
+#sejarah {
+    background: var(--brown-dark);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    padding: 1px;
+}
+
+/* Container Utama */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 2rem 80px;
+}
+
+/* ==========================================================================
+   PEMBAHARUAN: PAGE HEADER (BACKGROUND PREMIUM & AGUNG)
+   ========================================================================== */
+/* ==========================================================================
+   PEMBAHARUAN: PAGE HEADER (GRADASI MELINGKAR / RADIAL LUXURY)
+   ========================================================================== */
+.page-header {
+    text-align: center;
+    padding-top: 170px;
+    border-radius: 8px;
+    background: radial-gradient(ellipse at center,  #3d1a03 15%, var(--brown-dark) 65%, var(--brown-dark) 100%);
+    
+
+    overflow: hidden;
+}
+
+/* Tekstur Ornamen Klasik Samar pada Background Header */
+.page-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.03; /* Tipis dan elegan di atas warna cokelat gelap */
+    background-image: url('https://www.transparenttextures.com/patterns/batik-fractal.png');
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Memastikan konten teks berada di atas overlay background */
+.sejarah-label, .sejarah-title, .divider-custom, .history-tabs-container {
+    position: relative;
+    z-index: 2;
+}
+
+.sejarah-label {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.sejarah-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    color: var(--cream);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Modifikasi Garis Pembatas (Divider) yang Elegan */
+.divider-custom {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 3rem auto;
+}
+
+/* ==========================================================================
+   KONTROL VISUAL TAB KONTEN & TOMBOL (RINGKAS & ESTETIK)
+   ========================================================================== */
 .history-tab-content {
     display: none;
     opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(15px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .history-tab-content.active-content {
@@ -12,132 +93,41 @@
     transform: translateY(0);
 }
 
-/* --- DESAIN TOMBOL PILIHAN YANG LEBIH RINGKAS & KECIL --- */
 .history-tabs-container {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
-    gap: 8px;
-    margin: 15px auto 30px auto;
+    gap: 10px;
+    margin: 0 auto;
+    background: rgba(28, 15, 6, 0.6); /* Diambil dari kontras warna --text-dark */
+    padding: 6px;
+    border-radius: 30px;
+    border: 1px solid rgba(212, 162, 80, 0.15);
 }
 
 .tab-btn {
-    background: #1e1e1e;
-    color: #bfa15f;
-    border: 1px solid #bfa15f;
-    padding: 6px 16px;
-    /* Ukuran padding diperkecil */
+    background: transparent;
+    color: var(--cream-dark);
+    border: none;
+    padding: 8px 24px;
     font-size: 0.85rem;
-    /* Ukuran font diperkecil agar pas di HP */
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.tab-btn.active,
-.tab-btn:hover {
-    background: #bfa15f;
-    color: #121212;
-}
-
-/* --- ATURAN RESPONSIVE KHUSUS LAYAR HP (MOBILE VERSION) --- */
-@media screen and (max-width: 768px) {
-
-    /* Merapatkan jarak pembungkus linimasa di HP */
-    .timeline-detailed {
-        padding: 10px 0;
-    }
-
-    /* Memaksa susunan konten menjadi satu kolom vertikal di HP */
-    .timeline-node {
-        flex-direction: column !important;
-        gap: 15px !important;
-        margin-bottom: 35px;
-    }
-
-    /* Mengatur area teks agar mengambil lebar penuh layar HP */
-    .node-text {
-        width: 100% !important;
-        padding: 0 10px !important;
-        text-align: left !important;
-    }
-
-    /* Mengatur gambar agar tampil proporsional di bawah teks pada layar HP */
-    .node-image {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 10px !important;
-    }
-
-    .image-card img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-}
-
-#sejarah {
-    background: var(--brown-dark);
-    color: var(--cream);
-    font-family: 'Cormorant Garamond', serif;
-    line-height: 1.8;
-    overflow-x: hidden;
-    z-index: 1;
-}
-
-#sejarah::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Menggunakan pola Batik Kawung & Gurda dengan kontras yang sedikit dinaikkan (0.07) agar lebih terlihat */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23b38e46' fill-opacity='0.07'%3E%3Cpath d='M50 0 C62 20, 78 20, 90 0 C95 10, 95 25, 100 30 C80 35, 80 51, 100 60 C80 65, 80 81, 100 90 C95 95, 85 95, 80 100 C68 80, 52 80, 40 100 C32 80, 16 80, 0 100 C0 95 0 85 0 80 C20 75 20 59 0 50 C20 45 20 29 0 20 C0 15 0 5 0 0 C12 20, 28 20, 40 0 Z M50 50 C58 32, 72 32, 80 50 C72 68, 58 68, 50 50 Z M50 50 C42 32, 28 32, 20 50 C28 68, 42 68, 50 50 Z'/%3E%3Ccircle cx='50' cy='50' r='3'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='100' cy='0' r='2'/%3E%3Ccircle cx='0' cy='100' r='2'/%3E%3Ccircle cx='100' cy='100' r='2'/%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: repeat;
-    pointer-events: none;
-    /* Agar tidak mengganggu klik atau hover pada teks/tombol */
-    z-index: -1;
-    /* Berada di bawah semua konten teks/gambar */
-}
-
-/* Container Utama */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 140px 2rem 100px;
-    position: relative;
-    z-index: 2;
-    /* Memastikan konten berada di atas pola ornamen */
-}
-
-/* Header Halaman */
-.page-header {
-    text-align: center;
-    margin-bottom: 6rem;
-}
-
-.sejarah-label {
-    font-family: 'Josefin Sans', sans-serif;
-    color: var(--gold);
     text-transform: uppercase;
-    letter-spacing: 6px;
-    display: block;
-    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.sejarah-title {
-    font-family: 'Playfair Display', serif;
-    line-height: 1.2;
-    margin-bottom: 2rem;
+.tab-btn:hover {
+    color: var(--gold);
 }
 
-.divider-custom {
-    width: 80px;
-    height: 2px;
+.tab-btn.active {
     background: var(--gold);
-    margin: 0 auto;
+    color: var(--text-dark); /* Teks gelap di atas tombol emas agar terbaca tajam */
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(212, 162, 80, 0.3);
 }
 
 /* ==========================================================================
@@ -149,7 +139,6 @@
     width: 100%;
 }
 
-/* Garis Tengah Sempurna pada Desktop */
 .timeline-detailed::before {
     content: '';
     position: absolute;
@@ -162,7 +151,6 @@
     z-index: 1;
 }
 
-/* Pengaturan Node Baris */
 .timeline-node {
     display: flex;
     width: 100%;
@@ -170,19 +158,15 @@
     position: relative;
     align-items: center;
     cursor: pointer;
-    /* Efek transisi halus saat seluruh baris di-hover */
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Pembagian Ruang 50% Kiri & 50% Kanan */
-.node-text,
-.node-image {
+.node-text, .node-image {
     width: 50%;
     position: relative;
     z-index: 2;
 }
 
-/* PENATAAN BARIS KIRI (Teks Kiri, Gambar Seberang Kanan) */
 .timeline-node.node-left {
     flex-direction: row;
 }
@@ -198,7 +182,6 @@
     justify-content: flex-start;
 }
 
-/* PENATAAN BARIS KANAN (Teks Kanan, Gambar Seberang Kiri) */
 .timeline-node.node-right {
     flex-direction: row-reverse;
 }
@@ -214,7 +197,6 @@
     justify-content: flex-end;
 }
 
-/* Komponen Elemen di dalam Node */
 .node-year {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--gold);
@@ -228,6 +210,7 @@
     font-family: 'Playfair Display', serif;
     margin-bottom: 1rem;
     color: var(--cream-dark);
+    font-size: 1.8rem;
     transition: color 0.3s ease;
 }
 
@@ -253,39 +236,34 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
-    object-position: top;
+    object-position: top; 
 }
 
 /* ==========================================================================
-   INTERAKSI HOVER GLOBAL (Berlaku Bersamaan untuk Semua Device)
+   INTERAKSI HOVER GLOBAL
    ========================================================================== */
 .timeline-node:hover {
     transform: translateY(-5px);
 }
 
-/* Hover Bersamaan: Gambar membesar halus */
 .timeline-node:hover .image-card img {
     transform: scale(1.05);
 }
 
-/* Hover Bersamaan: Border gambar menyala emas */
 .timeline-node:hover .image-card {
     border-color: var(--gold);
     box-shadow: 0 20px 40px rgba(212, 162, 80, 0.15);
 }
 
-/* Hover Bersamaan: Judul teks berubah warna menjadi emas */
 .timeline-node:hover .node-text h3 {
     color: var(--gold);
 }
 
-/* Hover Bersamaan: Teks tahun memutih terang bersinar */
 .timeline-node:hover .node-year {
-    color: #ffffff;
+    color: var(--cream);
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
-/* Titik Penanda Lingkaran di Garis Tengah */
 .timeline-node::after {
     content: '';
     position: absolute;
@@ -300,13 +278,11 @@
     transition: all 0.3s ease;
 }
 
-/* Hover Bersamaan: Titik tengah membesar */
 .timeline-node:hover::after {
     background: var(--cream);
     box-shadow: 0 0 0 6px rgba(212, 162, 80, 0.4);
     transform: translate(-50%, -50%) scale(1.2);
 }
-
 
 /* Story Blocks & Highlights */
 .story-container {
@@ -359,71 +335,70 @@
 }
 
 /* ==========================================================================
-   MOBILE RESPONSIVE SYSTEM (Garis Ekstrem Kiri & Gambar Melebar Penuh)
+   MOBILE RESPONSIVE SYSTEM (SISTEM LAYAR HP)
    ========================================================================== */
 @media screen and (max-width: 768px) {
-
-    /* Menghilangkan padding container agar area luar makin luas mendekati tepi layar */
     .container {
-        padding: 100px 0.5rem 60px !important;
+        padding: 60px 1rem 60px !important;
     }
 
-    /* 1. Garis timeline dipepetkan sangat ekstrim ke dinding layar kiri (sisa 4px) */
+    .page-header {
+        padding: 40px 20px;
+        margin-bottom: 3.5rem;
+    }
+
+    .sejarah-title {
+        font-size: 1.8rem;
+    }
+
+    .timeline-detailed {
+        padding: 10px 0;
+    }
+
     .timeline-detailed::before {
         left: 4px !important;
         transform: none !important;
         height: 100% !important;
     }
 
-    /* 2. Reset struktur 50% desktop agar card melebar penuh 100% tanpa terhimpit */
     .timeline-node {
         display: flex !important;
-        flex-direction: column !important;
-        /* Membuat tumpukan vertikal */
+        flex-direction: column !important; 
         align-items: flex-start !important;
-        width: 100% !important;
-        /* Menggunakan lebar penuh layar */
+        width: 100% !important; 
         left: 0 !important;
         padding: 0 !important;
         margin-bottom: 4rem !important;
     }
 
-    /* Membatalkan aturan posisi kiri-kanan selang-seling bawaan desktop */
     .timeline-node:nth-child(odd),
     .timeline-node:nth-child(even) {
         left: 0 !important;
         text-align: left !important;
     }
 
-    /* 3. MENUKAR URUTAN: Memaksa Card Gambar berada di atas Teks per topik */
+    /* MENUKAR URUTAN MOBILE: Gambar Atas, Teks Bawah */
     .timeline-node .node-image {
-        order: 1 !important;
-        /* Gambar tampil pertama (paling atas) */
-        margin-bottom: 1rem !important;
-        /* Jarak antara card gambar dengan teks di bawahnya */
+        order: 1 !important;        
+        margin-bottom: 1.2rem !important; 
         width: 100% !important;
-        padding-left: 10px !important;
-        /* Jarak pengaman minimal dari garis paling kiri */
+        padding-left: 15px !important; 
         padding-right: 0 !important;
     }
 
     .timeline-node .node-text,
     .timeline-node .node-content {
-        order: 2 !important;
-        /* Teks (judul & paragraf) mengalir di bawah gambar */
+        order: 2 !important;        
         width: 100% !important;
-        padding-left: 20px !important;
-        /* Jarak pas agar teks tidak menabrak garis kiri */
+        padding-left: 20px !important; 
         padding-right: 0 !important;
         text-align: left !important;
     }
 
-    /* 4. Membuat card gambar melebar penuh mengikuti device HP Anda */
     .image-card {
         max-width: 100% !important;
         width: 100% !important;
-        height: 190px !important;
-        /* Ketinggian card gambar ideal untuk mobile */
+        height: 200px !important;   
     }
 
     .image-card img {
@@ -432,23 +407,21 @@
         object-fit: cover !important;
     }
 
-    /* 5. Menggeser Titik Bulat (.timeline-node::after) agar menempel pas menindih garis kiri */
     .timeline-node::after {
-        left: 4px !important;
-        /* Posisi horizontal sama dengan garis mepet kiri */
-        top: -20px !important;
-        /* Posisi titik sejajar dengan baris teks tahun */
+        left: 4px !important;      
+        top: -15px !important;       
         right: auto !important;
-        transform: translateX(-50%) !important;
-        /* Titik simetris membelah garis vertikal */
+        transform: translateX(-50%) !important; 
     }
 
-    /* Override Khusus Hover Titik Bulat di Mobile agar tidak menggunakan translate desktop */
     .timeline-node:hover::after {
         transform: translateX(-50%) scale(1.2) !important;
     }
 
-    /* Penyesuaian box quotes pelengkap */
+    .story-card {
+        padding: 2rem 1.5rem;
+    }
+
     .highlight-box {
         padding: 2.5rem 1rem !important;
     }
