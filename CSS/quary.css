@@ -629,19 +629,56 @@
         border-radius: 50% !important;
     }
 
-    /* 6. Tombol Pemicu Saat Sidebar Tertutup / STATUS DEFAULT AWAL 
-   (Stand-by Nempel Kiri Layar HP memancing user untuk klik) */
+    /* 1. Definisikan timeline pada container pembungkus (misal: body atau main-layout) */
+    body {
+        timeline-scope: --main-section;
+    }
+
+    main {
+        view-timeline-name: --main-section;
+    }
+
+    /* 2. Tombol Pemicu */
     .main-layout-container:not(.sidebar-open) .btn-toggle-events {
         position: fixed !important;
         left: 0 !important;
-        right: auto !important;
         top: 50vh !important;
         transform: translateY(-50%) !important;
-        border-left: none !important;
         border-radius: 0 50% 50% 0 !important;
-        /* Berbentuk tab melayang setengah lingkaran */
         background: var(--gold) !important;
         color: var(--brown-dark) !important;
+        z-index: 90 !important;
+
+        /* Gunakan animasi untuk mengontrol visibilitas */
+        animation: auto linear reveal-btn both;
+        animation-timeline: --main-section;
+    }
+
+    @keyframes reveal-btn {
+
+        /* Tombol tetap hilang di luar area main */
+        from {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Tombol muncul tepat saat mulai masuk tag main */
+        entry 10% {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Tombol tetap terlihat selama di dalam main */
+        exit 90% {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Hilang saat sudah lewat tag main */
+        to {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 
     /* 7. Sinkronisasi Putaran Ikon Panah Lucide di HP */
