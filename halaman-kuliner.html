@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="CSS/quary.css">
     <link rel="stylesheet" href="CSS/btn-top.css">
     <link rel="stylesheet" href="CSS/in-out-page.css">
+    <link rel="stylesheet" href="CSS/keyframes.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <link rel="stylesheet" href="CSS/kuliner-kompleks.css">
 
@@ -41,6 +44,7 @@
                             <i data-lucide="chevron-down"
                                 class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
                         </a>
+
                         <div
                             class="dropdown-content absolute top-full left-0 mt-4 w-52 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
                             <a href="halaman-batik.html">Batik</a>
@@ -56,6 +60,7 @@
                             <i data-lucide="chevron-down"
                                 class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
                         </a>
+
                         <div
                             class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
                             <a href="halaman-makanan-tradisional.html">Makanan Tradisional</a>
@@ -70,6 +75,7 @@
                             <i data-lucide="chevron-down"
                                 class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
                         </a>
+
                         <div
                             class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
                             <a href="halaman-wisata-alam.html">Wisata Alam</a>
@@ -84,6 +90,7 @@
                             <i data-lucide="chevron-down"
                                 class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
                         </a>
+
                         <div
                             class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
                             <a href="halaman-smart-city.html">Smart City</a>
@@ -100,8 +107,85 @@
                     <i data-lucide="menu"></i>
                 </button>
             </div>
+
+            <div id="mobile-menu"
+                class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-12">
+                    <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
+                    <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                        <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col space-y-6 overflow-y-auto">
+                    <a href="halaman-beranda.html" class="mobile-link">Beranda</a>
+                    <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-budaya.html" class="mobile-link flex-grow">Budaya</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-batik.html" class="mobile-sublink">Batik</a>
+                            <a href="halaman-tarian-adat.html" class="mobile-sublink">Tarian Adat</a>
+                            <a href="halaman-wayang.html" class="mobile-sublink">Wayang</a>
+                            <a href="halaman-upacara-adat.html" class="mobile-sublink">Upacara Adat</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-kuliner.html" class="mobile-link flex-grow">Kuliner</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-makanan-tradisional.html" class="mobile-sublink">Makanan
+                                Tradisional</a>
+                            <a href="halaman-jajanan-khas.html" class="mobile-sublink">Jajanan Khas</a>
+                            <a href="halaman-minuman-khas.html" class="mobile-sublink">Minuman Khas</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-destinasi.html" class="mobile-link flex-grow">Destinasi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-wisata-alam.html" class="mobile-sublink">Wisata Alam</a>
+                            <a href="halaman-wisata-sejarah.html" class="mobile-sublink">Wisata Sejarah</a>
+                            <a href="halaman-wisata-budaya.html" class="mobile-sublink">Wisata Budaya</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-teknologi.html" class="mobile-link flex-grow">Teknologi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-smart-city.html" class="mobile-sublink">Smart City</a>
+                            <a href="halaman-kota-pelajar.html" class="mobile-sublink">Kota Pelajar</a>
+                            <a href="halaman-industri-modern.html" class="mobile-sublink">Industri Modern</a>
+                        </div>
+                    </div>
+
+                    <a href="halaman-peta-jogja.html" class="mobile-link">Peta</a>
+                    <a href="halaman-info.html" class="mobile-link">Tentang Kami</a>
+                </div>
+            </div>
         </nav>
     </header>
+
 
     <main class="kuliner-main-container">
 
@@ -126,7 +210,7 @@
         <section class="bento-grid-section" id="bento-container">
 
             <a href="halaman-makanan-tradisional.html" class="bento-card card-large group">
-                <div class="bento-bg" style="background-image: url('IMG/bgkul1.png');"></div>
+                <div class="bento-bg" style="background-image: url('IMG/bgkul1.jpg');"></div>
                 <div class="bento-overlay"></div>
                 <div class="bento-content">
                     <div class="bento-icon"><i data-lucide="utensils"></i></div>
