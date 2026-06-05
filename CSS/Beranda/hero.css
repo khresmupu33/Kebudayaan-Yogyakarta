@@ -190,7 +190,7 @@
 }
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
+@media (max-width: 1424px) {
     .hero-label {
         letter-spacing: 0.2rem;
         padding: 30px;
