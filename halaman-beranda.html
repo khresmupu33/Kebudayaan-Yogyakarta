@@ -188,13 +188,186 @@
     </header>
     <div class="home-wrapper">
         <section id="home">
+            <div class="parent">
+                <div class="ornament top-left"></div>
+                <div class="ornament top-right"></div>
+                <div class="ornament bottom-left"></div>
+                <div class="ornament bottom-right"></div>
+                <div class="corner-light"></div>
+                <div class="corner-light corner-light-2"></div>
+            </div>
+            <script>
+                const light1 = document.querySelector('.corner-light');
+                const light2 = document.querySelector('.corner-light-2');
+
+                function getSegments() {
+
+                    const tl = document.querySelector('.top-left');
+                    const tr = document.querySelector('.top-right');
+                    const br = document.querySelector('.bottom-right');
+                    const bl = document.querySelector('.bottom-left');
+
+                    const tlRect = tl.getBoundingClientRect();
+                    const trRect = tr.getBoundingClientRect();
+                    const brRect = br.getBoundingClientRect();
+                    const blRect = bl.getBoundingClientRect();
+
+                    const scrollX = window.scrollX;
+                    const scrollY = window.scrollY;
+
+                    /* KIRI */
+                    const leftX = tlRect.left + scrollX + 1;
+                    const leftInnerX = leftX + 100;
+
+                    /* KANAN */
+                    const rightX = trRect.right + scrollX - 10;
+                    const rightInnerX = rightX - 100;
+
+                    /* ATAS */
+                    const topY = tlRect.top + scrollY + 1;
+                    const topInnerY = topY + 100;
+
+                    /* BAWAH */
+                    const bottomY = blRect.bottom + scrollY - 1;
+                    const bottomInnerY = bottomY - 100;
+
+                    return [
+
+                        /* TOP LEFT kiri */
+                        {
+                            start: { x: leftX, y: topInnerY },
+                            end: { x: leftX, y: topY },
+                            next: { x: leftX, y: topY }
+                        },
+
+                        /* TOP LEFT atas */
+                        {
+                            start: { x: leftX, y: topY },
+                            end: { x: leftInnerX, y: topY },
+                            next: { x: rightInnerX, y: topY }
+                        },
+
+                        /* TOP RIGHT atas */
+                        {
+                            start: { x: rightInnerX, y: topY },
+                            end: { x: rightX, y: topY },
+                            next: { x: rightX, y: topY }
+                        },
+
+                        /* TOP RIGHT kanan */
+                        {
+                            start: { x: rightX, y: topY },
+                            end: { x: rightX, y: topInnerY },
+                            next: { x: rightX, y: bottomInnerY }
+                        },
+
+                        /* BOTTOM RIGHT kanan */
+                        {
+                            start: { x: rightX, y: bottomInnerY },
+                            end: { x: rightX, y: bottomY },
+                            next: { x: rightX, y: bottomY }
+                        },
+
+                        /* BOTTOM RIGHT bawah */
+                        {
+                            start: { x: rightX, y: bottomY },
+                            end: { x: rightInnerX, y: bottomY },
+                            next: { x: leftInnerX, y: bottomY }
+                        },
+
+                        /* BOTTOM LEFT bawah */
+                        {
+                            start: { x: leftInnerX, y: bottomY },
+                            end: { x: leftX, y: bottomY },
+                            next: { x: leftX, y: bottomY }
+                        },
+
+                        /* BOTTOM LEFT kiri */
+                        {
+                            start: { x: leftX, y: bottomY },
+                            end: { x: leftX, y: bottomInnerY },
+                            next: { x: leftX, y: topInnerY }
+                        }
+
+                    ];
+                }
+
+                let segments = getSegments();
+
+                window.addEventListener('resize', () => {
+                    segments = getSegments();
+                });
+
+                const speed = 0.025;
+
+                /* ================================================= */
+                /* FUNGSI UMUM UNTUK BANYAK CAHAYA */
+                /* ================================================= */
+
+                function createLightAnimation(lightElement, startSegment = 0) {
+
+                    let currentSegment = startSegment;
+                    let progress = 0;
+
+                    function animate() {
+
+                        requestAnimationFrame(animate);
+
+                        const segment = segments[currentSegment];
+
+                        progress += speed;
+
+                        if (progress >= 1) {
+
+                            lightElement.style.left = `${segment.next.x}px`;
+                            lightElement.style.top = `${segment.next.y}px`;
+
+                            currentSegment =
+                                (currentSegment + 1) % segments.length;
+
+                            progress = 0;
+
+                            return;
+                        }
+
+                        const x =
+                            segment.start.x +
+                            (segment.end.x - segment.start.x) * progress;
+
+                        const y =
+                            segment.start.y +
+                            (segment.end.y - segment.start.y) * progress;
+
+                        lightElement.style.left = `${x}px`;
+                        lightElement.style.top = `${y}px`;
+                    }
+
+                    const first = segments[startSegment].start;
+
+                    lightElement.style.left = `${first.x}px`;
+                    lightElement.style.top = `${first.y}px`;
+
+                    animate();
+                }
+
+                /* ================================================= */
+                /* JALANKAN */
+                /* ================================================= */
+
+                createLightAnimation(light1, 0);
+
+                /* mulai dari sisi berlawanan */
+                createLightAnimation(light2, 4);
+            </script>
             <div class="batik-bg"></div>
 
             <div class="hero-content">
+                <div class="batik-ornament left"></div>
                 <span class="hero-label">Warisan Agung Yogyakarta</span>
                 <h1 class="hero-title">Yogya<em>karta</em></h1>
                 <p class="hero-subtitle">Di mana tradisi merangkul zaman</p>
                 <div class="hero-divider"></div>
+                <div class="batik-ornament right"></div>
             </div>
 
             <div class="scroll-indicator">

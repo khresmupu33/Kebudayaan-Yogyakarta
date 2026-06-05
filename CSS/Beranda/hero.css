@@ -14,6 +14,7 @@
     z-index: -100000;
     overflow: hidden; /* Mencegah munculnya area putih saat scale */
 }
+
 /* --- Hero Section (The Stage) --- */
 #home {
     min-height: 100vh;
@@ -75,12 +76,52 @@
     font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+     padding: 0 120px; /* Ruang untuk ornamen kiri dan kanan */
+     display: inline-block;
 }
 
 .hero-title em {
     color: var(--gold);
     font-style: italic;
     font-weight: 400;
+}
+/* Ornamen Kiri & Kanan (Menggunakan Data URI SVG agar langsung tampil) */
+.hero-title::before,
+.hero-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    /* Ini adalah kode SVG pola bunga/batik berwarna emas */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23ff9d00' stroke-width='2'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23ff9d00' stroke-width='1'/%3E%3Cpath d='M50 5 L55 45 L95 50 L55 55 L50 95 L45 55 L5 50 L45 45 Z' fill='%23ff9d00' opacity='0.5'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    animation: sparkle 3s infinite ease-in-out;
+}
+
+/* Tambahkan keyframes ini di bagian bawah CSS Anda */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.6;
+        filter: brightness(1) drop-shadow(0 0 0px rgba(255, 157, 0, 0));
+    }
+    50% {
+        opacity: 1;
+        filter: brightness(1.5) drop-shadow(0 0 10px rgba(255, 157, 0, 0.8));
+    }
+}
+
+.hero-title::before { left: 0; }
+.hero-title::after { right: 0; }
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .hero-title { padding: 30px; }
+    .hero-title::before, .hero-title::after { display: none;}
 }
 
 .hero-subtitle {
@@ -123,15 +164,42 @@
     width: 1px;
     height: 40px;
     background: linear-gradient(to bottom, var(--gold), transparent);
+    
+    /* Menambahkan animasi */
+    animation: scrollAnimation 2s infinite ease-in-out;
+    transform-origin: top; /* Animasi bergerak dari titik atas */
+}
+.corner-light-2{
+    background:#ffd700;
+
+    box-shadow:
+        0 0 5px #ffd700,
+        0 0 10px #ffd700,
+        0 0 20px #ffd700;
+}
+
+@keyframes scrollAnimation {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(10px); /* Garis turun 10px */
+        opacity: 1;
+    }
 }
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .hero-label {
         letter-spacing: 0.2rem;
+        padding: 30px;
     }
     .scroll-indicator {
         bottom: 25px;
+    }
+    .corner-light{
+        display: none;
     }
 }
 .main-layout-container {
@@ -141,4 +209,94 @@
     /* Tambahan: bayangan agar ada efek 'kedalaman' saat menimpa hero */
     box-shadow: 0 -20px 60px rgba(0,0,0,0.5);
     
+}
+/* --- Ornamen Sudut --- */
+.ornament {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--gold);
+    opacity: 0.3;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.top-left { top: 110px; left: 30px; border-right: none; border-bottom: none; }
+.top-right { top: 110px; right: 30px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 30px; left: 30px; border-right: none; border-top: none; }
+.bottom-right { bottom: 30px; right: 30px; border-left: none; border-top: none; }
+/* ======================================
+   PARENT
+====================================== */
+
+.parent{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+/* ======================================
+   ORNAMEN
+====================================== */
+
+.ornament{
+    position:absolute;
+    width:100px;
+    height:100px;
+    border:2px solid var(--gold);
+    opacity:.3;
+    z-index:5;
+}
+
+.top-left{
+    top:110px;
+    left:30px;
+    border-right:none;
+    border-bottom:none;
+}
+
+.top-right{
+    top:110px;
+    right:30px;
+    border-left:none;
+    border-bottom:none;
+}
+
+.bottom-left{
+    bottom:30px;
+    left:30px;
+    border-right:none;
+    border-top:none;
+}
+
+.bottom-right{
+    bottom:30px;
+    right:30px;
+    border-left:none;
+    border-top:none;
+}
+
+/* ======================================
+   CAHAYA
+====================================== */
+
+.corner-light{
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    box-shadow:
+        0 0 5px var(--gold),
+        0 0 10px var(--gold),
+        0 0 20px var(--gold),
+        0 0 40px var(--gold);
+
+    z-index:50;
+
+    transform:translate(-50%, -50%);
 }
