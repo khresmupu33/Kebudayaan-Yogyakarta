@@ -26,10 +26,12 @@
 
 @media (max-width: 768px) {
     #home {
-        height: 50px;
+        height: 40px;
         padding: 1px;
     }
-
+    .home-wrapper{
+        padding-bottom: 100px;
+    }
     html {
         font-size: 16px;
     }
@@ -123,6 +125,17 @@
     .kuliner-slider-view {
         height: 420px;
         /* Diturunkan dari 530px agar hemat ruang vertikal HP */
+    }
+    .kuliner-link-btn {
+        margin-top: 0.1px;
+        padding: 1px 3px;
+        font-size: 10px!important;
+    }
+    .kuliner-cards-holder{
+        margin-top: 20px !important;
+    }
+    .kuliner-action-buttons{
+        margin-top: 50px;
     }
 
     /* 3. Membuat kartu melebar penuh dan mengatur ulang posisi tumpukan */
@@ -542,7 +555,9 @@
     .timeline-detailed::before {
         left: 20px;
     }
-
+    .kuliner-action-buttons{
+        margin-top: 20px;
+    }
     .timeline-node {
         width: 100%;
         left: 0 !important;
