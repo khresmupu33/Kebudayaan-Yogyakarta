@@ -1,5 +1,5 @@
 #kuliner-body {
-    background-color: var(--dark-brown);
+    background-color: var(--brown-dark);
     color: var(--cream);
     padding: 0px;
 }
@@ -7,7 +7,7 @@
 
 /* --- HERO SECTION --- */
 .kuliner-main-container {
-    background-color: var(--dark-brown);
+    background-color: var(--brown-dark);
     padding-top: 100px;
     /* Jarak dari navbar */
     display: flex;
