@@ -6,62 +6,153 @@ const defaultCenter = [-7.8200, 110.4200];
 const defaultZoom = 10.5;
 
 const map = L.map('map', {
-    zoomControl: false,       // Mematikan tombol default bawaan Leaflet
-    scrollWheelZoom: false    // KUNCI: Scroll mouse murni menggulirkan web, tidak men-zoom peta
+    zoomControl: false,
+    scrollWheelZoom: false
 }).setView(defaultCenter, defaultZoom);
 
-// 2. Load Base Map Gaya Gelap Muted dari CartoDB (Kredit/Attribution Dihilangkan)
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '' // Bagian cite kosong untuk menghilangkan teks kredit di pojok kanan bawah
+    attribution: ''
 }).addTo(map);
 
-// 3. Inisialisasi Kelompok Layer Koleksi Destinasi
 const layers = {
     budaya: L.layerGroup().addTo(map),
+    sejarah: L.layerGroup().addTo(map),
     kuliner: L.layerGroup().addTo(map),
     alam: L.layerGroup().addTo(map),
     transportasi: L.layerGroup().addTo(map),
-    akomodasi: L.layerGroup().addTo(map)
+    akomodasi: L.layerGroup().addTo(map),
+    fasilitas: L.layerGroup().addTo(map)
 };
 
-// 4. Kumpulan Objek Data Koordinat Wisata Daerah Istimewa Yogyakarta
 const tempatWisata = [
-    { nama: "Keraton Ngayogyakarta Hadiningrat", kategori: "budaya", koordinat: [-7.8052, 110.3642], deskripsi: "Pusat eksistensi peradaban kebudayaan Jawa Kesultanan Yogyakarta Syah." },
-    { nama: "Candi Prambanan", kategori: "budaya", koordinat: [-7.7520, 110.4914], deskripsi: "Kompleks candi Hindu terbesar sekaligus mahakarya megah abad ke-9 Masehi." },
-    { nama: "Candi Ratu Boko", kategori: "budaya", koordinat: [-7.7705, 110.4894], deskripsi: "Situs reruntuhan istana kraton kuno berlatar pemandangan sunset menakjubkan." },
-    { nama: "Taman Sari Water Castle", kategori: "budaya", koordinat: [-7.8098, 110.3594], deskripsi: "Situs pemandian kuno bersejarah tempat rekreasi keluarga sultan jaman dahulu." },
-    { nama: "Kotagede Heritage Site", kategori: "budaya", koordinat: [-7.8276, 110.3994], deskripsi: "Kota tua peninggalan Mataram Islam abad ke-16, pusat pengrajin perak Jogja." },
-    { nama: "Pasar Beringharjo & Malioboro", kategori: "kuliner", koordinat: [-7.7935, 110.3656], deskripsi: "Pusat transaksi batik, kuliner pecel, jajanan pasar pasar tradisional tertua." },
-    { nama: "Gudeg Wijilan Yu Djum", kategori: "kuliner", koordinat: [-7.8045, 110.3678], deskripsi: "Sentra hidangan kuliner nangka muda manis autentik khas dapur Mataram Jogja." },
-    { nama: "Kopi Joss Lik Man Tugu", kategori: "kuliner", koordinat: [-7.7885, 110.3641], deskripsi: "Angkringan legendaris pelopor sajian kopi unik arang membara menyala." },
-    { nama: "Sate Klatak Pak Bari Imogiri", kategori: "kuliner", koordinat: [-7.8872, 110.3875], deskripsi: "Kuliner sate kambing muda khas Bantul yang dibakar unik menggunakan jeruji besi." },
-    { nama: "Pantai Parangtritis", kategori: "alam", koordinat: [-8.0246, 110.3249], deskripsi: "Pantai mistis berpasir hitam selatan Jogja dengan gumuk pasir yang langka." },
-    { nama: "Kawasan Wisata Kaliurang", kategori: "alam", koordinat: [-7.5947, 110.4457], deskripsi: "Resort alam dataran tinggi sejuk tepat di bawah kaki lava Gunung Merapi." },
-    { nama: "Pantai Indrayanti (Pulang Sawal)", kategori: "alam", koordinat: [-8.1504, 110.6123], deskripsi: "Pantai berpasir putih eksotis dengan tebing karang megah di Gunungkidul." },
-    { nama: "Goa Jomblang Cave", kategori: "alam", koordinat: [-8.0286, 110.6384], deskripsi: "Goa vertikal purba dengan fenomena pancaran cahaya surga menembus atap goa." },
-    { nama: "Stasiun Yogyakarta (Tugu)", kategori: "transportasi", koordinat: [-7.7891, 110.3634], deskripsi: "Stasiun kereta api utama kelas besar simpul koneksi kereta jarak jauh dan KRL komuter." },
-    { nama: "Stasiun Lempuyangan", kategori: "transportasi", koordinat: [-7.7900, 110.3752], deskripsi: "Stasiun sekunder pusat transit keberangkatan kereta api ekonomi antar provinsi." },
-    { nama: "Bandara Internasional Yogyakarta (YIA)", kategori: "transportasi", koordinat: [-7.9001, 110.0571], deskripsi: "Infrastruktur gerbang udara modern pintu utama turis domestik & mancanegara." },
-    { nama: "Terminal Giwangan", kategori: "transportasi", koordinat: [-7.8341, 110.3924], deskripsi: "Terminal bus induk tipe A terbesar penghubung rute AKAP lintas pulau Sumatera-Jawa-Bali." },
-    { nama: "Yogyakarta Marriott Hotel", kategori: "akomodasi", magnets: "akomodasi", koordinat: [-7.7599, 110.3992], deskripsi: "Akomodasi penginapan hotel bintang 5 premium mewah terintegrasi pusat perbelanjaan." },
-    { nama: "The Phoenix Hotel Yogyakarta", kategori: "akomodasi", koordinat: [-7.7825, 110.3683], deskripsi: "Hotel warisan kolonial bersejarah tinggi yang memadukan arsitektur Eropa-Jawa." },
-    { nama: "RSUP Dr. Sardjito", kategori: "akomodasi", koordinat: [-7.7686, 110.3736], deskripsi: "Rumah sakit pusat rujukan kesehatan umum terbesar wilayah DIY dan Jawa Tengah." }
+    // WISATA ALAM
+    { id: "merapi", nama: "Lava Tour Merapi", kategori: "alam", koordinat: [-7.5947, 110.4457], deskripsi: "Petualangan ekstrem jalur lahar dingin." },
+    { id: "parangtritis", nama: "Pantai Parangtritis", kategori: "alam", koordinat: [-8.0246, 110.3249], deskripsi: "Pantai ikonik pesisir selatan." },
+    { id: "heha", nama: "HeHa Sky View", kategori: "alam", koordinat: [-7.8500, 110.4500], deskripsi: "Lanskap perbukitan kapur Gunungkidul." },
+    { id: "kalibiru", nama: "Puncak Kalibiru", kategori: "alam", koordinat: [-7.8100, 110.1200], deskripsi: "Hutan pegunungan Menoreh." },
+
+    // WISATA SEJARAH
+    { id: "keraton", nama: "Keraton Ngayogyakarta Hadiningrat", kategori: "sejarah", koordinat: [-7.8052, 110.3642], deskripsi: "Pusat eksistensi peradaban kebudayaan Jawa." },
+    { id: "tamansari", nama: "Istana Air Taman Sari", kategori: "sejarah", koordinat: [-7.8098, 110.3594], deskripsi: "Situs reruntuhan pemandian sultan." },
+    { id: "vredeburg", nama: "Benteng Vredeburg", kategori: "sejarah", koordinat: [-7.7950, 110.3660], deskripsi: "Situs saksi bisu kolonialisme." },
+    { id: "kotagede", nama: "Situs Tua Kotagede", kategori: "sejarah", koordinat: [-7.8276, 110.3994], deskripsi: "Kota tua pusat kerajinan perak." },
+
+    // WISATA BUDAYA
+    { id: "malioboro", nama: "Nadi Budaya Malioboro", kategori: "budaya", koordinat: [-7.7935, 110.3656], deskripsi: "Poros sumbu imajiner tempat bertemunya tradisi." },
+    { id: "wijilan", nama: "Sentra Gudeg Wijilan", kategori: "budaya", koordinat: [-7.8045, 110.3678], deskripsi: "Kampung kuliner tradisional gudeg." },
+    { id: "beringharjo", nama: "Pasar Beringharjo", kategori: "budaya", koordinat: [-7.7940, 110.3660], deskripsi: "Pusat transaksi budaya dan batik." },
+    { id: "affandi", nama: "Museum Affandi", kategori: "budaya", koordinat: [-7.7800, 110.3900], deskripsi: "Kompleks rumah kubah maestro seni." },
+    
+    // EVENT & LOKASI KHUSUS
+    { id: "prambanan", nama: "Candi Prambanan (Keroncong Plesiran)", kategori: "budaya", koordinat: [-7.7520, 110.4914], deskripsi: "Lokasi Keroncong Plesiran 1 Dekade." },
+    { id: "jnm", nama: "Jogja National Museum (ARTJOG)", kategori: "budaya", koordinat: [-7.7940, 110.3580], deskripsi: "Lokasi perhelatan ARTJOG 2026." },
+    { id: "kridosono", nama: "Stadion Kridosono", kategori: "transportasi", koordinat: [-7.7850, 110.3730], deskripsi: "Lokasi Jogja Rockphonic & Sarga Festival." },
+
+    // TRANSPORTASI
+    { nama: "Stasiun Tugu", kategori: "transportasi", koordinat: [-7.7891, 110.3634], deskripsi: "Stasiun utama pusat kota." },
+    { nama: "Stasiun Lempuyangan", kategori: "transportasi", koordinat: [-7.7900, 110.3752], deskripsi: "Stasiun transit ekonomi." },
+    { nama: "Bandara YIA", kategori: "transportasi", koordinat: [-7.9001, 110.0571], deskripsi: "Bandara Internasional Yogyakarta." },
+    { nama: "Terminal Giwangan", kategori: "transportasi", koordinat: [-7.8341, 110.3924], deskripsi: "Terminal bus utama DIY." },
+    { nama: "Halte Trans Jogja Malioboro", kategori: "transportasi", koordinat: [-7.7930, 110.3650], deskripsi: "Pusat koneksi bus perkotaan." },
+
+    // AKOMODASI
+    { nama: "Yogyakarta Marriott Hotel", kategori: "akomodasi", koordinat: [-7.7599, 110.3992], deskripsi: "Hotel bintang 5 premium." },
+    { nama: "The Phoenix Hotel", kategori: "akomodasi", koordinat: [-7.7825, 110.3683], deskripsi: "Hotel warisan kolonial." },
+
+    // FASILITAS (SPBU, RUMAH SAKIT)
+    { nama: "SPBU Malioboro", kategori: "fasilitas", koordinat: [-7.7980, 110.3650], deskripsi: "SPBU area pusat kota." },
+    { nama: "SPBU Kaliurang", kategori: "fasilitas", koordinat: [-7.6500, 110.4200], deskripsi: "SPBU jalur wisata Merapi." },
+    { nama: "RSUP Dr. Sardjito", kategori: "fasilitas", koordinat: [-7.7686, 110.3736], deskripsi: "Rumah sakit pusat rujukan." },
+    { nama: "Puskesmas Gedongtengen", kategori: "fasilitas", koordinat: [-7.7920, 110.3600], deskripsi: "Fasilitas kesehatan area kota." },
+
+    // WISATA RELIGI
+    { id: "masjid_gedhe", nama: "Masjid Gedhe Kauman", kategori: "budaya", koordinat: [-7.8035, 110.3620], deskripsi: "Masjid bersejarah kesultanan." },
+    { id: "gereja_ganjuran", nama: "Gereja Hati Kudus Ganjuran", kategori: "budaya", koordinat: [-7.9150, 110.3120], deskripsi: "Gereja dengan arsitektur Jawa." },
+    { id: "masjid_syuhada", nama: "Masjid Syuhada", kategori: "budaya", koordinat: [-7.7780, 110.3720], deskripsi: "Masjid ikonik Kotabaru." },
+
+    // WISATA EDUKASI & MUSEUM
+    { id: "museum_biologi", nama: "Museum Biologi UGM", kategori: "budaya", koordinat: [-7.7850, 110.3780], deskripsi: "Koleksi spesimen flora fauna." },
+    { id: "taman_pintar", nama: "Taman Pintar", kategori: "budaya", koordinat: [-7.7950, 110.3680], deskripsi: "Wahana edukasi sains anak." },
+    { id: "museum_geologi", nama: "Museum Geoteknologi", kategori: "budaya", koordinat: [-7.7610, 110.3800], deskripsi: "Edukasi bumi dan batuan." },
+    { id: "museum_sonobudoyo", nama: "Museum Sonobudoyo", kategori: "budaya", koordinat: [-7.8020, 110.3645], deskripsi: "Museum kebudayaan Jawa." },
+
+    // PUSAT BELANJA
+    { id: "mal_ioboro_mall", nama: "Malioboro Mall", kategori: "kuliner", koordinat: [-7.7925, 110.3650], deskripsi: "Pusat perbelanjaan utama." },
+    { id: "galeria_mall", nama: "Galeria Mall", kategori: "kuliner", koordinat: [-7.7800, 110.3750], deskripsi: "Mal ikonik utara kota." },
+    { id: "hartono_mall", nama: "Pakuwon Mall Jogja", kategori: "kuliner", koordinat: [-7.7550, 110.3950], deskripsi: "Pusat gaya hidup modern." },
+    { id: "pasar_kranggan", nama: "Pasar Kranggan", kategori: "kuliner", koordinat: [-7.7830, 110.3630], deskripsi: "Pasar tradisional legendaris." },
+
+    // FASILITAS UMUM & SPBU TAMBAHAN
+    { id: "spbu_gejayan", nama: "SPBU Gejayan", kategori: "fasilitas", koordinat: [-7.7750, 110.3900], deskripsi: "SPBU area kampus." },
+    { id: "spbu_parangtritis", nama: "SPBU Parangtritis", kategori: "fasilitas", koordinat: [-7.9800, 110.3500], deskripsi: "SPBU jalur wisata selatan." },
+    { id: "rs_bethesda", nama: "RS Bethesda", kategori: "fasilitas", koordinat: [-7.7800, 110.3700], deskripsi: "Rumah sakit swasta pusat." },
+    { id: "stasiun_maguwo", nama: "Stasiun Maguwo", kategori: "transportasi", koordinat: [-7.7780, 110.4350], deskripsi: "Stasiun akses bandara lama." },
+    // WISATA ALAM & TAMAN
+    { id: "hutan_pinus", nama: "Hutan Pinus Mangunan", kategori: "alam", koordinat: [-7.9400, 110.4200], deskripsi: "Wisata hutan pinus ikonik Bantul." },
+    { id: "gumuk_pasir", nama: "Gumuk Pasir Parangkusumo", kategori: "alam", koordinat: [-8.0200, 110.3150], deskripsi: "Padang pasir unik di pesisir selatan." },
+    { id: "waduk_sermo", nama: "Waduk Sermo", kategori: "alam", koordinat: [-7.7850, 110.1200], deskripsi: "Bendungan asri Kulon Progo." },
+    { id: "air_terjun_sri_gethuk", nama: "Air Terjun Sri Gethuk", kategori: "alam", koordinat: [-7.9550, 110.5100], deskripsi: "Air terjun di pinggir sungai Oyo." },
+    { id: "taman_pelangi", nama: "Taman Pelangi Monjali", kategori: "alam", koordinat: [-7.7500, 110.3650], deskripsi: "Wisata lampion malam hari." },
+
+    // WISATA BUDAYA & SEJARAH
+    { id: "candi_ijo", nama: "Candi Ijo", kategori: "sejarah", koordinat: [-7.7800, 110.5100], deskripsi: "Candi tertinggi di Yogyakarta." },
+    { id: "candi_sambisari", nama: "Candi Sambisari", kategori: "sejarah", koordinat: [-7.7600, 110.4500], deskripsi: "Candi bawah permukaan tanah." },
+    { id: "museum_perjuangan", nama: "Museum Perjuangan", kategori: "sejarah", koordinat: [-7.8100, 110.3700], deskripsi: "Situs sejarah perjuangan RI." },
+    { id: "makam_imogiri", nama: "Kompleks Makam Raja Imogiri", kategori: "sejarah", koordinat: [-7.9250, 110.3950], deskripsi: "Makam raja-raja Mataram." },
+
+    // KULINER (TEMBAH BANYAK)
+    { id: "bakmi_jowo_mbah_gito", nama: "Bakmi Jowo Mbah Gito", kategori: "kuliner", koordinat: [-7.8200, 110.3800], deskripsi: "Bakmi nuansa kayu tradisional." },
+    { id: "mie_ayam_tumini", nama: "Mie Ayam Tumini", kategori: "kuliner", koordinat: [-7.8300, 110.3750], deskripsi: "Mie ayam legendaris Sari." },
+    { id: "oseng_mercon_bu_numi", nama: "Oseng Mercon Bu Numi", kategori: "kuliner", koordinat: [-7.8000, 110.3600], deskripsi: "Kuliner super pedas." },
+    { id: "jejamuran", nama: "Jejamuran", kategori: "kuliner", koordinat: [-7.7200, 110.3500], deskripsi: "Resto olahan jamur khas Sleman." },
+
+    // TRANSPORTASI & FASILITAS TAMBAHAN
+    { id: "terminal_jombor", nama: "Terminal Jombor", kategori: "transportasi", koordinat: [-7.7500, 110.3550], deskripsi: "Terminal bus utama utara." },
+    { id: "spbu_jl_solo", nama: "SPBU Jl. Solo", kategori: "fasilitas", koordinat: [-7.7800, 110.4000], deskripsi: "SPBU akses utama Bandara." },
+    { id: "rs_johar", nama: "RS Jogja International", kategori: "fasilitas", koordinat: [-7.7700, 110.3850], deskripsi: "Fasilitas kesehatan modern." },
+    
+    // TAMBAHKAN BERBAGAI TITIK POI LAINNYA
+    { id: "kampus_ugm", nama: "Kampus UGM", kategori: "budaya", koordinat: [-7.7700, 110.3770], deskripsi: "Kawasan pendidikan pusat." },
+    { id: "stadion_maguwoharjo", nama: "Stadion Maguwoharjo", kategori: "transportasi", koordinat: [-7.7580, 110.4250], deskripsi: "Stadion kebanggaan DIY." },
+    { id: "desa_wisata_kasongan", nama: "Desa Wisata Kasongan", kategori: "budaya", koordinat: [-7.8400, 110.3500], deskripsi: "Pusat kerajinan gerabah." }
 ];
 
-// 5. Membuat dan Memetakan Struktur Popup Kandungan Info Tempat
+// 5. Membuat dan Memetakan Struktur Popup
 tempatWisata.forEach(tempat => {
+    // Membuat link Google Maps otomatis berdasarkan koordinat
+    const gmapsLink = `https://www.google.com/maps/search/?api=1&query=${tempat.koordinat[0]},${tempat.koordinat[1]}`;
+    
     const htmlPopup = `
         <div class="popup-box">
             <span class="popup-category">${tempat.kategori}</span>
             <h3 class="popup-title">${tempat.nama}</h3>
             <p class="popup-desc">${tempat.deskripsi}</p>
+            <a href="${gmapsLink}" target="_blank" class="popup-link">Buka di Google Maps</a>
         </div>
     `;
+    
     const marker = L.marker(tempat.koordinat).bindPopup(htmlPopup);
+    
+    // PERBAIKAN: Jika kategori tidak terdaftar di 'layers', masukkan ke layer default
     if (layers[tempat.kategori]) {
         marker.addTo(layers[tempat.kategori]);
+    } else {
+        // Jika kategori tidak cocok, tetap tampilkan di peta (jangan disembunyikan)
+        marker.addTo(map); 
     }
 });
+
+// FUNGSI NAVIGASI GLOBAL (Digunakan untuk link dari luar)
+window.arahkannyaKeLokasi = function(lat, lng, zoom = 15) {
+    map.flyTo([lat, lng], zoom, { animate: true, duration: 1.5 });
+};
+
+window.arahkannyaKeWilayah = function(key) {
+    if (dataTitikWilayah[key]) {
+        map.flyTo(dataTitikWilayah[key].center, dataTitikWilayah[key].zoom, { animate: true, duration: 1.5 });
+    }
+};
+
 
 // =========================================================================
 // NAVIGASI DENGAN TITIK KOORDINAT (FLY TO WILAYAH KABUPATEN)
@@ -83,7 +174,18 @@ window.arahkannyaKeWilayah = function(key) {
         });
     }
 };
-
+// Tambahkan ini di bagian bawah Peta.js
+window.addEventListener('load', () => {
+    const params = new URLSearchParams(window.location.search);
+    const lat = params.get('lat');
+    const lng = params.get('lng');
+    
+    if (lat && lng) {
+        setTimeout(() => {
+            arahkannyaKeLokasi(parseFloat(lat), parseFloat(lng), 15);
+        }, 500); // Delay agar peta siap dimuat dulu
+    }
+});
 // =========================================================================
 // DATA GARIS REKAYASA SPASIAL DIY JOGJA (TERURUT - ANTI JALUR POTONG)
 // HANYA RENDER DI DESKTOP LAYAR >= 768px
@@ -170,20 +272,52 @@ document.getElementById('mobileZoomReset').addEventListener('click', function ()
 // 9. Logika Sinkronisasi Checkbox Terpusat (Desktop & Mobile)
 document.addEventListener('change', function (e) {
     if (e.target && e.target.classList.contains('sync-chk')) {
-        const targetKategori = e.target.getAttribute('data-target');
-        const isChecked = e.target.checked;
+        const targetKategori = e.target.getAttribute('data-target'); // Mengambil kategori (contoh: 'alam')
+        const isChecked = e.target.checked; // Status apakah dicentang atau tidak
 
+        // Sinkronisasi status checkbox (jika ada checkbox yang sama di mobile/desktop)
         const semuaCheckboxKategori = document.querySelectorAll(`input[data-target="${targetKategori}"]`);
         semuaCheckboxKategori.forEach(checkbox => {
             checkbox.checked = isChecked;
         });
 
+        // INI BAGIAN UTAMA FILTERINGNYA:
         if (isChecked) {
-            map.addLayer(layers[targetKategori]);
+            map.addLayer(layers[targetKategori]); // Menampilkan layer
         } else {
-            map.removeLayer(layers[targetKategori]);
+            map.removeLayer(layers[targetKategori]); // Menyembunyikan layer
         }
     }
+});
+// Fungsi untuk memproses perubahan status layer
+function updateAllFilters(status) {
+    const checkboxes = document.querySelectorAll('.sync-chk');
+    checkboxes.forEach(chk => {
+        // Update checkbox
+        chk.checked = status;
+        
+        // Update layer di peta
+        const targetKategori = chk.getAttribute('data-target');
+        const layer = layers[targetKategori];
+        
+        if (layer) {
+            if (status) {
+                if (!map.hasLayer(layer)) map.addLayer(layer);
+            } else {
+                if (map.hasLayer(layer)) map.removeLayer(layer);
+            }
+        }
+    });
+}
+
+// Menangani tombol "Pilih Semua" (mendukung banyak tombol sekaligus)
+document.querySelectorAll('.btn-check-all').forEach(btn => {
+    btn.addEventListener('click', () => updateAllFilters(true));
+});
+
+// Menangani tombol "Hapus Semua" (mendukung banyak tombol sekaligus)
+document.querySelectorAll('.btn-uncheck-all').forEach(btn => {
+    btn.addEventListener('click', () => updateAllFilters(false));
 });
 
 // 10. Mekanisme Kontrol Drawer / Laci Mobile Samping
@@ -207,5 +341,23 @@ map.on('click', function () {
         kontainerPetaLayout.classList.remove('sidebar-open');
         btnTogglePeta.innerHTML = `<i data-lucide="chevron-left" class="w-6 h-6"></i>`;
         lucide.createIcons();
+    }
+});
+
+// Navigasi Otomatis berdasarkan URL Hash (contoh: peta.html#prambanan)
+window.addEventListener('load', () => {
+    const hash = window.location.hash.substring(1); // Mengambil teks setelah #
+    if (hash) {
+        const target = tempatWisata.find(t => t.id === hash);
+        if (target) {
+            setTimeout(() => {
+                map.flyTo(target.koordinat, 15, {
+                    animate: true,
+                    duration: 1.5
+                });
+                // Opsional: Buka popup otomatis
+                // L.marker(target.koordinat).openPopup();
+            }, 800);
+        }
     }
 });

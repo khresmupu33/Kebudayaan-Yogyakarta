@@ -11,10 +11,13 @@ body {
 
 .main-layout-container {
     width: 100%;
-    height: calc(100vh - 70px); /* Memotong tinggi navbar agar tidak ke bawah scroll */
-    margin-top: 70px;           /* Memberi ruang pas bagi navbar agar peta kelihatan penuh */
+    height: calc(100vh - 70px);
+    /* Memotong tinggi navbar agar tidak ke bawah scroll */
+    margin-top: 70px;
+    /* Memberi ruang pas bagi navbar agar peta kelihatan penuh */
     display: grid;
-    grid-template-columns: 320px 1fr; /* Kolom Kiri: 320px (Legenda), Kolom Kanan: Sisa Ruang (Peta) */
+    grid-template-columns: 320px 1fr;
+    /* Kolom Kiri: 320px (Legenda), Kolom Kanan: Sisa Ruang (Peta) */
     padding: 0 !important;
     max-width: none !important;
     overflow: hidden;
@@ -29,10 +32,13 @@ body {
     grid-column: 1;
     height: 100%;
     width: 100%;
-    background: rgba(30, 20, 12, 0.98); /* Cokelat Gelap khas Mataram */
-    border-right: 2px solid #d4af37;     /* Border Emas asli/var(--gold) */
+    background: rgba(30, 20, 12, 0.98);
+    /* Cokelat Gelap khas Mataram */
+    border-right: 2px solid #d4af37;
+    /* Border Emas asli/var(--gold) */
     padding: 30px 24px;
-    color: #f5f0e6;                     /* Warna Cream asli/var(--cream) */
+    color: #f5f0e6;
+    /* Warna Cream asli/var(--cream) */
     box-shadow: 6px 0 25px rgba(0, 0, 0, 0.5);
     z-index: 2;
     overflow-y: auto;
@@ -58,11 +64,23 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     padding: 4px 0;
+
 }
 
 .legend-item:hover {
     transform: translateX(6px);
-    color: #d4af37;
+}
+
+.btn-check-all,
+.btn-uncheck-all {
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-check-all:hover,
+.btn-uncheck-all:hover {
+    transform: translateY(-4px);
 }
 
 .legend-item input[type="checkbox"] {
@@ -186,7 +204,8 @@ body {
     bottom: 24px;
     right: 20px;
     z-index: 7;
-    display: none; /* Diaktifkan lewat media query mobile */
+    display: none;
+    /* Diaktifkan lewat media query mobile */
     flex-direction: column;
     gap: 10px;
 }
@@ -218,6 +237,7 @@ body {
    6. PEMBARUAN: INTERFACES RESPONSIF & GRID KHUSUS MOBILE (Layar <= 768px)
 ========================================================================= */
 @media (max-width: 768px) {
+
     /* Memaksa body tidak bisa di-scroll secara global agar layout mengunci */
     body {
         overflow: hidden !important;
@@ -225,11 +245,15 @@ body {
 
     /* Mengubah susunan grid desktop menjadi tumpuk & pas dengan tinggi sisa layar */
     .main-layout-container {
-        grid-template-columns: 1fr;       /* Menjadi satu kolom penuh */
-        grid-template-rows: auto 1fr;     /* Baris atas untuk filter, sisanya kebawah full untuk peta */
-        height: calc(100vh - 70px);       /* Tinggi pas dari batas bawah navbar sampai ujung layar HP */
+        grid-template-columns: 1fr;
+        /* Menjadi satu kolom penuh */
+        grid-template-rows: auto 1fr;
+        /* Baris atas untuk filter, sisanya kebawah full untuk peta */
+        height: calc(100vh - 70px);
+        /* Tinggi pas dari batas bawah navbar sampai ujung layar HP */
         margin-top: 70px;
-        overflow: hidden;                 /* Mencegah main-layout tembus kebawah */
+        overflow: hidden;
+        /* Mencegah main-layout tembus kebawah */
     }
 
     /* Modifikasi panel filter di mobile (Menempati Baris Pertama) */
@@ -237,9 +261,11 @@ body {
         grid-column: 1;
         grid-row: 1;
         width: 100%;
-        max-height: 180px;                /* Membatasi tinggi filter agar area peta tetap dominan */
+        max-height: 180px;
+        /* Membatasi tinggi filter agar area peta tetap dominan */
         border-right: none;
-        border-bottom: 2px solid #d4af37; /* Mengalihkan garis pembatas ke area bawah */
+        border-bottom: 2px solid #d4af37;
+        /* Mengalihkan garis pembatas ke area bawah */
         padding: 14px 16px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
@@ -251,25 +277,36 @@ body {
     }
 
     /* Menyusun item-item filter secara horizontal agar hemat ruang vertikal HP */
-    .map-legend-control > div:first-child {
+    .map-legend-control>div:first-child {
         display: flex;
-        flex-wrap: wrap;                 /* Membuat filter otomatis turun ke baris baru jika penuh */
+        flex-wrap: wrap;
+        /* Membuat filter otomatis turun ke baris baru jika penuh */
         gap: 6px 14px;
     }
 
     .legend-item {
-        margin-bottom: 0;                /* Menghapus margin bawah bawaan desktop */
+        margin-bottom: 0;
+        /* Menghapus margin bawah bawaan desktop */
         padding: 2px 0;
+        color: #d4af37;
     }
-    
+
     .legend-label {
         font-size: 12px;
-        color: #d4af37;                 /* Sedikit mengecilkan teks agar muat di layar HP kecil */
+        color: #d4af37;
+        /* Sedikit mengecilkan teks agar muat di layar HP kecil */
     }
 
     /* Menyembunyikan panel kontrol tombol zoom teks desktop di layar mobile */
-    .map-legend-control > div:last-child {
+    .map-legend-control>div:last-child {
         display: none !important;
+    }
+
+    .btn-check-all,
+    .btn-uncheck-all {
+        padding: 8px 16px;
+        /* Padding standar untuk desktop */
+        font-size: 14px;
     }
 
     /* Modifikasi wrapper peta di mobile (Menempati Baris Kedua - Menghabiskan Sisa Layar) */
@@ -277,13 +314,15 @@ body {
         grid-column: 1;
         grid-row: 2;
         width: 100%;
-        height: 100%;                     /* Otomatis mengisi 1fr dari sisa row grid */
+        height: 100%;
+        /* Otomatis mengisi 1fr dari sisa row grid */
     }
 
     /* Menampilkan tombol navigasi zoom bulat melayang di atas peta */
     .mobile-floating-zoom {
         display: flex;
-        bottom: 16px;                     /* Disesuaikan posisinya agar pas di ujung layar HP */
+        bottom: 16px;
+        /* Disesuaikan posisinya agar pas di ujung layar HP */
         right: 16px;
     }
 
@@ -297,6 +336,7 @@ body {
         margin: 0 !important;
     }
 }
+
 /* =========================================================================
    TOMBOL PENGARAH / DIREKSI RUTE DI DALAM POPUP PETA
 ========================================================================= */
@@ -307,8 +347,10 @@ body {
     width: 100%;
     margin-top: 10px;
     padding: 8px 12px;
-    background-color: #2b1808; /* Cokelat gelap Mataram */
-    border: 1px solid #d4af37;  /* Emas */
+    background-color: #2b1808;
+    /* Cokelat gelap Mataram */
+    border: 1px solid #d4af37;
+    /* Emas */
     color: #d4af37;
     border-radius: 6px;
     font-family: 'Josefin Sans', sans-serif;

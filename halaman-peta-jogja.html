@@ -190,39 +190,53 @@
     <main class="main-layout-container" id="kontainer_peta_layout">
 
         <div class="map-legend-control flex flex-col justify-between">
-            <!-- Berikan ID atau biarkan selector CSS bekerja untuk membungkus label filter -->
+
             <div>
                 <div class="legend-title">Filter Destinasi</div>
-
                 <label class="legend-item">
                     <input type="checkbox" class="sync-chk" data-target="budaya" checked>
-                    <span class="legend-icon">🏛️</span>
-                    <span class="legend-label">Sejarah & Budaya</span>
+                    Wisata Budaya
+                </label>
+
+                <label class="legend-item">
+                    <input type="checkbox" class="sync-chk" data-target="sejarah" checked>
+                    Situs Sejarah
                 </label>
 
                 <label class="legend-item">
                     <input type="checkbox" class="sync-chk" data-target="kuliner" checked>
-                    <span class="legend-icon">🍔</span>
-                    <span class="legend-label">Kuliner Legendaris</span>
+                    Kuliner Legendaris
                 </label>
 
                 <label class="legend-item">
                     <input type="checkbox" class="sync-chk" data-target="alam" checked>
-                    <span class="legend-icon">🌿</span>
-                    <span class="legend-label">Bentang Alam</span>
+                    Bentang Alam
                 </label>
 
                 <label class="legend-item">
                     <input type="checkbox" class="sync-chk" data-target="transportasi" checked>
-                    <span class="legend-icon">🚌</span>
-                    <span class="legend-label">Transportasi Umum</span>
+                    Transportasi
                 </label>
 
                 <label class="legend-item">
                     <input type="checkbox" class="sync-chk" data-target="akomodasi" checked>
-                    <span class="legend-icon">🏨</span>
-                    <span class="legend-label">Akomodasi & Fasilitas</span>
+                    Akomodasi
                 </label>
+
+                <label class="legend-item">
+                    <input type="checkbox" class="sync-chk" data-target="fasilitas" checked>
+                    Fasilitas Umum
+                </label>
+            </div>
+            <div class="legend-actions" style="margin-bottom: 15px; display: flex; gap: 10px;">
+                <button class="btn-check-all"
+                    style="cursor:pointer; padding: 8px 12px; background: #d4af37; border: none; color: black; border-radius: 4px; font-weight: bold;">
+                    Pilih Semua
+                </button>
+                <button class="btn-uncheck-all"
+                    style="cursor:pointer; padding: 8px 12px; background: #333; border: 1px solid #d4af37; color: white; border-radius: 4px;">
+                    Hapus Semua
+                </button>
             </div>
 
 
