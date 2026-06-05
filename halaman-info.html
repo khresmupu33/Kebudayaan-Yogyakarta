@@ -179,6 +179,13 @@
 
         <main class="about-container">
             <section class="about-hero">
+                <!-- Ornamen Pola Tambahan -->
+                <div class="hero-pattern">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
                 <h2 class="info-tag">Tugas Besar Web Dasar</h2>
                 <h2 class="info-title">Manifesto Digital Jogja Culture</h2>
                 <div class="ornament-divider"></div>
@@ -188,46 +195,47 @@
                 </p>
             </section>
 
-            <section class="about-details">
-                <h2 class="section-subtitle">Referensi Resmi</h2>
-                <div class="ornament-divider"></div>
-                <p class="info-desc-secondary">
-                    Penyajian data kebudayaan dan pariwisata valid yang merujuk langsung pada dua pilar informasi
-                    otoritatif:
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-                    <div class="ref-detail-card">
-                        <div class="card-meta">
-                            <h3>Kraton Ngayogyakarta Hadiningrat</h3>
-                        </div>
-                        <p class="card-text">
-                            Sumber validasi data sejarah, silsilah Mataram Islam, adat istiadat, pranata sosial, tata
-                            ruang sumbu imajiner, serta filosofi kebudayaan lokal Keraton Yogyakarta.
-                        </p>
-                        <a href="https://www.kratonjogja.id/" target="_blank" rel="noopener noreferrer"
-                            class="ref-link-premium">
-                            <span>Kunjungi kratonjogja.id </span>
-                            <i data-lucide="external-link"></i>
-                        </a>
+            <div class="grid grid-cols-1 gap-8 mt-10 detail">
+                <!-- Card 1 -->
+                <div class="ref-detail-card">
+                    <div class="card-meta">
+                        <h3>Mengapa JogjaCulture?</h3>
                     </div>
-
-                    <div class="ref-detail-card">
-                        <div class="card-meta">
-                            <h3>Enjoy Jakarta Tourism Portal</h3>
-                        </div>
-                        <p class="card-text">
-                            Referensi cetak biru manajemen informasi urban, arsitektur tata letak direktori, visualisasi
-                            peta penjelajahan, serta ergonomi interface panduan wisata digital.
-                        </p>
-                        <a href="https://enjoy.jakarta.go.id/" target="_blank" rel="noopener noreferrer"
-                            class="ref-link-premium">
-                            <span>Kunjungi enjoy.jakarta.go.id </span>
-                            <i data-lucide="external-link"></i>
-                        </a>
-                    </div>
+                    <p class="card-text">
+                        Nama ini dipilih untuk menjembatani identitas lokal (Jogja) dengan adaptasi zaman (Culture).
+                        Kami meyakini bahwa budaya Yogyakarta bukanlah peninggalan statis, melainkan entitas hidup yang
+                        terus relevan di era modern. JogjaCulture hadir sebagai jembatan digital bagi siapa saja yang
+                        ingin mengenal jiwa Yogyakarta secara lebih dalam dan inklusif.
+                    </p>
                 </div>
-            </section>
+
+                <!-- Card 2 -->
+                <div class="ref-detail-card">
+                    <div class="card-meta">
+                        <h3>Strategi Visual & Pewarnaan</h3>
+                    </div>
+                    <div class="card-text">
+                        <p style="margin-bottom: 15px;">
+                            Kami tidak hanya sekadar memilih warna, melainkan memahat suasana untuk setiap narasi yang
+                            kami sampaikan:
+                        </p>
+                        <div style="text-align: left;">
+                            • <strong>Nuansa Earthy (Brown Series):</strong> <br>Melambangkan akar, tanah, dan sejarah.
+                            Warna ini membungkus kategori <em>Sejarah, Kuliner, dan Destinasi</em> untuk menghadirkan
+                            kehangatan memori dan aroma tradisi yang abadi.
+                            <br>
+                            • <strong>Pendar Hangat (Cream):</strong> <br>Merepresentasikan keramahan khas "Berhati Nyaman"
+                            Yogyakarta. Warna ini menyapa pengguna di <em>Beranda, Budaya, dan Informasi</em> dengan
+                            keterbukaan dan ketulusan.
+                            <br>
+                            • <strong>Modernitas (Zinc):</strong> <br>Simbol kemajuan dan ketajaman berpikir. Kami
+                            menggunakannya untuk kategori <em>Teknologi</em> guna menegaskan bahwa Yogyakarta adalah
+                            kota masa depan yang tetap menjunjung tinggi masa lalunya.
+                        </div>
+                    </div>
+                    </p>
+                </div>
+            </div>
 
             <section class="team-section">
                 <h2 class="section-subtitle">Tim Pengembang</h2>
@@ -241,7 +249,6 @@
                         <div class="member-info-content">
                             <div class="pcard">
                                 <div class="card-header-dev">
-                                    <div class="avatar-box"><i data-lucide="terminal"></i></div>
                                     <div>
                                         <h3>Khresmupu</h3>
                                         <span class="role-badge">Lead Core &amp; System Engineer</span>
@@ -303,7 +310,6 @@
                         <div class="member-info-content">
                             <div>
                                 <div class="card-header-dev">
-                                    <div class="avatar-box"><i data-lucide="palette"></i></div>
                                     <div>
                                         <h3>Steven</h3>
                                     </div>
@@ -318,11 +324,7 @@
                                     <li><i data-lucide="file-code-2"></i><span>halaman-tarian-adat.html </span></li>
                                     <li><i data-lucide="file-code-2"></i><span>halaman-wayang.html</span></li>
                                     <li><i data-lucide="file-code-2"></i><span>halaman-upacara-adat.html</span></li>
-                                    <li><i data-lucide="file-code-2"></i><span>halaman-destinasi.html (Halaman Menu)
-                                        </span></li>
-                                    <li><i data-lucide="file-code-2"></i><span>halaman-wisata-alam.html </span></li>
-                                    <li><i data-lucide="file-code-2"></i><span>halaman-wisata-sejarah.html </span></li>
-                                    <li><i data-lucide="file-code-2"></i><span>halaman-wisata-budaya.html </span></li>
+
                                 </ul>
                             </div>
                             <div class="portfolio-links">
@@ -347,7 +349,6 @@
                         <div class="member-info-content">
                             <div>
                                 <div class="card-header-dev">
-                                    <div class="avatar-box"><i data-lucide="chef-hat"></i></div>
                                     <div>
                                         <h3>Roland</h3>
                                     </div>
@@ -363,6 +364,11 @@
                                     </li>
                                     <li><i data-lucide="file-code-2"></i><span>halaman-jajanan-khas.html </span></li>
                                     <li><i data-lucide="file-code-2"></i><span>halaman-minuman-khas.html </span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-destinasi.html (Halaman Menu)
+                                        </span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-wisata-alam.html </span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-wisata-sejarah.html </span></li>
+                                    <li><i data-lucide="file-code-2"></i><span>halaman-wisata-budaya.html </span></li>
                                 </ul>
                             </div>
                             <div class="portfolio-links">

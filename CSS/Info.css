@@ -1,16 +1,25 @@
 /* ==========================================================================
    Base Configuration
    ========================================================================== */
+/* 1. Mengubah background utama */
 #halaman-info {
-    background: var(--brown-dark);
+    background: var(--cream-dark); /* Menggantikan --brown-dark */
     padding: 1px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* Memastikan tinggi halaman penuh agar posisi vertikal pas di tengah */
     width: 100%;
+}
+
+/* 2. Menyesuaikan warna teks agar kontras dengan latar baru (Cream Dark) */
+.info-title, .section-subtitle {
+    color: var(--brown-dark) !important; /* Diubah dari --cream agar terbaca di background terang */
+}
+
+.info-desc, .info-desc-secondary, .card-text, .task-intro, .task-list li {
+    color: var(--brown-dark) !important; /* Diubah dari --cream-dark agar lebih pekat */
 }
 
 .about-container {
@@ -22,6 +31,7 @@
 .about-hero {
     text-align: center;
     margin-bottom: 65px;
+    padding-top: 120px;
 }
 
 .info-tag {
@@ -38,7 +48,7 @@
     color: var(--cream);
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    margin-top: 15px;
+    padding-top: 2px;
 }
 
 /* Divider Hiasan */
@@ -60,7 +70,67 @@
     top: -2px;
     transform: rotate(45deg);
 }
+/* Styling untuk Hero Pattern agar lebih artistik */
+.hero-pattern {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
 
+.hero-pattern .dot {
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border: 1.5px solid var(--gold); /* Bingkai emas */
+    transform: rotate(45deg);
+    position: relative;
+}
+
+/* Menambahkan aksen di dalam dot */
+.hero-pattern .dot::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--gold);
+    opacity: 0.8;
+}
+
+/* Menambahkan garis dekoratif yang menghubungkan */
+.hero-pattern .dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 25px;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    opacity: 0.5;
+}
+
+/* Menghilangkan garis pada dot terakhir agar tidak menggantung */
+.hero-pattern .dot:last-child::before {
+    display: none;
+}
+
+/* Memberikan efek napas (pulsing) halus agar terlihat hidup */
+@keyframes pulse-gold {
+    0%, 100% { opacity: 0.5; transform: rotate(45deg) scale(1); }
+    50% { opacity: 1; transform: rotate(45deg) scale(1.1); }
+}
+
+.hero-pattern .dot {
+    animation: pulse-gold 3s infinite ease-in-out;
+}
+
+.hero-pattern .dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
 .ornament-divider::before {
     left: -15px;
 }
@@ -93,7 +163,11 @@
     max-width: 800px;
     margin: 0 auto 25px auto;
 }
-
+.detail{
+    padding-top:100px ;
+    padding-left: 40px;
+    padding-right: 40px;
+}
 /* ==========================================================================
    REFERENSI CARDS & EFEK INTERAKTIF HOVER LUAS
    ========================================================================== */
@@ -110,8 +184,8 @@
 }
 
 .ref-detail-card {
-    background: rgba(107, 58, 31, 0.18);
-    border: 1px solid rgba(212, 162, 80, 0.25);
+       background: rgba(255, 255, 255, 0.5); /* Background lebih terang/semi-transparan */
+    border: 1px solid var(--gold);
     padding: 35px;
     border-radius: 8px;
     display: flex;
@@ -126,7 +200,7 @@
 .ref-detail-card:hover {
     transform: translateY(-8px);
     border-color: var(--gold);
-    background: rgba(107, 58, 31, 0.28);
+    background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5),
         0 0 20px rgba(212, 162, 80, 0.1);
 }
@@ -169,7 +243,7 @@
 }
 
 .ref-link-premium:hover {
-    color: var(--brown-dark);
+    color: var(--brown-dark) !important;
     background: var(--gold);
 }
 
@@ -199,8 +273,8 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    background: rgba(240, 224, 204, 0.03);
-    border: 1px solid rgba(232, 201, 168, 0.12);
+        background: var(--cream);
+    border: 1px solid rgba(107, 58, 31, 0.2);
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.35s ease;
@@ -240,6 +314,9 @@
     gap: 16px;
     margin-bottom: 16px;
 }
+.card-header-dev h3{
+    color: var(--brown-light) !important;
+}
 
 .avatar-box {
     width: 50px;
@@ -262,8 +339,8 @@
 
 .role-badge {
     display: inline-block;
-    color: var(--brown-dark);
-    background: var(--gold);
+        color: var(--cream-dark);
+    background: var(--brown-dark) !important; /* Dibalik agar kontras */
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
     padding: 2px 10px;
@@ -272,7 +349,7 @@
 }
 
 .task-intro {
-    color: var(--cream-dark);
+    color: var(--brown-dark) !important;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     margin-bottom: 14px;
@@ -308,7 +385,7 @@
 }
 
 .portfolio-links a {
-    color: var(--cream-dark);
+    color: var(--brown-dark);
     background: rgba(107, 58, 31, 0.25);
     width: 38px;
     height: 38px;
@@ -321,8 +398,8 @@
 }
 
 .portfolio-links a:hover {
-    color: var(--brown-dark);
-    background: var(--gold);
+    color: var(--brown-dark) !important;
+    background: var(--gold) !important;
     border-color: var(--gold);
     transform: translateY(-3px);
 }
@@ -369,7 +446,7 @@
 }
 
 .highlight-quote {
-    background: linear-gradient(135deg, var(--brown-mid), var(--brown-warm));
+     background: linear-gradient(135deg, var(--cream-border), var(--brown-light));
     border-left: 4px solid var(--gold);
     padding: 35px;
     border-radius: 0 8px 8px 0;
@@ -377,7 +454,7 @@
 }
 
 .highlight-quote blockquote {
-    color: var(--cream);
+    color: var(--brown-dark) !important; /* Teks dibuat lebih gelap */
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 1.4rem;
