@@ -511,7 +511,7 @@
     .budaya-card::after {
         content: "Lihat Lebih Lanjut →";
         position: absolute;
-        bottom: 10px;
+        bottom: -15px;
         /* Posisikan teks secara permanen di bawah */
         left: 0;
         width: 100%;
