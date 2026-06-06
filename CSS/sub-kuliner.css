@@ -6,15 +6,13 @@
     --grey-text: #dfd5c6;
 }
 
-body#kuliner-body {
+#kuliner-body {
     background-color: var(--dark-brown);
-    margin: 0;
-    padding: 0;
     color: var(--cream);
     overflow-x: hidden;
 }
 
-.tradisional-main-container {
+.tradisional-main-container { 
     padding-top: 120px;
     padding-bottom: 100px;
     width: 100%;
