@@ -841,3 +841,76 @@
         left: 30px;
     }
 }
+
+@media (max-width: 1024px) {
+    .culture-grid {
+        gap: 30px;
+    }
+
+    .about-wrapper {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: clamp(3rem,15vw,6rem);
+    }
+
+    .hero-ornament {
+        display: none;
+    }
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .card-image-wrapper {
+        height: 220px;
+    }
+
+    .about-text-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-wrapper {
+        padding: 32px 24px;
+    }
+
+    .gold-corner {
+        width: 40px;
+        height: 40px;
+    }
+
+    .floating-ornament {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(2.5rem,18vw,4.5rem);
+    }
+
+    .card-content {
+        padding: 24px;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .about-quote blockquote {
+        font-size: 1.4rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}

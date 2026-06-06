@@ -2,428 +2,714 @@
     background: var(--cream-dark);
 }
 
-.eksplorasi-seksyen {
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    width: 100%;
-}
-
-.budaya-card {
+body {
+    font-family: 'Josefin Sans', serif;
+    background-color: var(--cream-dark);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
     position: relative;
-    height: 480px; 
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px 25px;
+}
+
+:root {
+    --gold: #b89243;
+    --gold-light: #d4a84b;
+    --gold-dark: #8a6d32;
+    --cream: #fcf8f2;
+    --cream-dark: #f5edd8;
+    --dark: #1a1510;
+    --dark-light: #2d2519;
+    --dark-medium: #3d3225;
+    --brown: #5c4a2f;
+    --brown-light: #7a6340;
+    --text-dark: #2c2418;
+    --text-medium: #5a4d3c;
+    --text-light: #8a7d6c;
+    --white: #ffffff;
+    --shadow-soft: 0 4px 20px rgba(26,21,16,0.08);
+    --shadow-medium: 0 8px 40px rgba(26,21,16,0.12);
+    --shadow-strong: 0 16px 60px rgba(26,21,16,0.18);
+    --transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    --transition-slow: all 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.budaya-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(10, 77, 38, 0.25);
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
-.budaya-card::before {
+body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(10, 77, 38, 0.2), rgba(0, 0, 0, 0.85));
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(184,146,67,0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(184,146,67,0.02) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(184,146,67,0.02) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;    
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,h1,h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-dark);
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    position: relative;
+    transition: var(--transition);
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: var(--transition);
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    top: 7px;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url(../IMG/hero-section-budaya-kece.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180 deg,
+        rgba(26,21,16,0.7),
+        rgba(26,21,16,0.5),
+        rgba(26,21,16,0.6),
+        rgba(26,21,16,0.85) 100%
+    );
     z-index: 1;
 }
 
-.card-badge, .card-title, .card-desc, .btn-jelajahi {
-    position: relative;
+.hero-ornament {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 300px;
+    border: 1px solid rgba(184,146,67,0.03);
     z-index: 2;
-    text-align: left;
 }
 
-.card-badge {
-    align-self: flex-start;
-    color: var(--emas-keraton);
-    font-size: 0.8rem;
-    font-weight: bold;
+.hero-ornament-left {
+    left: 5%;
+    border-right: none;
+}
+
+.hero-ornament-right {
+    right: 5%;
+    border-left: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 24px;
+}
+
+.hero-subtitle {
+    font-family: 'Josefin Sans', serif;
+    font-size: clamp(0.8rem,1.5vw,1rem);
+    font-weight: 300;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem,12vw,10rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 24px;
+    text-shadow: 0 4px 40px rgba(0,0,0,0.5);
+}
+
+.hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.divider-line {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.divider-diamond {
+    color: var(--gold);
+    font-size: 0.8rem;
+}
+
+.hero-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem,2vw,1.4rem);
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: float 2s ease-in-out infinite;
+}
+
+.scroll-text {
+    font-family: 'Josefin Sans', serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+}
+
+.scroll-arrow {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(-50%)
+        translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%)
+        translateY(8px);
+    }
+}
+
+.section-divider {
+    padding: 40px 0;
+    text-align: center;
+    background: var(--cream);
+}
+
+.section-divider-dark {
+    background: var(--dark);
+}
+
+.divider-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.ornament-wing-left,
+.ornament-wing-right {
+    color: var(--gold);
+    opacity: 0.4;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+}
+
+.ornament-center {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+.intro-section {
+    padding: 80px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.intro-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-badge {
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.intro-badge span {
+    font-family: 'Josefin Sans', serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: 3px;
+    color: var(--gold);
+    padding: 8px 20px;
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+}
+
+.intro-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-medium);
+    line-height: 1.9;
+    margin-top: 24px;
+}
+
+.floating-ornament {
+    position: absolute;
+    color: var(--gold);
+    opacity: 0.15;
+    font-size: 2rem;
+    animation: floatSlow 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.floating-ornament-1 {
+    top: 15%;
+    left: 8%;
+    font-size: 3rem;
+    animation-delay: 0s;
+}
+
+.floating-ornament-2 {
+    top: 60%;
+    right: 10%;
+    font-size: 2.5rem;
+    animation-delay: 2s;
+}
+
+.floating-ornament-3 {
+    top: 20%;
+    left: 15%;
+    font-size: 1.8rem;
+    animation-delay: 4s;
+}
+
+.floating-ornament-4 {
+    top: 20%;
+    right: 8%;
+    font-size: 2.5rem;
+    animation-delay: 1s;
+}
+
+.floating-ornament-5 {
+    bottom: 25%;
+    left: 5%;
+    font-size: 2rem;
+    animation-delay: 3s;
+}
+
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+.culture-grid-section {
+    padding: 100px 0;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-bg-pattern {
+    position:absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(184,146,67,0.02) 40px,
+        rgba(184,146,67,0.02) 41px
+    );
+    pointer-events: none;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-label {
+    font-family: 'Josefin Sans', serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.title-underline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.title-underline span {
+    display: block;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+.title-underline span:nth-child(1) {
+    width: 3px;
+}
+
+.title-underline span:nth-child(2) {
+    width: 60px;
+}
+
+.title-underline span:nth-child(3) {
+    width: 30px;
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.culture-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-slow);
+    position: relative;
+}
+
+.culture-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.culture-card:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(26,21,16,0.6) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.culture-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.3);
+}
+
+.card-content {
+    padding: 32px;
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
 }
 
 .card-title {
-    color: var(--putih);
-    font-size: 1.7rem;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
 }
 
 .card-desc {
-    color: #E0E0E0;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin: 0 0 20px 0;
-    font-style: normal; 
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--text-medium);
+    line-height: 1.8;
+    margin-bottom: 24px;
 }
 
-.btn-jelajahi {
-    align-self: flex-start;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: var(--putih);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    padding: 10px 24px;
+.card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Josefin Sans', serif;
     font-size: 0.85rem;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(4px);
+    font-weight: 500;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    color: var(--dark);
+    padding: 12px 28px;
+    border: 1.5px solid var(--gold);
+    border-radius: 30px;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.card-btn:hover {
+    background: var(--gold);
+    color: var(--white);
+    transform: translateX(4px);
+}
+
+.card-btn svg {
+    transition: var(--transition);
+}
+
+.card-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.card-border-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition-slow);
+}
+
+.culture-card:hover .card-border-accent {
+    transform: scaleX(1);
+}
+
+.about-section {
+    padding: 120px 0;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(../IMG/);
+    background-size: 400px;
+    background-repeat: repeat;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.about-wrapper {
+    position: relative;
+    padding: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gold-corner {
+    position:absolute;
+    width: 60px;
+    height: 60px;
+    border-color: var(--gold);
+    border-style: solid;
+    border-width: 0;
+}
+
+.gold-corner-tl {
+    top: 0;
+    left: 0;
+    border-top-width: 2px;
+    border-left-width: 2px;
+}
+
+.gold-corner-tr {
+    top: 0;
+    right: 0;
+    border-top-width: 2px;
+    border-right-width: 2px;
+}
+
+.gold-corner-bl {
+    bottom: 0;
+    left: 0;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}
+
+.gold-corner-br {
+    bottom: 0;
+    right: 0;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-label {
+    font-family: 'Josefin Sans', serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 16px;
+}
+
+.about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem,4vw,3rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 32px;
+}
+
+.about-text-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.about-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.9;
+    text-align: left;
+}
+
+.about-quote {
+    padding-top: 32px;
+    border-top: 1px solid rgba(184,146,67,0.3);
+}
+
+.about-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.about-quote cite {
+    font-family: 'Josefin Sans', serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    font-style: normal;
     letter-spacing: 0.5px;
 }
 
-.btn-jelajahi:hover {
-    background-color: var(--emas-keraton);
-    color: var(--hijau-keraton);
-    border-color: var(--emas-keraton);
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 30px;
-    width: 100%;
-    max-width: 1400px;
-    margin: 50px auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    width: 100%;
-    max-width: 1300px;
-    margin: 50px auto;
-    padding: 0 24px;
-    box-sizing: border-box;
-    align-items: stretch;
-}
-
-.card {
+.content-frame {
+    border: 1px solid rgba(184, 146, 67, 0.3);
+    padding: 20px;
     position: relative;
-    height: 520px;
-    border-radius: 16px;
-    overflow: hidden;
-    padding: 40px 24px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.card-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.card:hover .card-bg {
-    transform: scale(1.08); 
-}
-
-.card .sub-title, 
-.card .card-title, 
-.card .btn {
-    position: relative;
-    z-index: 2;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-.card .sub-title {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-align: center;
-    margin-bottom: auto;
-}
-
-.card .card-title {
-    color: #ffffff;
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.card .btn {
-    display: inline-block;
-    min-width: 130px;
-    padding: 12px 24px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    background: transparent;
-    margin-top: auto;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-.card .btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-    border-color: #ffffff;
-}
-
-/* Section Utama */
-.jogja-saniki-section {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #1a1510 0%, #2a2015 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-top: 2px solid #b89243;
-    border-bottom: 2px solid #b89243;
-}
-
-.jogja-saniki-container {
-    max-width: 800px;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(184, 146, 67, 0.2);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-}
-
-.jogja-saniki-badge-wrapper {
-    display: inline-flex;
-    gap: 0;
-    font-family: 'Georgia', serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.badge-jogja {
-    background-color: #fcf8f2; /* Warna krem kain mori */
-    color: #1a1510;
-    padding: 10px 20px;
-}
-
-.badge-saniki {
-    background-color: #b89243; /* Warna emas Mataram */
-    color: #ffffff;
-    padding: 10px 20px;
-}
-
-.jogja-saniki-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    color: #dfd5c6; /* Warna teks putih gading hangat */
-    line-height: 1.6;
-    margin: 0;
-    font-weight: 300;
-}
-
-.jogja-saniki2-section {
-    position: relative;
-    padding: 175px 0px; /* Dipertebal sedikit jarak atas bawahnya agar efek gerak lebih terasa */
-    display: block;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    box-sizing: border-box;
-}
-
-.jogja-saniki2-container {
-    width: 100%;
-    max-width: 1200px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-/* Wrapper Badge (Ditambahkan GAP untuk memberi jarak antar kotak) */
-.jogja-saniki2-badge-wrapper {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    gap: 6px; /* <--- Ini untuk mengatur jarak renggang antara kotak kiri dan kanan */
-}
-
-/* Badge Kiri (Budaya) */
-.badge-jogja2 {
-    background-color: #fcf8f2;
-    color: #1a1510;
-    font-size: 32px;
-    font-weight: 700;
-    padding: 10px 24px;
-    line-height: 1.2;
-    font-family: system-ui, -apple-system, sans-serif;
-    border-radius: 4px; /* Memberikan kelengkungan sudut sendiri */
-}
-
-/* Badge Kanan (Jogja) */
-.badge-saniki2 {
-    background-color: #b89243;
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: 700;
-    padding: 10px 24px;
-    line-height: 1.2;
-    font-family: system-ui, -apple-system, sans-serif;
-    border-radius: 4px; /* Memberikan kelengkungan sudut sendiri */
-}
-
-.jogja-saniki2-text {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.6;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: system-ui, -apple-system, sans-serif;
-}
-
-/* Update pada Container Utama (Section) */
-.mcb-stats-section {
-    width: 100%;
-    padding: 60px 0;
-    
-    /* --- PERUBAHAN DI SINI --- */
-    background-color: transparent; /* Latar belakang cokelat tua dihapus */
-    /* ------------------------- */
-    
-    box-sizing: border-box;
-}
-
-
-/* Container Grid (Sama persis dengan tata letak MCB) */
-.mcb-stats-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Membagi menjadi 4 kolom rata */
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-/* Desain Kotak Kartu */
-.mcb-stats-card {
-    background-color: #1a1510; /* Warna box gelap serasi */
-    border: 1px solid rgba(184, 146, 67, 0.2); /* Border tipis halus */
-    border-radius: 8px;
-    padding: 40px 20px;
-    text-align: center;
-    box-sizing: border-box;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Efek sedikit terangkat saat disentuh kursor */
-.mcb-stats-card:hover {
-    transform: scale(1.1);
-    border-color: #b89243; /* Berubah ke warna emas utama Anda */
-}
-
-/* Pengaturan Tempat Ikon (Bagian Atas) */
-.mcb-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-    color: #b89243;
-}
-
-/* Pengaturan Angka Besar */
-.mcb-number {
-    font-size: 42px;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 10px 0;
-    font-family: system-ui, -apple-system, sans-serif;
-}
-
-/* Pengaturan Teks Label Keterangan */
-.mcb-label {
-    font-size: 16px;
-    color: #dfd5c6; /* Putih gading abu-abu */
-    margin: 0;
-    font-weight: 500;
-    font-family: system-ui, -apple-system, sans-serif;
-}
-
-/* Pembungkus Section */
-.mcb-about-section {
-    width: 100%;
-    padding: 60px 0 20px 0;
-    background: transparent; /* Mengikuti warna krem halaman Anda */
-    box-sizing: border-box;
-}
-
-/* Container Teks */
-.mcb-about-container {
-    max-width: 850px; /* Membatasi lebar teks agar nyaman dibaca */
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-/* Gaya Judul Utama */
-.mcb-about-title {
-    font-family: 'Playfair Display', Georgia, serif; /* Gaya klasik/tradisional */
-    font-size: 36px;
-    font-weight: 700;
-    color: #1a1510; /* Menyesuaikan warna gelap utama web Anda */
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-/* Gaya Paragraf Penjelasan */
-.mcb-about-description {
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size: 16px;
-    font-style: italic; /* Sesuai dengan format miring di situs aslinya */
-    color: #555555; /* Abu-abu gelap elegan agar kontras di atas krem */
-    line-height: 1.8; /* Memberi ruang antar baris teks */
-    margin: 0;
 }

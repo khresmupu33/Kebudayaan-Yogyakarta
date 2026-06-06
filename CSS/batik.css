@@ -1,0 +1,384 @@
+#batik {
+    background: var(--cream-dark);
+}
+
+.bat-main-container {
+    overflow: visible;
+}
+
+.hero-batik {
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(0deg, rgba(36, 12, 4, 0.72), rgba(15, 7, 4, 0.45)), 
+                url("../IMG/batik2.jpg"), #0F172E;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    display: flex;
+    align-items: flex-start; /* Tetap di atas secara vertikal */
+    justify-content: center; /* Rata tengah secara horizontal */
+    text-align: center;
+    
+    padding: 180px 20px 40px 20px; 
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Konten di Dalam Hero */
+.hero-batik-content {
+    width: 100%;
+    max-width: 850px;
+    color: #ffffff;
+    z-index: 2;
+}
+
+/* 1. Teks "MAHAKARYA KAIN JOGJA" (Bagian Atas) */
+.hero-tagline {
+    display: block;
+    font-size: 0.95rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ffd700; /* EMAS TERANG MURNI */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.2;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+    font-weight: 300;
+}
+
+.hero-quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #ffd700; /* EMAS TERANG MURNI */
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 15px 0;
+    display: inline-block;
+    max-width: 630px;
+}
+
+/* --- BAGIAN TENGAH: PARALLAX SECTION (BACKGROUND SEKAT GELAP) --- */
+.jogja-saniki2-section {
+    position: relative;
+    padding: 175px 0px;
+    display: block;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../IMG/kota-jogja.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efek mengunci background saat di-scroll */
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+}
+
+.jogja-saniki2-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.jogja-saniki2-badge-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Memunculkan ikon Kipas/Gunungan Emas tiruan jogjaprov */
+.jogja-saniki2-badge-wrapper::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%23d4af37'><path d='M32 2C26 14 14 26 14 38c0 10 8 18 18 18s18-8 18-18C50 26 38 14 32 2zm0 48c-7.7 0-14-6.3-14-14 0-9.6 9.3-19.3 14-24.3 4.7 5 14 14.7 14 24.3 0 7.7-6.3 14-14 14z'/><path d='M32 14v28M24 24l16 16M40 24L24 40'/></svg>");
+}
+
+.badge-jogja2, .badge-saniki2 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #d4af37;
+    line-height: 1.2;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.jogja-saniki2-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    max-width: 680px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+/* --- BAGIAN BAWAH: GRID KARTU MOTIF BATIK --- */
+.eksplorasi-seksyen {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+.card {
+    position: relative;
+    height: 520px;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 40px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover .card-bg {
+    transform: scale(1.08); 
+}
+
+.card .sub-title, .card .card-title, .card .btn {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.card .sub-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: auto;
+}
+
+.card .card-title {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card .btn {
+    display: inline-block;
+    min-width: 130px;
+    padding: 12px 24px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    background: transparent;
+    margin-top: auto;
+    transition: all 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+.heritage-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 40px;
+    gap: 80px;
+}
+
+.content-side {
+    flex: 1;
+    padding-right: 60px;
+}
+
+.content-side h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    /* Gunakan warna coklat tua yang lebih pekat agar terlihat tegas */
+    color: #26190e; 
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.content-side p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem; 
+    /* Menggelapkan warna teks agar kontras dengan background krem */
+    color: #1a1510; 
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.content-side p strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* Update bagian image-side dan gambarnya */
+.image-side {
+    flex: 1;
+    position: relative;
+    height: 450px;
+    /* Memberi margin agar tidak menempel ke teks di layar kecil */
+    margin-left: 20px; 
+}
+
+/* Gambar Belakang (Kiri atas) */
+.img-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 350px;
+    background: url('../IMG/batik2.jpg') center/cover;
+    /* Gunakan warna Emas Kuno yang senada dengan tagline */
+    border: 4px solid #B89243; 
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Gambar Depan (Kanan bawah - Lebih menonjol) */
+.img-2 {
+    position: absolute;
+    top: 70px;  /* Sedikit lebih rapat agar tumpang tindih terlihat indah */
+    left: 120px; /* Sedikit lebih rapat agar tidak terlalu jauh */
+    width: 280px;
+    height: 350px;
+    background: url('../IMG/batik3.jpg') center/cover;
+    /* Border Coklat Tua (Soga) agar terlihat mewah dan tradisional */
+    border: 8px solid #3d2211; 
+    border-radius: 8px;
+    z-index: 2;
+    /* Bayangan lebih lembut */
+    box-shadow: 0 20px 40px rgba(61, 34, 17, 0.25);
+}
+
+.batik-types-section {
+    padding: 100px 40px;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #2D1B0E;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.type-row {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+/* Teknik Zig-Zag */
+.type-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Memastikan teks dan gambar punya ruang seimbang */
+.types-image, .types-card {
+    flex: 1;
+}
+
+/* Style gambar tetap cantik (border emas/krem) */
+.types-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 8px solid #fdfbf7;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Style Teks Card tetap elegan */
+.types-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #2D1B0E;
+    margin-bottom: 20px;
+    border-left: 4px solid #B89243;
+    padding-left: 20px;
+}
+
+.types-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+}
