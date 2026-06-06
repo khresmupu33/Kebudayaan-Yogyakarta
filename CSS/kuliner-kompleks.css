@@ -1,26 +1,25 @@
 #kuliner-body {
     background-color: var(--brown-dark);
     color: var(--cream);
-    padding: 0px;
+    padding: 1px;
 }
 
 
-/* --- HERO SECTION --- */
-.kuliner-main-container {
-    background-color: var(--dark-brown);
-    /* Jarak dari navbar */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
+
 
 .kuliner-hero {
-    position: relative;
     text-align: center;
-    max-width: 900px;
+    padding-top: 19%;
+    padding-bottom: 29%;
+    border-radius: 8px;
+    max-width: 800px;
+    /* Tetap gunakan display flex jika kamu ingin konten di dalamnya juga di tengah */
+    display: flex;
+    flex-direction: column; /* Biarkan konten (teks/judul) menumpuk ke bawah */
+    justify-content: center; 
+    align-items: center;
     z-index: 10;
-    
+    min-height: 90vh;
 }
 
 .kuliner-eyebrow {
@@ -31,7 +30,6 @@
     color: var(--gold);
     text-transform: uppercase;
     letter-spacing: 4px;
-    margin-bottom: 1.5rem;
     font-size: 0.9rem;
     font-weight: 600;
 }
@@ -390,6 +388,7 @@
     background: rgba(255, 255, 255, 0.02);
     border-radius: 16px;
 }
+
 /* --- STATISTIK RIBET SECTION --- */
 .complex-stats-section {
     width: 100%;
@@ -413,36 +412,16 @@
 
 /* --- HERO SECTION --- */
 .kuliner-main-container {
-    padding-top: 100px;
-    /* Jarak dari navbar */
+    min-height: 90vh;
+    /* Tetap gunakan display flex jika kamu ingin konten di dalamnya juga di tengah */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Biarkan konten (teks/judul) menumpuk ke bawah */
+    justify-content: center; 
     align-items: center;
-    width: 100%;
 }
 
-.kuliner-hero {
-    position: relative;
-    text-align: center;
-    padding-top: 12%;
-    padding-bottom: 250px;
-    max-width: 900px;
-    margin: 0 auto;
-    z-index: 10;
-}
 
-.kuliner-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Josefin Sans', sans-serif;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
+
 
 .dot-pulse {
     width: 8px;
@@ -557,20 +536,6 @@
     grid-row: span 1;
 }
 
-/* Responsif Mobile (Jadi numpuk biasa aja biar ga rusak) */
-@media (max-width: 900px) {
-    .bento-grid-section {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
-    }
-
-    .card-large,
-    .card-wide,
-    .card-square {
-        grid-column: span 1;
-        height: 350px;
-    }
-}
 
 .bento-bg {
     position: absolute;
