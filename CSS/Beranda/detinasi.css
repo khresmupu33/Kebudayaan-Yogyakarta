@@ -51,15 +51,16 @@
 }
 
 .destination-card {
-    background:var(--brown-dark); 
+    background: var(--dark-brown);
     border: 1px solid rgba(212, 162, 80, 0.2);
     border-radius: 12px;
-    box-shadow: none !important; 
+    box-shadow: none !important;
+    padding: 10px; 
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .destination-card:hover {
-    background: var(--brown-mid);
+    
     border-color: rgba(212, 162, 80, 0.5);
     transform: translateY(-8px);
     box-shadow: none !important; 
@@ -75,6 +76,7 @@
     inset: 0;
     background: linear-gradient(to bottom, transparent 60%, rgba(35, 30, 25, 0.5));
     pointer-events: none;
+    border-radius: 12px;
 }
 
 .dest-card-title {

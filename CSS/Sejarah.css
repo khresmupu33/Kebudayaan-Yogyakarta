@@ -31,7 +31,11 @@
     min-height: 90vh;
     overflow: hidden;
 }
-
+@media (max-width: 768px)  {
+    .hero-scroll-indicator{
+        display: none !important;
+    }
+}
 
 
 /* Memastikan konten teks berada di atas overlay background */

@@ -221,8 +221,8 @@
     display: inline-block;
     margin-top: 2px;
     padding: 2px 7px;
-    background-color: var(--brown-dark);
-    color: #fff;
+    background-color: #fff;
+    color:var(--brown-dark);
     text-decoration: none;
     border-radius: 4px;
     transition: background 0.3s ease;
