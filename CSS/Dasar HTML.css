@@ -123,6 +123,41 @@ a,
     line-height: 1.2;
 }
 
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: float 2s ease-in-out infinite;
+}
+
+.scroll-text {
+    font-family: 'Josefin Sans', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+}
+
+.scroll-arrow {
+    color: var(--gold);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(-50%)
+        translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%)
+        translateY(8px);
+    }
+}
 .section-main-title em {
     font-style: italic;
     font-weight: 400;

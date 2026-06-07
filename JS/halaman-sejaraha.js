@@ -24,7 +24,17 @@ function switchHistoryTab(tabName) {
 
     // Optional: Menggulung halaman kembali ke area atas linimasa dengan halus saat berpindah menu
     const targetElement = document.querySelector('.history-tabs-container');
+
     if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Mendapatkan posisi elemen dari atas dokumen
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+
+        // Kurangi 100px (atau berapa pun jarak yang kamu mau)
+        const offsetPosition = elementPosition + 200;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
     }
 }

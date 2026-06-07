@@ -57,8 +57,8 @@
     
     /* Motif dikunci penuh mengikuti seluruh area padding hero */
     background-image: 
-        radial-gradient(circle at center, transparent 30%, var(--zinc) 95%), /* Masking halus di ujung terluar */
-        radial-gradient(rgba(212, 162, 80, 0.15) 1.5px, transparent 1.5px); /* Pola titik emas samar */
+        radial-gradient(circle at center, transparent 40%, var(--zinc) 95%), /* Masking halus di ujung terluar */
+        radial-gradient(rgba(65, 51, 27, 0.15) 1.5px, transparent 3px); /* Pola titik emas samar */
     background-size: 100% 100%, 24px 24px;
     background-position: center;
     background-repeat: repeat;

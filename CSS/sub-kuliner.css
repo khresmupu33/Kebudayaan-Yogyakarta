@@ -6,15 +6,13 @@
     --grey-text: #dfd5c6;
 }
 
-body#kuliner-body {
+#kuliner-body {
     background-color: var(--dark-brown);
-    margin: 0;
-    padding: 0;
     color: var(--cream);
     overflow-x: hidden;
 }
 
-.tradisional-main-container {
+.tradisional-main-container { 
     padding-top: 120px;
     padding-bottom: 100px;
     width: 100%;
@@ -39,10 +37,8 @@ body#kuliner-body {
 }
 
 .trad-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
     color: var(--cream);
-    margin: 0 0 20px 0;
+    text-align: center;
 }
 
 .trad-divider {
@@ -182,29 +178,62 @@ body#kuliner-body {
     font-size: 0.95rem;
 }
 
-/* RESPONSIVE MOBILE ACCORDANCE */
 @media (max-width: 900px) {
-    .trad-gallery-wrapper {
-        gap: 60px;
+    body#kuliner-body {
+        padding-left: 1px;
+        padding-right: 1px;
     }
+    .trad-gallery-wrapper {
+        gap: 80px; /* Sedikit lebih lega */
+        padding: 0 15px; /* Memberikan ruang napas di pinggir layar */
+    }
+
     .trad-row, .trad-row.reverse {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        margin-bottom: 20px;
     }
+
     .trad-img-col {
-        width: 100%;
+        width: 290px;
     }
+
     .trad-img-arch {
-        height: 380px;
-        border-radius: 120px 120px 20px 20px;
+        height: 300px; /* Dibuat sedikit lebih pendek agar proporsional di HP */
+        border-radius: 100px 100px 20px 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
     }
+
     .trad-text-col {
-        width: 92%;
+        width: 88%; /* Sedikit lebih ramping agar tidak terlihat terlalu penuh */
         margin-left: 0 !important;
         margin-right: 0 !important;
-        margin-top: -80px; 
-        padding: 35px 24px;
+        margin-top: -60px; /* Penyesuaian agar overlap terasa alami */
+        padding: 15px;
         position: relative;
+        width: 320px;
+        text-align: center; /* Teks rata tengah agar lebih enak dibaca di HP */
+    }
+
+    /* Memperbaiki alignment elemen di dalam kartu */
+    .trad-number {
+        font-size: 3rem; /* Sedikit diperkecil agar tidak memakan ruang */
+        margin-bottom: 5px;
+    }
+
+    .trad-name {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .trad-detail {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .trad-complement {
+        text-align: left; /* Biarkan bagian ini tetap rata kiri agar terlihat kontras */
+        padding: 12px 15px;
     }
 }

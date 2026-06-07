@@ -1,15 +1,11 @@
 #budaya {
-    background: var(--cream-dark);
-}
-
-body {
-    font-family: 'Josefin Sans', serif;
-    background-color: var(--cream-dark);
+      background-color: var(--cream-dark);
     color: var(--text-dark);
-    line-height: 1.7;
     overflow-x: hidden;
     position: relative;
 }
+
+
 
 :root {
     --gold: #b89243;
@@ -41,10 +37,6 @@ body {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
 
 body::before {
     content: '';
@@ -84,14 +76,12 @@ img {
 }
 
 h1,h1,h3 {
-    font-family: 'Playfair Display', serif;
     font-weight: 700;
     line-height: 1.2;
     color: var(--text-dark);
 }
 
 .section-title {
-    font-size: clamp(2rem, 4vw, 3.2rem);
     margin-bottom: 1rem;
     color: var(--dark);
 }
@@ -131,7 +121,8 @@ h1,h1,h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url(../IMG/hero-section-budaya-kece.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, .94)), 
+                      url(../IMG/hero-section-budaya-kece.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -178,7 +169,6 @@ h1,h1,h3 {
 
 .hero-subtitle {
     font-family: 'Josefin Sans', serif;
-    font-size: clamp(0.8rem,1.5vw,1rem);
     font-weight: 300;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -187,13 +177,8 @@ h1,h1,h3 {
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(4rem,12vw,10rem);
-    font-weight: 900;
     color: var(--white);
-    line-height: 0.95;
     margin-bottom: 24px;
-    text-shadow: 0 4px 40px rgba(0,0,0,0.5);
 }
 
 .hero-divider {
@@ -213,55 +198,16 @@ h1,h1,h3 {
 
 .divider-diamond {
     color: var(--gold);
-    font-size: 0.8rem;
 }
 
 .hero-desc {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem,2vw,1.4rem);
     font-style: italic;
     color: rgba(255,255,255,0.85);
     max-width: 600px;
     margin: 0 auto;
 }
 
-.hero-scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    animation: float 2s ease-in-out infinite;
-}
-
-.scroll-text {
-    font-family: 'Josefin Sans', serif;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-}
-
-.scroll-arrow {
-    color: var(--gold);
-    font-size: 1.2rem;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateX(-50%)
-        translateY(0);
-    }
-
-    50% {
-        transform: translateX(-50%)
-        translateY(8px);
-    }
-}
 
 .section-divider {
     padding: 40px 0;
@@ -284,13 +230,11 @@ h1,h1,h3 {
 .ornament-wing-right {
     color: var(--gold);
     opacity: 0.4;
-    font-size: 0.6rem;
     letter-spacing: 2px;
 }
 
 .ornament-center {
     color: var(--gold);
-    font-size: 1.2rem;
 }
 
 .intro-section {
@@ -313,7 +257,6 @@ h1,h1,h3 {
 
 .intro-badge span {
     font-family: 'Josefin Sans', serif;
-    font-size: 0.75rem;
     letter-spacing: 3px;
     text-transform: 3px;
     color: var(--gold);
@@ -324,7 +267,6 @@ h1,h1,h3 {
 
 .intro-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
     font-style: italic;
     color: var(--text-medium);
     line-height: 1.9;
@@ -335,7 +277,6 @@ h1,h1,h3 {
     position: absolute;
     color: var(--gold);
     opacity: 0.15;
-    font-size: 2rem;
     animation: floatSlow 6s ease-in-out infinite;
     pointer-events: none;
 }
@@ -343,35 +284,30 @@ h1,h1,h3 {
 .floating-ornament-1 {
     top: 15%;
     left: 8%;
-    font-size: 3rem;
     animation-delay: 0s;
 }
 
 .floating-ornament-2 {
     top: 60%;
     right: 10%;
-    font-size: 2.5rem;
     animation-delay: 2s;
 }
 
 .floating-ornament-3 {
     top: 20%;
     left: 15%;
-    font-size: 1.8rem;
     animation-delay: 4s;
 }
 
 .floating-ornament-4 {
     top: 20%;
     right: 8%;
-    font-size: 2.5rem;
     animation-delay: 1s;
 }
 
 .floating-ornament-5 {
     bottom: 25%;
     left: 5%;
-    font-size: 2rem;
     animation-delay: 3s;
 }
 
@@ -411,7 +347,6 @@ h1,h1,h3 {
 
 .section-label {
     font-family: 'Josefin Sans', serif;
-    font-size: 0.75rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold);
@@ -509,7 +444,6 @@ h1,h1,h3 {
 
 .card-number {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
     font-weight: 900;
     color: rgba(255,255,255,0.3);
 }
@@ -519,13 +453,11 @@ h1,h1,h3 {
 }
 
 .card-icon {
-    font-size: 2rem;
     margin-bottom: 12px;
 }
 
 .card-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
     font-weight: 700;
     color: var(--dark);
     margin-bottom: 12px;
@@ -533,7 +465,6 @@ h1,h1,h3 {
 
 .card-desc {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
     color: var(--text-medium);
     line-height: 1.8;
     margin-bottom: 24px;
@@ -544,7 +475,6 @@ h1,h1,h3 {
     align-items: center;
     gap: 8px;
     font-family: 'Josefin Sans', serif;
-    font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -654,7 +584,6 @@ h1,h1,h3 {
 
 .about-label {
     font-family: 'Josefin Sans', serif;
-    font-size: 0.75rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold);
@@ -664,7 +593,6 @@ h1,h1,h3 {
 
 .about-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem,4vw,3rem);
     font-weight: 700;
     color: var(--white);
     margin-bottom: 32px;
@@ -679,7 +607,6 @@ h1,h1,h3 {
 
 .about-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
     font-style: italic;
     color: rgba(255,255,255,0.75);
     line-height: 1.9;
@@ -693,7 +620,6 @@ h1,h1,h3 {
 
 .about-quote blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
     font-weight: 700;
     font-style: italic;
     color: var(--gold);
@@ -702,7 +628,6 @@ h1,h1,h3 {
 
 .about-quote cite {
     font-family: 'Josefin Sans', serif;
-    font-size: 0.85rem;
     color: rgba(255,255,255,0.5);
     font-style: normal;
     letter-spacing: 0.5px;

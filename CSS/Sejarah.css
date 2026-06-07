@@ -25,24 +25,14 @@
    ========================================================================== */
 .page-header {
     text-align: center;
-    padding-top: 170px;
+    padding-top: 140px;
     border-radius: 8px;
     background: radial-gradient(ellipse at center,  #3d1a03 15%, var(--brown-dark) 65%, var(--brown-dark) 100%);
-    
-
+    min-height: 90vh;
     overflow: hidden;
 }
 
-/* Tekstur Ornamen Klasik Samar pada Background Header */
-.page-header::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    opacity: 0.03; /* Tipis dan elegan di atas warna cokelat gelap */
-    background-image: url('https://www.transparenttextures.com/patterns/batik-fractal.png');
-    pointer-events: none;
-    z-index: 1;
-}
+
 
 /* Memastikan konten teks berada di atas overlay background */
 .sejarah-label, .sejarah-title, .divider-custom, .history-tabs-container {
@@ -57,12 +47,10 @@
     letter-spacing: 6px;
     display: inline-block;
     margin-bottom: 1.5rem;
-    font-size: 0.9rem;
 }
 
 .sejarah-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
     line-height: 1.3;
     margin-bottom: 2rem;
     color: var(--cream);
@@ -99,7 +87,6 @@
     gap: 10px;
     margin: 0 auto;
     background: rgba(28, 15, 6, 0.6); /* Diambil dari kontras warna --text-dark */
-    padding: 6px;
     border-radius: 30px;
     border: 1px solid rgba(212, 162, 80, 0.15);
 }

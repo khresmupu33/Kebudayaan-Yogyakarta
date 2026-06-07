@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="CSS/budaya.css">
-        <link rel="stylesheet" href="CSS/Dasar HTML.css">
+    <link rel="stylesheet" href="CSS/Dasar HTML.css">
     <link rel="stylesheet" href="CSS/Navigasi.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/quary.css">
@@ -22,184 +22,185 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body id="budaya">
+<body>
     <div class="in-page"></div>
     <div class="out-page"></div>
 
-     <header>
-            <nav class="navbar transition-all duration-300">
-                <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
-                    <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
+    <header>
+        <nav class="navbar transition-all duration-300">
+            <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
+                <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
 
-                    <div class="nav-links hidden md:flex gap-x-1 items-center font-medium">
-                        <a href="halaman-beranda.html">Beranda</a>
-                        <a href="halaman-sejarah.html">Sejarah</a>
+                <div class="nav-links hidden md:flex gap-x-1 items-center font-medium">
+                    <a href="halaman-beranda.html">Beranda</a>
+                    <a href="halaman-sejarah.html">Sejarah</a>
 
-                        <div class="dropdown-parent relative group">
-                            <a href="halaman-budaya.html" class="outline-none">
-                                <span>Budaya</span>
-                                <i data-lucide="chevron-down"
-                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-                            </a>
-                            <div
-                                class="dropdown-content absolute top-full left-0 mt-4 w-52 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
-                                <a href="halaman-batik.html">Batik</a>
-                                <a href="halaman-tarian-adat.html">Tarian Adat</a>
-                                <a href="halaman-wayang.html">Wayang</a>
-                                <a href="halaman-upacara-adat.html">Upacara Adat</a>
-                            </div>
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-budaya.html" class="outline-none">
+                            <span>Budaya</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-52 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-batik.html">Batik</a>
+                            <a href="halaman-tarian-adat.html">Tarian Adat</a>
+                            <a href="halaman-wayang.html">Wayang</a>
+                            <a href="halaman-upacara-adat.html">Upacara Adat</a>
                         </div>
-
-                        <div class="dropdown-parent relative group">
-                            <a href="halaman-kuliner.html" class="outline-none">
-                                <span>Kuliner</span>
-                                <i data-lucide="chevron-down"
-                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-                            </a>
-                            <div
-                                class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
-                                <a href="halaman-makanan-tradisional.html">Makanan Tradisional</a>
-                                <a href="halaman-jajanan-khas.html">Jajanan Khas</a>
-                                <a href="halaman-minuman-khas.html">Minuman Khas</a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown-parent relative group">
-                            <a href="halaman-destinasi.html" class="outline-none">
-                                <span>Destinasi</span>
-                                <i data-lucide="chevron-down"
-                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-                            </a>
-                            <div
-                                class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
-                                <a href="halaman-wisata-alam.html">Wisata Alam</a>
-                                <a href="halaman-wisata-sejarah.html">Wisata Sejarah</a>
-                                <a href="halaman-wisata-budaya.html">Wisata Budaya</a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown-parent relative group">
-                            <a href="halaman-teknologi.html" class="outline-none">
-                                <span>Teknologi</span>
-                                <i data-lucide="chevron-down"
-                                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-                            </a>
-                            <div
-                                class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
-                                <a href="halaman-smart-city.html">Smart City</a>
-                                <a href="halaman-kota-pelajar.html">Kota Pelajar</a>
-                                <a href="halaman-industri-modern.html">Industri Modern</a>
-                            </div>
-                        </div>
-
-                        <a href="halaman-peta-jogja.html">Peta</a>
-                        <a href="halaman-info.html">Tentang Kami</a>
                     </div>
 
-                    <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
-                        <i data-lucide="menu"></i>
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-kuliner.html" class="outline-none">
+                            <span>Kuliner</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-makanan-tradisional.html">Makanan Tradisional</a>
+                            <a href="halaman-jajanan-khas.html">Jajanan Khas</a>
+                            <a href="halaman-minuman-khas.html">Minuman Khas</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-destinasi.html" class="outline-none">
+                            <span>Destinasi</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-wisata-alam.html">Wisata Alam</a>
+                            <a href="halaman-wisata-sejarah.html">Wisata Sejarah</a>
+                            <a href="halaman-wisata-budaya.html">Wisata Budaya</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-teknologi.html" class="outline-none">
+                            <span>Teknologi</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-smart-city.html">Smart City</a>
+                            <a href="halaman-kota-pelajar.html">Kota Pelajar</a>
+                            <a href="halaman-industri-modern.html">Industri Modern</a>
+                        </div>
+                    </div>
+
+                    <a href="halaman-peta-jogja.html">Peta</a>
+                    <a href="halaman-info.html">Tentang Kami</a>
+                </div>
+
+                <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-12">
+                    <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
+                    <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                        <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
                     </button>
                 </div>
 
-                <div id="mobile-menu"
-                    class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
-                    <div class="flex items-center justify-between mb-12">
-                        <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
-                        <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
-                            <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
-                        </button>
+                <div class="flex flex-col space-y-6 overflow-y-auto">
+                    <a href="halaman-beranda.html" class="mobile-link">Beranda</a>
+                    <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-budaya.html" class="mobile-link flex-grow">Budaya</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-batik.html" class="mobile-sublink">Batik</a>
+                            <a href="halaman-tarian-adat.html" class="mobile-sublink">Tarian Adat</a>
+                            <a href="halaman-wayang.html" class="mobile-sublink">Wayang</a>
+                            <a href="halaman-upacara-adat.html" class="mobile-sublink">Upacara Adat</a>
+                        </div>
                     </div>
 
-                    <div class="flex flex-col space-y-6 overflow-y-auto">
-                        <a href="halaman-beranda.html" class="mobile-link">Beranda</a>
-                        <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
-
-                        <div class="mobile-dropdown">
-                            <div class="w-full flex justify-between items-center">
-                                <a href="halaman-budaya.html" class="mobile-link flex-grow">Budaya</a>
-                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
-                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
-                                </button>
-                            </div>
-                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
-                                <a href="halaman-batik.html" class="mobile-sublink">Batik</a>
-                                <a href="halaman-tarian-adat.html" class="mobile-sublink">Tarian Adat</a>
-                                <a href="halaman-wayang.html" class="mobile-sublink">Wayang</a>
-                                <a href="halaman-upacara-adat.html" class="mobile-sublink">Upacara Adat</a>
-                            </div>
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-kuliner.html" class="mobile-link flex-grow">Kuliner</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
                         </div>
-
-                        <div class="mobile-dropdown">
-                            <div class="w-full flex justify-between items-center">
-                                <a href="halaman-kuliner.html" class="mobile-link flex-grow">Kuliner</a>
-                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
-                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
-                                </button>
-                            </div>
-                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
-                                <a href="halaman-makanan-tradisional.html" class="mobile-sublink">Makanan
-                                    Tradisional</a>
-                                <a href="halaman-jajanan-khas.html" class="mobile-sublink">Jajanan Khas</a>
-                                <a href="halaman-minuman-khas.html" class="mobile-sublink">Minuman Khas</a>
-                            </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-makanan-tradisional.html" class="mobile-sublink">Makanan
+                                Tradisional</a>
+                            <a href="halaman-jajanan-khas.html" class="mobile-sublink">Jajanan Khas</a>
+                            <a href="halaman-minuman-khas.html" class="mobile-sublink">Minuman Khas</a>
                         </div>
-
-                        <div class="mobile-dropdown">
-                            <div class="w-full flex justify-between items-center">
-                                <a href="halaman-destinasi.html" class="mobile-link flex-grow">Destinasi</a>
-                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
-                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
-                                </button>
-                            </div>
-                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
-                                <a href="halaman-wisata-alam.html" class="mobile-sublink">Wisata Alam</a>
-                                <a href="halaman-wisata-sejarah.html" class="mobile-sublink">Wisata Sejarah</a>
-                                <a href="halaman-wisata-budaya.html" class="mobile-sublink">Wisata Budaya</a>
-                            </div>
-                        </div>
-
-                        <div class="mobile-dropdown">
-                            <div class="w-full flex justify-between items-center">
-                                <a href="halaman-teknologi.html" class="mobile-link flex-grow">Teknologi</a>
-                                <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
-                                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
-                                </button>
-                            </div>
-                            <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
-                                <a href="halaman-smart-city.html" class="mobile-sublink">Smart City</a>
-                                <a href="halaman-kota-pelajar.html" class="mobile-sublink">Kota Pelajar</a>
-                                <a href="halaman-industri-modern.html" class="mobile-sublink">Industri Modern</a>
-                            </div>
-                        </div>
-
-                        <a href="halaman-peta-jogja.html" class="mobile-link">Peta</a>
-                        <a href="halaman-info.html" class="mobile-link">Tentang Kami</a>
                     </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-destinasi.html" class="mobile-link flex-grow">Destinasi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-wisata-alam.html" class="mobile-sublink">Wisata Alam</a>
+                            <a href="halaman-wisata-sejarah.html" class="mobile-sublink">Wisata Sejarah</a>
+                            <a href="halaman-wisata-budaya.html" class="mobile-sublink">Wisata Budaya</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-teknologi.html" class="mobile-link flex-grow">Teknologi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-smart-city.html" class="mobile-sublink">Smart City</a>
+                            <a href="halaman-kota-pelajar.html" class="mobile-sublink">Kota Pelajar</a>
+                            <a href="halaman-industri-modern.html" class="mobile-sublink">Industri Modern</a>
+                        </div>
+                    </div>
+
+                    <a href="halaman-peta-jogja.html" class="mobile-link">Peta</a>
+                    <a href="halaman-info.html" class="mobile-link">Tentang Kami</a>
                 </div>
-            </nav>
-        </header>
-
+            </div>
+        </nav>
+    </header>
+    <main id="budaya">
         <section class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-ornament hero-ornament-left"></div>
             <div class="hero-ornament hero-ornament-right"></div>
             <div class="content-frame">
-            <div class="hero-content">
-                <p class="hero-subtitle fade-in-up">Menjelajahi Warisan Adiluhung</p>
-                <h1 class="hero-title fade-in-up">Budaya Jogja</h1>
-                <div class="hero-divider fade-in-up">
-                    <span class="divider-line"></span>
-                    <span class="divider-diamond">◈</span>
-                    <span class="divider-line"></span>
+                <div class="hero-content">
+                    <p class="hero-subtitle fade-in-up">Menjelajahi Warisan Adiluhung</p>
+                    <h1 class="hero-title fade-in-up">Budaya Jogja</h1>
+                    <div class="hero-divider fade-in-up">
+                        <span class="divider-line"></span>
+                        <span class="divider-diamond">◈</span>
+                        <span class="divider-line"></span>
+                    </div>
+                    <p class="hero-desc fade-in-up">Warisan budaya Mataram yang abadi, mengalir dalam setiap nafas
+                        kehidupan Yogyakarta</p>
                 </div>
-                <p class="hero-desc fade-in-up">Warisan budaya Mataram yang abadi, mengalir dalam setiap nafas kehidupan Yogyakarta</p>
             </div>
-        </div>
-        <div class="hero-scroll-indicator">
-            <span class="scroll-text">Gulir ke bawah</span>
-            <span class="scroll-arrow">⭣</span>
-        </div>
-    </section>
+            <div class="hero-scroll-indicator">
+                <span class="scroll-text">Gulir ke bawah</span>
+                <span class="scroll-arrow">⭣</span>
+            </div>
+        </section>
 
         <div class="section-divider">
             <div class="divider-ornament">
@@ -217,10 +218,16 @@
                     </div>
                     <h2 class="section-title fade-in-up">Warisan Adiluhung<br>Tanah Mataram</h2>
                     <p class="intro-text fade-in-up">
-                        Yogyakarta, kota yang menyimpan ribuan cerita dalam setiap sudutnya. Dari gemulai tarian klasik yang mengalun di pendopo keraton, hingga suara gamelan yang menggetarkan jiwa di malam-malam pertunjukan wayang. Di sini, budaya bukan sekadar warisan masa lalu - ia adalah nafas kehidupan yang terus mengalir, menghubungkan generasi demi generasi dalam untaian tradisi yang tak lekang oleh waktu.
+                        Yogyakarta, kota yang menyimpan ribuan cerita dalam setiap sudutnya. Dari gemulai tarian klasik
+                        yang mengalun di pendopo keraton, hingga suara gamelan yang menggetarkan jiwa di malam-malam
+                        pertunjukan wayang. Di sini, budaya bukan sekadar warisan masa lalu - ia adalah nafas kehidupan
+                        yang terus mengalir, menghubungkan generasi demi generasi dalam untaian tradisi yang tak lekang
+                        oleh waktu.
                     </p>
                     <p class="intro-text fade-in-up">
-                        Setiap helai batik menyimpan filosofi, setiap gerakan tari mengandung makna, dan setiap upacara adat menjadi jembatan antara manusia dengan alam semesta. Mari kita jelajahi kekayaan budaya yang menjadi jiwa dari Kota Istimewa ini.
+                        Setiap helai batik menyimpan filosofi, setiap gerakan tari mengandung makna, dan setiap upacara
+                        adat menjadi jembatan antara manusia dengan alam semesta. Mari kita jelajahi kekayaan budaya
+                        yang menjadi jiwa dari Kota Istimewa ini.
                     </p>
                 </div>
             </div>
@@ -254,11 +261,14 @@
                         <div class="card-content">
                             <div class="card-icon">🎨</div>
                             <h3 class="card-title">Batik</h3>
-                            <p class="card-desc">Seni membatik Yogyakarta merupakan warisan budaya tak benda UNESCO. Setiap motif menyimpan filosofi mendalam tentang kehidupan, alam, dan spiritualitas Jawa yang telah diwariskan turun-temurun sejak era Kerajaan Mataram.</p>
+                            <p class="card-desc">Seni membatik Yogyakarta merupakan warisan budaya tak benda UNESCO.
+                                Setiap motif menyimpan filosofi mendalam tentang kehidupan, alam, dan spiritualitas Jawa
+                                yang telah diwariskan turun-temurun sejak era Kerajaan Mataram.</p>
                             <a href="halaman-batik.html" class="card-btn">
                                 <span>Jelajahi</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </a>
                         </div>
@@ -276,11 +286,14 @@
                         <div class="card-content">
                             <div class="card-icon">💃</div>
                             <h3 class="card-title">Tarian Adat</h3>
-                            <p class="card-desc">Tarian klasik Yogyakarta seperti Bedhaya, Serimpi, dan Golek Menak merupakan ekspresi keindahan jiwa jawa. Setiap gerakan halus penuh makna simbolis yang menggambarkan keanggunan dan kehalusan budi pekerti.</p>
+                            <p class="card-desc">Tarian klasik Yogyakarta seperti Bedhaya, Serimpi, dan Golek Menak
+                                merupakan ekspresi keindahan jiwa jawa. Setiap gerakan halus penuh makna simbolis yang
+                                menggambarkan keanggunan dan kehalusan budi pekerti.</p>
                             <a href="halaman-tarian-adat.html" class="card-btn">
                                 <span>Jelajahi</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </a>
                         </div>
@@ -298,11 +311,14 @@
                         <div class="card-content">
                             <div class="card-icon">🎭</div>
                             <h3 class="card-title">Wayang</h3>
-                            <p class="card-desc">Wayang kulit Yogyakarta adalah teater bayangan yang memukau, menghidupkan kisah-kisah epik Ramayana dan Mahabharata. Dalang sebagai sutradara tunggal mengendalikan puluhan karakter dalam semalam penuh pertunjukan.</p>
+                            <p class="card-desc">Wayang kulit Yogyakarta adalah teater bayangan yang memukau,
+                                menghidupkan kisah-kisah epik Ramayana dan Mahabharata. Dalang sebagai sutradara tunggal
+                                mengendalikan puluhan karakter dalam semalam penuh pertunjukan.</p>
                             <a href="halaman-wayang.html" class="card-btn">
                                 <span>Jelajahi</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </a>
                         </div>
@@ -320,11 +336,14 @@
                         <div class="card-content">
                             <div class="card-icon">🕯️</div>
                             <h3 class="card-title">Upacara Adat</h3>
-                            <p class="card-desc">Upacara adat Yogyakarta seperti Sekaten, Grebeg Maulud, dan Labuhan merupakan ritual sakral yang menghubungkan manusia dengan Sang Pencipta. Tradisi ini menjadi simbol keharmonisan antara dunia lahir dan batin.</p>
+                            <p class="card-desc">Upacara adat Yogyakarta seperti Sekaten, Grebeg Maulud, dan Labuhan
+                                merupakan ritual sakral yang menghubungkan manusia dengan Sang Pencipta. Tradisi ini
+                                menjadi simbol keharmonisan antara dunia lahir dan batin.</p>
                             <a href="halaman-wayang.html" class="card-btn">
                                 <span>Jelajahi</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </a>
                         </div>
@@ -357,10 +376,15 @@
                         <h2 class="about-title">Jogja Istimewa,<br>Budaya Abadi</h2>
                         <div class="about-text-columns">
                             <p class="about-text">
-                                Di tengah arus modernisasi yang tak terbendung, Yogyakarta tetap teguh menjaga warisan leluhurnya. Keraton Ngayogyakarta Hadiningrat sebagai penjaga tradisi, tempat di mana tata krama, seni, dan spiritualitas Jawa terus dilestarikan dengan penuh kekhidmatan.
+                                Di tengah arus modernisasi yang tak terbendung, Yogyakarta tetap teguh menjaga warisan
+                                leluhurnya. Keraton Ngayogyakarta Hadiningrat sebagai penjaga tradisi, tempat di mana
+                                tata krama, seni, dan spiritualitas Jawa terus dilestarikan dengan penuh kekhidmatan.
                             </p>
                             <p class="about-text">
-                                Keistimewaan Yogyakarta bukan hanya terletak pada status politiknya, melainkan pada kekayaan budaya yang hidup dan bernafas di setiap sudut kota. Dari pasar tradisional hingga galeri seni kontemporer, dari pendopo keraton hingga panggung-panggung pertunjukan modern - budaya Mataram terus berevolusi tanpa kehilangan esensinya.
+                                Keistimewaan Yogyakarta bukan hanya terletak pada status politiknya, melainkan pada
+                                kekayaan budaya yang hidup dan bernafas di setiap sudut kota. Dari pasar tradisional
+                                hingga galeri seni kontemporer, dari pendopo keraton hingga panggung-panggung
+                                pertunjukan modern - budaya Mataram terus berevolusi tanpa kehilangan esensinya.
                             </p>
                         </div>
                         <div class="about-quote">
@@ -375,14 +399,15 @@
             <div class="floating-ornament floating-ornament-4">◈</div>
             <div class="floating-ornament floating-ornament-5">✦</div>
         </section>
+    </main>
 
     <footer>
         <div class="footer-top-section">
             <div class="footer-column">
-            <div class="footer-logo-box">
-                <div class="footer-logo">Jogja<span>Culture</span></div>
-                <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
-            </div>
+                <div class="footer-logo-box">
+                    <div class="footer-logo">Jogja<span>Culture</span></div>
+                    <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+                </div>
             </div>
 
             <div class="footer-column">

@@ -26,15 +26,18 @@
 
 @media (max-width: 768px) {
     #home {
-        height: 40px;
+        height: 30vh;
         padding: 1px;
     }
-    .bottom-right{
+
+    .bottom-right {
         margin-bottom: 30px;
     }
-    .bottom-left{
+
+    .bottom-left {
         margin-bottom: 30px;
     }
+
     html {
         font-size: 16px;
     }
@@ -129,14 +132,17 @@
         height: 420px;
         /* Diturunkan dari 530px agar hemat ruang vertikal HP */
     }
+
     .kuliner-link-btn {
         margin-top: 0.1px;
         padding: 1px 3px;
     }
-    .kuliner-cards-holder{
+
+    .kuliner-cards-holder {
         margin-top: 20px !important;
     }
-    .kuliner-action-buttons{
+
+    .kuliner-action-buttons {
         margin-top: 50px;
     }
 
@@ -212,6 +218,10 @@
 
     .hero-label {
         padding-top: 80px;
+    }
+
+    .hero-content {
+        padding-bottom: 100px;
     }
 
     .btn-primary,
@@ -492,6 +502,42 @@
 
 
 @media (max-width: 900px) {
+    .budaya-card {
+        /* Opsional: Beri padding bawah agar teks tidak menumpuk dengan konten card */
+        padding-bottom: 40px;
+    }
+
+    /* Paksa teks untuk selalu tampil */
+    .budaya-card::after {
+        content: "Lihat Lebih Lanjut →";
+        position: absolute;
+        bottom: -15px;
+        /* Posisikan teks secara permanen di bawah */
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #fff;
+        opacity: 1;
+    }
+
+
+
+    .home-wrapper {
+        min-height: 50vh;
+        padding-bottom: 400px;
+    }
+
+    .hero-scroll-indicator {
+        bottom: 80px;
+        /* Naikkan dengan memperkecil nilai bottom */
+    }
+
+    .scroll-arrow {
+        display: none;
+    }
+
     html {
         font-size: 17px;
     }
@@ -557,9 +603,11 @@
     .timeline-detailed::before {
         left: 20px;
     }
-    .kuliner-action-buttons{
+
+    .kuliner-action-buttons {
         margin-top: 20px;
     }
+
     .timeline-node {
         width: 100%;
         left: 0 !important;
@@ -854,7 +902,7 @@
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: clamp(3rem,15vw,6rem);
+        font-size: clamp(3rem, 15vw, 6rem);
     }
 
     .hero-ornament {
@@ -895,7 +943,7 @@
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: clamp(2.5rem,18vw,4.5rem);
+        font-size: clamp(2.5rem, 18vw, 4.5rem);
     }
 
     .card-content {
