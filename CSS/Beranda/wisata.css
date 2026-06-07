@@ -3,7 +3,7 @@
 ========================================================================= */
 
 #wisata {
-    background: var(--cream, #fcf8f2);
+    background: var(--cream-border);
     padding: 6rem 2rem;
     width: 100%;
     box-sizing: border-box;

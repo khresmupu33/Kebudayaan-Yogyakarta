@@ -1,33 +1,33 @@
 // Data destinasi 5 Kabupaten/Kota DIY
 const destinations = [
-    {
+{
         id: "region-kulonprogo",
         title: "Kulon Progo",
-        desc: "The Jewel of Java. Menawarkan keasrian Waduk Sermo, pesona perbukitan Menoreh, serta spot foto alam ikonik Kalibiru dengan pemandangan hijau yang membentang luas.",
+        desc: "Permata tersembunyi di Barat Yogyakarta. Nikmati ketenangan Waduk Sermo, kemegahan Perbukitan Menoreh, hingga ikon wisata Kalibiru yang menawarkan panorama alam hijau sejauh mata memandang.",
         image: "IMG/kulon-progo.jpg"
     },
     {
         id: "region-sleman",
         title: "Sleman",
-        desc: "Berada di bawah lereng Gunung Merapi yang megah. Sleman kaya akan wisata budaya kuno seperti Candi Prambanan serta keseruan petualangan alam Lava Tour Merapi.",
+        desc: "Bersemayam di bawah megahnya lereng Gunung Merapi. Sleman memadukan keagungan sejarah Candi Prambanan dengan keseruan petualangan Lava Tour yang memacu adrenalin.",
         image: "IMG/Sleman.jpg"
     },
     {
         id: "region-kota",
         title: "Kota Yogyakarta",
-        desc: "Pusat budaya dan sejarah Javanese heritage. Mulai dari keagungan istana Keraton Yogyakarta, denyut nadi Jalan Malioboro, hingga situs bersejarah Taman Sari.",
+        desc: "Jantung budaya Jawa yang tak pernah tidur. Telusuri kemegahan Keraton Yogyakarta, nikmati denyut nadi Jalan Malioboro, dan selami rahasia sejarah di situs ikonik Taman Sari.",
         image: "IMG/Kota-Yogyakarta.jpg"
     },
     {
         id: "region-bantul",
         title: "Bantul",
-        desc: "Rumah bagi fenomena alam langka Gumuk Pasir Parangkusumo, eksotisme Pantai Parangtritis, serta keasrian alam perbukitan Mangunan.",
+        desc: "Surga eksotisme selatan Yogyakarta. Rasakan sensasi gurun di Gumuk Pasir Parangkusumo, deburan ombak Pantai Parangtritis, hingga sejuknya hutan pinus di perbukitan Mangunan.",
         image: "IMG/Bantul.jpg"
     },
     {
         id: "region-gunungkidul",
-        title: "Seribu Island / Gunungkidul",
-        desc: "The Thousand Islands are rich in marine tourist attractions, the panorama on land to under the sea displays extraordinary charm.",
+        title: "Gunungkidul",
+        desc: "Negeri seribu surga di tepi samudra. Gunungkidul memanjakan Anda dengan deretan pantai pasir putih yang menawan serta kekayaan alam bawah laut yang luar biasa mempesona.",
         image: "IMG/gunung-kidul.png"
     }
 ];

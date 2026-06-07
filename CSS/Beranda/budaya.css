@@ -1,6 +1,7 @@
+/* --- Pengaturan Section & Grid --- */
 #budaya-section {
-    background-color: var(--brown-dark);
-    padding: 3rem 1.5rem;
+    background-color: var(--cream-dark);
+    padding: 3rem 1rem;
     color: #ffffff;
 }
 
@@ -9,144 +10,135 @@
     margin: 0 auto;
 }
 
-.budaya-title {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.budaya-intro {
-    text-align: center;
-    font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-
 .budaya-grid {
     display: grid;
-    /* Pada mobile tampil 1 kolom, di layar lebih besar tampil 2 kolom */
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
     .budaya-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.budaya-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    text-decoration: none;
-    color: #ffffff;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.budaya-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-5px);
-}
-
-.budaya-card h3 {
-    margin: 0 0 0.5rem 0;
-    font-family: 'Playfair Display', serif;
-}
-
-.budaya-card p {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.5;
-}
+/* --- Card Styling Dasar --- */
 .budaya-card {
     position: relative;
     overflow: hidden;
+    min-height: 250px;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Transisi lebih halus dengan easing yang elegan */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 200px; /* Tambahkan tinggi minimal agar pola terlihat */
-    padding: 2rem;
-    color: #ffffff;
     text-decoration: none;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    
+    /* Default Mobile: Warna Coklat */
+    background-color: #6d4c41; 
 }
 
-/* Pastikan overlay tidak memblokir background-image */
 .budaya-card::before {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(44, 26, 14, 0.7); /* Kurangi opacity agar pola di bawahnya sedikit terlihat */
+    background: rgba(109, 76, 65, 0.5);
     z-index: 1;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .budaya-card h3, .budaya-card p {
     position: relative;
-    z-index: 2; /* Konten di atas overlay */
+    z-index: 2;
+    color: #ffffff;
+    transition: all 0.6s ease;
+    margin: 0 0 0.5rem 0;
+}
+.budaya-intro{
+    text-align: center;
+    color: var(--text-dark);
+    padding-bottom: 30px;
 }
 
-/* Pastikan .budaya-card punya posisi relative agar background muncul */
-.budaya-card {
-    transition: all 0.5s ease;
-}
-
-/* Pola Batik (Geometris Kawung - Lebih terlihat) */
-.budaya-bg-batik {
-    background-color: #2e1d1a;
-    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 2px, transparent 2px);
-    background-size: 40px 40px;
-}
-
-/* Pola Tarian (Satin Silk - Efek kilau halus) */
-.budaya-bg-tari {
-    background-color: #2e1d1a;
-    background-image: linear-gradient(135deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 40%, rgba(255,255,255,0.1) 70%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent);
-    background-size: 60px 60px;
-}
-
-/* Pola Wayang (Tatah Kulit - Aksen titik elegan) */
-.budaya-bg-wayang {
-    background-color: #2e1d1a;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-    background-size: 20px 20px;
-}
-
-/* Pola Upacara (Anyaman - Tekstur Grid Tegas) */
-.budaya-bg-upacara {
-    background-color: #2e1d1a;
-    background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 2px),
-                      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
-    background-size: 30px 30px;
-}
-
-
-.budaya-card:hover {
-    background-color: #6d4c41 !important;
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-}
-
-/* Menambahkan tulisan "Lihat Lebih Lanjut" saat hover */
+/* --- Tulisan "Lihat Lebih Lanjut" (Mobile Optimized) --- */
 .budaya-card::after {
     content: "Lihat Lebih Lanjut →";
     position: absolute;
-    bottom: -40px; /* Sembunyikan di bawah card secara default */
-    left: 0;
-    width: 100%;
+    /* Ditinggikan posisinya di mobile */
+    bottom: 30px; 
+    left: 0; width: 100%;
     text-align: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #fff;
-    opacity: 0;
-    transition: all 0.4s ease;
-    padding-bottom: 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 1;
+    transition: all 0.6s ease;
+    z-index: 3;
 }
 
-.budaya-card:hover::after {
-    bottom: 0; /* Munculkan teks saat card di-hover */
-    opacity: 1;
+/* --- Pola Background --- */
+.budaya-bg-batik { background-color: #2e1d1a; background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25) 3px, transparent 3px); background-size: 40px 40px; }
+.budaya-bg-tari { background-color: #2e1d1a; background-image: linear-gradient(135deg, rgba(255,255,255,0.15) 25%, transparent 25%, transparent 40%, rgba(255,255,255,0.15) 70%, rgba(255,255,255,0.15) 75%, transparent 75%, transparent); background-size: 60px 60px; }
+.budaya-bg-wayang { background-color: #2e1d1a; background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 1.5px); background-size: 25px 25px; }
+.budaya-bg-upacara { background-color: #2e1d1a; background-image: linear-gradient(rgba(255,255,255,0.12) 1px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px); background-size: 35px 35px; }
+
+/* --- Penyesuaian Desktop --- */
+@media (min-width: 768px) {
+    .budaya-card {
+        background-color: transparent !important;
+    }
+    
+    .budaya-card::before {
+        background: rgba(255, 255, 255, 0.9);
+    }
+    
+    .budaya-card h3, .budaya-card p {
+        color: var(--text-dark);
+    }
+    
+    .budaya-card::after {
+        bottom: -40px;
+        opacity: 0;
+    }
+
+    /* Hover Desktop (Halus) */
+    .budaya-card:hover {
+        background-color: #6d4c41 !important;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    
+    .budaya-card:hover::before {
+        background: rgba(109, 76, 65, 0.5);
+    }
+    
+    .budaya-card:hover h3, .budaya-card:hover p {
+        color: #ffffff;
+    }
+    
+    .budaya-card:hover::after {
+        bottom: 30px; /* Samakan posisi dengan mobile */
+        opacity: 1;
+    }
+}
+@media (max-width: 767px) {
+    /* Kita gunakan ::after untuk mobile agar tampilannya sesuai keinginan Anda */
+    .budaya-card::after {
+        content: "Lihat Lebih Lanjut →";
+        position: absolute;
+        /* Gunakan nilai positif yang sesuai dengan tinggi kartu Anda */
+        bottom: 20px !important; 
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        z-index: 10;
+    }
 }

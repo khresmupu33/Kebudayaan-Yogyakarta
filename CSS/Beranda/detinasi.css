@@ -36,7 +36,7 @@
 }
 
 .map-region {
-    fill: rgba(255, 255, 255, 0.03);
+    fill: var(--brown-dark);
     stroke: var(--gold);
     stroke-width: 2;
     cursor: pointer;
@@ -51,7 +51,7 @@
 }
 
 .destination-card {
-    background: rgba(255, 255, 255, 0.07); 
+    background:var(--brown-dark); 
     border: 1px solid rgba(212, 162, 80, 0.2);
     border-radius: 12px;
     box-shadow: none !important; 
@@ -59,7 +59,7 @@
 }
 
 .destination-card:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--brown-mid);
     border-color: rgba(212, 162, 80, 0.5);
     transform: translateY(-8px);
     box-shadow: none !important; 
