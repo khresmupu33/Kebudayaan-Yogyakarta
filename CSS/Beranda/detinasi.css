@@ -54,7 +54,6 @@
     background: var(--dark-brown);
     border: 1px solid rgba(212, 162, 80, 0.2);
     border-radius: 12px;
-    box-shadow: none !important;
     padding: 10px; 
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -63,7 +62,8 @@
     
     border-color: rgba(212, 162, 80, 0.5);
     transform: translateY(-8px);
-    box-shadow: none !important; 
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(212, 162, 80, 0.1);
 }
 
 .card-image-overlay {

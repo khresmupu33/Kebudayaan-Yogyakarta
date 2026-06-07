@@ -3,7 +3,8 @@
    ========================================================================== */
 /* 1. Mengubah background utama */
 #halaman-info {
-    background: var(--cream-dark); /* Menggantikan --brown-dark */
+    background: var(--cream-dark);
+    /* Menggantikan --brown-dark */
     padding: 1px;
     display: flex;
     flex-direction: column;
@@ -14,12 +15,19 @@
 }
 
 /* 2. Menyesuaikan warna teks agar kontras dengan latar baru (Cream Dark) */
-.info-title, .section-subtitle {
-    color: var(--brown-dark) !important; /* Diubah dari --cream agar terbaca di background terang */
+.info-title,
+.section-subtitle {
+    color: var(--brown-dark) !important;
+    /* Diubah dari --cream agar terbaca di background terang */
 }
 
-.info-desc, .info-desc-secondary, .card-text, .task-intro, .task-list li {
-    color: var(--brown-dark) !important; /* Diubah dari --cream-dark agar lebih pekat */
+.info-desc,
+.info-desc-secondary,
+.card-text,
+.task-intro,
+.task-list li {
+    color: var(--brown-dark) !important;
+    /* Diubah dari --cream-dark agar lebih pekat */
 }
 
 .about-container {
@@ -69,6 +77,7 @@
     top: -2px;
     transform: rotate(45deg);
 }
+
 /* Styling untuk Hero Pattern agar lebih artistik */
 .hero-pattern {
     display: flex;
@@ -83,7 +92,8 @@
     width: 12px;
     height: 12px;
     background-color: transparent;
-    border: 1.5px solid var(--gold); /* Bingkai emas */
+    border: 1.5px solid var(--gold);
+    /* Bingkai emas */
     transform: rotate(45deg);
     position: relative;
 }
@@ -119,8 +129,17 @@
 
 /* Memberikan efek napas (pulsing) halus agar terlihat hidup */
 @keyframes pulse-gold {
-    0%, 100% { opacity: 0.5; transform: rotate(45deg) scale(1); }
-    50% { opacity: 1; transform: rotate(45deg) scale(1.1); }
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: rotate(45deg) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1.1);
+    }
 }
 
 .hero-pattern .dot {
@@ -130,6 +149,7 @@
 .hero-pattern .dot:nth-child(2) {
     animation-delay: 0.5s;
 }
+
 .ornament-divider::before {
     left: -15px;
 }
@@ -162,10 +182,12 @@
     max-width: 800px;
     margin: 0 auto 25px auto;
 }
-.detail{
+
+.detail {
     padding-left: 40px;
     padding-right: 40px;
 }
+
 /* ==========================================================================
    REFERENSI CARDS & EFEK INTERAKTIF HOVER LUAS
    ========================================================================== */
@@ -182,7 +204,8 @@
 }
 
 .ref-detail-card {
-       background: rgba(255, 255, 255, 0.5); /* Background lebih terang/semi-transparan */
+    background: rgba(255, 255, 255, 0.5);
+    /* Background lebih terang/semi-transparan */
     border: 1px solid var(--gold);
     padding: 35px;
     border-radius: 8px;
@@ -271,7 +294,7 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-        background: var(--cream);
+    background: var(--cream);
     border: 1px solid rgba(107, 58, 31, 0.2);
     border-radius: 12px;
     overflow: hidden;
@@ -312,7 +335,8 @@
     gap: 16px;
     margin-bottom: 16px;
 }
-.card-header-dev h3{
+
+.card-header-dev h3 {
     color: var(--brown-light) !important;
 }
 
@@ -337,8 +361,9 @@
 
 .role-badge {
     display: inline-block;
-        color: var(--cream-dark);
-    background: var(--brown-dark) !important; /* Dibalik agar kontras */
+    color: var(--cream-dark);
+    background: var(--brown-dark) !important;
+    /* Dibalik agar kontras */
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
     padding: 2px 10px;
@@ -421,7 +446,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-    object-position: top; 
+    object-position: top;
 }
 
 
@@ -444,7 +469,7 @@
 }
 
 .highlight-quote {
-     background: linear-gradient(135deg, var(--cream-border), var(--brown-light));
+    background: linear-gradient(135deg, var(--cream-border), var(--brown-light));
     border-left: 4px solid var(--gold);
     padding: 35px;
     border-radius: 0 8px 8px 0;
@@ -452,7 +477,8 @@
 }
 
 .highlight-quote blockquote {
-    color: var(--brown-dark) !important; /* Teks dibuat lebih gelap */
+    color: var(--brown-dark) !important;
+    /* Teks dibuat lebih gelap */
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 1.4rem;
@@ -475,6 +501,9 @@
    RESPONSIVE MOBILE OPTIMIZED (CARD HAMPIR MENYENTUH PINGGIR HALAMAN FULL)
    ========================================================================== */
 @media screen and (max-width: 768px) {
+    br {
+        display: none;
+    }
 
     .about-container {
         padding: 0 4px !important;
@@ -657,6 +686,10 @@
         font-size: 0.52rem;
         padding: 1px 6px;
         margin-top: 2px;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .task-intro {
@@ -669,14 +702,15 @@
     .task-list {
         gap: 5px;
         margin-bottom: 14px;
-        align-items: center;
+        text-align: left;
+        justify-content: left;
     }
 
     .task-list li {
         font-size: 0.70rem;
         line-height: 1.4;
         gap: 6px;
-        justify-content: center;
+       text-align: left;
     }
 
     .task-list li i,
