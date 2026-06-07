@@ -1,13 +1,11 @@
 #budaya {
-    background: var(--cream-dark);
-}
-
-body {
-    background-color: var(--cream-dark);
+      background-color: var(--cream-dark);
     color: var(--text-dark);
     overflow-x: hidden;
     position: relative;
 }
+
+
 
 :root {
     --gold: #b89243;
