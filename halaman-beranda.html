@@ -704,65 +704,6 @@
                     </div>
                 </div>
             </section>
-
-<section id="destinasi" class="destinasi-section">
-                <div class="section-intro-box">
-                    <h2 class="section-main-title">Pesona &<br><em> Destinasi Wilayah</em></h2>
-                    <div class="section-title-line"></div>
-                </div>
-
-                <div
-                    class="flex flex-col lg:flex-row justify-center items-center w-full gap-8 max-w-[12000px] mx-auto px-4 py-16">
-                    <div class="map-container w-full max-w-[600px] hidden lg:block">
-                        <svg viewBox="0 0 620 480" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <filter id="drop-shadow-map" x="-10%" y="-10%" width="130%" height="130%">
-                                    <feDropShadow dx="-5" dy="8" stdDeviation="10" flood-color="#000000"
-                                        flood-opacity="0.8" />
-                                </filter>
-                            </defs>
-                            <g id="yogyakarta-map" filter="url(#drop-shadow-map)" stroke-linejoin="round"
-                                stroke-linecap="round">
-                                <path id="region-kulonprogo" class="map-region"
-                                    d="M251,102 L244,115 L252,143 L233,149 L217,144 L204,151 L200,166 L211,179 L200,201 L204,217 L192,230 L188,247 L171,260 L174,279 L162,298 L169,311 L151,326 L163,337 L248,397 L249,385 L259,372 L260,356 L267,343 L264,331 L275,317 L275,296 L283,281 L278,272 L269,268 L269,252 L260,243 L255,229 L262,223 L260,207 L251,192 L254,178 L250,152 L254,136 Z"
-                                    onclick="changeDestination(0)" />
-                                <path id="region-sleman" class="map-region"
-                                    d="M251,102 L254,136 L250,152 L254,178 L251,192 L260,207 L262,223 L255,229 L260,243 L269,252 L269,268 L278,272 L283,281 L294,277 L293,259 L287,243 L297,222 L301,231 L314,228 L313,235 L320,240 L314,248 L315,264 L332,231 L347,227 L351,215 L360,211 L365,223 L376,219 L389,228 L399,223 L381,202 L378,187 L367,175 L362,152 L353,138 L348,118 L339,94 L323,43 L317,54 L294,97 L272,111 Z"
-                                    onclick="changeDestination(1)" />
-                                <path id="region-kota" class="map-region"
-                                    d="M293,243 L293,259 L287,270 L294,277 L304,264 L315,264 L314,248 L314,228 L301,231 L297,222 L287,227 Z"
-                                    onclick="changeDestination(2)" />
-                                <path id="region-bantul" class="map-region"
-                                    d="M283,281 L275,296 L275,317 L264,331 L267,343 L260,356 L259,372 L249,385 L248,397 L302,434 L340,432 L347,406 L361,385 L357,370 L351,357 L359,343 L345,335 L346,316 L355,310 L356,298 L360,286 L364,269 L360,256 L355,244 L360,233 L347,227 L332,231 L315,264 L304,264 L294,277 L283,281 Z"
-                                    onclick="changeDestination(3)" />
-                                <path id="region-gunungkidul" class="map-region"
-                                    d="M399,223 L390,228 L376,219 L365,223 L360,211 L351,215 L347,227 L360,233 L355,244 L360,256 L364,269 L360,286 L356,298 L355,310 L346,316 L345,335 L359,343 L351,357 L357,370 L361,385 L347,406 L340,432 L351,438 L366,423 L377,411 L396,399 L412,410 L435,426 L454,440 L478,458 L503,468 L508,454 L502,442 L508,429 L489,417 L491,399 L480,387 L482,374 L489,353 L479,342 L483,322 L478,296 L488,284 L482,267 L483,248 L489,233 L473,221 L479,207 L467,203 L450,217 L436,215 L420,217 L409,208 Z"
-                                    onclick="changeDestination(4)" />
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col items-center lg:items-start w-full max-w-[450px] relative px-10">
-                        <button onclick="prevSlide()"
-                            class="dest-nav-btn absolute left-0 top-[40%] -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center font-bold z-10 text-sm">&#10216;</button>
-                        <div class="destination-card overflow-hidden w-full transition-all duration-500 transform"
-                            id="destination-card">
-                            <div class="h-60 rounded-xl w-full bg-cover bg-center transition-all duration-500 card-image-overlay"
-                                id="dest-image"></div>
-                            <div class="p-6 min-h-[170px] flex flex-col justify-between">
-                                <div>
-                                    <h3 class="dest-card-title text-xl font-bold mb-2" id="dest-title">Gunungkidul</h3>
-                                    <p class="dest-card-desc text-xs sm:text-sm leading-relaxed" id="dest-desc"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <button onclick="nextSlide()"
-                            class="dest-nav-btn absolute right-0 top-[40%] -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center font-bold z-10 text-sm">&#10217;</button>
-                        <div class="w-full flex flex-col items-center mt-6 gap-4">
-                            <div class="flex gap-2 " id="dots-container"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <section id="wisata">
                 <div class="section-intro-box">
                     <h2 class="section-main-title">Eksplorasi<br><em> Ragam Destinasi</em></h2>
@@ -910,7 +851,71 @@
                     </div>
 
                 </div>
-                
+
+            </section>
+            <section id="destinasi" class="destinasi-section">
+                <div class="section-intro-box">
+                    <h2 class="section-main-title">Pesona &<br><em> Destinasi Wilayah</em></h2>
+                    <div class="section-title-line"></div>
+                </div>
+
+                <div
+                    class="great-father flex flex-col lg:flex-row justify-center items-center w-full gap-8 max-w-[12000px] mx-auto px-4 py-16">
+                    <div class="map-container w-full max-w-[600px] hidden lg:block">
+                        <svg viewBox="0 0 620 480" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="drop-shadow-map" x="-10%" y="-10%" width="130%" height="130%">
+                                    <feDropShadow dx="-5" dy="8" stdDeviation="10" flood-color="#000000"
+                                        flood-opacity="0.8" />
+                                </filter>
+                            </defs>
+                            <g id="yogyakarta-map" filter="url(#drop-shadow-map)" stroke-linejoin="round"
+                                stroke-linecap="round">
+                                <path id="region-kulonprogo" class="map-region"
+                                    d="M251,102 L244,115 L252,143 L233,149 L217,144 L204,151 L200,166 L211,179 L200,201 L204,217 L192,230 L188,247 L171,260 L174,279 L162,298 L169,311 L151,326 L163,337 L248,397 L249,385 L259,372 L260,356 L267,343 L264,331 L275,317 L275,296 L283,281 L278,272 L269,268 L269,252 L260,243 L255,229 L262,223 L260,207 L251,192 L254,178 L250,152 L254,136 Z"
+                                    onclick="changeDestination(0)" />
+                                <path id="region-sleman" class="map-region"
+                                    d="M251,102 L254,136 L250,152 L254,178 L251,192 L260,207 L262,223 L255,229 L260,243 L269,252 L269,268 L278,272 L283,281 L294,277 L293,259 L287,243 L297,222 L301,231 L314,228 L313,235 L320,240 L314,248 L315,264 L332,231 L347,227 L351,215 L360,211 L365,223 L376,219 L389,228 L399,223 L381,202 L378,187 L367,175 L362,152 L353,138 L348,118 L339,94 L323,43 L317,54 L294,97 L272,111 Z"
+                                    onclick="changeDestination(1)" />
+                                <path id="region-kota" class="map-region"
+                                    d="M293,243 L293,259 L287,270 L294,277 L304,264 L315,264 L314,248 L314,228 L301,231 L297,222 L287,227 Z"
+                                    onclick="changeDestination(2)" />
+                                <path id="region-bantul" class="map-region"
+                                    d="M283,281 L275,296 L275,317 L264,331 L267,343 L260,356 L259,372 L249,385 L248,397 L302,434 L340,432 L347,406 L361,385 L357,370 L351,357 L359,343 L345,335 L346,316 L355,310 L356,298 L360,286 L364,269 L360,256 L355,244 L360,233 L347,227 L332,231 L315,264 L304,264 L294,277 L283,281 Z"
+                                    onclick="changeDestination(3)" />
+                                <path id="region-gunungkidul" class="map-region"
+                                    d="M399,223 L390,228 L376,219 L365,223 L360,211 L351,215 L347,227 L360,233 L355,244 L360,256 L364,269 L360,286 L356,298 L355,310 L346,316 L345,335 L359,343 L351,357 L357,370 L361,385 L347,406 L340,432 L351,438 L366,423 L377,411 L396,399 L412,410 L435,426 L454,440 L478,458 L503,468 L508,454 L502,442 L508,429 L489,417 L491,399 L480,387 L482,374 L489,353 L479,342 L483,322 L478,296 L488,284 L482,267 L483,248 L489,233 L473,221 L479,207 L467,203 L450,217 L436,215 L420,217 L409,208 Z"
+                                    onclick="changeDestination(4)" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="father flex flex-col items-center lg:items-start w-full max-w-[450px] relative px-10">
+                        <button onclick="prevSlide()"
+                            class="dest-nav-btn absolute left-0 top-[40%] -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center font-bold z-10 text-sm">&#10216;</button>
+                        <div class="destination-card overflow-hidden w-full transition-all duration-500 transform"
+                            id="destination-card">
+                            <div class="h-60 rounded-xl w-full bg-cover bg-center transition-all duration-500 card-image-overlay"
+                                id="dest-image"></div>
+                            <div class="p-6 min-h-[170px] flex flex-col justify-between">
+                                <div>
+                                    <h3 class="dest-card-title text-xl font-bold mb-2" id="dest-title">Gunungkidul</h3>
+                                    <p class="dest-card-desc text-xs sm:text-sm leading-relaxed" id="dest-desc"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="nextSlide()"
+                            class="dest-nav-btn absolute right-0 top-[40%] -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center font-bold z-10 text-sm">&#10217;</button>
+                        <div class="w-full flex flex-col items-center mt-6 gap-4">
+                            <div class="flex gap-2 " id="dots-container"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center mt-12">
+                    <a href="halaman-peta-jogja.html" class="btn-explore-map">
+                        Lihat Peta Lengkap
+                    </a>
+                </div>
             </section>
         </main>
     </div>

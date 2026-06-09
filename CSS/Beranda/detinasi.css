@@ -1,5 +1,5 @@
 .destinasi-section {
-    background: var(--brown-dark);
+    background: var(--zinc);
     color: var(--cream);
     font-family: 'Cormorant Garamond', serif;
     line-height: 1.8;
@@ -10,7 +10,7 @@
 .destinasi-header-grid {
     max-width: 1200px;
     margin: 0 auto 4rem auto;
-    padding: 0 2rem;
+    padding: 0px;
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -31,12 +31,12 @@
     background: var(--gold);
 }
 .map-container{
-    padding-right: 60px;
+    padding-right: 1px;
     margin: -99px;
 }
 
 .map-region {
-    fill: var(--brown-dark);
+    fill: var(--dark-brown);
     stroke: var(--gold);
     stroke-width: 2;
     cursor: pointer;
@@ -53,7 +53,7 @@
 .destination-card {
     background: var(--dark-brown);
     border: 1px solid rgba(212, 162, 80, 0.2);
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 10px; 
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -126,4 +126,33 @@
     transform: scale(1.25);
     border-color: var(--cream);
     box-shadow: none !important;
+}
+
+.btn-explore-map {
+    display: inline-block;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    letter-spacing: 1px;
+}
+
+.btn-explore-map:hover {
+    background: var(--gold);
+    color: var(--dark-brown); /* Sesuaikan dengan variabel warna gelap Anda */
+    box-shadow: 0 4px 15px rgba(212, 162, 80, 0.3);
+}
+.father{
+    margin-bottom: -80px;
+}
+.great-father{
+    margin-top: -45px;
 }
