@@ -1,0 +1,224 @@
+/* =========================================================================
+   STYLE SEKSI WISATA - RAPI & ELEGANT
+========================================================================= */
+
+#wisata {
+    background: var(--cream-border, #fdf6e4);
+    padding: 6rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Filter Container --- */
+.wisata-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 3.5rem;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid #2b1808;
+    /* Warna coklat tua */
+    background: transparent;
+    color: #2b1808;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.section-title-line {
+    width: 200px !important;
+}
+
+.section-second-title {
+    color: var(--text-mid);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #2b1808;
+    color: #d4af37;
+    /* Gold */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 26, 14, 0.2);
+}
+
+/* --- Grid Layout (Diubah menjadi 1 kolom) --- */
+.wisata-mosaik-grid {
+    display: grid;
+    /* 1 kolom saja dengan lebar maksimal 800px agar tidak terlalu lebar */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 800px;
+    /* Lebar maksimal kartu di layar besar */
+    margin: 0 auto;
+}
+
+/* Mematikan efek masonry agar kartu tidak melebar/meninggi secara paksa */
+.wisata-card.size-tall,
+.wisata-card.size-wide,
+.wisata-card.size-standard {
+    grid-row: span 1;
+    grid-column: span 1;
+    height: auto;
+    /* Mengikuti konten */
+    min-height: 250px;
+    /* Tinggi minimum kartu */
+}
+
+/* Kelas untuk variasi ukuran (Masonry effect) */
+.wisata-card.size-tall {
+    grid-row: span 2;
+}
+
+.wisata-card.size-wide {
+    grid-column: span 2;
+}
+
+.wisata-card.size-standard {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* --- Card Styling --- */
+.wisata-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #140d07;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.wisata-card.is-hidden {
+    display: none !important;
+}
+
+.wisata-img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Membuat overlay gelap yang menutupi gambar */
+.wisata-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.733), rgba(0, 0, 0, 0.908));
+
+    transition: background-color 0.3s ease;
+}
+
+.wisata-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+/* Overlay & Text */
+.wisata-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20, 13, 7, 0.9) 0%, rgba(20, 13, 7, 0.3) 60%, transparent 100%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.wisata-tag {
+    color: #d4af37;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1.5px;
+}
+
+.wisata-title {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.wisata-desc {
+    color: rgba(255, 245, 230, 0.8);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.wisata-btn-detail {
+    align-self: flex-start;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* --- Hover Effects --- */
+.wisata-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(20, 13, 7, 0.25);
+}
+
+.wisata-card:hover .wisata-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.wisata-card:hover .wisata-btn-detail {
+    background: #d4af37;
+    color: #140d07;
+    border-color: #d4af37;
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    .wisata-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        
+        /* PENTING: Gunakan height auto agar kartu memanjang mengikuti teks */
+        height: 360px;
+        min-height: auto !important; 
+        
+        /* Opsional: Beri jarak bawah agar tidak menempel ke kartu selanjutnya */
+        margin-bottom: 25px !important; 
+        
+        /* Pastikan layout internal kartu vertikal */
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* Mencegah konten keluar dari kartu */
+    }
+
+    /* Pastikan gambar di dalam kartu tidak memotong tinggi kartu */
+    .wisata-card img {
+        width: 100%;
+        height: 360px; /* Beri tinggi tetap untuk gambar saja */
+        object-fit: cover;
+    }
+    #wisataMosaikGrid {
+        display: block !important; /* Ubah ke block agar margin kartu bekerja */
+        padding: 15px !important;
+    }
+}

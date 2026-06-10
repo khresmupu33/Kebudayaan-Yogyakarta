@@ -83,8 +83,8 @@ h3,
 .events-title,
 .menu-item-name,
 .node-content h3 {
-    font-size: 1.375rem !important;
-    font-weight: 600;
+    font-size: 25px !important;
+    font-weight: 60;
 }
 
 h4,
@@ -106,7 +106,7 @@ p,
 .art-card-desc,
 .timeline-content p,
 .node-content p {
-    font-size: 1rem !important;
+    font-size: 19px !important;
 }
 
 a,
