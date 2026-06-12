@@ -154,4 +154,19 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", (e) => {
         if (!searchInput.contains(e.target)) suggestionBox.innerHTML = "";
     });
+    // --- Event Klik Filter ---
+filterButtons.forEach(button => {
+    button.addEventListener("click", function () {
+        // 1. Reset visual tombol
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+        
+        // 2. Jalankan logika filter (tampilkan/sembunyikan kartu)
+        const target = this.getAttribute("data-target");
+        filterCards(target, searchInput.value); // Pastikan fungsi filterCards terdefinisi
+        
+        // 3. Panggil fungsi Scroll Otomatis (INI YANG MEMBUATNYA TETAP ADA)
+        scrollToGrid();
+    });
+});
 });
