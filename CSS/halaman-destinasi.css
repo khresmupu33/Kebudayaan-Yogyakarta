@@ -276,6 +276,27 @@
 }
 
 @media (max-width: 767px) {
+    .search-wrapper {
+        width: 90% !important; /* Gunakan persentase agar tidak melebar */
+        margin: 0 auto;
+    }
+
+    #wisataSearch {
+        width: 100%;
+        padding: 10px 15px; /* Sedikit lebih ramping */
+        font-size: 14px; /* Ukuran font mobile lebih nyaman */
+    }
+
+    .suggestion-box {
+        width: 100%; /* Menyesuaikan lebar wrapper */
+        left: 0;
+        right: 0;
+    }
+
+    .suggestion-item {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
     #wisata {
         padding-top: 10px !important;
     }
@@ -324,7 +345,7 @@
 
     /* Opsi tambahan: Jika ingin filter tetap terlihat rapi di mobile */
     .wisata-filter-container {
-        gap: 8px; /* Mengurangi gap agar tombol tidak turun ke bawah */
+        gap: 10px; /* Mengurangi gap agar tombol tidak turun ke bawah */
         margin-bottom: 2rem;
     }
 
