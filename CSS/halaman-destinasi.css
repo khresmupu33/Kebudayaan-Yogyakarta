@@ -44,6 +44,12 @@
 .suggestion-item:hover {
     background: #fdf6e4;
 }
+#noResultsMsg {
+    margin: 40px auto;
+    border: 2px dashed #d4af37;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.5);
+}
 
 #wisataSearch:focus {
     border-color: #2b1808;

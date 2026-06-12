@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Jika target adalah "all" (opsional) atau sesuai kategori
                 if (target === "all" || cardKategori === target) {
                     card.classList.remove("is-hidden");
-                    
+
                     // Opsional: Berikan sedikit efek fade in saat kartu muncul
                     card.style.opacity = "0";
                     setTimeout(() => {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // 3. Logika Filter (tampilkan/sembunyikan)
         wisataCards.forEach(card => {
             const cardKategori = card.getAttribute("data-kategori");
-            
+
             // Logika: Jika target 'all' atau kategori cocok, tampilkan. Jika tidak, sembunyikan.
             if (targetKategori === "all" || cardKategori === targetKategori) {
                 card.classList.remove("is-hidden");
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // --- LOGIKA URL PARAMETER (Deteksi dari halaman lain) ---
     const urlParams = new URLSearchParams(window.location.search);
-    const filterFromUrl = urlParams.get('filter') || 'all'; 
+    const filterFromUrl = urlParams.get('filter') || 'all';
 
     // Jalankan filter pertama kali saat halaman dimuat
     filterDanAcak(filterFromUrl);
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const grid = document.querySelector("#wisataMosaikGrid");
     const filterButtons = document.querySelectorAll(".filter-btn");
     const wisataCards = Array.from(document.querySelectorAll(".wisata-card"));
-    
+
     // Ambil semua judul
     const allTitles = wisataCards.map(c => c.querySelector(".wisata-title").innerText);
 
@@ -119,13 +119,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Tambahkan variabel ini di bagian atas fungsi filter atau di dalam DOMContentLoaded
+    const noResultsMsg = document.getElementById("noResultsMsg");
+
     function filterCards(target, query = "") {
+        let adaYangMuncul = false;
+
         wisataCards.forEach(card => {
             const cat = card.dataset.kategori;
             const title = card.querySelector(".wisata-title").innerText.toLowerCase();
+
+            // Cek kecocokan kategori dan teks pencarian
             const match = (target === "all" || cat === target) && title.includes(query.toLowerCase());
-            card.style.display = match ? "block" : "none";
+
+            if (match) {
+                card.style.display = "block";
+                adaYangMuncul = true; // Tandai bahwa ada kartu yang ketemu
+            } else {
+                card.style.display = "none";
+            }
         });
+
+        // Tampilkan pesan jika tidak ada kartu yang cocok
+        if (adaYangMuncul) {
+            noResultsMsg.style.display = "none";
+        } else {
+            noResultsMsg.style.display = "block";
+        }
     }
 
     // Rekomendasi acak saat klik input
@@ -137,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Pencarian saat mengetik
     searchInput.addEventListener("input", (e) => {
         const val = e.target.value.toLowerCase();
-        if(!val) { suggestionBox.innerHTML = ""; return; }
+        if (!val) { suggestionBox.innerHTML = ""; return; }
         showSuggestions(allTitles.filter(t => t.toLowerCase().includes(val)));
     });
 
@@ -155,18 +175,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!searchInput.contains(e.target)) suggestionBox.innerHTML = "";
     });
     // --- Event Klik Filter ---
-filterButtons.forEach(button => {
-    button.addEventListener("click", function () {
-        // 1. Reset visual tombol
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        this.classList.add("active");
-        
-        // 2. Jalankan logika filter (tampilkan/sembunyikan kartu)
-        const target = this.getAttribute("data-target");
-        filterCards(target, searchInput.value); // Pastikan fungsi filterCards terdefinisi
-        
-        // 3. Panggil fungsi Scroll Otomatis (INI YANG MEMBUATNYA TETAP ADA)
-        scrollToGrid();
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            // 1. Reset visual tombol
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            // 2. Jalankan logika filter (tampilkan/sembunyikan kartu)
+            const target = this.getAttribute("data-target");
+            filterCards(target, searchInput.value); // Pastikan fungsi filterCards terdefinisi
+
+            // 3. Panggil fungsi Scroll Otomatis (INI YANG MEMBUATNYA TETAP ADA)
+            scrollToGrid();
+        });
     });
-});
 });
