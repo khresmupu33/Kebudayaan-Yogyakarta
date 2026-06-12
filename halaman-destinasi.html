@@ -184,19 +184,107 @@
         <main>
             <section>
                 <div class="section-intro-box">
-                    <h1 class="section-main-title">Eksplorasi</h1>
-                    <h2 class="section-second-title"><strong> Warisan Nusantara</strong></h2>
-                    <div class="section-title-line"></div>
+                    <!-- Menambahkan span untuk aksen warna gold -->
+                    <h1 class="section-main-title">Eksplorasi <span class="highlight">Nusantara</span></h1>
+                    <h2 class="section-second-title">Menelusuri Jejak Warisan Budaya dan Alam</h2>
+
                     <div class="wisata-filter-container" id="wisataFilterGroup">
-                        <button class="filter-btn active" data-target="all">Semua</button> <button class="filter-btn"
-                            data-target="alam">Wisata Alam</button>
+                        <button class="filter-btn active" data-target="all">Semua</button>
+                        <button class="filter-btn" data-target="alam">Wisata Alam</button>
                         <button class="filter-btn" data-target="sejarah">Wisata Sejarah</button>
                         <button class="filter-btn" data-target="budaya">Wisata Budaya</button>
+                        <button class="filter-btn" data-target="religi">Wisata Religi</button>
+                        <button class="filter-btn" data-target="edukasi">Wisata Edukasi</button>
+                    </div>
+                    <div class="search-container"
+                        style="margin-top: 20px; position: relative; width: 300px; margin: 20px auto;">
+                        <input type="text" id="wisataSearch" placeholder="Cari lokasi wisata..."
+                            style="padding: 10px 20px; border-radius: 25px; border: 1px solid #d4af37; width: 100%; box-sizing: border-box; outline: none;">
+
+                        <div id="suggestionBox"
+                            style="position: absolute; top: 100%; left: 0; right: 0; background: white; border-radius: 0 0 15px 15px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); z-index: 999; margin-top: 5px; text-align: left;">
+                        </div>
                     </div>
                 </div>
 
 
                 <div class="wisata-mosaik-grid" id="wisataMosaikGrid">
+
+
+                    <div class="wisata-card" data-kategori="alam">
+                        <div class="wisata-img-wrapper"><img src="IMG/hutan-pinus.jpg" alt="Hutan Pinus Mangunan"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Alam</span>
+                            <h3 class="wisata-title">Hutan Pinus Mangunan</h3>
+                            <p class="wisata-desc">Wisata hutan pinus ikonik dengan suasana asri di Bantul.</p>
+                            <a href="halaman-peta-jogja.html#hutan_pinus" class="wisata-btn-detail">Lihat di Peta</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="alam">
+                        <div class="wisata-img-wrapper"><img src="IMG/gumuk-pasir.jpg" alt="Gumuk Pasir"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Alam</span>
+                            <h3 class="wisata-title">Gumuk Pasir Parangkusumo</h3>
+                            <p class="wisata-desc">Padang pasir unik dan langka di pesisir selatan Yogyakarta.</p>
+                            <a href="halaman-peta-jogja.html#gumuk_pasir" class="wisata-btn-detail">Lihat di Peta</a>
+                        </div>
+                    </div>
+
+
+                    <div class="wisata-card" data-kategori="sejarah">
+                        <div class="wisata-img-wrapper"><img src="IMG/candi-ijo.jpg" alt="Candi Ijo"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Sejarah</span>
+                            <h3 class="wisata-title">Candi Ijo</h3>
+                            <p class="wisata-desc">Candi tertinggi di Yogyakarta dengan pemandangan sunset menawan.</p>
+                            <a href="halaman-peta-jogja.html#candi_ijo" class="wisata-btn-detail">Lihat di Peta</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="religi">
+                        <div class="wisata-img-wrapper"><img src="IMG/masjid-kauman.jpg" alt="Masjid Gedhe Kauman">
+                        </div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Religi</span>
+                            <h3 class="wisata-title">Masjid Gedhe Kauman</h3>
+                            <p class="wisata-desc">Masjid bersejarah pusat spiritual Kesultanan Yogyakarta.</p>
+                            <a href="halaman-peta-jogja.html#masjid_gedhe" class="wisata-btn-detail">Lihat di Peta</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="religi">
+                        <div class="wisata-img-wrapper"><img src="IMG/gereja-ganjuran.jpg" alt="Gereja Ganjuran"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Religi</span>
+                            <h3 class="wisata-title">Gereja Hati Kudus Ganjuran</h3>
+                            <p class="wisata-desc">Gereja unik dengan perpaduan arsitektur Jawa yang kental.</p>
+                            <a href="halaman-peta-jogja.html#gereja_ganjuran" class="wisata-btn-detail">Lihat di
+                                Peta</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="edukasi">
+                        <div class="wisata-img-wrapper"><img src="IMG/taman-pintar.jpg" alt="Taman Pintar"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Edukasi</span>
+                            <h3 class="wisata-title">Taman Pintar</h3>
+                            <p class="wisata-desc">Wahana edukasi sains yang interaktif dan menyenangkan untuk keluarga.
+                            </p>
+                            <a href="halaman-peta-jogja.html#taman_pintar" class="wisata-btn-detail">Lihat di Peta</a>
+                        </div>
+                    </div>
+
+                    <div class="wisata-card" data-kategori="edukasi">
+                        <div class="wisata-img-wrapper"><img src="IMG/sonobudoyo.jpg" alt="Museum Sonobudoyo"></div>
+                        <div class="wisata-card-overlay">
+                            <span class="wisata-tag">Wisata Edukasi</span>
+                            <h3 class="wisata-title">Museum Sonobudoyo</h3>
+                            <p class="wisata-desc">Pusat edukasi kebudayaan Jawa dengan koleksi artefak lengkap.</p>
+                            <a href="halaman-peta-jogja.html#museum_sonobudoyo" class="wisata-btn-detail">Lihat di
+                                Peta</a>
+                        </div>
+                    </div>
 
                     <div class="wisata-card" data-kategori="alam">
                         <div class="wisata-img-wrapper"><img src="IMG/merapi-lava.jpg" alt="Lava Tour Merapi"></div>

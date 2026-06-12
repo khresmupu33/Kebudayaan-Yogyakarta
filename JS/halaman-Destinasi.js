@@ -87,3 +87,71 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("wisataSearch");
+    const suggestionBox = document.getElementById("suggestionBox");
+    const grid = document.querySelector("#wisataMosaikGrid");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const wisataCards = Array.from(document.querySelectorAll(".wisata-card"));
+    
+    // Ambil semua judul
+    const allTitles = wisataCards.map(c => c.querySelector(".wisata-title").innerText);
+
+    function scrollToGrid() {
+        const headerOffset = 130;
+        const elementPosition = grid.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: elementPosition - headerOffset, behavior: "smooth" });
+    }
+
+    function showSuggestions(list) {
+        suggestionBox.innerHTML = "";
+        list.slice(0, 3).forEach(item => {
+            const div = document.createElement("div");
+            div.className = "suggestion-item";
+            div.innerText = item;
+            div.onclick = () => {
+                searchInput.value = item;
+                suggestionBox.innerHTML = "";
+                filterCards(document.querySelector(".filter-btn.active").dataset.target, item);
+                scrollToGrid();
+            };
+            suggestionBox.appendChild(div);
+        });
+    }
+
+    function filterCards(target, query = "") {
+        wisataCards.forEach(card => {
+            const cat = card.dataset.kategori;
+            const title = card.querySelector(".wisata-title").innerText.toLowerCase();
+            const match = (target === "all" || cat === target) && title.includes(query.toLowerCase());
+            card.style.display = match ? "block" : "none";
+        });
+    }
+
+    // Rekomendasi acak saat klik input
+    searchInput.addEventListener("focus", () => {
+        const random = allTitles.sort(() => 0.5 - Math.random()).slice(0, 3);
+        showSuggestions(random);
+    });
+
+    // Pencarian saat mengetik
+    searchInput.addEventListener("input", (e) => {
+        const val = e.target.value.toLowerCase();
+        if(!val) { suggestionBox.innerHTML = ""; return; }
+        showSuggestions(allTitles.filter(t => t.toLowerCase().includes(val)));
+    });
+
+    // Enter untuk scroll
+    searchInput.addEventListener("keypress", (e) => {
+        if (e.key === 'Enter') {
+            filterCards(document.querySelector(".filter-btn.active").dataset.target, searchInput.value);
+            scrollToGrid();
+            suggestionBox.innerHTML = "";
+        }
+    });
+
+    // Sembunyi saat klik di luar
+    document.addEventListener("click", (e) => {
+        if (!searchInput.contains(e.target)) suggestionBox.innerHTML = "";
+    });
+});

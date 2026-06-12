@@ -4,7 +4,7 @@
 
 #wisata {
     background: var(--cream-border, #fdf6e4);
-    padding: 6rem 2rem;
+    padding: 10px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -17,7 +17,38 @@
     gap: 15px;
     margin-bottom: 3.5rem;
 }
+#wisataSearch {
+    background: rgba(255, 255, 255, 0.95);
+    color: #2b1808;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: all 0.3s ease;
+}
 
+#wisataSearch:focus {
+    border-color: #2b1808 !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+/* Memastikan elemen grid memiliki ruang saat di-scroll */
+#wisataMosaikGrid {
+    scroll-margin-top: 150px; 
+}
+.suggestion-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #2b1808;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+    background: #fdf6e4;
+}
+
+#wisataSearch:focus {
+    border-color: #2b1808;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
 .filter-btn {
     padding: 10px 25px;
     border: 2px solid #2b1808;
@@ -25,7 +56,7 @@
     background: transparent;
     color: #2b1808;
     font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 60;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -33,13 +64,58 @@
     letter-spacing: 1px;
     font-size: 14px;
 }
+/* --- Styling Intro Box --- */
+.section-intro-box {
+   text-align: center;
+    padding-top: 19%;
+    padding-bottom: 29%;
+    border-radius: 8px;
+    max-width: 800px;
+    /* Tetap gunakan display flex jika kamu ingin konten di dalamnya juga di tengah */
+    display: flex;
+    flex-direction: column; /* Biarkan konten (teks/judul) menumpuk ke bawah */
+    justify-content: center; 
+    align-items: center;
+    z-index: 10;
+    min-height: 90vh;
+}
 
-.section-title-line {
-    width: 200px !important;
+.section-main-title {
+    font-family: 'Playfair Display', serif; 
+    color: #2b1808;
+}
+
+.section-main-title .highlight {
+    color: var(--dark-brown); /* Gold */
 }
 
 .section-second-title {
-    color: var(--text-mid);
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+
+
+/* Mempercantik filter button agar lebih modern */
+.filter-btn {
+    border: 1px solid #d4af37 !important;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.filter-btn:hover {
+    background: #d4af37;
+    color: #fff;
+}
+
+.filter-btn.active {
+    background: #2b1808;
+    color: #d4af37;
+    border-color: #2b1808 !important;
 }
 
 .filter-btn:hover,
@@ -194,6 +270,9 @@
 }
 
 @media (max-width: 767px) {
+    #wisata {
+        padding-top: 10px !important;
+    }
     .wisata-card {
         width: 100% !important;
         max-width: 100% !important;
@@ -220,5 +299,31 @@
     #wisataMosaikGrid {
         display: block !important; /* Ubah ke block agar margin kartu bekerja */
         padding: 15px !important;
+    }
+
+    .highlight{
+        margin-top: -10px !important;;
+        font-size: 30px !important;
+    }
+    .section-main-title {
+        font-size: 40px !important;
+        line-height: 1.2;
+    }
+
+    .section-second-title {
+        font-size: 15px !important; /* Lebih kecil agar tidak wrap berlebihan */
+        letter-spacing: 1px; /* Mengurangi spacing agar teks tetap rapat */
+        padding: 0 10px;
+    }
+
+    /* Opsi tambahan: Jika ingin filter tetap terlihat rapi di mobile */
+    .wisata-filter-container {
+        gap: 8px; /* Mengurangi gap agar tombol tidak turun ke bawah */
+        margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 12px; /* Sedikit lebih kecil untuk layar sempit */
     }
 }
