@@ -24,7 +24,39 @@ body {
     position: relative;
     background-color: #121212;
 }
+/* Container untuk memastikan label rapi */
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between; /* Mendorong titik warna ke kanan */
+}
 
+/* Style titik warna */
+.color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: auto; /* Memastikan titik berada di paling kanan */
+    border: 1px solid rgba(255,255,255,0.2);
+}
+h3{
+    margin-bottom: -12px !important;
+}
+/* Definisi Warna per Kategori */
+.color-budaya    { background-color: #ff9f43; } /* Oranye terang */
+.color-sejarah   { background-color: #5f27cd; } /* Ungu */
+.color-kuliner   { background-color: #ee5253; } /* Merah */
+.color-alam      { background-color: #10ac84; } /* Hijau */
+.color-transportasi { background-color: #54a0ff; } /* Biru */
+.color-akomodasi { background-color: #feca57; } /* Kuning */
+.color-fasilitas { background-color: #c8d6e5; } /* Abu-abu muda */
+
+/* Efek redup saat checkbox tidak dicentang */
+.sync-chk:not(:checked) + .legend-label + .color-dot {
+    opacity: 0.3;
+    filter: grayscale(1);
+}
 /* =========================================================================
    2. PANEL LEGENDA & FILTER (DESKTOP KIRI)
 ========================================================================= */

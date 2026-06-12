@@ -42,7 +42,7 @@ const tempatWisata = [
     { id: "wijilan", nama: "Sentra Gudeg Wijilan", kategori: "budaya", koordinat: [-7.8045, 110.3678], deskripsi: "Kampung kuliner tradisional gudeg." },
     { id: "beringharjo", nama: "Pasar Beringharjo", kategori: "budaya", koordinat: [-7.7940, 110.3660], deskripsi: "Pusat transaksi budaya dan batik." },
     { id: "affandi", nama: "Museum Affandi", kategori: "budaya", koordinat: [-7.7800, 110.3900], deskripsi: "Kompleks rumah kubah maestro seni." },
-    
+
     // EVENT & LOKASI KHUSUS
     { id: "prambanan", nama: "Candi Prambanan (Keroncong Plesiran)", kategori: "budaya", koordinat: [-7.7520, 110.4914], deskripsi: "Lokasi Keroncong Plesiran 1 Dekade." },
     { id: "jnm", nama: "Jogja National Museum (ARTJOG)", kategori: "budaya", koordinat: [-7.7940, 110.3580], deskripsi: "Lokasi perhelatan ARTJOG 2026." },
@@ -110,44 +110,68 @@ const tempatWisata = [
     { id: "terminal_jombor", nama: "Terminal Jombor", kategori: "transportasi", koordinat: [-7.7500, 110.3550], deskripsi: "Terminal bus utama utara." },
     { id: "spbu_jl_solo", nama: "SPBU Jl. Solo", kategori: "fasilitas", koordinat: [-7.7800, 110.4000], deskripsi: "SPBU akses utama Bandara." },
     { id: "rs_johar", nama: "RS Jogja International", kategori: "fasilitas", koordinat: [-7.7700, 110.3850], deskripsi: "Fasilitas kesehatan modern." },
-    
+
     // TAMBAHKAN BERBAGAI TITIK POI LAINNYA
     { id: "kampus_ugm", nama: "Kampus UGM", kategori: "budaya", koordinat: [-7.7700, 110.3770], deskripsi: "Kawasan pendidikan pusat." },
     { id: "stadion_maguwoharjo", nama: "Stadion Maguwoharjo", kategori: "transportasi", koordinat: [-7.7580, 110.4250], deskripsi: "Stadion kebanggaan DIY." },
     { id: "desa_wisata_kasongan", nama: "Desa Wisata Kasongan", kategori: "budaya", koordinat: [-7.8400, 110.3500], deskripsi: "Pusat kerajinan gerabah." }
 ];
 
+// A. Definisi warna untuk setiap kategori
+const warnaKategori = {
+    'budaya': '#ff9f43',
+    'sejarah': '#5f27cd',
+    'kuliner': '#ee5253',
+    'alam': '#10ac84',
+    'transportasi': '#54a0ff',
+    'akomodasi': '#feca57',
+    'fasilitas': '#c8d6e5'
+};
+
+// B. Fungsi untuk membuat ikon berwarna (tanpa mengubah CSS)
+function getMarkerIcon(kategori) {
+    const warna = warnaKategori[kategori] || '#ffffff';
+    return L.divIcon({
+        className: 'custom-pin',
+        html: `<div style="background-color: ${warna}; width: 20px; height: 20px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2px solid white; box-shadow: 0 0 5px rgba(0,0,0,0.5);"></div>`,
+        iconSize: [20, 20],
+        iconAnchor: [10, 20],
+        popupAnchor: [0, -20]
+    });
+}
 // 5. Membuat dan Memetakan Struktur Popup
 tempatWisata.forEach(tempat => {
-    // Membuat link Google Maps otomatis berdasarkan koordinat
-    const gmapsLink = `https://www.google.com/maps/search/?api=1&query=${tempat.koordinat[0]},${tempat.koordinat[1]}`;
-    
+    // Membuat link Google Maps rute
+    const gmapsLink = `https://www.google.com/maps/dir/?api=1&destination=${tempat.koordinat[0]},${tempat.koordinat[1]}`;
+
     const htmlPopup = `
         <div class="popup-box">
-            <span class="popup-category">${tempat.kategori}</span>
+            <span class="popup-category">${tempat.kategori.toUpperCase()}</span>
             <h3 class="popup-title">${tempat.nama}</h3>
             <p class="popup-desc">${tempat.deskripsi}</p>
             <a href="${gmapsLink}" target="_blank" class="popup-link">Buka di Google Maps</a>
         </div>
     `;
-    
-    const marker = L.marker(tempat.koordinat).bindPopup(htmlPopup);
-    
-    // PERBAIKAN: Jika kategori tidak terdaftar di 'layers', masukkan ke layer default
+
+    // Menggunakan ikon dinamis yang warnanya disesuaikan kategori
+    const marker = L.marker(tempat.koordinat, { 
+        icon: getMarkerIcon(tempat.kategori) 
+    }).bindPopup(htmlPopup);
+
+    // Memasukkan ke layer yang sesuai
     if (layers[tempat.kategori]) {
         marker.addTo(layers[tempat.kategori]);
     } else {
-        // Jika kategori tidak cocok, tetap tampilkan di peta (jangan disembunyikan)
-        marker.addTo(map); 
+        marker.addTo(map);
     }
 });
 
 // FUNGSI NAVIGASI GLOBAL (Digunakan untuk link dari luar)
-window.arahkannyaKeLokasi = function(lat, lng, zoom = 15) {
+window.arahkannyaKeLokasi = function (lat, lng, zoom = 15) {
     map.flyTo([lat, lng], zoom, { animate: true, duration: 1.5 });
 };
 
-window.arahkannyaKeWilayah = function(key) {
+window.arahkannyaKeWilayah = function (key) {
     if (dataTitikWilayah[key]) {
         map.flyTo(dataTitikWilayah[key].center, dataTitikWilayah[key].zoom, { animate: true, duration: 1.5 });
     }
@@ -158,15 +182,15 @@ window.arahkannyaKeWilayah = function(key) {
 // NAVIGASI DENGAN TITIK KOORDINAT (FLY TO WILAYAH KABUPATEN)
 // =========================================================================
 const dataTitikWilayah = {
-    "kulonprogo":  { nama: "Kabupaten Kulon Progo", center: [-7.8500, 110.1600], zoom: 11 },
-    "sleman":      { nama: "Kabupaten Sleman",      center: [-7.6800, 110.4000], zoom: 11 },
-    "yogyakarta":  { nama: "Kota Yogyakarta",      center: [-7.8000, 110.3700], zoom: 13 },
-    "bantul":      { nama: "Kabupaten Bantul",      center: [-7.9200, 110.3600], zoom: 11 },
+    "kulonprogo": { nama: "Kabupaten Kulon Progo", center: [-7.8500, 110.1600], zoom: 11 },
+    "sleman": { nama: "Kabupaten Sleman", center: [-7.6800, 110.4000], zoom: 11 },
+    "yogyakarta": { nama: "Kota Yogyakarta", center: [-7.8000, 110.3700], zoom: 13 },
+    "bantul": { nama: "Kabupaten Bantul", center: [-7.9200, 110.3600], zoom: 11 },
     "gunungkidul": { nama: "Kabupaten Gunungkidul", center: [-8.0300, 110.6000], zoom: 11 }
 };
 
 // Fungsi Global pengarah peta (Fly To) sewaktu tombol HTML diklik
-window.arahkannyaKeWilayah = function(key) {
+window.arahkannyaKeWilayah = function (key) {
     if (dataTitikWilayah[key]) {
         map.flyTo(dataTitikWilayah[key].center, dataTitikWilayah[key].zoom, {
             animate: true,
@@ -179,7 +203,7 @@ window.addEventListener('load', () => {
     const params = new URLSearchParams(window.location.search);
     const lat = params.get('lat');
     const lng = params.get('lng');
-    
+
     if (lat && lng) {
         setTimeout(() => {
             arahkannyaKeLokasi(parseFloat(lat), parseFloat(lng), 15);
@@ -195,36 +219,36 @@ if (window.innerWidth >= 768) {
         "yogyakarta": {
             nama: "Kota Yogyakarta",
             coords: [
-                [-7.7692, 110.3612], [-7.7712, 110.3945], [-7.7950, 110.3980], 
-                [-7.8256, 110.3956], [-7.8312, 110.3512],[-7.8120, 110.3480],  
+                [-7.7692, 110.3612], [-7.7712, 110.3945], [-7.7950, 110.3980],
+                [-7.8256, 110.3956], [-7.8312, 110.3512], [-7.8120, 110.3480],
                 [-7.7945, 110.3456], [-7.7820, 110.3550]
             ]
         },
         "sleman": {
-    nama: "Kabupaten Sleman",
-    coords: [
-        /* Bagian Atas Sleman */
-        [-7.5412, 110.4412], [-7.5650, 110.4900], [-7.6010, 110.5180], [-7.6234, 110.5412],
-        [-7.6650, 110.5150], [-7.7120, 110.5050], 
+            nama: "Kabupaten Sleman",
+            coords: [
+                /* Bagian Atas Sleman */
+                [-7.5412, 110.4412], [-7.5650, 110.4900], [-7.6010, 110.5180], [-7.6234, 110.5412],
+                [-7.6650, 110.5150], [-7.7120, 110.5050],
 
-        /* 1. Titik Temu Gunungkidul (Kiri Atas GK) */
-        [-7.7423, 110.4934], 
+                /* 1. Titik Temu Gunungkidul (Kiri Atas GK) */
+                [-7.7423, 110.4934],
 
-        /* 2. Titik PUSAT PERTEMUAN Sleman-Gunungkidul-Yogya */
-        [-7.7712, 110.47], 
+                /* 2. Titik PUSAT PERTEMUAN Sleman-Gunungkidul-Yogya */
+                [-7.7712, 110.47],
 
-      [-7.7700, 110.3800], // Titik belokan 1
-        [-7.7680, 110.3700], // Titik belokan 2
-        [-7.7692, 110.362], // Titik belokan 3 (ujung)
+                [-7.7700, 110.3800], // Titik belokan 1
+                [-7.7680, 110.3700], // Titik belokan 2
+                [-7.7692, 110.362], // Titik belokan 3 (ujung)
 
-        /* 4. Titik TEMU Sleman-Yogya-Bantul */
-        [-7.7947, 110.3456], 
+                /* 4. Titik TEMU Sleman-Yogya-Bantul */
+                [-7.7947, 110.3456],
 
-        /* 5. Menutup kembali ke arah Barat/Utara */
-        [-7.7912, 110.3312], [-7.7600, 110.3010], [-7.7212, 110.2104], 
-        [-7.6950, 110.2150], [-7.6534, 110.3121], [-7.5850, 110.3600]
-    ]
-},
+                /* 5. Menutup kembali ke arah Barat/Utara */
+                [-7.7912, 110.3312], [-7.7600, 110.3010], [-7.7212, 110.2104],
+                [-7.6950, 110.2150], [-7.6534, 110.3121], [-7.5850, 110.3600]
+            ]
+        },
         "kulonprogo": {
             nama: "Kabupaten Kulon Progo",
             coords: [
@@ -310,11 +334,11 @@ function updateAllFilters(status) {
     checkboxes.forEach(chk => {
         // Update checkbox
         chk.checked = status;
-        
+
         // Update layer di peta
         const targetKategori = chk.getAttribute('data-target');
         const layer = layers[targetKategori];
-        
+
         if (layer) {
             if (status) {
                 if (!map.hasLayer(layer)) map.addLayer(layer);
