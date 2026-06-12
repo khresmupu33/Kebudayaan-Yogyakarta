@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogja Culture | Upacara Adat Ngayogyakarta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/upacara-adat.css">
+    <link rel="stylesheet" href="CSS/Dasar HTML.css">
+    <link rel="stylesheet" href="CSS/Navigasi.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/quary.css">
+    <link rel="stylesheet" href="CSS/btn-top.css">
+    <link rel="stylesheet" href="CSS/keyframes.css">
+    <link rel="stylesheet" href="CSS/in-out-page.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="in-page"></div>
+    <div class="out-page"></div>
+
+    <header>
+        <nav class="navbar transition-all duration-300">
+            <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
+                <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
+
+                <div class="nav-links hidden md:flex gap-x-1 items-center font-medium">
+                    <a href="halaman-beranda.html">Beranda</a>
+                    <a href="halaman-sejarah.html">Sejarah</a>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-budaya.html" class="outline-none">
+                            <span>Budaya</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-52 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-batik.html">Batik</a>
+                            <a href="halaman-tarian-adat.html">Tarian Adat</a>
+                            <a href="halaman-wayang.html">Wayang</a>
+                            <a href="halaman-upacara-adat.html">Upacara Adat</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-kuliner.html" class="outline-none">
+                            <span>Kuliner</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-makanan-tradisional.html">Makanan Tradisional</a>
+                            <a href="halaman-jajanan-khas.html">Jajanan Khas</a>
+                            <a href="halaman-minuman-khas.html">Minuman Khas</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-destinasi.html" class="outline-none">
+                            <span>Destinasi</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-wisata-alam.html">Wisata Alam</a>
+                            <a href="halaman-wisata-sejarah.html">Wisata Sejarah</a>
+                            <a href="halaman-wisata-budaya.html">Wisata Budaya</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-teknologi.html" class="outline-none">
+                            <span>Teknologi</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-smart-city.html">Smart City</a>
+                            <a href="halaman-kota-pelajar.html">Kota Pelajar</a>
+                            <a href="halaman-industri-modern.html">Industri Modern</a>
+                        </div>
+                    </div>
+
+                    <a href="halaman-peta-jogja.html">Peta</a>
+                    <a href="halaman-info.html">Tentang Kami</a>
+                </div>
+
+                <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-12">
+                    <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
+                    <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                        <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col space-y-6 overflow-y-auto">
+                    <a href="halaman-beranda.html" class="mobile-link">Beranda</a>
+                    <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-budaya.html" class="mobile-link flex-grow">Budaya</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-batik.html" class="mobile-sublink">Batik</a>
+                            <a href="halaman-tarian-adat.html" class="mobile-sublink">Tarian Adat</a>
+                            <a href="halaman-wayang.html" class="mobile-sublink">Wayang</a>
+                            <a href="halaman-upacara-adat.html" class="mobile-sublink">Upacara Adat</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-kuliner.html" class="mobile-link flex-grow">Kuliner</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-makanan-tradisional.html" class="mobile-sublink">Makanan
+                                Tradisional</a>
+                            <a href="halaman-jajanan-khas.html" class="mobile-sublink">Jajanan Khas</a>
+                            <a href="halaman-minuman-khas.html" class="mobile-sublink">Minuman Khas</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-destinasi.html" class="mobile-link flex-grow">Destinasi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-wisata-alam.html" class="mobile-sublink">Wisata Alam</a>
+                            <a href="halaman-wisata-sejarah.html" class="mobile-sublink">Wisata Sejarah</a>
+                            <a href="halaman-wisata-budaya.html" class="mobile-sublink">Wisata Budaya</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-teknologi.html" class="mobile-link flex-grow">Teknologi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-smart-city.html" class="mobile-sublink">Smart City</a>
+                            <a href="halaman-kota-pelajar.html" class="mobile-sublink">Kota Pelajar</a>
+                            <a href="halaman-industri-modern.html" class="mobile-sublink">Industri Modern</a>
+                        </div>
+                    </div>
+
+                    <a href="halaman-peta-jogja.html" class="mobile-link">Peta</a>
+                    <a href="halaman-info.html" class="mobile-link">Tentang Kami</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="upacara-adat">
+
+        <header class="hero reveal" id="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="frame hero-card">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="ukel ukel-tl"></span>
+                <span class="ukel ukel-br"></span>
+                <p class="hero-eyebrow">Laku Bakti, Warisan Leluhur Yogyakarta</p>
+                <h1 class="hero-title">Upacara Adat<br><span>Ngayogyakarta</span></h1>
+                <div class="parang-divider"></div>
+                <p class="hero-sub">Menjaga keseimbangan semesta melalui laku ritual, doa, dan syukur yang diwariskan
+                    turun-temurun oleh para leluhur Mataram.
+                </p>
+                <div href="#makna-ritual" class="scroll-cue" aria-label="Mulai menjelajah">
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="parang-edge"></div>
+
+        <section class="section" id="makna-ritual">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split">
+                    <div class="split-text reveal">
+                        <p class="kicker">Bab Satu</p>
+                        <h2>Esensi Ritual Adat</h2>
+                        <div class="parang-divider sm"></div>
+                        <p class="lead">Upacara adat bukan sekadar seremonial, melainkan jembatan komunikasi antara
+                            manusia, alam, dan Sang Pencipta.</p>
+                        <p>Di Yogyakarta, upacara adat adalah manifestasi dari konsep <em>Hamemayu Hayuning Bawana</em>.
+                            Setiap langkah ritual—mulai dari sesaji hingga doa yang dilantunkan—memiliki makna simbolis
+                            untuk menjaga harmoni kosmos. Upacara ini menjadi pengingat bahwa manusia hanyalah bagian
+                            kecil dari semesta yang harus senantiasa menghormati akar budayanya.</p>
+                    </div>
+                    <figure class="split-media reveal">
+                        <img data-src="ritual-img" alt="Prosesi upacara adat Yogyakarta" id="img-ritual" loading="lazy">
+                        <figcaption>Laku ritual &mdash; menyelaraskan denyut nadi manusia dengan alam.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="tahapan-upacara">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split reverse">
+                    <div class="split-text reveal">
+                        <p class="kicker">Bab Dua</p>
+                        <h2>Simbolisme &amp; Laku</h2>
+                        <div class="parang-divider sm"></div>
+                        <p class="lead">Setiap elemen dalam upacara menyimpan pesan filosofis yang mendalam tentang
+                            kehidupan.</p>
+                        <p>Penggunaan bunga setaman, kemenyan, hingga busana adat (seperti kain batik motif tertentu)
+                            bukanlah tanpa alasan. Semua benda dan tindakan dalam upacara adat memiliki fungsi sebagai
+                            media pengantar doa. Melalui tata cara yang pakem, masyarakat Yogyakarta menjaga kesinambungan
+                            tradisi agar tidak hilang ditelan zaman.</p>
+                    </div>
+                    <figure class="split-media reveal">
+                        <img data-src="simbol-img" alt="Detail sesaji dan atribut upacara" id="img-simbol"
+                            loading="lazy">
+                        <figcaption>Detail ritual &mdash; setiap elemen adalah doa yang terwujud.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="ragam-upacara">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="ukel ukel-tl"></span>
+                <span class="ukel ukel-br"></span>
+                <div class="centered reveal">
+                    <p class="kicker">Bab Tiga</p>
+                    <h2>Ragam Upacara Agung</h2>
+                    <div class="parang-divider"></div>
+                    <p class="lead narrow">Dari labuhan di pantai selatan hingga perayaan Sekaten, Yogyakarta terus
+                        menghidupkan napas tradisi.</p>
+                </div>
+                <figure class="wide-media reveal">
+                    <img data-src="upacara-grid-img" alt="Galeri foto berbagai upacara adat" id="img-upacara-grid"
+                        loading="lazy">
+                </figure>
+                <p class="centered-text reveal">Tradisi adalah warisan yang harus dirawat. Dengan memahami dan mengikuti
+                    upacara-upacara ini, kita sedang menjaga nyala api kebudayaan Yogyakarta tetap terang, membimbing
+                    generasi mendatang untuk tetap berpijak pada nilai-nilai luhur leluhur.</p>
+            </div>
+        </section>
+
+        <section class="section" id="tahapan-ritual">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="centered reveal">
+                    <p class="kicker">Bab Empat</p>
+                    <h2>Laku Ritual</h2>
+                    <p class="subtitle">Prosesi Bakti Tradisi</p>
+                    <div class="parang-divider sm center"></div>
+                    <p class="lead narrow">Upacara adat adalah laku batin. Sebuah perjalanan meniti tradisi yang
+                        menuntut ketulusan, keselarasan, dan penghormatan kepada semesta.</p>
+                </div>
+                <figure class="wide-media reveal">
+                    <img data-src="ritual-process-img" alt="Prosesi masyarakat melakukan upacara adat" id="img-process"
+                        loading="lazy">
+                </figure>
+                <div class="steps">
+                    <article class="step reveal">
+                        <span class="step-no">01</span>
+                        <h3>Persiapan Laku</h3>
+                        <p>Penyucian diri dan tempat, penyediaan sesaji sebagai simbol syukur, serta koordinasi para
+                            pelaksana ritual sesuai pakem adat setempat.</p>
+                    </article>
+                    <article class="step reveal">
+                        <span class="step-no">02</span>
+                        <h3>Pelantunan Doa</h3>
+                        <p>Pimpinan adat melantunkan mantra atau doa syukur (tata cara doa) sebagai bentuk komunikasi
+                            spiritual dan permohonan keselamatan.</p>
+                    </article>
+                    <article class="step reveal">
+                        <span class="step-no">03</span>
+                        <h3>Puncak Ritual</h3>
+                        <p>Pelaksanaan inti upacara (seperti larung, kirab, atau kenduri), di mana nilai-nilai luhur
+                            diaktualisasikan dalam gerak dan niat yang suci.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="parang-edge"></div>
+
+        <section class="section special" id="spirit-mataram">
+            <div class="special-intro reveal">
+                <p class="kicker gold">Bagian Khusus</p>
+                <h2 class="special-title">Ritual Adat<br><span>Napas Budaya Mataram</span></h2>
+                <div class="parang-divider center"></div>
+            </div>
+
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split">
+                    <div class="split-text reveal">
+                        <h3 class="block-title">Harmoni &amp; Keseimbangan</h3>
+                        <div class="parang-divider sm"></div>
+                        <p>Upacara adat Yogyakarta berakar kuat pada nilai <em>Hamemayu Hayuning Bawana</em>. Gaya
+                            pelaksanaan yang khidmat dan teratur mencerminkan kedisiplinan serta penghormatan masyarakat
+                            terhadap tatanan kosmos yang telah diwariskan oleh leluhur Mataram.</p><br>
+                        <p>Setiap detail prosesi adalah simbolis; dari busana yang dikenakan hingga rangkaian bunga
+                            setaman. Semua bukan sekadar hiasan, melainkan bahasa doa untuk menjaga keseimbangan antara
+                            manusia, sesama, dan Sang Pencipta.</p>
+                    </div>
+                    <figure class="split-media reveal">
+                        <img data-src="cultural-symbol-img" alt="Simbol kebudayaan Yogyakarta" id="img-keraton"
+                            loading="lazy">
+                        <figcaption>Laku Tradisi &mdash; merawat harmoni semesta.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="ukel ukel-tl"></span>
+                <span class="ukel ukel-br"></span>
+                <div class="centered reveal">
+                    <h3 class="block-title">Elemen Ritual</h3>
+                    <p class="subtitle">Makna di Balik Simbol</p>
+                    <div class="parang-divider sm center"></div>
+                </div>
+                <figure class="wide-media reveal">
+                    <img data-src="img-elements" alt="Berbagai elemen sesaji upacara" id="img-palette" loading="lazy">
+                </figure>
+                <div class="color-grid">
+                    <div class="color-card reveal" style="--c:#7a4a1e;">
+                        <span class="swatch"></span>
+                        <h4>Sesaji</h4>
+                        <p>Simbol rasa syukur dan bentuk penghormatan manusia kepada pemberi hidup.</p>
+                    </div>
+                    <div class="color-card reveal" style="--c:#3d2410;">
+                        <span class="swatch"></span>
+                        <h4>Busana Adat</h4>
+                        <p>Cermin etika dan identitas diri yang menunjukkan penghormatan pada acara.</p>
+                    </div>
+                    <div class="color-card reveal" style="--c:#8c2f24;">
+                        <span class="swatch"></span>
+                        <h4>Wewangian</h4>
+                        <p>Kemenyan atau bunga, sarana untuk menenangkan pikiran dan menyucikan niat.</p>
+                    </div>
+                    <div class="color-card reveal" style="--c:#15110d;">
+                        <span class="swatch"></span>
+                        <h4>Laku Batin</h4>
+                        <p>Niat tulus dalam hati, inti dari setiap upacara agar doa tersampaikan.</p>
+                    </div>
+                    <div class="color-card reveal" style="--c:#c89a2b;">
+                        <span class="swatch"></span>
+                        <h4>Waktu (Petung)</h4>
+                        <p>Pemilihan hari yang selaras dengan alam untuk mencapai keberkahan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="siklus-ritual">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split reverse">
+                    <div class="split-text reveal">
+                        <h3 class="block-title">Ritual dalam Laku Kehidupan</h3>
+                        <div class="parang-divider sm"></div>
+                        <ul class="lifecycle">
+                            <li><strong>Kelahiran &mdash; Mitoni/Sepasaran.</strong> Upacara syukur sebagai permohonan
+                                keselamatan agar sang anak tumbuh dalam naungan berkah Tuhan dan leluhur.</li>
+                            <li><strong>Kedewasaan &mdash; Laku Prihatin.</strong> Proses pendewasaan diri melalui
+                                ritual; mengajarkan tentang pengendalian hawa nafsu, kesabaran, dan keteguhan prinsip.
+                            </li>
+                            <li><strong>Kematian &mdash; Tradisi Nyewu.</strong> Menghadapi kepulangan dengan ikhlas;
+                                kesadaran bahwa hidup adalah perjalanan menuju asal muasal (Sang Khalik).</li>
+                            <li><strong>Adab &mdash; Tata Krama.</strong> Upacara adat menjadi sekolah kehidupan tentang
+                                <em>unggah-ungguh</em>; bagaimana menghargai sesama, alam, dan Yang Maha Kuasa.</li>
+                        </ul>
+                    </div>
+                    <figure class="split-media reveal">
+                        <img data-src="ritual-lifecycle-img" alt="Prosesi masyarakat menjalankan ritual adat"
+                            id="img-lifecycle" loading="lazy">
+                        <figcaption>Ritual &mdash; menuntun manusia di setiap langkah hayat.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <div class="parang-edge"></div>
+
+        <section class="section" id="galeri-ritual">
+            <div class="frame section-card wide reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="ukel ukel-tl"></span>
+                <span class="ukel ukel-br"></span>
+                <div class="centered reveal">
+                    <p class="kicker">Bab Tujuh</p>
+                    <h2>Galeri Ritual Interaktif</h2>
+                    <div class="parang-divider sm center"></div>
+                    <p class="lead narrow">Kekayaan laku budaya &mdash; arahkan kursor untuk menyingkap makna dan
+                        filosofi di balik setiap upacara adat Yogyakarta.</p>
+                </div>
+                <div class="motif-grid" id="motif-grid">
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="pelestarian-budaya">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split">
+                    <figure class="split-media reveal">
+                        <img data-src="preservation-img" alt="Tokoh adat mengajarkan anak muda cara membuat sesaji"
+                            id="img-preservation" loading="lazy">
+                        <figcaption>Generasi penerus, penjaga napas tradisi.</figcaption>
+                    </figure>
+                    <div class="split-text reveal">
+                        <p class="kicker">Bab Delapan</p>
+                        <h2>Pelestarian Warisan</h2>
+                        <div class="parang-divider sm"></div>
+                        <ul class="pillars">
+                            <li><strong>Edukasi Adat.</strong> Memberikan ruang bagi generasi muda untuk memahami makna
+                                di balik ritual dan tata cara adat langsung dari para sesepuh.</li>
+                            <li><strong>Dukungan Komunitas.</strong> Mengapresiasi abdi dalem dan komunitas seni agar
+                                upacara adat tetap hidup dan relevan di tengah modernitas.</li>
+                            <li><strong>Ritual Rutin.</strong> Menjaga siklus tradisi melalui upacara yang dilakukan
+                                secara terjadwal untuk menjaga keseimbangan alam dan spiritual.</li>
+                            <li><strong>Digitalisasi Budaya.</strong> Mengarsipkan tata cara dan filosofi upacara ke
+                                dalam format digital &mdash; agar nilai luhur tetap terjaga lintas generasi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section reveal" id="quote">
+            <div class="quote-bg"></div>
+            <div class="quote-overlay"></div>
+            <figure class="quote-inner reveal">
+                <span class="quote-mark">&ldquo;</span>
+                <blockquote>Upacara adat adalah napas keseimbangan semesta; tempat laku batin dan doa bertemu, menjaga
+                    harmoni antara manusia, alam, dan Sang Pencipta dalam bingkai Hamemayu Hayuning Bawana.
+                </blockquote>
+                <div class="parang-divider sm center light"></div>
+                <figcaption>Filosofi Upacara Adat Mataram Yogyakarta</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top-section">
+            <div class="footer-column">
+                <div class="footer-logo-box">
+                    <div class="footer-logo">Jogja<span>Culture</span></div>
+                    <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="column-title">Company</h4>
+                <div class="footer-links-vertical">
+                    <a href="halaman-info.html">About Us</a>
+                    <a href="halaman-privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain untuk kebudayaan Mataram</p>
+    </footer>
+
+    <a href="#upacara-adat" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
+        &#8593;
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
+    <script src="JS/halaman-upacara-adat.js"></script>
+    <script src="JS/Navigasi.js"></script>
+    <script src="JS/Dasar html.js"></script>
+    <script src="JS/btn-top.js"></script>
+    <script src="JS/in-out-page.js"></script>
+</body>
+
+</html>

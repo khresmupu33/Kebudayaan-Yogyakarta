@@ -962,3 +962,171 @@
         font-size: 1.8rem;
     }
 }
+
+/* ==== Halaman-batik responsive ==== */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .hero-bg {
+        animation: none;
+    }
+    .scroll-cue span {
+        animation: none;
+    }
+}
+
+@media (max-width: 980px) {
+    .color-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+    .motif-grid {
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    body {
+        font-size: 17px;
+    }
+
+    .section {
+        padding: 4rem 1.1rem;
+    }
+
+    .section-card {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .split.reverse .split-text {
+        order: 1;
+    }
+
+    .split.reverse .split-media {
+        order: 2;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .color-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .motif-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .corner {
+        width: 54px;
+        height: 54px;
+    }
+
+    .corner::before {
+        width: 54px;
+    }
+
+    .corner::after {
+        height: 54px;
+    }
+
+    .lung {
+        width: 60px;
+        height: 60px;
+    }
+
+    .h2 {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .motif-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .hero-card {
+        padding: 3rem 0; 
+        width: 100vw;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Responsive Halaman event */
+@media (max-width: 768px) {
+    .header {
+        padding: 2rem 1.5rem;
+    }
+
+    .header-content {
+        padding: 1.5rem 0;
+    }
+
+    .filter-section {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .filter-buttons {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .main-content {
+        padding: 1rem 1rem 2.5rem;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .event-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 1.75rem;
+    }
+
+    .header-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .filter-btn {
+        font-size: 0.8rem;
+        padding: 0.45rem 0.85rem;
+    }
+
+    .event-card-title {
+        font-size: 1.2rem;
+    }
+}

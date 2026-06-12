@@ -5,8 +5,6 @@
     position: relative;
 }
 
-
-
 :root {
     --gold: #b89243;
     --gold-light: #d4a84b;
@@ -168,6 +166,7 @@ h1,h1,h3 {
 }
 
 .hero-subtitle {
+    font-weight: bold;
     font-family: 'Josefin Sans', serif;
     font-weight: 300;
     letter-spacing: 4px;
@@ -194,6 +193,17 @@ h1,h1,h3 {
     width: 60px;
     height: 1px;
     background: var(--gold);
+}
+
+.intro-badge span {
+    font-family: 'Josefin Sans', serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dark) !important; 
+    border: 1px solid var(--gold-dark) !important; 
+    padding: 8px 20px;
+    border-radius: 30px;
+    transition: var(--transition);
 }
 
 .divider-diamond {
@@ -268,7 +278,8 @@ h1,h1,h3 {
 .intro-text {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    color: var(--text-medium);
+    font-weight: bold;
+    color: var(--text-dark);
     line-height: 1.9;
     margin-top: 24px;
 }
@@ -464,8 +475,8 @@ h1,h1,h3 {
 }
 
 .card-desc {
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--text-medium);
+    font-family: 'Josefin Sans', serif;
+    color: var(--text-dark);
     line-height: 1.8;
     margin-bottom: 24px;
 }
@@ -527,7 +538,7 @@ h1,h1,h3 {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url(../IMG/);
+    background-image: url(../IMG/batik-parang.jpg);
     background-size: 400px;
     background-repeat: repeat;
     opacity: 0.03;

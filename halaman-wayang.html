@@ -5,61 +5,539 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogja Culture | Ragam Budaya Mataram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="CSS/wayang.css">
     <link rel="stylesheet" href="CSS/Dasar HTML.css">
     <link rel="stylesheet" href="CSS/Navigasi.css">
-    <link rel="stylesheet" href="CSS/budaya.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/quary.css">
     <link rel="stylesheet" href="CSS/btn-top.css">
     <link rel="stylesheet" href="CSS/keyframes.css">
     <link rel="stylesheet" href="CSS/in-out-page.css">
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body id="budaya">
+<body>
     <div class="in-page"></div>
     <div class="out-page"></div>
 
     <header>
-        <nav class="navbar">
-            <div class="nav-container"
-                style="display: flex; justify-content: space-between; align-items: center; height: 100%; max-width: 1200px; margin: 0 auto; width: 100%;">
-                <div class="logo"
-                    style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream);">
-                    <a href="halaman-beranda.html" style="color: inherit; text-decoration: none;">Jogja<span
-                            style="color: var(--gold);">Culture</span></a>
+        <nav class="navbar transition-all duration-300">
+            <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
+                <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
+
+                <div class="nav-links hidden md:flex gap-x-1 items-center font-medium">
+                    <a href="halaman-beranda.html">Beranda</a>
+                    <a href="halaman-sejarah.html">Sejarah</a>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-budaya.html" class="outline-none">
+                            <span>Budaya</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-52 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-batik.html">Batik</a>
+                            <a href="halaman-tarian-adat.html">Tarian Adat</a>
+                            <a href="halaman-wayang.html">Wayang</a>
+                            <a href="halaman-upacara-adat.html">Upacara Adat</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-kuliner.html" class="outline-none">
+                            <span>Kuliner</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-makanan-tradisional.html">Makanan Tradisional</a>
+                            <a href="halaman-jajanan-khas.html">Jajanan Khas</a>
+                            <a href="halaman-minuman-khas.html">Minuman Khas</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-destinasi.html" class="outline-none">
+                            <span>Destinasi</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-wisata-alam.html">Wisata Alam</a>
+                            <a href="halaman-wisata-sejarah.html">Wisata Sejarah</a>
+                            <a href="halaman-wisata-budaya.html">Wisata Budaya</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-teknologi.html" class="outline-none">
+                            <span>Teknologi</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-smart-city.html">Smart City</a>
+                            <a href="halaman-kota-pelajar.html">Kota Pelajar</a>
+                            <a href="halaman-industri-modern.html">Industri Modern</a>
+                        </div>
+                    </div>
+
+                    <a href="halaman-peta-jogja.html">Peta</a>
+                    <a href="halaman-info.html">Tentang Kami</a>
                 </div>
 
-                <ul class="nav-links" style="display: flex; list-style: none; gap: 1.5rem; align-items: center;">
-                    <li><a href="halaman-beranda.html">Beranda</a></li>
-                    <li><a href="halaman-sejarah.html">Sejarah</a></li>
-                    <li><a href="halaman-budaya.html" style="color: var(--gold);">Budaya</a></li>
-                    <li><a href="halaman-kuliner.html">Kuliner</a></li>
-                    <li><a href="halaman-destinasi.html">Destinasi</a></li>
-                    <li><a href="halaman-teknologi.html">Teknologi</a></li>
-                    <li><a href="halaman-peta-jogja.html">Peta</a></li>
-                    <li><a href="halaman-info.html">Tentang Kami</a></li>
-                </ul>
+                <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-12">
+                    <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
+                    <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                        <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col space-y-6 overflow-y-auto">
+                    <a href="halaman-beranda.html" class="mobile-link">Beranda</a>
+                    <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-budaya.html" class="mobile-link flex-grow">Budaya</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-batik.html" class="mobile-sublink">Batik</a>
+                            <a href="halaman-tarian-adat.html" class="mobile-sublink">Tarian Adat</a>
+                            <a href="halaman-wayang.html" class="mobile-sublink">Wayang</a>
+                            <a href="halaman-upacara-adat.html" class="mobile-sublink">Upacara Adat</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-kuliner.html" class="mobile-link flex-grow">Kuliner</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-makanan-tradisional.html" class="mobile-sublink">Makanan
+                                Tradisional</a>
+                            <a href="halaman-jajanan-khas.html" class="mobile-sublink">Jajanan Khas</a>
+                            <a href="halaman-minuman-khas.html" class="mobile-sublink">Minuman Khas</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-destinasi.html" class="mobile-link flex-grow">Destinasi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-wisata-alam.html" class="mobile-sublink">Wisata Alam</a>
+                            <a href="halaman-wisata-sejarah.html" class="mobile-sublink">Wisata Sejarah</a>
+                            <a href="halaman-wisata-budaya.html" class="mobile-sublink">Wisata Budaya</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-teknologi.html" class="mobile-link flex-grow">Teknologi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-smart-city.html" class="mobile-sublink">Smart City</a>
+                            <a href="halaman-kota-pelajar.html" class="mobile-sublink">Kota Pelajar</a>
+                            <a href="halaman-industri-modern.html" class="mobile-sublink">Industri Modern</a>
+                        </div>
+                    </div>
+
+                    <a href="halaman-peta-jogja.html" class="mobile-link">Peta</a>
+                    <a href="halaman-info.html" class="mobile-link">Tentang Kami</a>
+                </div>
             </div>
         </nav>
     </header>
 
-    <main class="container" style="max-width: 1200px; margin: 70px auto 0 auto; padding: 5rem 2rem;">
+    <main id="wayang">
 
+        <header class="hero reveal" id="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="frame hero-card">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="ukel ukel-tl"></span>
+                <span class="ukel ukel-br"></span>
+                <p class="hero-eyebrow">Dunia Bayang, Warisan Agung Budaya Yogyakarta</p>
+                <h1 class="hero-title">Wayang Kulit<br><span>Ngayogyakarta</span></h1>
+                <div class="parang-divider"></div>
+                <p class="hero-sub">Menyingkap tirai kelir, di mana cahaya dan bayang bercerita tentang
+                    hakikat hidup, dharma, dan perjalanan jiwa manusia.
+                </p>
+                <div href="#apa-itu" class="scroll-cue" aria-label="Mulai menjelajah">
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="parang-edge"></div>
+
+        <section class="section" id="apa-itu">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split">
+                    <div class="split-text reveal">
+                        <p class="kicker">Bab Satu</p>
+                        <h2>Apa Itu Wayang</h2>
+                        <div class="parang-divider sm"></div>
+                        <p class="lead">Wayang bukan sekadar pertunjukan bayangan; ia adalah cermin kehidupan.</p>
+                        <p>Secara etimologis berasal dari kata <em>ma hyang</em> (menuju Tuhan), wayang adalah sarana
+                            edukasi, dakwah, dan hiburan yang mendalam. Di balik layar putih yang disebut
+                            <em>kelir</em>, seorang dalang menggerakkan tokoh-tokoh kulit kerbau, menghidupkan epos
+                            Ramayana dan Mahabharata. Wayang adalah sintesis antara sastra, seni rupa, musik gamelan,
+                            dan filsafat kebatinan yang telah diakui dunia sebagai Warisan Mahakarya Takbenda dari
+                            UNESCO.</p>
+                    </div>
+                    <figure class="split-media reveal">
+                        <img data-src="hero-card-img" alt="Dalang memainkan wayang kulit di balik kelir" id="img-dalang"
+                            loading="lazy">
+                        <figcaption>Sang Dalang &mdash; konduktor kehidupan di balik layar.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="filosofi-tokoh">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split reverse">
+                    <div class="split-text reveal">
+                        <p class="kicker">Bab Dua</p>
+                        <h2>Filosofi Tokoh &amp; Seni Tatah</h2>
+                        <div class="parang-divider sm"></div>
+                        <p class="lead">Setiap goresan tatahan pada kulit kerbau adalah manifestasi dari watak manusia.
+                        </p>
+                        <p>Tokoh wayang tidak dibuat sembarangan. Proses <em>tatah</em> (memahat) dan <em>sungging</em>
+                            (mewarnai) menentukan karakter: apakah ia berwatak halus, gagah, atau raksasa yang angkara
+                            murka. Warna emas pada badan wayang melambangkan keluhuran budi, sementara bentuk mata dan
+                            posisi kepala menjadi simbol kedewasaan spiritual. Wayang adalah kitab berjalan yang
+                            menuntun manusia mengenali dirinya sendiri.</p>
+                    </div>
+                    <figure class="split-media reveal">
+                        <img data-src="tatah-img" alt="Detail seni tatah wayang kulit" id="img-tatah" loading="lazy">
+                        <figcaption>Ketelitian tatah &mdash; menentukan watak dan kedalaman karakter.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="ragam-wayang">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="ukel ukel-tl"></span>
+                <span class="ukel ukel-br"></span>
+                <div class="centered reveal">
+                    <p class="kicker">Bab Tiga</p>
+                    <h2>Ragam Tokoh Wayang</h2>
+                    <div class="parang-divider"></div>
+                    <p class="lead narrow">Dari Pandawa yang bijaksana hingga Kurawa yang penuh duka, setiap karakter
+                        mewakili sisi kemanusiaan kita.</p>
+                </div>
+                <figure class="wide-media reveal">
+                    <img data-src="wayang-img" alt="Barisan tokoh wayang kulit" id="img-wayang-grid" loading="lazy">
+                </figure>
+                <p class="centered-text reveal">Wayang Purwa adalah semesta yang luas. Ada tokoh yang meniti jalan
+                    <em>dharma</em>, ada pula yang terjerat nafsu duniawi. Memahami wayang berarti memahami dinamika
+                    pertarungan abadi antara kebaikan dan keburukan yang selalu terjadi di dalam diri setiap manusia.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="laku-dalang">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="centered reveal">
+                    <p class="kicker">Bab Empat</p>
+                    <h2>Laku Sang Dalang</h2>
+                    <p class="subtitle">Proses Penyajian</p>
+                    <div class="parang-divider sm center"></div>
+                    <p class="lead narrow">Mendalang adalah meditasi. Sebuah laku yang menuntut kepekaan,
+                        improvisasi, dan kerendahan hati di hadapan penonton dan Sang Pencipta.</p>
+                </div>
+                <figure class="wide-media reveal">
+                    <img data-src="dalang-process-img" alt="Dalang sedang memainkan wayang dengan iringan gamelan"
+                        id="img-process" loading="lazy">
+                </figure>
+                <div class="steps">
+                    <article class="step reveal">
+                        <span class="step-no">01</span>
+                        <h3>Panggelaran</h3>
+                        <p>Persiapan kelir (layar), debog (batang pisang), dan penataan wayang sesuai urutan
+                            cerita. Tahap awal membangun semesta bayang.</p>
+                    </article>
+                    <article class="step reveal">
+                        <span class="step-no">02</span>
+                        <h3>Suluk &amp; Janturan</h3>
+                        <p>Dalang melantunkan tembang pembuka (suluk) dan narasi deskriptif (janturan)
+                            untuk menghidupkan suasana dan karakter tokoh yang muncul.</p>
+                    </article>
+                    <article class="step reveal">
+                        <span class="step-no">03</span>
+                        <h3>Tutur &amp; Sabet</h3>
+                        <p>Dialog filosofis (tutur) antara tokoh, dipadukan dengan keterampilan gerak wayang (sabet)
+                            yang dinamis &mdash; puncak dari sebuah lakon pewayangan.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="parang-edge"></div>
+
+        <section class="section special" id="jati-diri-mataram">
+            <div class="special-intro reveal">
+                <p class="kicker gold">Bagian Khusus</p>
+                <h2 class="special-title">Wayang Kulit<br><span>Jati Diri Mataram</span></h2>
+                <div class="parang-divider center"></div>
+            </div>
+
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split">
+                    <div class="split-text reveal">
+                        <h3 class="block-title">Warisan Agung &amp; Pakem Keraton</h3>
+                        <div class="parang-divider sm"></div>
+                        <p>Wayang kulit Yogyakarta memiliki pakem yang kuat, berakar dari tradisi Mataram.
+                            Gaya Yogyakarta (Yogya) dikenal dengan tokoh yang cenderung lebih "gagah" dan
+                            tegas, mencerminkan karakter kesatria Mataram yang disiplin.
+                        </p><br>
+                        <p>Kelestarian wayang dijaga melalui <em>sabetan</em> (gerak wayang) dan <em>gending</em>
+                            (musik) yang khas. Tokoh seperti Arjuna, Bima, dan Yudhistira bukan sekadar boneka,
+                            melainkan simbol dari laku hidup manusia dalam mencapai kesempurnaan batin.</p>
+                    </div>
+                    <figure class="split-media reveal">
+                        <img data-src="wayang-classic-img" alt="Wayang Kulit tokoh Arjuna" id="img-keraton"
+                            loading="lazy">
+                        <figcaption>Wayang Gaya Yogya &mdash; sumber pakem pewayangan.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="ukel ukel-tl"></span>
+                <span class="ukel ukel-br"></span>
+                <div class="centered reveal">
+                    <h3 class="block-title">Simfoni Karakter</h3>
+                    <p class="subtitle">Sifat Tokoh Pewayangan</p>
+                    <div class="parang-divider sm center"></div>
+                </div>
+                <figure class="wide-media reveal">
+                    <img data-src="img-karakter" alt="Berbagai karakter tokoh wayang" id="img-palette" loading="lazy">
+                </figure>
+                <div class="color-grid">
+                    <div class="color-card reveal" style="--c:#7a4a1e;">
+                        <span class="swatch"></span>
+                        <h4>Luruh</h4>
+                        <p>Tokoh halus, bijaksana, tunduk pada kehendak Tuhan (Contoh: Yudhistira).</p>
+                    </div>
+                    <div class="color-card reveal" style="--c:#3d2410;">
+                        <span class="swatch"></span>
+                        <h4>Gagah</h4>
+                        <p>Tokoh kesatria, pemberani, berwibawa dan kuat dalam pendirian.</p>
+                    </div>
+                    <div class="color-card reveal" style="--c:#8c2f24;">
+                        <span class="swatch"></span>
+                        <h4>Brangasan</h4>
+                        <p>Tokoh yang temperamental, jujur, namun mudah tersulut emosi.</p>
+                    </div>
+                    <div class="color-card reveal" style="--c:#15110d;">
+                        <span class="swatch"></span>
+                        <h4>Butha</h4>
+                        <p>Tokoh raksasa, simbol angkara murka dan hawa nafsu yang tak terkendali.</p>
+                    </div>
+                    <div class="color-card reveal" style="--c:#c89a2b;">
+                        <span class="swatch"></span>
+                        <h4>Dewa</h4>
+                        <p>Simbol cahaya, pencerahan, dan otoritas ilahi yang menuntun lakon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section" id="wayang-siklus">
+                <div class="frame section-card reveal">
+                    <span class="corner corner-tl"></span>
+                    <span class="corner corner-tr"></span>
+                    <span class="corner corner-bl"></span>
+                    <span class="corner corner-br"></span>
+                    <span class="lung lung-tl"></span>
+                    <span class="lung lung-br"></span>
+                    <div class="split reverse">
+                        <div class="split-text reveal">
+                            <h3 class="block-title">Wayang dalam Laku Kehidupan</h3>
+                            <div class="parang-divider sm"></div>
+                            <ul class="lifecycle">
+                                <li><strong>Kelahiran &mdash; Murwakala.</strong> Simbol pembersihan diri;
+                                    doa agar anak terhindar dari marabahaya dan senantiasa dalam lindungan Tuhan.</li>
+                                <li><strong>Kedewasaan &mdash; Panji.</strong> Kisah pencarian jati diri;
+                                    mengajarkan tentang keteguhan prinsip, kesabaran, dan pengabdian pada kebenaran.
+                                </li>
+                                <li><strong>Kematian &mdash; Layang Kalimasada.</strong> Menghadapi akhir hayat dengan
+                                    ikhlas; kesadaran bahwa hidup adalah perjalanan menuju asal muasal.</li>
+                                <li><strong>Adab.</strong> Wayang mengajarkan <em>unggah-ungguh</em>;
+                                    bagaimana bersikap kepada yang tua, sesama, dan kepada Sang Pencipta melalui
+                                    tokoh-tokohnya.</li>
+                            </ul>
+                        </div>
+                        <figure class="split-media reveal">
+                            <img data-src="wayang-lifecycle-img" alt="Pertunjukan wayang dalam upacara adat"
+                                id="img-lifecycle" loading="lazy">
+                            <figcaption>Wayang &mdash; menuntun manusia di setiap langkah hayat.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <div class="parang-edge"></div>
+
+            <section class="section" id="galeri-wayang">
+                <div class="frame section-card wide reveal">
+                    <span class="corner corner-tl"></span>
+                    <span class="corner corner-tr"></span>
+                    <span class="corner corner-bl"></span>
+                    <span class="corner corner-br"></span>
+                    <span class="ukel ukel-tl"></span>
+                    <span class="ukel ukel-br"></span>
+                    <div class="centered reveal">
+                        <p class="kicker">Bab Tujuh</p>
+                        <h2>Galeri Tokoh Interaktif</h2>
+                        <div class="parang-divider sm center"></div>
+                        <p class="lead narrow">Karakter dalam bayang &mdash; arahkan kursor untuk menyingkap
+                            watak dan filosofi di balik setiap tokoh.</p>
+                    </div>
+                    <div class="motif-grid" id="motif-grid">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="pelestarian">
+                <div class="frame section-card reveal">
+                    <span class="corner corner-tl"></span>
+                    <span class="corner corner-tr"></span>
+                    <span class="corner corner-bl"></span>
+                    <span class="corner corner-br"></span>
+                    <span class="lung lung-tl"></span>
+                    <span class="lung lung-br"></span>
+                    <div class="split">
+                        <figure class="split-media reveal">
+                            <img data-src="preservation-img" alt="Maestro dalang mengajar anak-anak menabuh gamelan"
+                                id="img-preservation" loading="lazy">
+                            <figcaption>Generasi penerus, penjaga kelir.</figcaption>
+                        </figure>
+                        <div class="split-text reveal">
+                            <p class="kicker">Bab Delapan</p>
+                            <h2>Pelestarian Warisan</h2>
+                            <div class="parang-divider sm"></div>
+                            <ul class="pillars">
+                                <li><strong>Edukasi Pedalangan.</strong> Memberikan ruang bagi anak muda
+                                    untuk belajar seni sabet dan suluk secara langsung dari maestro.</li>
+                                <li><strong>Dukungan Seniman.</strong> Mengapresiasi para pengrajin wayang dan
+                                    penabuh gamelan agar kesenian ini tetap bernafas dalam ekonomi kreatif.</li>
+                                <li><strong>Pagelaran Rutin.</strong> Merawat tradisi melalui pertunjukan
+                                    berkala yang tetap relevan bagi masyarakat modern.</li>
+                                <li><strong>Digitalisasi Kelir.</strong> Mengabadikan epos dan karakter wayang
+                                    ke dalam format digital &mdash; menjaga agar bayangan tidak pernah hilang.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quote-section reveal" id="quote">
+                <div class="quote-bg"></div>
+                <div class="quote-overlay"></div>
+                <figure class="quote-inner reveal">
+                    <span class="quote-mark">&ldquo;</span>
+                    <blockquote>Wayang adalah cermin kehidupan; tempat cahaya dan bayang
+                        bermain, menceritakan rahasia tentang dharma dan perjalanan jiwa manusia.
+                    </blockquote>
+                    <div class="parang-divider sm center light"></div>
+                    <figcaption>Filosofi Wayang Purwa Ngayogyakarta</figcaption>
+                </figure>
+            </section>
     </main>
 
     <footer>
-        <div class="footer-logo">Jogja<span>Culture</span></div>
-        <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
-        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain dengan rasa hormat kepada tanah Mataram</p>
+        <div class="footer-top-section">
+            <div class="footer-column">
+                <div class="footer-logo-box">
+                    <div class="footer-logo">Jogja<span>Culture</span></div>
+                    <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="column-title">Company</h4>
+                <div class="footer-links-vertical">
+                    <a href="halaman-info.html">About Us</a>
+                    <a href="halaman-privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain untuk kebudayaan Mataram</p>
     </footer>
 
-    <a href="#budaya" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
+    <a href="#wayang" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
         &#8593;
     </a>
 
@@ -70,6 +548,7 @@
             }
         });
     </script>
+    <script src="JS/halaman-wayang.js"></script>
     <script src="JS/Navigasi.js"></script>
     <script src="JS/Dasar html.js"></script>
     <script src="JS/btn-top.js"></script>

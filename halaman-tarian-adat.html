@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogja Culture | Ragam Batik Mataram</title>
+    <title>Jogja Culture | Tarian Adat Ngayogyakarta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="CSS/tarian-adat.css">
     <link rel="stylesheet" href="CSS/Dasar HTML.css">
     <link rel="stylesheet" href="CSS/Navigasi.css">
     <link rel="stylesheet" href="CSS/footer.css">
@@ -16,64 +18,537 @@
     <link rel="stylesheet" href="CSS/btn-top.css">
     <link rel="stylesheet" href="CSS/keyframes.css">
     <link rel="stylesheet" href="CSS/in-out-page.css">
-    <link rel="stylesheet" href="CSS/tarian-adat.css">
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body id="tarian-adat">
+<body>
     <div class="in-page"></div>
     <div class="out-page"></div>
 
     <header>
-        <nav class="navbar">
-            <div class="nav-container"
-                style="display: flex; justify-content: space-between; align-items: center; height: 100%; max-width: 1200px; margin: 0 auto; width: 100%;">
-                <div class="logo"
-                    style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream);">
-                    <a href="halaman-beranda.html" style="color: inherit; text-decoration: none;">Jogja<span
-                            style="color: var(--gold);">Culture</span></a>
+        <nav class="navbar transition-all duration-300">
+            <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
+                <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
+
+                <div class="nav-links hidden md:flex gap-x-1 items-center font-medium">
+                    <a href="halaman-beranda.html">Beranda</a>
+                    <a href="halaman-sejarah.html">Sejarah</a>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-budaya.html" class="outline-none">
+                            <span>Budaya</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-52 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-batik.html">Batik</a>
+                            <a href="halaman-tarian-adat.html">Tarian Adat</a>
+                            <a href="halaman-wayang.html">Wayang</a>
+                            <a href="halaman-upacara-adat.html">Upacara Adat</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-kuliner.html" class="outline-none">
+                            <span>Kuliner</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-makanan-tradisional.html">Makanan Tradisional</a>
+                            <a href="halaman-jajanan-khas.html">Jajanan Khas</a>
+                            <a href="halaman-minuman-khas.html">Minuman Khas</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-destinasi.html" class="outline-none">
+                            <span>Destinasi</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-wisata-alam.html">Wisata Alam</a>
+                            <a href="halaman-wisata-sejarah.html">Wisata Sejarah</a>
+                            <a href="halaman-wisata-budaya.html">Wisata Budaya</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent relative group">
+                        <a href="halaman-teknologi.html" class="outline-none">
+                            <span>Teknologi</span>
+                            <i data-lucide="chevron-down"
+                                class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="dropdown-content absolute top-full left-0 mt-4 w-56 rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 shadow-xl border border-white/10">
+                            <a href="halaman-smart-city.html">Smart City</a>
+                            <a href="halaman-kota-pelajar.html">Kota Pelajar</a>
+                            <a href="halaman-industri-modern.html">Industri Modern</a>
+                        </div>
+                    </div>
+
+                    <a href="halaman-peta-jogja.html">Peta</a>
+                    <a href="halaman-info.html">Tentang Kami</a>
                 </div>
 
-                <ul class="nav-links" style="display: flex; list-style: none; gap: 1.5rem; align-items: center;">
-                    <li><a href="halaman-beranda.html">Beranda</a></li>
-                    <li><a href="halaman-sejarah.html">Sejarah</a></li>
-                    <li><a href="halaman-budaya.html" style="color: var(--gold);">Budaya</a></li>
-                    <li><a href="halaman-kuliner.html">Kuliner</a></li>
-                    <li><a href="halaman-destinasi.html">Destinasi</a></li>
-                    <li><a href="halaman-teknologi.html">Teknologi</a></li>
-                    <li><a href="halaman-peta-jogja.html">Peta</a></li>
-                    <li><a href="halaman-info.html">Tentang Kami</a></li>
-                </ul>
+                <button class="md:hidden p-2 text-white" onclick="handleMobileNav()">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="fixed inset-0 w-screen h-screen z-[100] flex flex-col p-6 transform transition-transform duration-300 ease-in-out translate-x-full md:hidden backdrop-blur-xl">
+                <div class="flex items-center justify-between mb-12">
+                    <div class="logo text-white">Jogja<span class="text-gold">Culture</span></div>
+                    <button class="text-white p-2 relative z-[10001]" onclick="handleMobileNav()">
+                        <i data-lucide="x" class="w-8 h-8 hover:text-red-400 transition-colors"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col space-y-6 overflow-y-auto">
+                    <a href="halaman-beranda.html" class="mobile-link">Beranda</a>
+                    <a href="halaman-sejarah.html" class="mobile-link">Sejarah</a>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-budaya.html" class="mobile-link flex-grow">Budaya</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-batik.html" class="mobile-sublink">Batik</a>
+                            <a href="halaman-tarian-adat.html" class="mobile-sublink">Tarian Adat</a>
+                            <a href="halaman-wayang.html" class="mobile-sublink">Wayang</a>
+                            <a href="halaman-upacara-adat.html" class="mobile-sublink">Upacara Adat</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-kuliner.html" class="mobile-link flex-grow">Kuliner</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-makanan-tradisional.html" class="mobile-sublink">Makanan
+                                Tradisional</a>
+                            <a href="halaman-jajanan-khas.html" class="mobile-sublink">Jajanan Khas</a>
+                            <a href="halaman-minuman-khas.html" class="mobile-sublink">Minuman Khas</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-destinasi.html" class="mobile-link flex-grow">Destinasi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-wisata-alam.html" class="mobile-sublink">Wisata Alam</a>
+                            <a href="halaman-wisata-sejarah.html" class="mobile-sublink">Wisata Sejarah</a>
+                            <a href="halaman-wisata-budaya.html" class="mobile-sublink">Wisata Budaya</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-dropdown">
+                        <div class="w-full flex justify-between items-center">
+                            <a href="halaman-teknologi.html" class="mobile-link flex-grow">Teknologi</a>
+                            <button class="p-2 text-white toggle-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-dropdown-content hidden flex flex-col pl-4 space-y-4 mt-4">
+                            <a href="halaman-smart-city.html" class="mobile-sublink">Smart City</a>
+                            <a href="halaman-kota-pelajar.html" class="mobile-sublink">Kota Pelajar</a>
+                            <a href="halaman-industri-modern.html" class="mobile-sublink">Industri Modern</a>
+                        </div>
+                    </div>
+
+                    <a href="halaman-peta-jogja.html" class="mobile-link">Peta</a>
+                    <a href="halaman-info.html" class="mobile-link">Tentang Kami</a>
+                </div>
             </div>
         </nav>
     </header>
+    <main id="tarian-adat">
+        <header class="hero reveal" id="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="frame hero-card">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="ukel ukel-tl"></span>
+                <span class="ukel ukel-br"></span>
+                <p class="hero-eyebrow">Tarian Tradisional Nusantara, Ekspresi Jiwa dan Warisan Budaya</p>
+                <h1 class="hero-title">Filosofi Gerak<br><span>Ngayogyakarta</span></h1>
+                <div class="parang-divider"></div>
+                <p class="hero-sub">Menelusuri napas, ritme, dan detak jantung leluhur yang terlukis 
+                    dalam harmoni gerak dan alunan musik tanah air.
+                </p>
+                <div href="#apa-itu" class="scroll-cue" aria-label="Mulai menjelajah">
+                    <span></span>
+                </div>
+        </header>
 
-    <header class="hero-batik">
-        <div class="hero-batik-content">
-            <span class="hero-tagline">MAHAKARYA KAIN JOGJA</span>
-            <h1 class="hero-title">Filosofi Batik Ngayogyakarta</h1>
-            <p class="hero-desc">
-                Menelusuri sejarah goresan malam adiluhung yang merekam harmoni kosmologi, 
-                kearifan lokal, serta identitas takhta Mataram Islam di atas bentangan kain mori.
-            </p>
-            <div class="hero-quote">
-                "Goresan canting malam yang merajut filosofi, ketegasan hidup, dan keagungan takhta Mataram Islam."
+        <div class="parang-edge"></div>
+
+        <section class="section" id="apa-itu">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl" ></span>
+                <span class="corner corner-tr" ></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split">
+                    <div class="split-text reveal">
+                        <p class="kicker">Bab Satu</p>
+                        <h2>Apa Itu Tarian Adat</h2>
+                        <div class="parang-divider sm"></div>
+                        <p class="lead">Tarian bukanlah sekadar gerak tubuh, melainkan doa yang divisualisasikan 
+                            dan napas yang menyatu dengan sejarah.</p>
+                        <p>Pada setiap ayunan tangan dan entakan kaki, tersimpan narasi kehidupan, 
+                            penghormatan kepada alam, serta ungkapan syukur kepada Sang Pencipta. 
+                            Tari adat adalah bahasa universal masyarakat Nusantara &mdash; sebuah media 
+                            untuk menjaga keseimbangan kosmis dan meneruskan nilai luhur dari 
+                            generasi ke generasi dengan keanggunan yang terjaga.</p>
+                    </div>
+                    <figure class="split-media reveal">
+                        <img data-src="img-hero-tari" alt="Penari tradisional sedang melakukan gerakan dalam pementasan" id="img-essence"
+                             loading="lazy">
+                        <figcaption>Ketulusan dalam gerak &mdash; awal dari sebuah pementasan sakral.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="filosofi-gerak">
+            <div class="frame section-card reveal">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+                <span class="lung lung-tl"></span>
+                <span class="lung lung-br"></span>
+                <div class="split reverse">
+                    <div class="split-text reveal">
+                        <p class="kicker">Bab Dua</p>
+                        <h2>Filosofi Gerak &amp; Ritual</h2>
+                        <div class="parang-divider sm"></div>
+                        <p class="lead">Di atas panggung atau tanah adat, sang penari berdiri di ambang 
+                            batas antara dunia manusia dan dunia spiritual.</p>
+                        <p>Gerak tari &mdash; dari yang lembut hingga yang dinamis &mdash; adalah 
+                            simbol: kesetiaan pada tradisi, ketangkasan dalam perjuangan, 
+                            dan kebersamaan dalam kehidupan bermasyarakat. Setiap pola lantai 
+                            dan mudra tangan memiliki makna mendalam yang dibaca oleh mereka yang 
+                            memahami getaran budaya nenek moyang.</p>
+                    </div>
+                    <figure class="split-media reveal">
+                        <img data-src="img-nusantara" alt="Penari adat dengan busana tradisional yang indah" id="img-nusantara" loading="lazy">
+                        <figcaption>Busana dan ritme &mdash; identitas suci yang ditarikan.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="ragam-nusantara">
+    <div class="frame section-card reveal">
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+        <span class="ukel ukel-tl"></span>
+        <span class="ukel ukel-br"></span>
+        <div class="centered reveal">
+            <p class="kicker">Bab Tiga</p>
+            <h2>Ragam Tarian Nusantara</h2>
+            <div class="parang-divider"></div>
+            <p class="lead narrow">Dari pesisir hingga pegunungan, tarian Indonesia berbicara dalam 
+                ribuan dialek gerak yang memukau.</p>
+        </div>
+        <figure class="wide-media reveal">
+            <img data-src="img-ragam" alt="Kolase beragam tarian tradisional dari berbagai daerah di Indonesia" id="img-ragam" loading="lazy">
+        </figure>
+        <p class="centered-text reveal">Tari Pesisir memancarkan energi ceria dan keterbukaan terhadap pengaruh luar; 
+            tarian pedalaman (seperti tari klasik keraton) memeluk ritme yang tenang, khidmat, dan aturan 
+            gerak yang penuh makna spiritual. Keduanya adalah satu kesatuan &mdash; bukti betapa kayanya 
+            imajinasi dan jati diri Nusantara.</p>
+    </div>
+</section>
+
+<section class="section" id="laku-prihatin">
+    <div class="frame section-card reveal">
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+        <span class="lung lung-tl"></span>
+        <span class="lung lung-br"></span>
+        <div class="centered reveal">
+            <p class="kicker">Bab Empat</p>
+            <h2>Laku Penempaan Diri</h2>
+            <p class="subtitle">Proses Pembelajaran Tari</p>
+            <div class="parang-divider sm center"></div>
+            <p class="lead narrow">Menari adalah meditasi gerak. Sebuah laku prihatin yang menuntut 
+                kedisiplinan dan kehalusan rasa.</p>
+        </div>
+        <figure class="wide-media reveal">
+            <img data-src="img-process" alt="Penari tradisional sedang berlatih dengan konsentrasi tinggi" id="img-process" loading="lazy">
+        </figure>
+        <div class="steps">
+            <article class="step reveal">
+                <span class="step-no">01</span>
+                <h3>Wirogo</h3>
+                <p>Penguasaan keterampilan gerak fisik. Tubuh dibentuk sedemikian rupa agar 
+                    mampu membawakan gerak yang luwes, tangkas, dan presisi.</p>
+            </article>
+            <article class="step reveal">
+                <span class="step-no">02</span>
+                <h3>Wiroso</h3>
+                <p>Tahap penghayatan. Penari mulai menyatukan perasaan ke dalam setiap gerak, 
+                    mengubah teknis fisik menjadi bahasa emosi yang dapat dirasakan penonton.</p>
+            </article>
+            <article class="step reveal">
+                <span class="step-no">03</span>
+                <h3>Wiro-Irama</h3>
+                <p>Penyatuan antara gerak, napas, dan musik. Sebuah penyingkapan keharmonisan 
+                    antara penari, irama, dan semesta.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<div class="parang-edge"></div>
+
+<section class="section special" id="jati-diri-mataram">
+    <div class="special-intro reveal">
+        <p class="kicker gold">Bagian Khusus</p>
+        <h2 class="special-title">Tari Klasik Yogyakarta<br><span>Jati Diri Mataram</span></h2>
+        <div class="parang-divider center"></div>
+    </div>
+
+    <div class="frame section-card reveal">
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+        <span class="lung lung-tl"></span>
+        <span class="lung lung-br"></span>
+        <div class="split">
+            <div class="split-text reveal">
+                <h3 class="block-title">Akar Sejarah &amp; Etika Dalem</h3>
+                <div class="parang-divider sm"></div>
+                <p>Tari klasik Yogyakarta lahir dari estetika luhur Mataram. Dengan gerak yang 
+                    terkendali, tenang, dan berwibawa, tari ini mencerminkan falsafah hidup 
+                    masyarakat Jawa yang menjunjung tinggi kehalusan budi.
+                </p><br>
+                <p>Dahulu, tari-tarian tertentu merupakan bagian dari ritual keraton yang 
+                    sakral, hanya ditarikan pada kesempatan tertentu oleh abdi dalem penari 
+                    yang terpilih. Gerakan seperti dalam tari Bedhaya atau Srimpi bukan sekadar 
+                    hiburan, melainkan wujud pengabdian dan manifestasi simbolik ajaran kebajikan.</p>
+            </div>
+            <figure class="split-media reveal">
+                <img data-src="img-pementasan" alt="Suasana pementasan tari klasik di lingkungan keraton" id="img-pementasan" loading="lazy">
+                <figcaption>Lingkungan Keraton &mdash; tempat lahirnya pakem tari klasik.</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="frame section-card reveal">
+    <span class="corner corner-tl"></span>
+    <span class="corner corner-tr"></span>
+    <span class="corner corner-bl"></span>
+    <span class="corner corner-br"></span>
+    <span class="ukel ukel-tl"></span>
+    <span class="ukel ukel-br"></span>
+
+    <div class="centered reveal">
+        <h3 class="block-title">Filosofi Warna Keraton</h3>
+        <p class="subtitle">Makna Warna dalam Busana Tari Klasik Yogyakarta</p>
+        <div class="parang-divider sm center"></div>
+    </div>
+    <figure class="wide-media reveal">
+        <img data-src="img-palletebusana" alt="Palet warna busana klasik Yogyakarta" id="img-palletebusana" loading="lazy">
+    </figure>
+    <div class="color-grid">
+        <div class="color-card reveal" style="--c:#7a4a1e;">
+            <span class="swatch"></span>
+            <h4>Sogan (Coklat)</h4>
+            <p>Melambangkan bumi dan kerendahan hati. Warna khas batik keraton yang membumi.</p>
+        </div>
+        <div class="color-card reveal" style="--c:#f7f3ea;">
+            <span class="swatch"></span>
+            <h4>Pethak (Putih)</h4>
+            <p>Melambangkan kesucian dan kejernihan batin (suci ing gati).</p>
+        </div>
+        <div class="color-card reveal" style="--c:#15110d;">
+            <span class="swatch"></span>
+            <h4>Ireng (Hitam)</h4>
+            <p>Melambangkan kekuatan spiritual dan kedewasaan jiwa yang matang.</p>
+        </div>
+        <div class="color-card reveal" style="--c:#c89a2b;">
+            <span class="swatch"></span>
+            <h4>Jenar (Kuning/Emas)</h4>
+            <p>Melambangkan kemuliaan, kewibawaan, dan keluhuran derajat.</p>
+        </div>
+        <div class="color-card reveal" style="--c:#8c2f24;">
+            <span class="swatch"></span>
+            <h4>Abrit (Merah)</h4>
+            <p>Melambangkan keberanian (wani) dan semangat dalam membela kebenaran.</p>
+        </div>
+        <div class="color-card reveal" style="--c:#3d5a3a;">
+            <span class="swatch"></span>
+            <h4>Ijem (Hijau)</h4>
+            <p>Melambangkan ketenangan, kesuburan, dan harapan bagi kehidupan.</p>
+        </div>
+        <div class="color-card reveal" style="--c:#1f3357;">
+            <span class="swatch"></span>
+            <h4>Biru (Lereh)</h4>
+            <p>Melambangkan keteguhan iman dan kesetiaan pada tata krama.</p>
+        </div>
+        <div class="color-card reveal" style="--c:#4a2c5a;">
+            <span class="swatch"></span>
+            <h4>Jambon/Ungu</h4>
+            <p>Melambangkan keanggunan, kelembutan watak, dan martabat tinggi.</p>
+        </div>
+    </div>
+</div>
+
+<section class="section" id="tarian-siklus">
+    <div class="frame section-card reveal">
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+        <span class="lung lung-tl"></span>
+        <span class="lung lung-br"></span>
+        <div class="split reverse">
+            <div class="split-text reveal">
+                <h3 class="block-title">Tari dalam Siklus Kehidupan</h3>
+                <div class="parang-divider sm"></div>
+                <ul class="lifecycle">
+                    <li><strong>Kelahiran &mdash; Tari Anak.</strong> Ekspresi kegembiraan dan 
+                        harapan orang tua bagi kehidupan sang buah hati yang baru lahir.</li>
+                    <li><strong>Kedewasaan &mdash; Tari Pergaulan.</strong> Media sosialisasi 
+                        dan ajang pembentukan karakter serta etika di antara pemuda-pemudi.</li>
+                    <li><strong>Ritual &mdash; Tari Upacara.</strong> Puncak dari siklus hidup, 
+                        seperti syukur panen, pernikahan, atau penghormatan arwah leluhur.</li>
+                    <li><strong>Adab &mdash; Estetika Tari.</strong> Menari mengajarkan disiplin, 
+                        kerendahan hati, dan pengendalian diri sebagai cermin martabat manusia.</li>
+                </ul>
+            </div>
+            <figure class="split-media reveal">
+                <img data-src="img-lifecycletari" alt="Tarian tradisional yang menjadi bagian dari upacara adat" id="img-lifecycletari" loading="lazy">
+                <figcaption>Menari adalah merayakan kehidupan &mdash; dari awal hingga akhir.</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<div class="parang-edge"></div>
+
+<section class="section" id="galeri-tari">
+    <div class="frame section-card wide reveal">
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+        <span class="ukel ukel-tl"></span>
+        <span class="ukel ukel-br"></span>
+        
+        <div class="centered reveal">
+            <p class="kicker">Bab Tujuh</p>
+            <h2>Galeri Tari Interaktif</h2>
+            <div class="parang-divider sm center"></div>
+            <p class="lead narrow">Beragam tarian Nusantara &mdash; arahkan kursor untuk menyingkap makna di balik setiap gerakannya.</p>
+        </div>
+
+        <div class="motif-grid dance-theme" id="motif-grid">
+            </div>
+    </div>
+</section>
+
+<section class="section" id="pelestarian">
+    <div class="frame section-card reveal">
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+        <span class="lung lung-tl"></span>
+        <span class="lung lung-br"></span>
+        <div class="split">
+            <figure class="split-media reveal">
+                <img alt="Generasi muda sedang belajar menari bersama maestro tari" id="img-preservation-tari" loading="lazy">
+                <figcaption>Generasi baru, penyambung napas tradisi.</figcaption>
+            </figure>
+            <div class="split-text reveal">
+                <p class="kicker">Bab Delapan</p>
+                <h2>Pelestarian Warisan</h2>
+                <div class="parang-divider sm"></div>
+                <ul class="pillars">
+                    <li><strong>Edukasi.</strong> Menanamkan kecintaan pada seni tari melalui 
+                        ekstrakurikuler dan sanggar sejak dini.</li>
+                    <li><strong>Dukungan Sanggar.</strong> Memberdayakan sanggar tari lokal agar 
+                        tetap menjadi pusat kreativitas dan pengabdian budaya.</li>
+                    <li><strong>Panggung Ekspresi.</strong> Menggelar festival tari dan pementasan 
+                        yang mengangkat martabat serta keindahan gerak tradisi.</li>
+                    <li><strong>Digitalisasi.</strong> Mengabadikan pola gerak dan filosofi tari 
+                        dalam arsip digital &mdash; seperti website budaya ini.</li>
+                </ul>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <main class="container bat-main-container">
-
+<section class="quote-section reveal" id="quote">
+    <div class="quote-bg"></div>
+    <div class="quote-overlay"></div>
+    <figure class="quote-inner reveal">
+        <span class="quote-mark">&ldquo;</span>
+        <blockquote>
+            Tarian bukanlah sekadar gerak tubuh, melainkan doa yang divisualisasikan, 
+            sebuah napas yang menyatu dengan detak jantung leluhur.
+        </blockquote>
+        <div class="parang-divider sm center light"></div>
+        <figcaption>Filosofi Tari Tradisional Nusantara</figcaption>
+    </figure>
+</section>
+    
     </main>
 
     <footer>
-        <div class="footer-logo">Jogja<span>Culture</span></div>
-        <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
-        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain dengan rasa hormat kepada tanah Mataram</p>
+        <div class="footer-top-section">
+            <div class="footer-column">
+                <div class="footer-logo-box">
+                    <div class="footer-logo">Jogja<span>Culture</span></div>
+                    <p class="footer-tagline">"Berhati Nyaman" — Kota yang Selalu Memanggil Pulang</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="column-title">Company</h4>
+                <div class="footer-links-vertical">
+                    <a href="halaman-info.html">About Us</a>
+                    <a href="halaman-privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="footer-copy">© 2026 Jogja Cultural Web · Didesain untuk kebudayaan Mataram</p>
     </footer>
 
-    <a href="#batik" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
+    <a href="#tarian-adat" class="btn-to-top" id="backToTop" aria-label="Kembali ke atas">
         &#8593;
     </a>
 
@@ -84,6 +559,7 @@
             }
         });
     </script>
+    <script src="JS/halaman-tarian-adat.js"></script>
     <script src="JS/Navigasi.js"></script>
     <script src="JS/Dasar html.js"></script>
     <script src="JS/btn-top.js"></script>
