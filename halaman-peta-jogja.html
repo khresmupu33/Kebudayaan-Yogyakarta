@@ -29,7 +29,7 @@
     <div class="in-page"></div>
     <div class="out-page"></div>
 
-        <header>
+    <header>
         <nav class="navbar transition-all duration-300">
             <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
                 <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
@@ -165,7 +165,7 @@
 
         <div class="map-legend-control flex flex-col justify-between">
 
-            <div >
+            <div>
                 <div class="legend-title">Filter Destinasi</div>
 
                 <label class="legend-item">
@@ -220,27 +220,8 @@
                     Hapus Semua
                 </button>
             </div>
-
-
-            <!-- Bagian ini otomatis disembunyikan di mobile melalui CSS (.map-legend-control > div:last-child) -->
-            <div class="mt-6 pt-6  ">
-                <div class="legend-title">Navigasi Peta</div>
-                <div class="grid grid-cols-2 gap-2 mb-2">
-                    <button id="customZoomIn" class="btn-custom-zoom" title="Perbesar Peta">
-                        <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Perbesar
-                    </button>
-                    <button id="customZoomOut" class="btn-custom-zoom" title="Perkecil Peta">
-                        <i data-lucide="minus" class="w-4 h-4 mr-2"></i> Perkecil
-                    </button>
-                </div>
-                <button id="customZoomReset" class="btn-custom-zoom w-full mb-4" title="Kembali ke Default">
-                    <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i> Reset Tampilan DIY
-                </button>
-                <br>
-                <br>
-                <br>
-                <!-- BARU: Blok Tombol Pengarah / Fokus Wilayah -->
-                <div class="legend-title">Navigasi Peta</div>
+            <div class="p">
+                <div class=" legend-title">Daerah Peta</div>
                 <div class="flex flex-col gap-1.5">
                     <button onclick="arahkannyaKeWilayah('yogyakarta')"
                         class="btn-custom-zoom !justify-start w-full !py-1.5 text-xs">
@@ -263,6 +244,25 @@
                         📍 Kab. Gunungkidul
                     </button>
                 </div>
+            </div>
+
+
+            <!-- Bagian ini otomatis disembunyikan di mobile melalui CSS (.map-legend-control > div:last-child) -->
+            <div class="mt-6 pt-6  t">
+                <div class="legend-title">Navigasi Peta</div>
+                <div class="grid grid-cols-2 gap-2 mb-2">
+                    <button id="customZoomIn" class="btn-custom-zoom" title="Perbesar Peta">
+                        <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Perbesar
+                    </button>
+                    <button id="customZoomOut" class="btn-custom-zoom" title="Perkecil Peta">
+                        <i data-lucide="minus" class="w-4 h-4 mr-2"></i> Perkecil
+                    </button>
+                </div>
+                <button id="customZoomReset" class="btn-custom-zoom w-full mb-4" title="Kembali ke Default">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i> Reset Tampilan DIY
+                </button>
+                <!-- BARU: Blok Tombol Pengarah / Fokus Wilayah -->
+
             </div>
         </div>
 
