@@ -150,7 +150,7 @@
 
     /* 3. Membuat kartu melebar penuh dan mengatur ulang posisi tumpukan */
     .menu-item-card {
-        width: 90% !important;
+        width: 100% !important;
         /* Kartu melebar hampir penuh menyisakan sedikit celah kiri-kanan */
         max-width: 100%;
         box-shadow: 0 8px 24px rgba(44, 26, 14, 0.06);
@@ -210,7 +210,7 @@
 
     /* 6. Mengatur tombol kontrol navigasi agar posisinya pas di bawah kartu lebar */
     .kuliner-carousel-controls {
-        margin-top: 0rem;
+        margin-top: 2rem;
     }
 
     .kuliner-ctrl-btn {
@@ -257,7 +257,8 @@
 
     /* 2. Pastikan kartu mengambil lebar penuh container */
     #destination-card {
-        width: 100% !important;
+        width: 280px !important;
+        padding: 10px;
     }
 
     /* 3. Atur ulang posisi tombol panah agar mengikuti pelebaran kartu */
@@ -272,11 +273,13 @@
 
     /* Tombol Kiri nempel di sisi dalam kiri kartu */
     .dest-nav-btn[onclick="prevSlide()"] {
+        top: 650px !important;
         left: 12px !important;
     }
 
     /* Tombol Kanan nempel di sisi dalam kanan kartu */
     .dest-nav-btn[onclick="nextSlide()"] {
+        top: 650px !important;
         right: 12px !important;
     }
 

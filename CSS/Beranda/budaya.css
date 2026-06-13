@@ -12,9 +12,11 @@
 
 .budaya-grid {
     display: grid;
+
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
+
 
 @media (min-width: 768px) {
     .budaya-grid {
@@ -23,6 +25,7 @@
 }
 
 /* --- Card Styling Dasar --- */
+/* Pastikan parent memiliki relative agar ::before bisa diatur */
 .budaya-card {
     position: relative;
     overflow: hidden;
@@ -30,35 +33,82 @@
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Transisi lebih halus dengan easing yang elegan */
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-decoration: none;
     cursor: pointer;
-    
-    /* Default Mobile: Warna Coklat */
-    background-color: #6d4c41; 
+    color: #fff;
+    /* Pastikan teks putih agar terlihat di atas gelap */
+    z-index: 1;
+}
+
+
+/* Layer Background dengan Blur & Overlay */
+.budaya-card::before {
+    content: "";
+    display: block;
+    /* Tambahkan ini: memastikan pseudo-element dianggap elemen blok */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Tambahkan ini: mencegah gambar terulang */
+    filter: blur(4px) brightness(0.6);
+    z-index: 0;
+    /* Pastikan z-index lebih kecil dari konten (teks) */
+    transition: transform 0.6s ease;
+    transform: scale(1.1);
+}
+
+.budaya-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+.budaya-bg-batik::before { 
+    background-image: url('../IMG/batik1.png') !important; 
+}
+
+.budaya-bg-tari::before {
+    background-image: url('IMG/tarian-adat1.jpg');
+}
+
+.budaya-bg-wayang::before {
+    background-image: url('IMG/wayang1.png');
+}
+
+.budaya-bg-upacara::before {
+    background-image: url('IMG/upacara-adat1.png');
 }
 
 .budaya-card::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(109, 76, 65, 0.5);
     z-index: 1;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.budaya-card h3, .budaya-card p {
+.budaya-card h3,
+.budaya-card p {
     position: relative;
     z-index: 2;
     color: #ffffff;
     transition: all 0.6s ease;
     margin: 0 0 0.5rem 0;
 }
-.budaya-intro{
+
+.budaya-intro {
     text-align: center;
     color: var(--text-dark);
     padding-bottom: 30px;
@@ -69,37 +119,58 @@
     content: "Lihat Lebih Lanjut →";
     position: absolute;
     /* Ditinggikan posisinya di mobile */
-    bottom: 30px; 
-    left: 0; width: 100%;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
     text-align: center;
     font-size: 0.95rem;
     font-weight: 700;
     color: #ffffff;
-    opacity: 1;
+    opacity: 0;
     transition: all 0.6s ease;
     z-index: 3;
 }
 
 /* --- Pola Background --- */
-.budaya-bg-batik { background-color: #2e1d1a; background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25) 3px, transparent 3px); background-size: 40px 40px; }
-.budaya-bg-tari { background-color: #2e1d1a; background-image: linear-gradient(135deg, rgba(255,255,255,0.15) 25%, transparent 25%, transparent 40%, rgba(255,255,255,0.15) 70%, rgba(255,255,255,0.15) 75%, transparent 75%, transparent); background-size: 60px 60px; }
-.budaya-bg-wayang { background-color: #2e1d1a; background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 1.5px); background-size: 25px 25px; }
-.budaya-bg-upacara { background-color: #2e1d1a; background-image: linear-gradient(rgba(255,255,255,0.12) 1px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px); background-size: 35px 35px; }
+.budaya-bg-batik {
+    background-color: #2e1d1a;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25) 3px, transparent 3px);
+    background-size: 40px 40px;
+}
+
+.budaya-bg-tari {
+    background-color: #2e1d1a;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 40%, rgba(255, 255, 255, 0.15) 70%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-size: 60px 60px;
+}
+
+.budaya-bg-wayang {
+    background-color: #2e1d1a;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 1.5px);
+    background-size: 25px 25px;
+}
+
+.budaya-bg-upacara {
+    background-color: #2e1d1a;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 35px 35px;
+}
 
 /* --- Penyesuaian Desktop --- */
 @media (min-width: 768px) {
     .budaya-card {
         background-color: transparent !important;
     }
-    
+
     .budaya-card::before {
         background: rgba(255, 255, 255, 0.9);
     }
-    
-    .budaya-card h3, .budaya-card p {
+
+    .budaya-card h3,
+    .budaya-card p {
         color: var(--text-dark);
     }
-    
+
     .budaya-card::after {
         bottom: -40px;
         opacity: 0;
@@ -109,29 +180,33 @@
     .budaya-card:hover {
         background-color: #6d4c41 !important;
         transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
-    
+
     .budaya-card:hover::before {
         background: rgba(109, 76, 65, 0.5);
     }
-    
-    .budaya-card:hover h3, .budaya-card:hover p {
+
+    .budaya-card:hover h3,
+    .budaya-card:hover p {
         color: #ffffff;
     }
-    
+
     .budaya-card:hover::after {
-        bottom: 30px; /* Samakan posisi dengan mobile */
+        bottom: 30px;
+        /* Samakan posisi dengan mobile */
         opacity: 1;
     }
 }
+
 @media (max-width: 767px) {
+
     /* Kita gunakan ::after untuk mobile agar tampilannya sesuai keinginan Anda */
     .budaya-card::after {
         content: "Lihat Lebih Lanjut →";
         position: absolute;
         /* Gunakan nilai positif yang sesuai dengan tinggi kartu Anda */
-        bottom: 20px !important; 
+        bottom: 20px !important;
         left: 0;
         width: 100%;
         text-align: center;

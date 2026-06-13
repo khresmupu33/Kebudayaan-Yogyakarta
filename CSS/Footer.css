@@ -1,7 +1,9 @@
 footer {
-    background: var(--brown-dark); /* Mengikuti variabel warna asli kamu */
-    padding: 4rem 1.5rem 2rem 1.5rem; /* Padding disesuaikan untuk layar HP agar tidak terlalu memakan tempat */
-    border-top: 1px solid rgba(212,162,80,0.2);
+    background: var(--brown-dark);
+    /* Mengikuti variabel warna asli kamu */
+    padding: 4rem 1.5rem 2rem 1.5rem;
+    /* Padding disesuaikan untuk layar HP agar tidak terlalu memakan tempat */
+    border-top: 1px solid rgba(212, 162, 80, 0.2);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -23,17 +25,17 @@ footer {
 .footer-logo {
     font-family: 'Playfair Display', serif;
     color: var(--cream);
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
 }
+
 
 .footer-logo span {
     color: var(--gold);
+    font-style: italic;
 }
 
 .footer-tagline {
-    color: rgba(240,224,204,0.6);
+    color: rgba(240, 224, 204, 0.6);
     font-size: 0.9rem;
     line-height: 1.5;
     margin: 0;
@@ -63,7 +65,8 @@ footer {
     left: 0;
     width: 35px;
     height: 2px;
-    background: #C8885A; /* Warna merah aksen, bisa diganti var(--gold) */
+    background: #C8885A;
+    /* Warna merah aksen, bisa diganti var(--gold) */
 }
 
 .footer-links-vertical {
@@ -74,7 +77,7 @@ footer {
 
 .footer-links-vertical a {
     text-decoration: none;
-    color: rgba(240,224,204,0.7);
+    color: rgba(240, 224, 204, 0.7);
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
@@ -91,7 +94,7 @@ footer {
 .social-icon {
     width: 40px;
     height: 40px;
-    background: rgba(240,224,204,0.12);
+    background: rgba(240, 224, 204, 0.12);
     color: var(--cream, #fff);
     display: flex;
     justify-content: center;
@@ -109,10 +112,10 @@ footer {
 }
 
 .footer-copy {
-    color: rgba(240,224,204,0.3);
+    color: rgba(240, 224, 204, 0.3);
     font-size: 0.75rem;
     text-align: center;
-    border-top: 1px solid rgba(240,224,204,0.08);
+    border-top: 1px solid rgba(240, 224, 204, 0.08);
     padding-top: 1.5rem;
     margin: 0;
     letter-spacing: 0.3px;
@@ -122,9 +125,11 @@ footer {
 /* --- TAMPILAN KHUSUS HP (SANGAT RAPI & OPTIMAL) --- */
 @media (max-width: 768px) {
     .footer-top-section {
-        grid-template-columns: 1fr; /* Stack vertikal untuk area utama */
+        grid-template-columns: 1fr;
+        /* Stack vertikal untuk area utama */
         gap: 2rem;
-        text-align: center; /* Semua teks otomatis ke tengah agar seimbang di HP */
+        text-align: center;
+        /* Semua teks otomatis ke tengah agar seimbang di HP */
         margin-bottom: 2rem;
     }
 
@@ -132,17 +137,25 @@ footer {
         font-size: 1.6rem;
     }
 
+    .footer-logo span {
+        vertical-align: 6px;
+        font-size: 15px !important;
+        line-height: 0;
+    }
+
     .footer-tagline {
         font-size: 0.85rem;
         max-width: 320px;
-        margin: 0 auto; /* Tagline diketengah */
+        margin: 0 auto;
+        /* Tagline diketengah */
     }
 
     /* Mengubah susunan link 'Company' dari atas-bawah menjadi berjejer ke samping (horizontal) */
     .footer-links-vertical {
         flex-direction: row;
         justify-content: center;
-        gap: 1.5rem; /* Jarak antar link menu di HP */
+        gap: 1.5rem;
+        /* Jarak antar link menu di HP */
         margin-top: 0.2rem;
     }
 
@@ -150,7 +163,8 @@ footer {
     .column-title {
         font-size: 1rem;
         margin-bottom: 0.8rem;
-        display: inline-block; /* Supaya garis bawah pas dengan lebar tulisan */
+        display: inline-block;
+        /* Supaya garis bawah pas dengan lebar tulisan */
         align-self: center;
     }
 
@@ -158,7 +172,8 @@ footer {
     .column-title::after {
         left: 50%;
         transform: translateX(-50%);
-        width: 25px; /* Sedikit diperkecil agar pas di HP */
+        width: 25px;
+        /* Sedikit diperkecil agar pas di HP */
     }
 
     /* Posisikan ikon sosmed tepat di tengah layar HP */
@@ -172,7 +187,7 @@ footer {
         height: 38px;
         font-size: 0.95rem;
     }
-    
+
     .footer-copy {
         padding-top: 1.2rem;
         line-height: 1.4;
