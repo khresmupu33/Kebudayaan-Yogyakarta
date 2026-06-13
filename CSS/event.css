@@ -26,7 +26,6 @@ html {
 }
 
 body {
-    background-color: var(--cream-dark) !important;
     font-family: 'Josefin Sans', sans-serif;
     color: var(--deep-brown);
     line-height: 1.6;
@@ -35,12 +34,12 @@ body {
 
 .header {
     background: linear-gradient(135deg, var(--deep-brown) 0%, var(--rich-batik) 50%, var(--warm-gold) 100%);
-    padding: 3rem 2rem;
+    padding: 150px !important;
     text-align: center;
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding: 4rem 2rem;
+    min-height: 50vh;
 }
 
 .header::before {
@@ -271,7 +270,6 @@ body {
 
 .no-events p {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.1rem;
     color: var(--text-muted);
     font-weight: 400;
 }

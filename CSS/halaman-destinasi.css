@@ -295,8 +295,13 @@ margin-top: -30px !important;
     border-color: #d4af37;
     font-weight: 700;
 }
-
+@media (max-width: 768px)  {
+    .hero-scroll-indicator{
+        display: none !important;
+    }
+}
 @media (max-width: 767px) {
+    
     .search-wrapper {
         width: 90% !important;
         /* Gunakan persentase agar tidak melebar */
@@ -322,10 +327,9 @@ margin-top: -30px !important;
     }
 
     #wisata {
-        padding-top: 10px !important;
+        padding-top: 8px !important;
         padding-right: 0 !important;
         padding-left: 0 !important;
-        width: 100%;
         position: relative;
     }
 

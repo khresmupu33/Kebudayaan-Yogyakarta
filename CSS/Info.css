@@ -503,7 +503,11 @@
     display: none;
 }
 
-
+@media (max-width: 768px)  {
+    .hero-scroll-indicator{
+        display: none !important;
+    }
+}
 /* ==========================================================================
    RESPONSIVE MOBILE OPTIMIZED (CARD HAMPIR MENYENTUH PINGGIR HALAMAN FULL)
    ========================================================================== */
@@ -513,7 +517,7 @@
     }
 
     .about-container {
-        padding: 0 4px !important;
+        padding: 0px !important;
         /* MODIFIKASI: Sisa jarak ke tepi layar dibuat sangat tipis (4px) */
         display: flex;
         flex-direction: column;
@@ -521,6 +525,7 @@
         box-sizing: border-box;
         width: 100% !important;
         max-width: 100% !important;
+        
     }
 
     .pcard {

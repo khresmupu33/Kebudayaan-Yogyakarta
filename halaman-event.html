@@ -26,7 +26,7 @@
     <div class="in-page"></div>
     <div class="out-page"></div>
 
-       <header>
+    <header>
         <nav class="navbar transition-all duration-300">
             <div class="max-w-7xl w-full mx-auto flex items-center justify-between">
                 <div class="logo"><a href="halaman-beranda.html">Jogja<span>Culture</span></a></div>
@@ -156,47 +156,48 @@
             </div>
         </nav>
     </header>
-    <section class="header">
-        <div class="header-ornament"></div>
-        <div class="header-content">
-            <h1 class="header-title">Direktori Event Yogyakarta</h1>
-            <p class="header-subtitle">Jelajahi ragam acara budaya, seni, dan komunitas di Kota Istimewa</p>
-        </div>
-        <div class="header-ornament"></div>
-    </section>
-
-    <!-- Filterrrrrrrrrrr Sedtionnnnnnnnnnn-->
-     <section class="filter-section">
-        <div class="filter-container">
-            <h2 class="filter-title">Pilih Bulan</h2>
-            <div class="filter-buttons" id="filterButtons">
-                <button class="filter-btn active" data-month="all">Semua</button>
-                <button class="filter-btn" data-month="1">Januari</button>
-                <button class="filter-btn" data-month="2">Februari</button>
-                <button class="filter-btn" data-month="3">Maret</button>
-                <button class="filter-btn" data-month="4">April</button>
-                <button class="filter-btn" data-month="5">Mei</button>
-                <button class="filter-btn" data-month="6">Juni</button>
-                <button class="filter-btn" data-month="7">Juli</button>
-                <button class="filter-btn" data-month="8">Agustus</button>
-                <button class="filter-btn" data-month="9">September</button>
-                <button class="filter-btn" data-month="10">Oktober</button>
-                <button class="filter-btn" data-month="11">November</button>
-                <button class="filter-btn" data-month="12">Desember</button>    
+    <main id="event">
+        <section class="header">
+            <div class="header-ornament"></div>
+            <div class="header-content">
+                <h1 class="header-title">Direktori Event Yogyakarta</h1>
+                <p class="header-subtitle">Jelajahi ragam acara budaya, seni, dan komunitas di Kota Istimewa</p>
             </div>
-        </div>
-     </section>
+            <div class="header-ornament"></div>
+        </section>
 
-     <!-- Eventttttttttt Griddddddddd Sectionnnnnnnnnn -->
-    <main class="main-content" id="event">
-        <div class="events-grid" id="eventsGrid">
-            <!-- Isinya ada di JS YAAAAAAAAAAAA-->
-        </div>
-        <div class="no-events" id="noEvents" style="display: none;">
-            <p>Belum ada event untuk bulan ini.</p>
-        </div>
+        <!-- Filterrrrrrrrrrr Sedtionnnnnnnnnnn-->
+        <section class="filter-section">
+            <div class="filter-container">
+                <h2 class="filter-title">Pilih Bulan</h2>
+                <div class="filter-buttons" id="filterButtons">
+                    <button class="filter-btn active" data-month="all">Semua</button>
+                    <button class="filter-btn" data-month="1">Januari</button>
+                    <button class="filter-btn" data-month="2">Februari</button>
+                    <button class="filter-btn" data-month="3">Maret</button>
+                    <button class="filter-btn" data-month="4">April</button>
+                    <button class="filter-btn" data-month="5">Mei</button>
+                    <button class="filter-btn" data-month="6">Juni</button>
+                    <button class="filter-btn" data-month="7">Juli</button>
+                    <button class="filter-btn" data-month="8">Agustus</button>
+                    <button class="filter-btn" data-month="9">September</button>
+                    <button class="filter-btn" data-month="10">Oktober</button>
+                    <button class="filter-btn" data-month="11">November</button>
+                    <button class="filter-btn" data-month="12">Desember</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eventttttttttt Griddddddddd Sectionnnnnnnnnn -->
+        <main class="main-content">
+            <div class="events-grid" id="eventsGrid">
+                <!-- Isinya ada di JS YAAAAAAAAAAAA-->
+            </div>
+            <div class="no-events" id="noEvents" style="display: none;">
+                <p>Belum ada event untuk bulan ini.</p>
+            </div>
+        </main>
     </main>
-
     <footer>
         <div class="footer-top-section">
             <div class="footer-column">
