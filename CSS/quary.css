@@ -25,6 +25,9 @@
 }
 
 @media (max-width: 768px) {
+    a{
+        font-size: 16px !important;
+    }
     #home {
         height: 30vh;
         padding: 1px;

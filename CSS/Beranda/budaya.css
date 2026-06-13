@@ -27,6 +27,7 @@
 /* --- Card Styling Dasar --- */
 /* Pastikan parent memiliki relative agar ::before bisa diatur */
 .budaya-card {
+      
     position: relative;
     overflow: hidden;
     min-height: 250px;
@@ -47,6 +48,7 @@
 
 /* Layer Background dengan Blur & Overlay */
 .budaya-card::before {
+    color: #ffffff !important;
     content: "";
     display: block;
     /* Tambahkan ini: memastikan pseudo-element dianggap elemen blok */
@@ -65,38 +67,40 @@
     transition: transform 0.6s ease;
     transform: scale(1.1);
 }
+/* Memaksa semua elemen teks di dalam kartu menjadi putih */
+/* Pastikan teks berwarna putih dalam kondisi normal */
+.budaya-card, 
+.budaya-card h3, 
+.budaya-card p {
+    color: #ffffff !important;
+}
+
+/* Jika Anda ingin memastikan teks tetap putih saat di-hover */
+.budaya-card:hover, 
+.budaya-card:hover h3, 
+.budaya-card:hover p {
+    color: #ffffff !important;
+}
 
 .budaya-card>* {
     position: relative;
     z-index: 1;
 }
-
 .budaya-bg-batik::before { 
-    background-image: url('../IMG/batik1.png') !important; 
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.94)), url('../../IMG/batik1.png') !important; 
 }
 
 .budaya-bg-tari::before {
-    background-image: url('IMG/tarian-adat1.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.94)), url('../../IMG/tarian-adat1.jpg') !important;
 }
 
 .budaya-bg-wayang::before {
-    background-image: url('IMG/wayang1.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.94)), url('../../IMG/wayang1.png') !important;
 }
 
 .budaya-bg-upacara::before {
-    background-image: url('IMG/upacara-adat1.png');
-}
-
-.budaya-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(109, 76, 65, 0.5);
-    z-index: 1;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.94)), url('../../IMG/upacara-adat1.png') !important;
 }
 
 .budaya-card h3,
@@ -116,6 +120,7 @@
 
 /* --- Tulisan "Lihat Lebih Lanjut" (Mobile Optimized) --- */
 .budaya-card::after {
+  
     content: "Lihat Lebih Lanjut →";
     position: absolute;
     /* Ditinggikan posisinya di mobile */
@@ -130,7 +135,14 @@
     transition: all 0.6s ease;
     z-index: 3;
 }
-
+/* 2. Kondisi Saat Di-hover */
+.budaya-card:hover {
+    /* Mengganti overlay saat hover dengan linear-gradient yang Anda inginkan */
+    background: 
+                var(--current-image); /* Kita akan gunakan variabel */
+    
+    transform: scale(1.15); /* Sedikit zoom saat hover */
+}
 /* --- Pola Background --- */
 .budaya-bg-batik {
     background-color: #2e1d1a;

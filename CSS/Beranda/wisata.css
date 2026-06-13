@@ -8,7 +8,26 @@
     width: 100%;
     box-sizing: border-box;
 }
+.btn-lihat-semua {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--cream);
+    color: #d4af37; /* Warna emas senada dengan tag */
+    border: 2px solid #d4af37;
+    border-radius: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
 
+.btn-lihat-semua:hover {
+    background: #d4af37;
+    color: #140d07;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    transform: translateY(-3px);
+}
 /* Filter Container Horizontal style kapsul */
 .wisata-filter-container {
     display: flex;
