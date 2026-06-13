@@ -4,7 +4,7 @@
 
 #wisata {
     background: var(--cream-border, #fdf6e4);
-    padding: 10px;
+    padding: 1px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -17,12 +17,19 @@
     gap: 15px;
     margin-bottom: 3.5rem;
 }
-
+.search-container{
+margin-top: -30px !important;
+}
 #wisataSearch {
     background: rgba(255, 255, 255, 0.95);
     color: #2b1808;
     font-family: 'Josefin Sans', sans-serif;
     transition: all 0.3s ease;
+    
+}
+.scroll-text{
+    color: var(--brown-dark) !important;
+    margin-top: 30px !important;
 }
 
 #wisataSearch:focus {
@@ -73,6 +80,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 14px;
+    margin-bottom: 0;
 }
 
 /* --- Styling Intro Box --- */
@@ -196,7 +204,13 @@
     position: relative;
     overflow: hidden;
 }
-
+.about-hero{
+        text-align: center;
+    padding-top: 140px;
+    border-radius: 8px;
+    min-height: 110vh;
+    overflow: hidden;
+}
 /* Membuat overlay gelap yang menutupi gambar */
 .wisata-img-wrapper::after {
     content: '';

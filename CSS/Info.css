@@ -38,7 +38,14 @@
 /* Header Manifesto */
 .about-hero {
     text-align: center;
+    padding-top: 140px;
+    border-radius: 8px;
+    background: radial-gradient(ellipse at center,  var(--cream) 10%, var(--cream-border) 55%, var(--cream-dark) 65%);
     min-height: 110vh;
+    overflow: hidden;
+}
+.scroll-text{
+    color: var(--brown-dark) !important;
 }
 
 .info-tag {
@@ -501,7 +508,7 @@
    RESPONSIVE MOBILE OPTIMIZED (CARD HAMPIR MENYENTUH PINGGIR HALAMAN FULL)
    ========================================================================== */
 @media screen and (max-width: 768px) {
-    br {
+    .Hilang{
         display: none;
     }
 
