@@ -29,3 +29,24 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+// Pantau perubahan pada container
+const container = document.querySelector('.main-layout-container');
+const btnToTop = document.querySelector('.btn-to-top');
+
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class' && window.innerWidth < 768) {
+            // Jika container memiliki class 'sidebar-open'
+            if (container.classList.contains('sidebar-open')) {
+                btnToTop.style.display = 'none'; // Sembunyikan
+            } else {
+                btnToTop.style.display = 'flex'; // Munculkan kembali
+            }
+        }
+    });
+});
+
+// Mulai memantau perubahan class pada container
+if (container && btnToTop) {
+    observer.observe(container, { attributes: true });
+}
