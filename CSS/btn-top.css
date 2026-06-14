@@ -15,7 +15,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     isolation: isolate;
-    z-index: 10; 
+    z-index: 100 !important; 
     /* Efek Sembunyi di Awal */
     opacity: 0;
     visibility: hidden;
