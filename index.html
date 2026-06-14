@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogja Culture - Welcome</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
 
     <style>
         /* Variabel Warna sesuai Tema Utama */
         :root {
-            --brown-mid: #6B3A1F; /* Cokelat latar belakang gambar */
-            --cream: #ffffff;    /* Putih krem Jogja */
-            --gold: #d4a250;     /* Emas Culture */
+            --brown-mid: #6B3A1F;
+            /* Cokelat latar belakang gambar */
+            --cream: #ffffff;
+            /* Putih krem Jogja */
+            --gold: #d4a250;
+            /* Emas Culture */
         }
 
         * {
@@ -84,12 +89,14 @@
 
         /* --- LOGIKA PERGESERAN KATA PASCA LOADING --- */
         .intro-container.split-active .text-jogja {
-            transform: translateX(-250px); /* Hanya kata Jogja meluncur ke kiri jauh */
+            transform: translateX(-250px);
+            /* Hanya kata Jogja meluncur ke kiri jauh */
             opacity: 0;
         }
 
         .intro-container.split-active .text-culture {
-            transform: translateX(250px); /* Hanya kata Culture meluncur ke kanan jauh */
+            transform: translateX(250px);
+            /* Hanya kata Culture meluncur ke kanan jauh */
             opacity: 0;
         }
 
@@ -122,8 +129,13 @@
         }
 
         @keyframes jalanLoading {
-            0% { width: 0; }
-            100% { width: 100%; }
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
         }
 
         /* Garis loading ikut memudar saat teks membelah */
@@ -147,25 +159,54 @@
                 transform: translateY(0);
             }
         }
-        
+
         /* Responsive teks untuk HP */
         @media (max-width: 640px) {
             .logo-intro {
                 font-size: 2.2rem;
             }
+
             .loading-bar-container {
                 width: 100px;
             }
+
             .intro-container.split-active .text-jogja {
                 transform: translateX(-100px);
             }
+
             .intro-container.split-active .text-culture {
                 transform: translateX(100px);
             }
         }
+
+        /* Styling Peringatan Mobile */
+        .mobile-warning {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--gold);
+            color: var(--brown-mid);
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            z-index: 100000;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        /* Tampilkan hanya jika lebar layar di bawah 900px */
+        @media (max-width: 900px) {
+            .mobile-warning {
+                display: block;
+            }
+        }
     </style>
 </head>
+
 <body>
+
 
     <div class="intro-container" id="introLayer">
         <h1 class="logo-intro" id="typingLogo"></h1>
@@ -173,17 +214,20 @@
             <div class="loading-bar"></div>
         </div>
     </div>
+    <div class="mobile-warning">
+        <p>Disarankan untuk membuka di layar yang lebih lebar untuk pengalaman terbaik.</p>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const container = document.getElementById("introLayer");
             const logoContainer = document.getElementById("typingLogo");
-            
+
             const kata1 = "Jogja".split("");
             const kata2 = "Culture".split("");
-            
-            let delayAkumulasi = 0; 
-            const kecepatanKetik = 120; 
+
+            let delayAkumulasi = 0;
+            const kecepatanKetik = 120;
 
             // 1. Cetak kata "Jogja"
             const spanJogja = document.createElement("span");
@@ -211,7 +255,7 @@
             });
             logoContainer.appendChild(spanCulture);
 
-            const totalDurasiKetik = delayAkumulasi + 300; 
+            const totalDurasiKetik = delayAkumulasi + 300;
 
             setTimeout(() => {
                 // TAHAP 1: Jalankan progress loading bar selama 3 detik
@@ -219,20 +263,21 @@
 
                 // TAHAP 2: Kunci jeda diam 3 detik setelah loading selesai
                 setTimeout(() => {
-                    
+
                     // TAHAP 3: Memicu pemisahan kata (Jogja ke kiri, Culture ke kanan) secara simultan bersama memudarnya latar
                     container.classList.add("split-active");
                     container.classList.add("slide-out");
 
                     // TAHAP 4: Tunggu durasi transisi 1.5 detik hingga layar bersih total, baru lempar halaman
                     setTimeout(() => {
-                        window.location.href = "halaman-beranda.html"; 
+                        window.location.href = "halaman-beranda.html";
                     }, 1500);
 
-                }, 3000); 
+                }, 3000);
 
             }, totalDurasiKetik);
         });
     </script>
 </body>
+
 </html>

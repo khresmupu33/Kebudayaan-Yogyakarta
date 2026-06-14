@@ -1,59 +1,74 @@
-document.addEventListener("DOMContentLoaded", () => {
+/**
+ * Script Transisi Halaman (Page Transition)
+ * Menggunakan pageshow untuk menangani BFCache browser
+ */
+
+// 1. Logika Utama: Berjalan saat halaman dimuat (termasuk saat Back/Forward)
+window.addEventListener("pageshow", (event) => {
     const inPageLayer = document.querySelector(".in-page");
     const navigationType = performance.getEntriesByType("navigation")[0]?.type;
     const isReload = navigationType === "reload";
     const isTransitioning = localStorage.getItem("pageTransitionActive") === "true";
 
-    // Hapus token secepatnya
+    // Hapus penanda transisi agar tidak looping
     localStorage.removeItem("pageTransitionActive");
 
+    // Jika halaman dimuat dari cache (tombol Back/Forward), reset state UI
+    if (event.persisted) {
+        if (inPageLayer) {
+            inPageLayer.classList.remove("jalan");
+            inPageLayer.style.display = ""; // Reset ke CSS awal
+        }
+        document.body.classList.add("visible");
+    }
+
+    // Logika animasi masuk
     if (isTransitioning && !isReload) {
-        // JIKA MASUK DARI PROSES TRANSISI:
         document.body.classList.add("visible");
         if (inPageLayer) {
-            inPageLayer.classList.add("jalan"); 
+            inPageLayer.classList.add("jalan");
         }
     } else {
-        // JIKA REFRESH / KETIK URL MANUAL:
+        // Jika buka tab baru, reload, atau ketik URL manual
         if (inPageLayer) {
             inPageLayer.style.display = "none";
         }
         document.body.classList.add("visible");
     }
+});
 
-    // INTERAKSI TOMBOL / LINK
+// 2. Logika Navigasi: Menangani klik link untuk memicu animasi keluar
+document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll("a");
+
     links.forEach(link => {
         link.addEventListener("click", function(e) {
-            // FIX: Abaikan proses transisi jika yang diklik adalah tombol Back to Top
+            // Abaikan tombol Back to Top
             if (this.id === "backToTop") return;
 
             const hrefAttr = this.getAttribute('href');
             
-            // Validasi dasar
-            if (!hrefAttr || hrefAttr === '#' || hrefAttr.startsWith('javascript:')) return; 
+            // Validasi: Abaikan link kosong, jangkar (#), javascript, atau target="_blank"
+            if (!hrefAttr || hrefAttr === '#' || hrefAttr.startsWith('javascript:') || this.getAttribute('target') === '_blank') return;
 
-            // Mengabaikan link target="_blank"
-            if (this.getAttribute('target') === '_blank') return;
+            e.preventDefault();
+            e.stopPropagation();
 
-            e.preventDefault(); 
-            e.stopPropagation(); 
-            
             const targetUrl = this.href;
             const menu = document.getElementById('mobile-menu');
             const outPageLayer = document.querySelector(".out-page");
             const isMenuOpen = menu && !menu.classList.contains('translate-x-full');
 
-            // Set penanda transisi untuk halaman tujuan
+            // Tandai bahwa transisi sedang berjalan
             localStorage.setItem("pageTransitionActive", "true");
 
             if (isMenuOpen) {
                 if (typeof handleMobileNav === "function") {
-                    handleMobileNav(); 
+                    handleMobileNav();
                 }
-                setTimeout(() => { 
-                    mulaiAnimasiKeluar(outPageLayer, targetUrl); 
-                }, 1); 
+                setTimeout(() => {
+                    mulaiAnimasiKeluar(outPageLayer, targetUrl);
+                }, 1);
             } else {
                 mulaiAnimasiKeluar(outPageLayer, targetUrl);
             }
@@ -61,10 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// 3. Fungsi eksekusi animasi keluar
 function mulaiAnimasiKeluar(layer, url) {
     if (layer) {
-        layer.classList.add("aktif"); 
+        layer.classList.add("aktif");
     }
+    // Waktu tunggu harus sama dengan durasi animasi di CSS Anda
     setTimeout(() => {
         window.location.href = url;
     }, 1000);
