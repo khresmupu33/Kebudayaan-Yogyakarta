@@ -5,16 +5,28 @@
 
 // 1. Logika Utama: Berjalan saat halaman dimuat (termasuk saat Back/Forward)
 window.addEventListener("pageshow", (event) => {
-    // 1. Jika halaman dimuat dari cache (tombol Back/Forward)
+    // 1. Ambil elemen transisi
+    const inPageLayer = document.querySelector(".in-page");
+    const outPageLayer = document.querySelector(".out-page");
+
+    // 2. KUNCI PERBAIKAN: Jika ini adalah navigasi Back/Forward, 
+    // hapus semua class yang memblokir layar secepat mungkin
     if (event.persisted) {
-        // Paksa refresh halaman agar animasi bisa berjalan dari nol
-        // Ini adalah cara paling ampuh mencegah "diam/terkunci" di halaman sebelumnya
-        window.location.reload();
-        return; 
+        if (inPageLayer) {
+            inPageLayer.classList.remove("jalan");
+            inPageLayer.style.display = "none";
+        }
+        if (outPageLayer) {
+            outPageLayer.classList.remove("aktif");
+            outPageLayer.style.display = "none";
+        }
+        document.body.classList.add("visible");
+        // Hapus token agar tidak ada sisa animasi
+        localStorage.removeItem("pageTransitionActive");
+        return; // Berhenti di sini, tidak perlu menjalankan logika transisi lagi
     }
 
-    // 2. Logika normal untuk transisi
-    const inPageLayer = document.querySelector(".in-page");
+    // 3. Logika transisi normal (hanya untuk klik link)
     const navigationType = performance.getEntriesByType("navigation")[0]?.type;
     const isReload = navigationType === "reload";
     const isTransitioning = localStorage.getItem("pageTransitionActive") === "true";
