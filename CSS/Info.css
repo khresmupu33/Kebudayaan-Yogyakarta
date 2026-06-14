@@ -3,7 +3,7 @@
    ========================================================================== */
 /* 1. Mengubah background utama */
 #halaman-info {
-    background: var(--cream-dark);
+    background: var(--cream-light);
     /* Menggantikan --brown-dark */
     padding: 1px;
     display: flex;
@@ -40,7 +40,7 @@
     text-align: center;
     padding-top: 140px;
     border-radius: 8px;
-    background: radial-gradient(ellipse at center,  var(--cream) 10%, var(--cream-border) 55%, var(--cream-dark) 65%);
+    background: radial-gradient(ellipse at center,  var(--cream) 20%, var(--cream-border) 55%, var(--cream-light) 65%);
     min-height: 110vh;
     overflow: hidden;
 }
