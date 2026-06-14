@@ -91,8 +91,8 @@
 }
 
 .reference-list li {
-    margin-bottom: 0.6rem;
-    padding-left: 1.2rem;
+    margin-bottom: 1px;
+    padding-left: 1px;
 }
 
 
@@ -114,11 +114,19 @@
 @media (max-width: 768px) {
     #privacy_policy_page {
         padding-top: 70px;
+
     }
 
-    .privacy-container {
-        padding: 2.5rem 1rem;
-    }
+.privacy-container {
+    display: flex;             /* Mengaktifkan flexbox */
+    justify-content: center;   /* Mengatur posisi horizontal ke tengah */
+    align-items: center;       /* Mengatur posisi vertikal ke tengah (opsional) */
+    flex-direction: column;    /* Gunakan ini jika kontennya bertumpuk ke bawah */
+    padding: 1rem;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
 
     .privacy-header {
         margin-bottom: 2.5rem;
@@ -142,7 +150,7 @@
 
     /* Rekonstruksi struktur Card khusus HP */
     .privacy-card {
-        padding: 1.5rem;
+        padding: 1rem;
         border-radius: 10px;
         background: rgba(107, 58, 31, 0.35); /* Lebih solid sedikit agar kontras di HP */
         
@@ -152,6 +160,8 @@
         column-gap: 1rem;
         row-gap: 0.8rem;
         align-items: center;
+        width: 350px;
+        max-width: 100%;
     }
 
     /* Memposisikan Ikon di sebelah kiri atas judul */

@@ -484,10 +484,11 @@
 }
 
 .highlight-quote blockquote {
-    color: var(--brown-dark) !important;
+    color: var(--zinc) !important;
     /* Teks dibuat lebih gelap */
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
+    font-weight: 1000;
     font-size: 1.4rem;
     text-align: center;
 }
