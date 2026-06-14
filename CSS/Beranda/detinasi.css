@@ -96,6 +96,7 @@
 }
 
 .dest-nav-btn {
+    justify-content: space-around;
     background: transparent;
     border: 1px solid var(--gold);
     color: var(--gold);

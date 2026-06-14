@@ -114,7 +114,19 @@ const tempatWisata = [
     // TAMBAHKAN BERBAGAI TITIK POI LAINNYA
     { id: "kampus_ugm", nama: "Kampus UGM", kategori: "budaya", koordinat: [-7.7700, 110.3770], deskripsi: "Kawasan pendidikan pusat." },
     { id: "stadion_maguwoharjo", nama: "Stadion Maguwoharjo", kategori: "transportasi", koordinat: [-7.7580, 110.4250], deskripsi: "Stadion kebanggaan DIY." },
-    { id: "desa_wisata_kasongan", nama: "Desa Wisata Kasongan", kategori: "budaya", koordinat: [-7.8400, 110.3500], deskripsi: "Pusat kerajinan gerabah." }
+    { id: "desa_wisata_kasongan", nama: "Desa Wisata Kasongan", kategori: "budaya", koordinat: [-7.8400, 110.3500], deskripsi: "Pusat kerajinan gerabah." },
+    // Tambahan untuk memetakan Event ke Lokasi
+    { id: "winongo", nama: "Bantaran Sungai Winongo", kategori: "budaya", koordinat: [-7.8100, 110.3500], deskripsi: "Lokasi Winongo Art Festival 2026." },
+    { id: "rocket_hall", nama: "Rocket Convention Hall", kategori: "fasilitas", koordinat: [-7.7500, 110.4000], deskripsi: "Lokasi Selarasa Fest 2026." },
+    { id: "jec", nama: "Jogja Expo Center (JEC)", kategori: "budaya", koordinat: [-7.7900, 110.4100], deskripsi: "Lokasi INACRAFT & Jogja Fashion Week." },
+    { id: "embung_giwangan", nama: "Taman Budaya Embung Giwangan", kategori: "budaya", koordinat: [-7.8300, 110.3900], deskripsi: "Lokasi Festival Sastra Yogyakarta." },
+    { id: "museum_batik", nama: "Museum Batik Yogyakarta", kategori: "budaya", koordinat: [-7.7900, 110.3700], deskripsi: "Lokasi Pameran Batik." },
+    { id: "pasar_seni_kotagede", nama: "Pasar Seni Kotagede", kategori: "budaya", koordinat: [-7.8270, 110.3990], deskripsi: "Lokasi Pameran Perak." },
+    { id: "rocket_hall", nama: "Rocket Convention Hall", kategori: "fasilitas", koordinat: [-7.7500, 110.4000], deskripsi: "Lokasi Selarasa Fest 2026." },
+    { id: "jec", nama: "Jogja Expo Center (JEC)", kategori: "budaya", koordinat: [-7.7900, 110.4100], deskripsi: "Lokasi INACRAFT & Jogja Fashion Week." },
+    { id: "embung_giwangan", nama: "Taman Budaya Embung Giwangan", kategori: "budaya", koordinat: [-7.8300, 110.3900], deskripsi: "Lokasi Festival Sastra Yogyakarta." },
+    { id: "museum_batik", nama: "Museum Batik Yogyakarta", kategori: "budaya", koordinat: [-7.7900, 110.3700], deskripsi: "Lokasi Pameran Batik." },
+    { id: "pasar_seni_kotagede", nama: "Pasar Seni Kotagede", kategori: "budaya", koordinat: [-7.8270, 110.3990], deskripsi: "Lokasi Pameran Perak." }
 ];
 
 // A. Definisi warna untuk setiap kategori
@@ -154,8 +166,8 @@ tempatWisata.forEach(tempat => {
     `;
 
     // Menggunakan ikon dinamis yang warnanya disesuaikan kategori
-    const marker = L.marker(tempat.koordinat, { 
-        icon: getMarkerIcon(tempat.kategori) 
+    const marker = L.marker(tempat.koordinat, {
+        icon: getMarkerIcon(tempat.kategori)
     }).bindPopup(htmlPopup);
 
     // Memasukkan ke layer yang sesuai

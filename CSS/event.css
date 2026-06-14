@@ -1,7 +1,19 @@
 #event {
     background: var(--cream-dark);
 }
+.btn-maps {
+    margin-left: 20px;
+    font-size: 0.85rem;
+    color: var(--gold);
+    text-decoration: underline;
+    margin-top: auto; /* Mendorong tombol ke bawah jika perlu */
+    padding-right: 0; /* Menempel ke pinggiran */
+    transition: color 0.2s;
+}
 
+.btn-maps:hover {
+    color: var(--cream);
+}
 :root {
     --cream-dark: #f5edd8;
     --deep-brown: #4a2c17;
@@ -171,6 +183,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    
 }
 
 .event-card-image {

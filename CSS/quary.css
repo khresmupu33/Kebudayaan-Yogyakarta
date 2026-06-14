@@ -266,7 +266,13 @@
     #destination-card {
         width: 280px !important;
         padding: 10px;
+        max-height: 592px;
+        min-height: 592px;
     }
+    
+.card-image-overlay{
+    max-height: 250px;
+}
 
     /* 3. Atur ulang posisi tombol panah agar mengikuti pelebaran kartu */
     .dest-nav-btn {
