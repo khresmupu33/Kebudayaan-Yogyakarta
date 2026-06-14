@@ -884,3 +884,75 @@ figcaption {
     gap: 4rem;
     align-items: center;
 }
+/* --- RESPONSIVE MOBILE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    /* 1. Standardisasi lebar dan padding semua section-card */
+    .section {
+        padding: 2rem 0.75rem !important; /* Padding luar section lebih rapat */
+    }
+    .hero-card {
+        padding: 1.5rem !important;
+        width: 90% !important;
+    }
+    .hero-title { font-size: 2.2rem !important; }
+
+    .frame.section-card, 
+    #apa-itu .frame, 
+    #wayang-siklus .frame, 
+    #pelestarian .frame {
+        width: 95% !important;        /* Lebar card seragam 95% */
+        margin: 1rem auto !important; /* Posisi selalu di tengah */
+        padding: 1.5rem !important;   /* Padding dalam card seragam */
+        max-width: 100% !important;
+    }
+
+    /* 2. Paksa semua layout split menjadi vertikal */
+    .split, 
+    .steps, 
+    .color-grid, 
+    .motif-grid {
+        display: block !important; 
+        gap: 1.5rem !important;
+    }
+
+    /* 3. Penyesuaian media (gambar) agar konsisten */
+    .split-media, 
+    .wide-media {
+        width: 100% !important;
+        aspect-ratio: 16 / 9;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* 4. Hierarki teks untuk layar kecil */
+    h2 { font-size: 1.6rem !important; line-height: 1.2 !important; }
+    .block-title { font-size: 1.3rem !important; }
+    .lead { font-size: 0.95rem !important; margin: 1rem 0 !important; }
+    
+    .lifecycle li, .pillars li {
+        font-size: 0.9rem !important;
+        padding-left: 1rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    /* 5. Pembersihan elemen dekoratif agar tidak bertabrakan dengan teks */
+    .corner, .lung, .ukel {
+        display: none !important; 
+    }
+
+    /* 6. Memastikan urutan gambar selalu di atas teks pada semua bab */
+    .split {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .split-media { order: 1; }
+    .split-text { order: 2; }
+    
+    /* Membalikkan order jika class-nya 'reverse' agar gambar tetap di atas */
+    .split.reverse {
+        flex-direction: column-reverse !important;
+    }
+    .split.reverse .split-media { order: 2; }
+    .split.reverse .split-text { order: 1; }
+
+
+}

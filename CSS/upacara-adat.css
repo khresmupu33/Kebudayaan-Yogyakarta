@@ -884,3 +884,105 @@ figcaption {
     gap: 4rem;
     align-items: center;
 }
+
+/* --- RESPONSIVE MOBILE ADJUSTMENTS (GLOBAL) --- */
+@media (max-width: 768px) {
+
+    /* 1. Reset Global Section Padding */
+    .section {
+        padding: 2rem 0.5rem !important;
+    }
+
+    .hero-card {
+        padding: 1.5rem !important;
+        width: 90% !important;
+    }
+
+    .hero-title {
+        font-size: 2.2rem !important;
+    }
+
+    /* 2. Standardisasi semua Section Card (Lebar & Padding) */
+    .section-card,
+    .frame.section-card {
+        width: 94% !important;
+        /* Lebar seragam */
+        margin: 1rem auto !important;
+        padding: 1.25rem !important;
+        /* Padding dalam seragam */
+        max-width: 100% !important;
+    }
+
+    #apa-itu .section-card {
+        padding: 1rem !important;
+        /* Sesuaikan nilai 1rem ini sesuai keinginan Anda */
+    }
+
+    /* 3. Paksa Layout Split & Grid menjadi Vertikal */
+    .split,
+    .steps,
+    .color-grid,
+    .motif-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+
+    /* 4. Hierarki Gambar & Media */
+    .split-media,
+    .wide-media {
+        width: 100% !important;
+        aspect-ratio: 16 / 9;
+        margin-bottom: 1rem !important;
+        order: 1;
+        /* Gambar selalu di atas */
+    }
+
+    .split-text {
+        order: 2;
+        /* Teks selalu di bawah */
+    }
+
+    /* Khusus untuk .reverse agar gambar tetap di atas teks */
+    .split.reverse {
+        flex-direction: column-reverse !important;
+    }
+
+    .split.reverse .split-media {
+        order: 2;
+    }
+
+    .split.reverse .split-text {
+        order: 1;
+    }
+
+    /* 5. Penyesuaian Tipografi */
+    h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .block-title {
+        font-size: 1.2rem !important;
+    }
+
+    .lead {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .lifecycle li,
+    .pillars li {
+        font-size: 0.85rem !important;
+        padding-left: 0.8rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    /* 6. Pembersihan Elemen Dekoratif (Sangat penting untuk kerapihan di HP) */
+    .corner,
+    .lung,
+    .ukel {
+        display: none !important;
+    }
+
+}
