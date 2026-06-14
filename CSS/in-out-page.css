@@ -1,10 +1,14 @@
 .page {
     padding: 40px;
+    width: 1000000px;
+    height: 1000000px;
     /* JANGAN taruh animasi fade-out di sini agar tidak kelip saat link diklik */
 }
 
 /* Base Lapisan Tirai (In & Out) */
 .in-page, .out-page {
+        width: 1000000px;
+    height: 1000000px;
     position: fixed;
     top: -50vh;   
     left: -50vw;  
@@ -22,6 +26,8 @@
     display: block;
     animation: slideOutRightUp 1.2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
+
+
 
 /* Jalankan Animasi Keluar */
 .out-page.aktif {

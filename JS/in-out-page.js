@@ -1,7 +1,3 @@
-/**
- * Script Transisi Halaman (Final - Optimized)
- */
-
 window.addEventListener("pageshow", (event) => {
     const inPageLayer = document.querySelector(".in-page");
     const outPageLayer = document.querySelector(".out-page");
@@ -32,32 +28,52 @@ window.addEventListener("pageshow", (event) => {
     }
 });
 
-// 3. INTERAKSI LINK & TRANSISI KELUAR
+// 2. Logika Navigasi: Menangani klik link untuk memicu animasi keluar
 document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll("a");
-    const outPageLayer = document.querySelector(".out-page");
 
     links.forEach(link => {
         link.addEventListener("click", function(e) {
+            // Abaikan tombol Back to Top
             if (this.id === "backToTop") return;
-            const href = this.getAttribute('href');
+
+            const hrefAttr = this.getAttribute('href');
             
-            if (!href || href === '#' || href.startsWith('javascript:') || this.target === '_blank') return;
+            // Validasi: Abaikan link kosong, jangkar (#), javascript, atau target="_blank"
+            if (!hrefAttr || hrefAttr === '#' || hrefAttr.startsWith('javascript:') || this.getAttribute('target') === '_blank') return;
 
             e.preventDefault();
             e.stopPropagation();
 
+            const targetUrl = this.href;
+            const menu = document.getElementById('mobile-menu');
+            const outPageLayer = document.querySelector(".out-page");
+            const isMenuOpen = menu && !menu.classList.contains('translate-x-full');
+
+            // Tandai bahwa transisi sedang berjalan
             localStorage.setItem("pageTransitionActive", "true");
 
-            // Trigger animasi keluar
-            if (outPageLayer) {
-                outPageLayer.classList.add("aktif");
+            if (isMenuOpen) {
+                if (typeof handleMobileNav === "function") {
+                    handleMobileNav();
+                }
+                setTimeout(() => {
+                    mulaiAnimasiKeluar(outPageLayer, targetUrl);
+                }, 1);
+            } else {
+                mulaiAnimasiKeluar(outPageLayer, targetUrl);
             }
-            
-            // Tunggu 800ms agar animasi terlihat sebelum pindah halaman
-            setTimeout(() => {
-                window.location.href = this.href;
-            }, 800);
         });
     });
 });
+
+// 3. Fungsi eksekusi animasi keluar
+function mulaiAnimasiKeluar(layer, url) {
+    if (layer) {
+        layer.classList.add("aktif");
+    }
+    // Waktu tunggu harus sama dengan durasi animasi di CSS Anda
+    setTimeout(() => {
+        window.location.href = url;
+    }, 1000);
+}
