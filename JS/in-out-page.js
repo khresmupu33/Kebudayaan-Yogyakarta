@@ -5,31 +5,28 @@
 
 // 1. Logika Utama: Berjalan saat halaman dimuat (termasuk saat Back/Forward)
 window.addEventListener("pageshow", (event) => {
+    // 1. Jika halaman dimuat dari cache (tombol Back/Forward)
+    if (event.persisted) {
+        // Paksa refresh halaman agar animasi bisa berjalan dari nol
+        // Ini adalah cara paling ampuh mencegah "diam/terkunci" di halaman sebelumnya
+        window.location.reload();
+        return; 
+    }
+
+    // 2. Logika normal untuk transisi
     const inPageLayer = document.querySelector(".in-page");
     const navigationType = performance.getEntriesByType("navigation")[0]?.type;
     const isReload = navigationType === "reload";
     const isTransitioning = localStorage.getItem("pageTransitionActive") === "true";
 
-    // Hapus penanda transisi agar tidak looping
     localStorage.removeItem("pageTransitionActive");
 
-    // Jika halaman dimuat dari cache (tombol Back/Forward), reset state UI
-    if (event.persisted) {
-        if (inPageLayer) {
-            inPageLayer.classList.remove("jalan");
-            inPageLayer.style.display = ""; // Reset ke CSS awal
-        }
-        document.body.classList.add("visible");
-    }
-
-    // Logika animasi masuk
     if (isTransitioning && !isReload) {
         document.body.classList.add("visible");
         if (inPageLayer) {
             inPageLayer.classList.add("jalan");
         }
     } else {
-        // Jika buka tab baru, reload, atau ketik URL manual
         if (inPageLayer) {
             inPageLayer.style.display = "none";
         }
