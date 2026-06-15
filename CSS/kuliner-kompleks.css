@@ -95,10 +95,10 @@
 }
 
 .orb-1 {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     top: 10%;
-    left: -100px;
+    left: 20%;
     animation: float 6s infinite ease-in-out;
 }
 
@@ -474,30 +474,7 @@
     line-height: 1.8;
 }
 
-/* Dekorasi Melayang */
-.floating-orb {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(184, 146, 67, 0.15) 0%, transparent 70%);
-    filter: blur(20px);
-    z-index: -1;
-}
 
-.orb-1 {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: -100px;
-    animation: float 6s infinite ease-in-out;
-}
-
-.orb-2 {
-    width: 250px;
-    height: 250px;
-    bottom: 0;
-    right: -50px;
-    animation: float 8s infinite ease-in-out reverse;
-}
 
 /* --- BENTO GRID LENGKAP & RIBET --- */
 .bento-grid-section {
