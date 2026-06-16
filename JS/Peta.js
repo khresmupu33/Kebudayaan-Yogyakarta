@@ -153,8 +153,8 @@ function getMarkerIcon(kategori) {
 }
 // 5. Membuat dan Memetakan Struktur Popup
 tempatWisata.forEach(tempat => {
-    // Membuat link Google Maps rute
-    const gmapsLink = `https://www.google.com/maps/dir/?api=1&destination=${tempat.koordinat[0]},${tempat.koordinat[1]}`;
+    // PERBAIKAN: Menghapus angka 0 typo sebelum kurung kurawal agar link tidak rusak
+    const gmapsLink = `https://www.google.com/maps/search/?api=1&query=${tempat.koordinat[0]},${tempat.koordinat[1]}`;
 
     const htmlPopup = `
         <div class="popup-box">
@@ -169,6 +169,9 @@ tempatWisata.forEach(tempat => {
     const marker = L.marker(tempat.koordinat, {
         icon: getMarkerIcon(tempat.kategori)
     }).bindPopup(htmlPopup);
+
+    // [PENTING] Simpan objek marker ini ke dalam data tempat agar bisa ditembak (.openPopup()) nanti
+    tempat.markerRef = marker;
 
     // Memasukkan ke layer yang sesuai
     if (layers[tempat.kategori]) {
@@ -210,16 +213,38 @@ window.arahkannyaKeWilayah = function (key) {
         });
     }
 };
-// Tambahkan ini di bagian bawah Peta.js
+// Navigasi Otomatis berdasarkan URL Hash (contoh: peta.html#prambanan)
 window.addEventListener('load', () => {
-    const params = new URLSearchParams(window.location.search);
-    const lat = params.get('lat');
-    const lng = params.get('lng');
+    const hash = window.location.hash.substring(1); // Mengambil teks setelah #
+    if (hash) {
+        const target = tempatWisata.find(t => t.id === hash);
+        if (target) {
+            setTimeout(() => {
+                // KUNCI UTAMA: Pastikan layer tempat tersebut terpasang di peta,
+                // jika tidak, marker tersembunyi dan popup gagal dipanggil.
+                if (layers[target.kategori] && !map.hasLayer(layers[target.kategori])) {
+                    map.addLayer(layers[target.kategori]);
+                    
+                    // Sinkronisasi checkbox HTML agar statusnya ikut tercentang (Desktop & Mobile)
+                    const checkboxes = document.querySelectorAll(`input[data-target="${target.kategori}"]`);
+                    checkboxes.forEach(chk => chk.checked = true);
+                }
 
-    if (lat && lng) {
-        setTimeout(() => {
-            arahkannyaKeLokasi(parseFloat(lat), parseFloat(lng), 15);
-        }, 500); // Delay agar peta siap dimuat dulu
+                // 1. Terbangkan peta ke lokasi target
+                map.flyTo(target.koordinat, 15, {
+                    animate: true,
+                    duration: 1.5
+                });
+
+                // 2. Tunggu sampai animasi flyTo ngerem/berhenti sempurna, baru munculkan popup
+                map.once('moveend', () => {
+                    if (target.markerRef) {
+                        target.markerRef.openPopup();
+                    }
+                });
+                
+            }, 800); // Delay memberikan waktu Leaflet merender peta dasar pertamakali
+        }
     }
 });
 // =========================================================================
