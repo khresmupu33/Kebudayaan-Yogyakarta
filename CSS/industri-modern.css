@@ -115,6 +115,9 @@ a[href="halaman-teknologi.html"]:hover {
     }
 }
 
+img {
+    height: 450px !important;
+}
 
 /* ==================== 4. EFEK HOVER NYALA KARTU ==================== */
 

@@ -1,6 +1,9 @@
 #kota_pelajar {
     background: var(--zinc);
 }
+img {
+    height: 450px !important;
+}
 
 /* ==================== 1. ELEMEN UTAMA & GAMBAR CONTROLLER ==================== */
 
