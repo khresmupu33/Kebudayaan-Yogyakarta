@@ -272,7 +272,9 @@ h3 {
     flex-direction: column;
     gap: 10px;
 }
-
+.popup-link{
+    text-align: right !important;
+}
 .btn-mobile-zoom {
     width: 46px;
     height: 46px;
@@ -307,6 +309,13 @@ h3 {
    6. PEMBARUAN: INTERFACES RESPONSIF & GRID KHUSUS MOBILE (Layar <= 768px)
 ========================================================================= */
 @media (max-width: 768px) {
+    .popup-box{
+        width: 100px !important;
+        padding: auto;
+    }
+    .popup-link{
+
+    }
     .p {
         display: none !important;
         position: absolute !important;
