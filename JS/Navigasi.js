@@ -47,50 +47,50 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileDropdowns.forEach(dropdown => {
         const content = dropdown.querySelector('.mobile-dropdown-content');
         const mainLink = dropdown.querySelector('.mobile-link');
- if (mainLink) {
+        if (mainLink) {
 
-    mainLink.addEventListener('click', function(e) {
+            mainLink.addEventListener('click', function (e) {
 
-        if (window.innerWidth < 1424) {
+                if (window.innerWidth < 1424) {
 
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation();
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
 
-            // ambil ulang elemennya
-            const parent = mainLink.closest('.mobile-dropdown');
-            if (!parent) return;
+                    // ambil ulang elemennya
+                    const parent = mainLink.closest('.mobile-dropdown');
+                    if (!parent) return;
 
-            const content = parent.querySelector('.mobile-dropdown-content');
-            const icon = parent.querySelector('.toggle-dropdown-btn svg, .toggle-dropdown-btn i');
+                    const content = parent.querySelector('.mobile-dropdown-content');
+                    const icon = parent.querySelector('.toggle-dropdown-btn svg, .toggle-dropdown-btn i');
 
-            // toggle active
-            parent.classList.toggle('active');
+                    // toggle active
+                    parent.classList.toggle('active');
 
-            // toggle dropdown
-            if (content.classList.contains('hidden')) {
+                    // toggle dropdown
+                    if (content.classList.contains('hidden')) {
 
-                content.classList.remove('hidden');
+                        content.classList.remove('hidden');
 
-                if (icon) {
-                    icon.style.transform = 'rotate(180deg)';
-                    icon.style.transition = 'transform 0.3s ease';
+                        if (icon) {
+                            icon.style.transform = 'rotate(180deg)';
+                            icon.style.transition = 'transform 0.3s ease';
+                        }
+
+                    } else {
+
+                        content.classList.add('hidden');
+
+                        if (icon) {
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+
+                    return false;
                 }
 
-            } else {
-
-                content.classList.add('hidden');
-
-                if (icon) {
-                    icon.style.transform = 'rotate(0deg)';
-                }
-            }
-
-            return false;
+            }, true);
         }
-
-    }, true);
-}
 
         // =================================================================
         // LOGIKA DESKTOP: TETAP MENGGUNAKAN HOVER AMAN (LAYAR >= 768px)
