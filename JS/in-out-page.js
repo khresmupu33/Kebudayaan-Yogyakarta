@@ -3,12 +3,12 @@ window.addEventListener("pageshow", (event) => {
     const outPageLayer = document.querySelector(".out-page");
 
     // 1. PENANGANAN BACK/FORWARD (BFCache)
-    // Jangan gunakan display: none. Cukup hapus class agar transisi terbuka.
     if (event.persisted) {
         if (inPageLayer) inPageLayer.classList.remove("jalan");
         if (outPageLayer) outPageLayer.classList.remove("aktif");
         document.body.classList.add("visible");
         localStorage.removeItem("pageTransitionActive");
+        enableScroll(); // Pastikan scroll aktif kembali
         return; 
     }
 
@@ -19,12 +19,18 @@ window.addEventListener("pageshow", (event) => {
     if (isTransitioning) {
         document.body.classList.add("visible");
         if (inPageLayer) {
+            disableScroll(); // Matikan fungsi scroll saat masuk
             inPageLayer.classList.add("jalan");
+
+            // Aktifkan kembali setelah animasi masuk selesai (sesuaikan 1000ms dengan CSS)
+            setTimeout(() => {
+                enableScroll();
+            }, 1000); 
         }
     } else {
-        // Akses pertama kali/refresh
         document.body.classList.add("visible");
         if (inPageLayer) inPageLayer.classList.remove("jalan");
+        enableScroll();
     }
 });
 
@@ -34,12 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     links.forEach(link => {
         link.addEventListener("click", function(e) {
-            // Abaikan tombol Back to Top
             if (this.id === "backToTop") return;
 
             const hrefAttr = this.getAttribute('href');
-            
-            // Validasi: Abaikan link kosong, jangkar (#), javascript, atau target="_blank"
             if (!hrefAttr || hrefAttr === '#' || hrefAttr.startsWith('javascript:') || this.getAttribute('target') === '_blank') return;
 
             e.preventDefault();
@@ -50,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const outPageLayer = document.querySelector(".out-page");
             const isMenuOpen = menu && !menu.classList.contains('translate-x-full');
 
-            // Tandai bahwa transisi sedang berjalan
             localStorage.setItem("pageTransitionActive", "true");
 
             if (isMenuOpen) {
@@ -70,10 +72,40 @@ document.addEventListener("DOMContentLoaded", () => {
 // 3. Fungsi eksekusi animasi keluar
 function mulaiAnimasiKeluar(layer, url) {
     if (layer) {
+        disableScroll(); // Matikan fungsi scroll saat keluar
         layer.classList.add("aktif");
     }
-    // Waktu tunggu harus sama dengan durasi animasi di CSS Anda
     setTimeout(() => {
         window.location.href = url;
     }, 1000);
+}
+
+// --- FUNGSI UNTUK MEMATIKAN FUNGSI SCROLL (TANPA MENGHILANGKAN SCROLLBAR) ---
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+// Menangani tombol keyboard seperti ArrowUp, ArrowDown, Spacebar, PageUp, PageDown
+function preventDefaultForScrollKeys(e) {
+    const keys = { 32: 1, 33: 1, 34: 1, 35: 1, 36: 1, 37: 1, 38: 1, 39: 1, 40: 1 };
+    if (keys[e.keyCode]) {
+        e.preventDefault();
+        return false;
+    }
+}
+
+function disableScroll() {
+    // Matikan scroll mouse / trackpad
+    window.addEventListener('wheel', preventDefault, { passive: false });
+    // Matikan scroll swipe di HP/Mobile
+    window.addEventListener('touchmove', preventDefault, { passive: false });
+    // Matikan scroll keyboard
+    window.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
+}
+
+function enableScroll() {
+    // Kembalikan fungsi scroll seperti semula
+    window.removeEventListener('wheel', preventDefault, { passive: false });
+    window.removeEventListener('touchmove', preventDefault, { passive: false });
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
 }

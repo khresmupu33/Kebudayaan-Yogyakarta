@@ -986,3 +986,45 @@ figcaption {
     }
 
 }
+
+/* --- TAMPILAN UNTUK MOBILE (Layar di bawah 768px) --- */
+@media (max-width: 767px) {
+    .motif {
+        position: relative;
+        /* Memastikan posisi overlay tetap aman di dalam figure */
+    }
+
+    .motif-overlay {
+        /* 1. Langsung munculkan overlay tanpa nunggu hover */
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        /* Reset jika sebelumnya ada efek transform/slide up */
+
+        /* 2. Buat background menjadi pudar (sesuaikan warnanya) */
+        background: rgba(0, 0, 0, 0.87) !important;
+        /* Hitam pudar 60% */
+
+        /* 3. Opsional: Mengatur posisi agar teks berada di bawah/tengah */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+
+    }
+    .motif-grid{
+        max-height: 4000px;
+    }
+
+    /* Jika teksnya warna hitam, ubah ke putih agar kontras dengan bg pudar */
+    .motif-overlay span,
+    .motif-overlay strong {
+        color: #ffffff;
+    }
+
+    /* Sembunyikan figcaption bawaan jika bertubrukan dengan overlay */
+    .motif-name {
+        display: none;
+    }
+}

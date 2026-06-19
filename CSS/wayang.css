@@ -1,4 +1,4 @@
-#wayang {
+#upacara-adat {
     background: var(--cream-dark);
 }
 
@@ -884,75 +884,147 @@ figcaption {
     gap: 4rem;
     align-items: center;
 }
-/* --- RESPONSIVE MOBILE ADJUSTMENTS --- */
+
+/* --- RESPONSIVE MOBILE ADJUSTMENTS (GLOBAL) --- */
 @media (max-width: 768px) {
-    /* 1. Standardisasi lebar dan padding semua section-card */
+
+    /* 1. Reset Global Section Padding */
     .section {
-        padding: 2rem 0.75rem !important; /* Padding luar section lebih rapat */
+        padding: 2rem 0.5rem !important;
     }
+
     .hero-card {
         padding: 1.5rem !important;
         width: 90% !important;
     }
-    .hero-title { font-size: 2.2rem !important; }
 
-    .frame.section-card, 
-    #apa-itu .frame, 
-    #wayang-siklus .frame, 
-    #pelestarian .frame {
-        width: 95% !important;        /* Lebar card seragam 95% */
-        margin: 1rem auto !important; /* Posisi selalu di tengah */
-        padding: 1.5rem !important;   /* Padding dalam card seragam */
+    .hero-title {
+        font-size: 2.2rem !important;
+    }
+
+    /* 2. Standardisasi semua Section Card (Lebar & Padding) */
+    .section-card,
+    .frame.section-card {
+        width: 94% !important;
+        /* Lebar seragam */
+        margin: 1rem auto !important;
+        padding: 1.25rem !important;
+        /* Padding dalam seragam */
         max-width: 100% !important;
     }
 
-    /* 2. Paksa semua layout split menjadi vertikal */
-    .split, 
-    .steps, 
-    .color-grid, 
+    #apa-itu .section-card {
+        padding: 1rem !important;
+        /* Sesuaikan nilai 1rem ini sesuai keinginan Anda */
+    }
+
+    /* 3. Paksa Layout Split & Grid menjadi Vertikal */
+    .split,
+    .steps,
+    .color-grid,
     .motif-grid {
-        display: block !important; 
+        display: flex !important;
+        flex-direction: column !important;
         gap: 1.5rem !important;
     }
 
-    /* 3. Penyesuaian media (gambar) agar konsisten */
-    .split-media, 
+    /* 4. Hierarki Gambar & Media */
+    .split-media,
     .wide-media {
         width: 100% !important;
         aspect-ratio: 16 / 9;
-        margin-bottom: 1.5rem !important;
+        margin-bottom: 1rem !important;
+        order: 1;
+        /* Gambar selalu di atas */
     }
 
-    /* 4. Hierarki teks untuk layar kecil */
-    h2 { font-size: 1.6rem !important; line-height: 1.2 !important; }
-    .block-title { font-size: 1.3rem !important; }
-    .lead { font-size: 0.95rem !important; margin: 1rem 0 !important; }
-    
-    .lifecycle li, .pillars li {
-        font-size: 0.9rem !important;
-        padding-left: 1rem !important;
-        margin-bottom: 0.8rem !important;
+    .split-text {
+        order: 2;
+        /* Teks selalu di bawah */
     }
 
-    /* 5. Pembersihan elemen dekoratif agar tidak bertabrakan dengan teks */
-    .corner, .lung, .ukel {
-        display: none !important; 
-    }
-
-    /* 6. Memastikan urutan gambar selalu di atas teks pada semua bab */
-    .split {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .split-media { order: 1; }
-    .split-text { order: 2; }
-    
-    /* Membalikkan order jika class-nya 'reverse' agar gambar tetap di atas */
+    /* Khusus untuk .reverse agar gambar tetap di atas teks */
     .split.reverse {
         flex-direction: column-reverse !important;
     }
-    .split.reverse .split-media { order: 2; }
-    .split.reverse .split-text { order: 1; }
 
+    .split.reverse .split-media {
+        order: 2;
+    }
 
+    .split.reverse .split-text {
+        order: 1;
+    }
+
+    /* 5. Penyesuaian Tipografi */
+    h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .block-title {
+        font-size: 1.2rem !important;
+    }
+
+    .lead {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .lifecycle li,
+    .pillars li {
+        font-size: 0.85rem !important;
+        padding-left: 0.8rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    /* 6. Pembersihan Elemen Dekoratif (Sangat penting untuk kerapihan di HP) */
+    .corner,
+    .lung,
+    .ukel {
+        display: none !important;
+    }
+
+}
+
+/* --- TAMPILAN UNTUK MOBILE (Layar di bawah 768px) --- */
+@media (max-width: 767px) {
+    .motif {
+        position: relative;
+        /* Memastikan posisi overlay tetap aman di dalam figure */
+    }
+
+    .motif-overlay {
+        /* 1. Langsung munculkan overlay tanpa nunggu hover */
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        /* Reset jika sebelumnya ada efek transform/slide up */
+
+        /* 2. Buat background menjadi pudar (sesuaikan warnanya) */
+        background: rgba(0, 0, 0, 0.87) !important;
+        /* Hitam pudar 60% */
+
+        /* 3. Opsional: Mengatur posisi agar teks berada di bawah/tengah */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+
+    }
+    .motif-grid{
+        max-height: 4000px;
+    }
+
+    /* Jika teksnya warna hitam, ubah ke putih agar kontras dengan bg pudar */
+    .motif-overlay span,
+    .motif-overlay strong {
+        color: #ffffff;
+    }
+
+    /* Sembunyikan figcaption bawaan jika bertubrukan dengan overlay */
+    .motif-name {
+        display: none;
+    }
 }

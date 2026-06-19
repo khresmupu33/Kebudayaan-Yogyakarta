@@ -307,7 +307,7 @@ margin-top: -30px !important;
     border-color: #d4af37;
     font-weight: 700;
 }
-@media (max-width: 768px) {
+@media (max-width: 1368px) {
     .hero-scroll-indicator {
         display: none !important;
     }

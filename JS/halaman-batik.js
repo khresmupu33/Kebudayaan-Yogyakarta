@@ -124,9 +124,8 @@ function buildGallery() {
     });
 
     grid.appendChild(frag);
-    document.querySelectorAll('motif.reveal').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.motif.reveal').forEach((el) => observer.observe(el));
 }
-
 
 
 function applyStagger() {
