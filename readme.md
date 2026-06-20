@@ -12,9 +12,11 @@ Proyek Tugas Besar (TUBES) Pemrograman Web Dasar ini dikembangkan secara kolabor
 
 ### 1. Khresmupu (Lead Developer / Core Layout)
 Bertanggung jawab atas arsitektur halaman utama, pemetaan, sejarah dasar, dan integrasi modernitas Jogja:
+* `index.html` (halaman intro)
 * `halaman-beranda.html` (Pusat Hub / Beranda Utama)
 * `halaman-sejarah.html` (Menu Utama Sejarah Mataram & Yogyakarta)
 * `halaman-peta-jogja.html` (Menu Peta Navigasi Interaktif)
+* `halaman-destinasi.html`
 * `halaman-teknologi.html` (Menu Utama & Sub-Halaman Teknologi):
   * `halaman-smart-city.html`
   * `halaman-kota-pelajar.html`
@@ -28,10 +30,6 @@ Bertanggung jawab atas visualisasi kebudayaan, agenda kota, destinasi, dan profi
   * `halaman-tarian-adat.html` 
   * `halaman-wayang.html` 
   * `halaman-upacara-adat.html`
-* `halaman-destinasi.html` (Menu Utama & Sub-Halaman Pariwisata):
-  * `halaman-wisata-alam.html` 
-  * `halaman-wisata-sejarah.html` 
-  * `halaman-wisata-budaya.html`
 * `halaman-event.html` (Agenda & Pagelaran Seni)
 
 ### 3. RolandMF (Culinary Curator)
